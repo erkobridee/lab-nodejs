@@ -1,0 +1,32 @@
+extends mainLayout
+
+block content
+  h1 #{title}
+  p Welcome to #{title}
+  p 
+    a(href='/about') About Page
+
+  p Persons
+    ul
+      li 
+        a(href='/api/json') json
+      li 
+        a(href='/persons') html
+  p Errors
+    ul
+      li
+        a(href='/api/jsonError') json
+      li
+        a(href='/pageError') html
+      li
+        a(href='/500') 500  
+  p Not Found
+    ul
+      li
+        a(href='/PageNotFound') page
+  p Access Not Allowed
+    ul
+      li
+        a(href='/403') 403
+      li
+        a(href='/admin') admin  
