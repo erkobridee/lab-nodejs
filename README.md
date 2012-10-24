@@ -9,6 +9,35 @@ Node.js test code lab
 
 * [Node.js API DOCS](http://nodejs.org/api/)
 
+* [Node.js Manual](http://nodemanual.org/latest/)
+
+* [npm - Node Packaged Modules](https://npmjs.org/)
+
+* [GitHub : Joyent / Node.js : Wiki / Modules](https://github.com/joyent/node/wiki/modules)
+
+---
+
+* [How to Node](http://howtonode.org/)
+
+* [The Node Beginner Book](http://www.nodebeginner.org/)
+
+* [Mastering Node.js](http://visionmedia.github.com/masteringnode/) Open Source Node eBook
+
+* [Learning Server-Side JavaScript with Node.js](http://net.tutsplus.com/tutorials/javascript-ajax/learning-serverside-javascript-with-node-js/)
+
+* [Node.js : Require and Exports](http://openmymind.net/2012/2/3/Node-Require-and-Exports/)
+
+* [Production Node.js Secrets](http://dshaw.github.com/2012-05-jsday/)
+
+* Hardening Node.js for production [part 1](http://blog.argteam.com/coding/hardening-nodejs-production-process-supervisor/) | [part 2](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load/) | [part 3](http://blog.argteam.com/coding/hardening-node-js-for-production-part-3-zero-downtime-deployments-with-nginx/)
+
+* [GitMoon](http://www.gitmoon.com/) Social analytics for Node.js developers
+
+* [GitHub : Status Dashboard](https://github.com/obazoud/statusdashboard) Status Dashboard is status page for your configured services or applications.
+
+#### pt_BR
+
+* [Configurando o Node.js no Amazon EC2](http://pablocantero.com/blog/2012/01/04/configurando-o-node-js-no-amazon-ec2/)
 
 ## Geekli.st
 
