@@ -51,9 +51,12 @@ test.on('helloEvent', helloEventHandler);
 test.on('customEvent', customEventHandler);
 
 // dispatchers
-test.dispatch('helloEvent', {hello: 'hello world'});
 test.dispatch('helloEvent');
+test.dispatch('helloEvent', {hello: 'hello world'});
+test.emit('helloEvent', {hello: 'hello world'});
+
 test.dispatch('customEvent');
+test.emit('customEvent');
 
 // remove events listeners
 test.removeListener('helloEvent', helloEventHandler);
