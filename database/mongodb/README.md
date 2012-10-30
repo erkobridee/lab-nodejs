@@ -31,14 +31,6 @@ Links
 
 * [A Basic introduction to Mongo DB](http://mongodb.github.com/node-mongodb-native/api-articles/nodekoarticle1.html)
 
-* [An introduction to the Node.js MongoDB Driver](http://www.slideshare.net/christkv/node-js-mongodriver) | [GitHub : Code](https://github.com/christkv/mongodb-presentation)
-
-* [GitHub : mongodb / node-mongodb-native](https://github.com/mongodb/node-mongodb-native)
-
-* [Blog rolling with mongoDB, express and Node.js](http://howtonode.org/express-mongodb)
-
-* [Creating a REST API using Node.js, Express, and MongoDB](http://coenraets.org/blog/2012/10/creating-a-rest-api-using-node-js-express-and-mongodb/)
-
 * [Mongoose](http://mongoosejs.com/) is the 10gen-supported ODM for Node.js.
 
 * [Fusioncube : Node.js and MongoDB – A match made in heaven](http://www.fusioncube.net/index.php/node-js-and-mongodb-a-match-made-in-heaven) | [GitHub : Code](https://github.com/chortlehoort/Node_Tutorial/blob/master/mongoose/mongoose.js)
@@ -79,4 +71,8 @@ Links
 * [Chat application with Node.js and Socket.io](http://erickrdch.com/2012/05/chat-application-with-node-js-and-socket-io.html) | [GitHub : Code](https://github.com/erickrdch/demo-chat)
 
 * [radig / radig-chat](https://github.com/radig/radig-chat) A Node.js + jQuery + MongoDB Chat
+
+* [Login System in Node.js and MongoDB](http://www.quietless.com/kitchen/building-a-login-system-in-node-js-and-mongodb/) | [GitHub : Code](https://github.com/braitsch/node-login)
+
+
 
