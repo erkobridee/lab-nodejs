@@ -29,21 +29,11 @@ Links
 
 * [MongoDB Blog > Node.js and MongoDB](http://blog.mongodb.org/post/812003773/node-js-and-mongodb)
 
-* [A Basic introduction to Mongo DB](http://mongodb.github.com/node-mongodb-native/api-articles/nodekoarticle1.html)
-
-* [Mongoose](http://mongoosejs.com/) is the 10gen-supported ODM for Node.js.
-
-* [Fusioncube : Node.js and MongoDB – A match made in heaven](http://www.fusioncube.net/index.php/node-js-and-mongodb-a-match-made-in-heaven) | [GitHub : Code](https://github.com/chortlehoort/Node_Tutorial/blob/master/mongoose/mongoose.js)
-
-* [How to Map-Reduce with Mongoose, mongoDB, Express, Node.js](http://wmilesn.com/2011/07/code/how-to-map-reduce-with-mongoose-mongodb-express-node-js/)
-
 * [Streaming Files from MongoDB GridFS](http://blog.james-carr.org/2012/01/09/streaming-files-from-mongodb-gridfs/) | [GitHub : Code](https://github.com/jamescarr/nodejs-mongodb-streaming)
 
 * [npm : gridfs-stream](https://npmjs.org/package/gridfs-stream) Writable/Readable Nodejs compatible GridFS streams, with support to Mongoose 
 
 * [StackOverflow : how should i store likes/dislikes and rating in mongoose/mongdb using node.js](http://stackoverflow.com/questions/12994594/how-should-i-store-likes-dislikes-and-rating-in-mongoose-mongdb-using-node-js)
-
-* [Node.js and MongoDB - Getting started with MongoJS](http://howtonode.org/node-js-and-mongodb-getting-started-with-mongojs)
 
 # pt_BR
 

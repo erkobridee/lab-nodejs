@@ -14,6 +14,8 @@ npm install mongodb
 
 * [GitHub : mongodb / node-mongodb-native / test ](https://github.com/mongodb/node-mongodb-native/tree/master/test)
 
+* [A Basic introduction to MongoDB](http://mongodb.github.com/node-mongodb-native/api-articles/nodekoarticle1.html)
+
 * [An introduction to the Node.js MongoDB Driver](http://www.slideshare.net/christkv/node-js-mongodriver) | [GitHub : Code](https://github.com/christkv/mongodb-presentation)
 
 * [Blog rolling with mongoDB, express and Node.js](http://howtonode.org/express-mongodb)
