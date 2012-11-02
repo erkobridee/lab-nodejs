@@ -3,7 +3,7 @@
 Install mysql module in this directory, to run these codes
 
 ```
-npm intall mysql
+npm install mysql@2.0.0-alpha3
 ```
 
 # Links
