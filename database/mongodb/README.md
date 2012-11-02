@@ -35,10 +35,11 @@ Links
 
 * [StackOverflow : how should i store likes/dislikes and rating in mongoose/mongdb using node.js](http://stackoverflow.com/questions/12994594/how-should-i-store-likes-dislikes-and-rating-in-mongoose-mongdb-using-node-js)
 
+* [Mongoskin - MongoDB with Node.js](http://www.hacksparrow.com/mongodb-with-node-js.html) | [GitHub : Mongoskin](https://github.com/kissjs/node-mongoskin)
+
 # pt_BR
 
 * [MongoDB - material de aprendizado inicial](http://mongly.com/)
-
 
 # App's on GitHub : Node.js + MongoDB
 

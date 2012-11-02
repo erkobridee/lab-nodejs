@@ -23,6 +23,8 @@ Node.js test code lab
 
 * [The Node Beginner Book](http://www.nodebeginner.org/)
 
+* [Node.js for Beginners | Nettuts+](http://net.tutsplus.com/tutorials/javascript-ajax/node-js-for-beginners/)
+
 * [Mastering Node.js](http://visionmedia.github.com/masteringnode/) Open Source Node eBook
 
 * [Learning Server-Side JavaScript with Node.js](http://net.tutsplus.com/tutorials/javascript-ajax/learning-serverside-javascript-with-node-js/)
