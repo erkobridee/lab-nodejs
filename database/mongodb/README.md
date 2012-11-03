@@ -65,5 +65,9 @@ Links
 
 * [Login System in Node.js and MongoDB](http://www.quietless.com/kitchen/building-a-login-system-in-node-js-and-mongodb/) | [GitHub : Code](https://github.com/braitsch/node-login)
 
+# Async / flow control
 
+* [Async - utilities for node and the browser](https://github.com/caolan/async)
+
+* [Cyclop - Stupid simple control flow library](https://github.com/vesln/cyclop)
 
