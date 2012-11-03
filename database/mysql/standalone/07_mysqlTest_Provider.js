@@ -217,4 +217,4 @@ products.findAll(function(err, results) {
   else return console.log(results);
 });
 
-// TODO: test the other function
+// TODO: test the other functions
