@@ -155,7 +155,7 @@ function listProducts(doNext) {
     if(err)  return console.log(err);
 
     console.log(results);
-    return doNext()
+    return doNext();
   });
 };
 
