@@ -1,9 +1,10 @@
 # TODO
 
-Install mongoose module in this directory, to run these codes
+Install mongoose and async modules in this directory, to run these codes
 
 ```
-npm intall mongoose
+npm install mongoose
+npm install async
 ```
 
 # Links
@@ -35,5 +36,7 @@ npm intall mongoose
 * [GitHub : alonronin / nodejs-mongoose-example](https://github.com/alonronin/nodejs-mongoose-example) - single and batch insert example
 
 * [Building a real life application in Node.js with Mongoose](http://www.slideshare.net/fakedarren/building-a-real-life-application-in-node-js) - slideshare
+
+* [node.js and mongo (using mongoose) tutorial – ps: it's mike](http://psitsmike.com/2012/02/node-js-and-mongo-using-mongoose-tutorial/) | [GitHub : Code](https://github.com/mmukhin/psitsmike_mongodb_tutorial)
 
 
