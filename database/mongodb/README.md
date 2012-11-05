@@ -21,6 +21,8 @@ Links
 
 * [Things I wish I knew about MongoDB a year ago](http://snmaynard.com/2012/10/17/things-i-wish-i-knew-about-mongodb-a-year-ago/)
 
+* [Mongly - Learn MongoDB](http://mongly.com/)
+
 * [The Little MongoDB Book](http://openmymind.net/2011/3/28/The-Little-MongoDB-Book/)
 
 ## Node.js
