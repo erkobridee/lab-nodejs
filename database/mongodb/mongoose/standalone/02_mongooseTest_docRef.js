@@ -60,7 +60,10 @@ function countProducts(ProductModel, next) {
 function listAllProducts(ProductModel, next) {
   console.log('list all products');
 
-  ProductModel.find({}, function(err, docs) {
+  ProductModel
+    .find({})
+    .populate('category') 
+    .exec(function(err, docs) {
     if(err) console.log(err);
     else console.log(docs);
 
