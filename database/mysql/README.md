@@ -1,9 +1,10 @@
 # TODO
 
-Install mysql module in this directory, to run these codes
+Install mysql and async modules in this directory, to run these codes
 
 ```
 npm install mysql@2.0.0-alpha3
+npm install async
 ```
 
 # Links
