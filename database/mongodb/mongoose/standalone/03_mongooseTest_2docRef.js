@@ -72,7 +72,7 @@ function listAllDocs(Model, next) {
   console.log('list all books');
 
   Model
-    .find({})
+    .find()
     .populate('category', 'name')
     .populate('author', 'name') 
     .exec(function(err, docs) {

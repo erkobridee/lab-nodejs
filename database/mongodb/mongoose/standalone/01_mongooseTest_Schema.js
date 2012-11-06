@@ -49,7 +49,7 @@ function countProducts(ProductModel, next) {
 function listAllProducts(ProductModel, next) {
   console.log('list all products');
 
-  ProductModel.find({}, function(err, docs) {
+  ProductModel.find(function(err, docs) {
     if(err) console.log(err);
     else console.log(docs);
 
@@ -99,7 +99,7 @@ function execute() {
           console.log('find last inserted');
 
           Product
-            .find({})
+            .find()
             .sort('-when')
             .limit(1)
             .exec(function(err, doc) {
@@ -142,7 +142,7 @@ function execute() {
       console.log('remove oldest product');
 
       Product
-        .find({})
+        .find()
         .sort('when')
         .limit(1)
         .findOneAndRemove(function(err, doc) {

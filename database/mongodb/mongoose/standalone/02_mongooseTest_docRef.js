@@ -61,7 +61,7 @@ function listAllProducts(ProductModel, next) {
   console.log('list all products');
 
   ProductModel
-    .find({})
+    .find()
     .populate('category') 
     .exec(function(err, docs) {
     if(err) console.log(err);
