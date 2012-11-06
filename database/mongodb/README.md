@@ -39,6 +39,8 @@ Links
 
 * [Mongoskin - MongoDB with Node.js](http://www.hacksparrow.com/mongodb-with-node-js.html) | [GitHub : Mongoskin](https://github.com/kissjs/node-mongoskin)
 
+* [GitHub - Goose](https://github.com/coreybutler/goose) - is a simple organizational approach for managing MongoDB schemas in a NodeJS/Mongoose environment, meant to be used as the model portion of an MVC-style NodeJS app.
+
 # pt_BR
 
 * [MongoDB - material de aprendizado inicial](http://mongly.com/)
