@@ -19,11 +19,13 @@ Links
 
 * [Building scalable applications with mongoDB ](http://lanyrd.com/2012/jazoon/swkpc/)
 
-* [Things I wish I knew about MongoDB a year ago](http://snmaynard.com/2012/10/17/things-i-wish-i-knew-about-mongodb-a-year-ago/)
-
 * [Mongly - Learn MongoDB](http://mongly.com/)
 
 * [The Little MongoDB Book](http://openmymind.net/2011/3/28/The-Little-MongoDB-Book/)
+
+* [Things I wish I knew about MongoDB a year ago](http://snmaynard.com/2012/10/17/things-i-wish-i-knew-about-mongodb-a-year-ago/)
+
+* [MongoDB Gotchas & How To Avoid Them](http://rsmith.co/2012/11/05/mongodb-gotchas-and-how-to-avoid-them/)
 
 ## Node.js
 
