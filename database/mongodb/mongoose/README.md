@@ -39,4 +39,7 @@ npm install async
 
 * [node.js and mongo (using mongoose) tutorial – ps: it's mike](http://psitsmike.com/2012/02/node-js-and-mongo-using-mongoose-tutorial/) | [GitHub : Code](https://github.com/mmukhin/psitsmike_mongodb_tutorial)
 
+* [Article: Building Web APIs with Node.js and MongoDB](http://www.code-magazine.com/Article.aspx?quickid=1210041) | [GitHub : Code](https://github.com/donnfelker/workout-tracker)
+
+
 
