@@ -9,7 +9,7 @@ var mongoose = require('mongoose')
 var AuthorSchema = new Schema({
   name: {type: String, required: true},
   country: {type: String},
-  createAt: {type: Date, default: Date.now}
+  createdAt: {type: Date, default: Date.now}
 });
 
 // define author model in mongoose using author schema
@@ -30,7 +30,7 @@ var BookSchema = new Schema({
   author: {type: ObjectId, ref: 'Author'},
   name: {type: String, required: true},
   value: {type: Number, default: 0},
-  createAt: {type: Date, default: Date.now}
+  createdAt: {type: Date, default: Date.now}
 });
 
 //--- define book model in mongoose using book schema
