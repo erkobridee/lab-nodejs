@@ -1,10 +1,24 @@
 # Links
 
-* [express.js](http://expressjs.com/)
+* [express.js](http://expressjs.com/) 
 
-* [stylus](http://learnboost.github.com/stylus/)
+    * [GitHub - express examples](https://github.com/visionmedia/express/tree/master/examples)
 
-* [Jade](http://jade-lang.com/)
+    * [api doc](http://expressjs.com/api.html#app-settings) - start app with NODE_END=production to production mode
+
+* [Jade](http://jade-lang.com/) - generates html output
+
+* [Ejs](https://github.com/visionmedia/ejs) - generates html output
+
+* [Stylus](http://learnboost.github.com/stylus/) - generates css output
+
+* [Less](http://lesscss.org/) - generates css output
+
+	* [10 LESS CSS Examples You Should Steal for Your Projects](http://designshack.net/articles/css/10-less-css-examples-you-should-steal-for-your-projects/)
+
+	* [LESS Elements: a collection of useful LESS mixins](http://lesselements.com/)
+	
+	* [Crunch](http://crunchapp.net/) - The LESS editor and compiler that almost makes it too easy. (Adobe AIR)
 
 * [Express.js Tutorial](http://www.hacksparrow.com/express-js-tutorial.html)
 
@@ -12,6 +26,18 @@
 
 * [Starting a project with Express, node.js and Stylus](http://peter.worksontheweb.net/2012/02/29/starting-a-project-with-express-node-js-and-stylus/)
 
+* [[SlideSharea] Building Web Apps with Express](http://www.slideshare.net/MarketingNinja/building-web-apps-with-express)
+
 #### pt_BR
 
 * [Começando com NodeJS + Express](http://labs.webdiastutoriais.com/2012/05/comecando-nodejs-express/)
+
+* Less
+
+	* [Caelum - CSS fácil, flexível e dinâmico com LESS](http://blog.caelum.com.br/css-facil-flexivel-e-dinamico-com-less/)
+
+	* [Tableless - CSS dinâmico com LESS](http://tableless.com.br/css-dinamico-com-less/)
+	
+	* [Simplificando a vida com LESS](http://loopinfinito.com.br/2012/06/19/simplificando-a-vida-com-less/)
+	
+	
