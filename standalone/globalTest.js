@@ -1,3 +1,5 @@
+// global docs
+// http://nodejs.org/api/globals.html
 
 // look at mainModule inside global.mainModule.exports array
 module.exports = function test1() {
@@ -21,7 +23,7 @@ console.log('\n---GLOBAL: END-----------------------------------------');
 
 console.log('\n\tsame object? (GLOBAL === ROOT) ' + (global === root));
 
-console.log('\n\t__dirname = shortcut to global.env.PWD');
+console.log('\n\t__dirname = The name of the directory that the currently executing script resides in.');
 
 console.log('\n\t__dirname : where i\'m?\n');
 console.log( __dirname );
