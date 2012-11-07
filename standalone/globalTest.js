@@ -1,10 +1,10 @@
 
-// look at mainModule inside global object
+// look at mainModule inside global.mainModule.exports array
 module.exports = function test1() {
   return 'test';
 };
 
-// not finded inside global object
+// not finded inside global.mainModule.exports array
 exports = function test2() {
   return /[a-z]/i
 };
