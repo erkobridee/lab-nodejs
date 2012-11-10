@@ -31,6 +31,8 @@ Node.js test code lab
 
 * [Node.js : Require and Exports](http://openmymind.net/2012/2/3/Node-Require-and-Exports/)
 
+* [Node.js as a build script | Blog | Miller Medeiros](http://blog.millermedeiros.com/node-js-as-a-build-script/)
+
 * [Production Node.js Secrets](http://dshaw.github.com/2012-05-jsday/)
 
 * Hardening Node.js for production [part 1](http://blog.argteam.com/coding/hardening-nodejs-production-process-supervisor/) | [part 2](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load/) | [part 3](http://blog.argteam.com/coding/hardening-node-js-for-production-part-3-zero-downtime-deployments-with-nginx/)
@@ -42,6 +44,12 @@ Node.js test code lab
 * [GitHub : Status Dashboard](https://github.com/obazoud/statusdashboard) Status Dashboard is status page for your configured services or applications.
 
 * [Surviving AWS Failures with a Node.js and MongoDB Stack | Kinvey Backend as a Service Blog](http://www.kinvey.com/blog/104/surviving-aws-failures-with-a-nodejs-and-mongodb-stack)
+
+---
+
+* [Node.js and Scala without mediators](http://blog.vasilrem.com/nodejs-and-scala-without-mediators) | [GitHub : nodejs-scala-connector](https://github.com/remeniuk/nodejs-scala-connector) - is an alternative approach for linking node.js to Scala (JVM) - no mediators are involved and system components communicate to each other directly. 
+
+* [GitHub : nearinfinity / Node Java](https://github.com/nearinfinity/node-java) - Bridge API to connect with existing Java APIs
 
 #### pt_BR
 
