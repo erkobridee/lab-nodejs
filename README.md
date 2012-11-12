@@ -25,6 +25,8 @@ Node.js test code lab
 
 * [Node.js for Beginners | Nettuts+](http://net.tutsplus.com/tutorials/javascript-ajax/node-js-for-beginners/)
 
+* [Understanding the node.js event loop](http://blog.mixu.net/2011/02/01/understanding-the-node-js-event-loop/)
+
 * [Mastering Node.js](http://visionmedia.github.com/masteringnode/) Open Source Node eBook
 
 * [Learning Server-Side JavaScript with Node.js](http://net.tutsplus.com/tutorials/javascript-ajax/learning-serverside-javascript-with-node-js/)
@@ -44,12 +46,6 @@ Node.js test code lab
 * [GitHub : Status Dashboard](https://github.com/obazoud/statusdashboard) Status Dashboard is status page for your configured services or applications.
 
 * [Surviving AWS Failures with a Node.js and MongoDB Stack | Kinvey Backend as a Service Blog](http://www.kinvey.com/blog/104/surviving-aws-failures-with-a-nodejs-and-mongodb-stack)
-
----
-
-* [Node.js and Scala without mediators](http://blog.vasilrem.com/nodejs-and-scala-without-mediators) | [GitHub : nodejs-scala-connector](https://github.com/remeniuk/nodejs-scala-connector) - is an alternative approach for linking node.js to Scala (JVM) - no mediators are involved and system components communicate to each other directly. 
-
-* [GitHub : nearinfinity / Node Java](https://github.com/nearinfinity/node-java) - Bridge API to connect with existing Java APIs
 
 #### pt_BR
 
