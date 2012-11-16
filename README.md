@@ -13,7 +13,7 @@ Node.js test code lab
 
 * [GitHub : Joyent / Node.js : Wiki / Modules](https://github.com/joyent/node/wiki/modules)
 
-* [npm - Node Package Modules](https://npmjs.org/)
+* [npm - Node Packaged Modules](https://npmjs.org/)
 
 * [10 Cool Things You Probably Didn’t Realize npm Could Do](http://blog.izs.me/post/1675072029/10-cool-things-you-probably-didnt-realize-npm-could-do)
 
