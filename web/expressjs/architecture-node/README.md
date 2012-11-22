@@ -2,7 +2,7 @@
 
 My suggestion for a project with some organization
 
-* [express.js](http://expressjs.com/) v 2.5.11
+* [express.js](http://expressjs.com/) v 3.0.3
 
 ## Tips & Commands
 
