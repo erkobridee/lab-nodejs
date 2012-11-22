@@ -56,7 +56,7 @@ exports = module.exports = function errorHandler(options) {
   				else locals['error'] = err.toString();
   			}
 
-    		res.render('error/'+ template +'.jade', { locals: locals, status: errorCode });
+    		res.render('error/'+ template, { title: template, locals: locals, status: errorCode });
   		}
 	};
 };

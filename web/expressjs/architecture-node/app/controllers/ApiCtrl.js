@@ -1,5 +1,5 @@
-var ApiError = require('../error/ApiError')	
-  , personModel = require('../model/PersonModel');
+var ApiError = require('../errors/ApiError')	
+  , personModel = require('../models/PersonModel');
 
 
 exports.list = function(req, res){  

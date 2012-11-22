@@ -1,4 +1,4 @@
-var Utils = require('../util/Utils');
+var Utils = require('../helpers/Utils');
 
 /*
 	Valid Parameters:

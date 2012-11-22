@@ -1,4 +1,4 @@
-var personModel = require('../model/PersonModel');
+var personModel = require('../models/PersonModel');
 
 exports.index = function(req, res) {
   res.render('index', { title: 'Express' })
@@ -7,8 +7,8 @@ exports.index = function(req, res) {
 exports.about = function(req, res) {
   res.render(
     'about', 
-	{ 
-	  title: 'About',
+  	{ 
+  	  title: 'About',
       content: 'Hello!' 
     }
   )
