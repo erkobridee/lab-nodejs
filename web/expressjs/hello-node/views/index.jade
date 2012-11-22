@@ -1,2 +1,12 @@
-h1= title
-p Welcome to #{title}
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  
+  hr
+    
+  p 
+    a(href='/about-me') About
+  p  
+    a(href='/users') users
