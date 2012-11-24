@@ -107,6 +107,17 @@ var Provider = (function(){
   Provider.prototype.__proto__ = EventEmitter.prototype;
 
   //--- public
+  Provider.prototype.count = function(callback) {
+    var sql = 'SELECT COUNT(0) AS count FROM ' + this.table;
+
+    function localCallback(err, rows) {
+      if(err) return callback(err);
+      else return callback(null, rows[0].count);
+    };
+
+    return dbOperation(this, localCallback, sql);
+  }; 
+
   Provider.prototype.findAll = function(callback) {
     var sql = 'SELECT * FROM ' + this.table;
 
@@ -207,6 +218,16 @@ async.series({
       return next();
     });    
   },
+  count: function(next) {
+    console.log('count');
+
+    products.count(function(err, count) {
+      console.log(count);
+
+      next();
+    });
+
+  },  
   list1: function(next) { listProducts(next); },
   find:  function(next) {
     console.log('findById');
