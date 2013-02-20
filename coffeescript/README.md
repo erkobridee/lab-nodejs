@@ -6,7 +6,15 @@
 
 * [Rocking out with CoffeeScript - Nettuts+](http://net.tutsplus.com/tutorials/javascript-ajax/rocking-out-with-coffeescript/)
 
+* [The Little Book on CoffeeScript](http://arcturo.github.com/library/coffeescript/)
 
+## Code Editor
+
+* [CoffeeScript with Sublime Text](http://soenkerohde.com/2011/11/coffeescript-with-sublime-text/)
+
+* [Compiling CoffeeScript from Sublime Text 2](http://hectorcorrea.com/blog/compiling-coffeescript-from-sublime-text-2)
+
+* GitHub - [CoffeeScript Sublime Plugin](https://github.com/Xavura/CoffeeScript-Sublime-Plugin)
 
 ## pt_BR
 
