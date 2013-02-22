@@ -1,35 +1,51 @@
-var personModel = require('../models/PersonModel');
+var UrlCtrl;
 
-exports.index = function(req, res) {
-  res.render('index', { title: 'Express' })
-};
+UrlCtrl = (function() {
+  var personModel;
 
-exports.about = function(req, res) {
-  res.render(
-    'about', 
-  	{ 
-  	  title: 'About',
-      content: 'Hello!' 
-    }
-  )
-};
+  function UrlCtrl() {}
 
-exports.persons = function(req, res) {
-  res.render(
-    'persons', 
-	  { 
-	    title: 'Persons',
-      persons: personModel.list(5) 
-    }
-  )
-};
+  personModel = require('../models/PersonModel');
 
-exports.pageError = function(req, res) {
-  throw new Error('page process error');
-};
+  UrlCtrl.index = function(req, res) {
+    return res.render("index", {
+      title: "Express"
+    });
+  };
 
-exports.accessNotAllowed = function(req, res) {
-  var err = new Error('Access Not Allowed!');
-  err.status = 403;
-  throw err;
+  UrlCtrl.about = function(req, res) {
+    return res.render("about", {
+      title: "About",
+      content: "Hello!"
+    });
+  };
+
+  UrlCtrl.persons = function(req, res) {
+    return res.render("persons", {
+      title: "Persons",
+      persons: personModel.list(5)
+    });
+  };
+
+  UrlCtrl.pageError = function(req, res) {
+    throw new Error('page process error');
+  };
+
+  UrlCtrl.accessNotAllowed = function(req, res) {
+    var err;
+    err = new Error('Access Not Allowed!');
+    err.status = 403;
+    throw err;
+  };
+
+  return UrlCtrl;
+
+})();
+
+module.exports = {
+  index: UrlCtrl.index,
+  about: UrlCtrl.about,
+  persons: UrlCtrl.persons,
+  pageError: UrlCtrl.pageError,
+  accessNotAllowed: UrlCtrl.accessNotAllowed
 };

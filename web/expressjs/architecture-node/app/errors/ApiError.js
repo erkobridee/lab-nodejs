@@ -1,39 +1,40 @@
-var Utils = require('../helpers/Utils');
-
 /*
-	Valid Parameters:
-	- Empty/Undefined
-	- String
-	- Error
+  Valid Parameters:
+  - Empty/Undefined
+  - String
+  - Error
 */
-function ApiError(value) {
 
-  var valueType = Utils.getClass(value);
+var ApiError;
 
-  /*
-  switch(valueType) {
-  	case 'Error':
-  		value = value.message;
-  		break;	
-  	case 'undefined':
-  		value = 'Undefined API Error';
-  		break
+ApiError = (function() {
+  var Utils;
+
+  Utils = require('../helpers/Utils');
+
+  function ApiError(value) {
+    var valueType;
+    this.value = value;
+    valueType = Utils.getClass(value);
+    if (valueType === "Error") {
+      value = value.message;
+    } else {
+      if (valueType === "undefined") {
+        value = "Undefined API Error";
+      }
+    }
+    
+    this.name = "APIError";
+    this.message = value;
+
+    Error.call(this, this.message);
+    Error.captureStackTrace(this, arguments.callee);
   }
-  */
 
-  if(valueType === 'Error') {
-    value = value.message;
-  } else if(valueType === 'undefined') {
-    value = 'Undefined API Error';
-  }
+  ApiError.prototype.__proto__ = Error.prototype;
 
-  this.name = 'APIError';
-  this.message = value;
+  return ApiError;
 
-  Error.call(this, this.message);
-  Error.captureStackTrace(this, arguments.callee);
-};
+})();
 
-ApiError.prototype.__proto__ = Error.prototype;
-
-exports = module.exports = ApiError;
+module.exports = ApiError;

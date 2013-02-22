@@ -1,20 +1,33 @@
-exports.list = function(max){
+var PersonModel;
 
-  // default parameter value
-  max = max || 10;
+// model definition
+PersonModel = (function() {
 
-  //---
-  var i = 1
-  	, objList = [];
+  function PersonModel() {}
 
-  for (i = 0; i < max; i++){
-  	obj = {
-  	  name:"person " + i, 
-  	  age: 10 + (i+1)
-  	};
-  	objList.push(obj);
-  }
-  
-  return objList;
+  PersonModel.list = function(max) {
+    var i, obj, objList;
+    if (max == null) {
+      max = 10;
+    }
+    i = 0;
+    objList = [];
+    while (i < max) {
+      obj = {
+        name: "person " + i,
+        age: 10 + i
+      };
+      objList.push(obj);
+      i++;
+    }
+    return objList;
+  };
 
+  return PersonModel;
+
+})();
+
+// ---
+module.exports = {
+  list: PersonModel.list
 };
