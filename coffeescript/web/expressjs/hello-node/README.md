@@ -1,6 +1,7 @@
 # About
 
-Basic express project initial structure, in CoffeeScript
+Basic express project initial structure
+Code in CoffeeScript
 
 * [express.js](http://expressjs.com/)
 * [CoffeeScript](http://coffeescript.org/)
