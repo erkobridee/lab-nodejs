@@ -8,7 +8,7 @@ var express = require('express')
   , urlCtrl = require('./app/controllers/UrlCtrl')
   , apiCtrl = require('./app/controllers/ApiCtrl')
 
-  , errorHandler = require('./app/errors/errorHandler')
+  , LocalErrorHandler = require('./app/errors/LocalErrorHandler')
   , ApiError = require('./app/errors/ApiError')
 
   , http = require('http')
@@ -45,9 +45,9 @@ app.configure('development', function(){
   //app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 
   // custom error handler
-  app.use(errorHandler({ dumpExceptions: true, showStack: true }));
+  app.use(LocalErrorHandler({ dumpExceptions: true, showStack: true }));
     // generate log file
-  //app.use(errorHandler({ dumpExceptions: true, showStack: true, logErrors: __dirname + '/log/error_log' }));
+  //app.use(LocalErrorHandler({ dumpExceptions: true, showStack: true, logErrors: __dirname + '/log/error_log' }));
 });
 
 // prod errors handler
@@ -56,7 +56,7 @@ app.configure('production', function(){
   //app.use(express.errorHandler());
 
   // custom error handler
-  app.use(errorHandler());
+  app.use(LocalErrorHandler());
 });
 
 /*
