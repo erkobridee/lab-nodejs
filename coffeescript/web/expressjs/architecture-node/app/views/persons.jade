@@ -1,0 +1,7 @@
+extends layouts/default
+
+block content
+  p #{title}
+    ul  
+    each person, i in persons
+      li person #{i} - name: #{person.name} | age: #{person.age}

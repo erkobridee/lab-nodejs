@@ -1,0 +1,9 @@
+extends ../layouts/error
+
+block content
+  h2 The Server Encountered an Error
+  
+  -if(locals.stack)
+    pre #{locals.stack}
+  -else
+    div #{locals.error}
