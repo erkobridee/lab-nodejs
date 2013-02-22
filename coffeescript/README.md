@@ -6,7 +6,11 @@
 
 * [Rocking out with CoffeeScript - Nettuts+](http://net.tutsplus.com/tutorials/javascript-ajax/rocking-out-with-coffeescript/)
 
+* [CoffeeScript Cookbook](http://coffeescriptcookbook.com/)
+
 * [The Little Book on CoffeeScript](http://arcturo.github.com/library/coffeescript/)
+
+* [Smooth CoffeeScript](http://autotelicum.github.com/Smooth-CoffeeScript/SmoothCoffeeScript.html)
 
 ## Code Editor
 
