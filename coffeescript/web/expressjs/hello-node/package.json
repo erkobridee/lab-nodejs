@@ -1,0 +1,14 @@
+{
+  "name": "hello-node",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node server"
+  },
+  "dependencies": {
+    "coffee-script": "*",
+    "express": "3.1.0",
+    "jade": "*",
+    "stylus": "*"
+  }
+}
