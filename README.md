@@ -51,6 +51,8 @@ Node.js test code lab
 
 * [Configurando o Node.js no Amazon EC2](http://pablocantero.com/blog/2012/01/04/configurando-o-node-js-no-amazon-ec2/)
 
+* [Injeção de dependência com Node.js | iMasters](http://imasters.com.br/front-end/javascript/injecao-de-dependencia-com-node-js/)
+
 ## Geekli.st
 
 Come join me at [Geekli.st](https://geekli.st/erkobridee/invite/196DA487FB) and share your geek achievements !
