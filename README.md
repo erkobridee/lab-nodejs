@@ -39,6 +39,8 @@ Node.js test code lab
 
 * Hardening Node.js for production [part 1](http://blog.argteam.com/coding/hardening-nodejs-production-process-supervisor/) | [part 2](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load/) | [part 3](http://blog.argteam.com/coding/hardening-node-js-for-production-part-3-zero-downtime-deployments-with-nginx/)
 
+* [Scaling Node.js Applications](http://cjihrig.com/blog/scaling-node-js-applications/)
+
 * [Getting Started with Node.js, Coffeescript, MongoDB, and more - Matt Kopala](http://mattkopala.com/blog/2012/02/12/getting-started-with-nodejs/)
 
 * [GitMoon](http://www.gitmoon.com/) Social analytics for Node.js developers
