@@ -17,7 +17,8 @@ Node.js test code lab
 
 * [10 Cool Things You Probably Didn’t Realize npm Could Do](http://blog.izs.me/post/1675072029/10-cool-things-you-probably-didnt-realize-npm-could-do)
 
----
+
+### Learn
 
 * [How to Node](http://howtonode.org/)
 
@@ -33,27 +34,41 @@ Node.js test code lab
 
 * [Node.js : Require and Exports](http://openmymind.net/2012/2/3/Node-Require-and-Exports/)
 
+* [Getting Started with Node.js, Coffeescript, MongoDB, and more - Matt Kopala](http://mattkopala.com/blog/2012/02/12/getting-started-with-nodejs/)
+
+
+### Amazon AWS
+
+* [Surviving AWS Failures with a Node.js and MongoDB Stack | Kinvey Backend as a Service Blog](http://www.kinvey.com/blog/104/surviving-aws-failures-with-a-nodejs-and-mongodb-stack)
+
+* [Amazon Web Services Blog: AWS Elastic Beanstalk for Node.js](http://aws.typepad.com/aws/2013/03/aws-elastic-beanstalk-for-nodejs.html)
+
+
+### Tips
+
 * [Node.js as a build script | Blog | Miller Medeiros](http://blog.millermedeiros.com/node-js-as-a-build-script/)
+
+* [Tracking down a memory leak in Node.js and Socket.IO](http://jpallen.net/2013/03/08/tracking-down-a-memory-leak-in-node-js-and-socket-io/)
+
+* [Scaling Node.js Applications](http://cjihrig.com/blog/scaling-node-js-applications/)
 
 * [Production Node.js Secrets](http://dshaw.github.com/2012-05-jsday/)
 
 * Hardening Node.js for production [part 1](http://blog.argteam.com/coding/hardening-nodejs-production-process-supervisor/) | [part 2](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load/) | [part 3](http://blog.argteam.com/coding/hardening-node-js-for-production-part-3-zero-downtime-deployments-with-nginx/)
 
-* [Scaling Node.js Applications](http://cjihrig.com/blog/scaling-node-js-applications/)
-
-* [Getting Started with Node.js, Coffeescript, MongoDB, and more - Matt Kopala](http://mattkopala.com/blog/2012/02/12/getting-started-with-nodejs/)
+### Use Cases
 
 * [GitMoon](http://www.gitmoon.com/) Social analytics for Node.js developers
 
 * [GitHub : Status Dashboard](https://github.com/obazoud/statusdashboard) Status Dashboard is status page for your configured services or applications.
 
-* [Surviving AWS Failures with a Node.js and MongoDB Stack | Kinvey Backend as a Service Blog](http://www.kinvey.com/blog/104/surviving-aws-failures-with-a-nodejs-and-mongodb-stack)
 
 #### pt_BR
 
 * [Configurando o Node.js no Amazon EC2](http://pablocantero.com/blog/2012/01/04/configurando-o-node-js-no-amazon-ec2/)
 
 * [Injeção de dependência com Node.js | iMasters](http://imasters.com.br/front-end/javascript/injecao-de-dependencia-com-node-js/)
+
 
 ## Geekli.st
 
