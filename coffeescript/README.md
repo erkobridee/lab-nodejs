@@ -25,3 +25,5 @@
 * [Zeno Rocha - Entendendo CoffeeScript](http://zenorocha.com/entendendo-coffeescript/)
 
 * [Loop Infinito - Uma xícara de CoffeeScript](http://loopinfinito.com.br/2012/09/18/uma-xicara-de-coffeescript/)
+
+* [Saiba como debugar melhor sua aplicação em CoffeeScript](http://ricardo.cc/2013/01/05/debug-aplicacao-coffeescript-pt.html)

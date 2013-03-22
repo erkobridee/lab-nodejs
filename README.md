@@ -24,6 +24,8 @@ Node.js test code lab
 
 * [The Node Beginner Book](http://www.nodebeginner.org/)
 
+* [The Art of Node.js](https://github.com/maxogden/art-of-node) - a short introduction to node.js
+
 * [Node.js for Beginners | Nettuts+](http://net.tutsplus.com/tutorials/javascript-ajax/node-js-for-beginners/)
 
 * [Understanding the node.js event loop](http://blog.mixu.net/2011/02/01/understanding-the-node-js-event-loop/)
@@ -33,6 +35,8 @@ Node.js test code lab
 * [Learning Server-Side JavaScript with Node.js](http://net.tutsplus.com/tutorials/javascript-ajax/learning-serverside-javascript-with-node-js/)
 
 * [Node.js : Require and Exports](http://openmymind.net/2012/2/3/Node-Require-and-Exports/)
+
+* [How I write Node.js modules](http://substack.net/how_I_write_modules)
 
 * [Getting Started with Node.js, Coffeescript, MongoDB, and more - Matt Kopala](http://mattkopala.com/blog/2012/02/12/getting-started-with-nodejs/)
 
@@ -46,6 +50,8 @@ Node.js test code lab
 
 ### Tips
 
+* [Managing Node.js Virtual Environments with Nave](http://forge.zeunic.com/development/2013/managing-node-js-virtual-environments-with-nave)
+
 * [Node.js as a build script | Blog | Miller Medeiros](http://blog.millermedeiros.com/node-js-as-a-build-script/)
 
 * [Tracking down a memory leak in Node.js and Socket.IO](http://jpallen.net/2013/03/08/tracking-down-a-memory-leak-in-node-js-and-socket-io/)
@@ -55,6 +61,9 @@ Node.js test code lab
 * [Production Node.js Secrets](http://dshaw.github.com/2012-05-jsday/)
 
 * Hardening Node.js for production [part 1](http://blog.argteam.com/coding/hardening-nodejs-production-process-supervisor/) | [part 2](http://blog.argteam.com/coding/hardening-node-js-for-production-part-2-using-nginx-to-avoid-node-js-load/) | [part 3](http://blog.argteam.com/coding/hardening-node-js-for-production-part-3-zero-downtime-deployments-with-nginx/)
+
+* [Generate fake data in the browser and Node.js with FakerJS](https://github.com/marak/Faker.js)
+
 
 ### Use Cases
 
