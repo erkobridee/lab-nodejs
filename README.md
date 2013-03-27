@@ -56,7 +56,11 @@ Node.js test code lab
 
 * [Node.js as a build script | Blog | Miller Medeiros](http://blog.millermedeiros.com/node-js-as-a-build-script/)
 
-* [[GitHub] Cron for NodeJS](https://github.com/ncb000gt/node-cron)
+* Cron
+
+	* [[GitHub] Cron for NodeJS](https://github.com/ncb000gt/node-cron)
+	
+	* [[GitHub] shell-jobs: Cron replacement in NodeJS, made for humans](https://github.com/azer/shell-jobs)
 
 * [[GitHub] node-windows](https://github.com/coreybutler/node-windows) - Windows support for Node.JS scripts (daemons, eventlog, UAC, etc)
 
@@ -73,7 +77,7 @@ Node.js test code lab
 
 ### Use Cases
 
-* [GitMoon](http://www.gitmoon.com/) Social analytics for Node.js developers
+* [GitMoon](http://www.gitmoon.com/) Social analytics for Node.js developers | [GitHub : code](https://github.com/yaronn/gitmoon)
 
 * [GitHub : Status Dashboard](https://github.com/obazoud/statusdashboard) Status Dashboard is status page for your configured services or applications.
 
