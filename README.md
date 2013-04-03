@@ -74,6 +74,8 @@ Node.js test code lab
 
 * [Generate fake data in the browser and Node.js with FakerJS](https://github.com/marak/Faker.js)
 
+* [[GitHub] kenshiro-o / login-utils](https://github.com/kenshiro-o/login-utils) - Simple authentication library
+
 
 ### Use Cases
 
@@ -83,6 +85,8 @@ Node.js test code lab
 
 
 #### pt_BR
+
+* [Node.js para leigos (Versão completa) | Underground WebDev](http://www.udgwebdev.com/nodejs-para-leigos/)
 
 * [Configurando o Node.js no Amazon EC2](http://pablocantero.com/blog/2012/01/04/configurando-o-node-js-no-amazon-ec2/)
 
