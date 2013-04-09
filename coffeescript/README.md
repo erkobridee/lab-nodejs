@@ -12,6 +12,8 @@
 
 * [Smooth CoffeeScript](http://autotelicum.github.com/Smooth-CoffeeScript/SmoothCoffeeScript.html)
 
+* [Functional JavaScript with CoffeeScript and Node](http://www.ibm.com/developerworks/library/j-coffeescript/)
+
 ## Code Editor
 
 * [CoffeeScript with Sublime Text](http://soenkerohde.com/2011/11/coffeescript-with-sublime-text/)
