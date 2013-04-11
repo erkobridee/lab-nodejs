@@ -1,10 +1,10 @@
 (function () {
 
-  alert = function(msg) {
+  var alert = function(msg) {
     console.log(msg);
   }
 
-  A = (function() {
+  var A = (function() {
     
     function A() {}
 
