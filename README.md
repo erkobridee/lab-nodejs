@@ -85,6 +85,8 @@ Node.js test code lab
 
 * [GitHub : Status Dashboard](https://github.com/obazoud/statusdashboard) Status Dashboard is status page for your configured services or applications.
 
+* [Building CSSDB: a short case-study on the build of a small Node.js/MongoDB application](http://rowanmanning.com/posts/building-cssdb/)
+
 
 #### pt_BR
 
