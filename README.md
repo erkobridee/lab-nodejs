@@ -76,6 +76,8 @@ Node.js test code lab
 
 * [[GitHub] kenshiro-o / login-utils](https://github.com/kenshiro-o/login-utils) - Simple authentication library
 
+* [[GitHub] c9 / architect](https://github.com/c9/architect) - A simple yet powerful plugin system for large-scale node applications
+
 
 ### Use Cases
 
