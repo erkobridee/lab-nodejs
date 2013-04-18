@@ -28,6 +28,8 @@ Node.js test code lab
 
 * [Node.js for Beginners | Nettuts+](http://net.tutsplus.com/tutorials/javascript-ajax/node-js-for-beginners/)
 
+* [Understanding how to create a nodejs package.json | Nodejitsu](http://package.json.nodejitsu.com/) - Package.json: an interactive guide
+
 * [Understanding the node.js event loop](http://blog.mixu.net/2011/02/01/understanding-the-node-js-event-loop/)
 
 * [Mastering Node.js](http://visionmedia.github.com/masteringnode/) Open Source Node eBook
