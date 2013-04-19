@@ -15,13 +15,12 @@ touch index.js
 
 touch Gruntfile.js
 
-npm install grunt --save-dev
-
-npm install grunt-contrib-jshint --save-dev
-
-npm install grunt-contrib-uglify --save-dev
-
-npm install grunt-contrib-clean --save-dev
+npm install \
+  grunt \
+  grunt-contrib-jshint \
+  grunt-contrib-uglify \
+  grunt-contrib-clean \
+  --save-dev
 ```
 
 ## project cloned from git
