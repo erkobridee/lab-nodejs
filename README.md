@@ -83,12 +83,13 @@ Node.js test code lab
 
 ### Use Cases
 
+* [Noduino](http://semu.github.io/noduino/) – Control Arduino with Node.js, WebSockets and HTML5
+
 * [GitMoon](http://www.gitmoon.com/) Social analytics for Node.js developers | [GitHub : code](https://github.com/yaronn/gitmoon)
 
 * [GitHub : Status Dashboard](https://github.com/obazoud/statusdashboard) Status Dashboard is status page for your configured services or applications.
 
 * [Building CSSDB: a short case-study on the build of a small Node.js/MongoDB application](http://rowanmanning.com/posts/building-cssdb/)
-
 
 #### pt_BR
 
