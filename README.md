@@ -17,6 +17,8 @@ Node.js test code lab
 
 * [10 Cool Things You Probably Didn’t Realize npm Could Do](http://blog.izs.me/post/1675072029/10-cool-things-you-probably-didnt-realize-npm-could-do)
 
+* [Node.js Jenkins-CI](http://jenkins.nodejs.org/) - To support a higher degree of stability, and hopefully catch issues sooner, we (node.js team) have a Jenkins instance running every commit through the test suite, on each operating system we support.
+
 
 ### Learn
 
