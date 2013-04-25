@@ -15,6 +15,8 @@ Node.js test code lab
 
 * [npm - Node Packaged Modules](https://npmjs.org/)
 
+* [npm Visualization | YASIV](http://www.yasiv.com/npm) | Sample: [Grunt npm dep](http://www.yasiv.com/npm#view/grunt)
+
 * [10 Cool Things You Probably Didn’t Realize npm Could Do](http://blog.izs.me/post/1675072029/10-cool-things-you-probably-didnt-realize-npm-could-do)
 
 * [Node.js Jenkins-CI](http://jenkins.nodejs.org/) - To support a higher degree of stability, and hopefully catch issues sooner, we (node.js team) have a Jenkins instance running every commit through the test suite, on each operating system we support.
