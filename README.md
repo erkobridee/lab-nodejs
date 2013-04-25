@@ -103,6 +103,8 @@ Node.js test code lab
 
 * [Injeção de dependência com Node.js | iMasters](http://imasters.com.br/front-end/javascript/injecao-de-dependencia-com-node-js/)
 
+* [Node.js com Express.js nos negócios | iMasters](http://imasters.com.br/front-end/javascript/node-js-com-express-js-nos-negocios/)
+
 * [Player.io](http://openblog.github.com/2013/03/15/player.io/) - Um media player que roda no navegador, feito com Node.JS, Socket.IO e é controlado pelo seu smartphone
 
 ## Geekli.st
