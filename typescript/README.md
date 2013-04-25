@@ -20,6 +20,7 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
 
 * [Getting Started With TypeScript ( Superset of JavaScript ) | CodeProject](http://www.codeproject.com/Articles/470129/TypeScript-Superset-of-JavaScript)
 
+* [TypeScript: A New Direction in Browser-Based Applications](http://blog.smartbear.com/software-quality/bid/275199/TypeScript-A-New-Direction-in-Browser-Based-Applications)
 
 ## Code Editor
 
