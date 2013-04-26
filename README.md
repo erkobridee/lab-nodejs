@@ -49,18 +49,13 @@ Node.js test code lab
 * [Getting Started with Node.js, Coffeescript, MongoDB, and more - Matt Kopala](http://mattkopala.com/blog/2012/02/12/getting-started-with-nodejs/)
 
 
-### Amazon AWS
-
-* [Surviving AWS Failures with a Node.js and MongoDB Stack | Kinvey Backend as a Service Blog](http://www.kinvey.com/blog/104/surviving-aws-failures-with-a-nodejs-and-mongodb-stack)
-
-* [Amazon Web Services Blog: AWS Elastic Beanstalk for Node.js](http://aws.typepad.com/aws/2013/03/aws-elastic-beanstalk-for-nodejs.html)
-
-
 ### Tips
 
 * [Managing Node.js Virtual Environments with Nave](http://forge.zeunic.com/development/2013/managing-node-js-virtual-environments-with-nave)
 
 * [Node.js as a build script | Blog | Miller Medeiros](http://blog.millermedeiros.com/node-js-as-a-build-script/)
+
+* [[Gist] Tips for Writing Portable Node.js Code](https://gist.github.com/domenic/2790533)
 
 * Cron
 
@@ -84,6 +79,8 @@ Node.js test code lab
 
 * [[GitHub] c9 / architect](https://github.com/c9/architect) - A simple yet powerful plugin system for large-scale node applications
 
+* [Blazing fast node.js: 10 performance tips from LinkedIn Mobile](http://engineering.linkedin.com/nodejs/blazing-fast-nodejs-10-performance-tips-linkedin-mobile)
+
 
 ### Use Cases
 
@@ -94,6 +91,25 @@ Node.js test code lab
 * [GitHub : Status Dashboard](https://github.com/obazoud/statusdashboard) Status Dashboard is status page for your configured services or applications.
 
 * [Building CSSDB: a short case-study on the build of a small Node.js/MongoDB application](http://rowanmanning.com/posts/building-cssdb/)
+
+
+### Amazon AWS
+
+* [Surviving AWS Failures with a Node.js and MongoDB Stack | Kinvey Backend as a Service Blog](http://www.kinvey.com/blog/104/surviving-aws-failures-with-a-nodejs-and-mongodb-stack)
+
+* [Amazon Web Services Blog: AWS Elastic Beanstalk for Node.js](http://aws.typepad.com/aws/2013/03/aws-elastic-beanstalk-for-nodejs.html)
+
+* [Node.js powered by BitNami](https://aws.amazon.com/marketplace/pp/B008ASK0ZE) 
+
+  * [BitNami Node.js](http://bitnami.com/stack/nodejs)
+
+* [How to install & setup Node.js on Amazon EC2 instance – complete guide](http://iconof.com/blog/how-to-install-setup-node-js-on-amazon-aws-ec2-complete-guide/)
+
+
+### Windows Azure
+
+* [[Blog] Node on Azure](http://nodeblog.azurewebsites.net/)
+
 
 #### pt_BR
 
