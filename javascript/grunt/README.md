@@ -7,6 +7,8 @@
 
 * [Grunt: Getting started](https://github.com/gruntjs/grunt/wiki/Getting-started)
 
+* [Getting started with Grunt | Blog - Fronto](http://fronto.be/blog/detail/getting-started-with-grunt)
+
 * [Sample Gruntfile - Grunt: The JavaScript Task Runner](http://gruntjs.com/sample-gruntfile)
 
 * [[YouTube] Grunt - The Basics](https://www.youtube.com/watch?v=q3Sqljpr-Vc)
@@ -54,4 +56,8 @@
 
 * [Backbone, RequireJS, Jasmine, PhantomJS, and Grunt](http://hdnrnzk.me/2013/01/10/backbone-requirejs-jasmine-phantomjs-and-grunt/)
   
+
+## Tips
+
+* [Using Grunt.js with CSS](http://blog.pamelafox.org/2012/05/using-gruntjs-with-css.html) | [[GitHub] source grunt file](https://github.com/pamelafox/5lide/blob/master/editor/grunt.js)
 
