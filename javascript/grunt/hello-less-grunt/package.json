@@ -1,0 +1,19 @@
+{
+  "name": "hello-less-grunt",
+  "version": "0.1.0",
+  "description": "fist less with grunt test",
+  "keywords": [
+    "less",
+    "grunt",
+    "compress",
+    "test"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "grunt-contrib-clean": "~0.4.1",
+    "grunt": "~0.4.1",
+    "grunt-contrib-less": "~0.5.1"
+  }
+}
