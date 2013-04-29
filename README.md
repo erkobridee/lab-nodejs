@@ -49,6 +49,9 @@ Node.js test code lab
 * [Getting Started with Node.js, Coffeescript, MongoDB, and more - Matt Kopala](http://mattkopala.com/blog/2012/02/12/getting-started-with-nodejs/)
 
 
+* [5 Talks to Learn More About Node.js](http://blog.modulus.io/five-talks-learn-more-nodejs)
+
+
 ### Tips
 
 * [Managing Node.js Virtual Environments with Nave](http://forge.zeunic.com/development/2013/managing-node-js-virtual-environments-with-nave)
