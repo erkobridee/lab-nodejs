@@ -11,6 +11,8 @@ npm install async
 
 * [Mongoose](http://mongoosejs.com/) is the 10gen-supported ODM for Node.js.
 
+* [[GitHub] tblobaum / mongoose-troop](https://github.com/tblobaum/mongoose-troop) - plugins for your mongoose schemas
+
 * [Mongoose v3 :: The Future is Bright](http://www.slideshare.net/aaronheckmann/mongoose-v3-the-future-is-bright) - SlideShare
 
 * [Fusioncube : Node.js and MongoDB – A match made in heaven](http://www.fusioncube.net/index.php/node-js-and-mongodb-a-match-made-in-heaven) | [GitHub : Code](https://github.com/chortlehoort/Node_Tutorial/blob/master/mongoose/mongoose.js)
