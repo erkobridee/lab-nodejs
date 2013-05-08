@@ -86,6 +86,8 @@ Node.js test code lab
 
 * [Install node.js on a raspberry pi](http://halusanation.com/post/49221746344/install-node-js-on-a-raspberry-pi)
 
+* [Starting with Node and Web Sockets](http://codular.com/node-web-sockets)
+
 
 ### Use Cases
 
