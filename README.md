@@ -17,6 +17,8 @@ Node.js test code lab
 
 * [npm Visualization | YASIV](http://www.yasiv.com/npm) | Sample: [Grunt npm dep](http://www.yasiv.com/npm#view/grunt)
 
+* [npm cheatsheet | Nodejitsu](https://blog.nodejitsu.com/npm-cheatsheet)
+
 * [10 Cool Things You Probably Didn’t Realize npm Could Do](http://blog.izs.me/post/1675072029/10-cool-things-you-probably-didnt-realize-npm-could-do)
 
 * [Node.js Jenkins-CI](http://jenkins.nodejs.org/) - To support a higher degree of stability, and hopefully catch issues sooner, we (node.js team) have a Jenkins instance running every commit through the test suite, on each operating system we support.
@@ -47,7 +49,6 @@ Node.js test code lab
 * [Learn Node.js Completely and with Confidence](http://javascriptissexy.com/learn-node-js-completely-and-with-confidence/)
 
 * [Getting Started with Node.js, Coffeescript, MongoDB, and more - Matt Kopala](http://mattkopala.com/blog/2012/02/12/getting-started-with-nodejs/)
-
 
 * [5 Talks to Learn More About Node.js](http://blog.modulus.io/five-talks-learn-more-nodejs)
 
@@ -121,6 +122,8 @@ Node.js test code lab
 #### pt_BR
 
 * [Node.js para leigos (Versão completa) | Underground WebDev](http://www.udgwebdev.com/nodejs-para-leigos/)
+
+* [NodeBR](http://nodebr.com/) - é um blog comunitário brasileiro sobre node.js, seu propósito é ensinar como desenvolver soluções em node assim como ensinar os conceitos fundamentais necessários para escrever um código eficiente.
 
 * [Configurando o Node.js no Amazon EC2](http://pablocantero.com/blog/2012/01/04/configurando-o-node-js-no-amazon-ec2/)
 
