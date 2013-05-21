@@ -32,6 +32,8 @@
 
 	* [A Simple Website in Node.js with Express, Jade and Stylus](http://clock.co.uk/tech-blogs/a-simple-website-in-nodejs-with-express-jade-and-stylus) | [GitHub : code](https://github.com/clocklimited/BasicExpressSite)
 
+	* [Intro to Express.js: Parameters, Error Handling and Other Middleware | webapplog](http://www.webapplog.com/intro-to-express-js-parameters-error-handling-and-other-middleware/)
+
 
 #### pt_BR
 
