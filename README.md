@@ -100,6 +100,8 @@ Node.js test code lab
 
 * [Building CSSDB: a short case-study on the build of a small Node.js/MongoDB application](http://rowanmanning.com/posts/building-cssdb/)
 
+* [How We Built eBay’s First Node.js Application](http://www.ebaytechblog.com/2013/05/17/how-we-built-ebays-first-node-js-application/)
+
 
 ### Amazon AWS
 
