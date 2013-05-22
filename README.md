@@ -89,6 +89,8 @@ Node.js test code lab
 
 * [Starting with Node and Web Sockets](http://codular.com/node-web-sockets)
 
+* [Real Time Chat With NodeJS, Socket.io and ExpressJS | Nettuts+](http://net.tutsplus.com/tutorials/javascript-ajax/real-time-chat-with-nodejs-socket-io-and-expressjs/)
+
 
 ### Use Cases
 
