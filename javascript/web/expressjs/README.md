@@ -6,6 +6,9 @@
 
     * [api doc](http://expressjs.com/api.html#app-settings) - start app with NODE_END=production to production mode
 
+    * [Understanding Express.js | Evan Hahn](http://evanhahn.com/understanding-express-js/)
+
+
 * [Jade](http://jade-lang.com/) - generates html output
 
 * [Ejs](https://github.com/visionmedia/ejs) - generates html output
