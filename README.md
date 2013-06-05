@@ -94,6 +94,8 @@ Node.js test code lab
 
 ### Use Cases
 
+* [Node GH](http://nodegh.io/) = NodeJS + GitHub - GitHub command line tools
+
 * [Noduino](http://semu.github.io/noduino/) – Control Arduino with Node.js, WebSockets and HTML5
 
 * [GitMoon](http://www.gitmoon.com/) Social analytics for Node.js developers | [GitHub : code](https://github.com/yaronn/gitmoon)
