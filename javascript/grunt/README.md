@@ -25,6 +25,8 @@
 
 * [Grunt: você deveria estar usando! | .openBlog()](http://openblog.github.com/2013/03/22/grunt/)
 
+* [Otimize suas tarefas com o Grunt! | Luiz Felipe Tartarotti Fialho](http://www.felipefialho.com/blog/2013/grunt-voce-deveria-estar-usando/)
+
 * [[SlideShare] Grunt.js and Yeoman, Continous Integration](http://www.slideshare.net/DavidAm/gruntjs-and-yeoman-continous-integration)
 
 
