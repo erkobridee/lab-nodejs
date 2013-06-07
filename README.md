@@ -106,6 +106,8 @@ Node.js test code lab
 
 * [How We Built eBay’s First Node.js Application](http://www.ebaytechblog.com/2013/05/17/how-we-built-ebays-first-node-js-application/)
 
+* [Can You Count on Node? - Blog - Joyent](http://joyent.com/blog/can-you-count-on-node)
+
 
 ### Amazon AWS
 
