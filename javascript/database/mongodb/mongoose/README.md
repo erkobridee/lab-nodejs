@@ -43,5 +43,6 @@ npm install async
 
 * [Article: Building Web APIs with Node.js and MongoDB](http://www.code-magazine.com/Article.aspx?quickid=1210041) | [GitHub : Code](https://github.com/donnfelker/workout-tracker)
 
+* [The MEAN Stack: Mistakes You’re Probably Making With MongooseJS, And How To Fix Them | MongoDB Blog](http://blog.mongodb.org/post/52299826008/the-mean-stack-mistakes-youre-probably-making-with)
 
 
