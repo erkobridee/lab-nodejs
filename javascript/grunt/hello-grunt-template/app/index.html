@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title><%- pageTitle %></title>
+</head>
+<body>
+  <p><%- test %></p>
+
+  <% if(enviroment === 'prod') { %>
+    <p>production</p>
+  <% } else { %>
+    <p>development</p>
+  <% } %>
+
+  <p><%
+    tags.forEach(function(tag) {
+      print(tag + ' | ');
+    });
+  %></p>
+
+</body>
+</html>

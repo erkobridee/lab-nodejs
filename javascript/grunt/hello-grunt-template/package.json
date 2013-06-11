@@ -1,0 +1,13 @@
+{
+  "name": "hello-grunt-template",
+  "version": "0.1.0",
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "grunt-contrib-clean": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt": "~0.4.1",
+    "grunt-template": "~0.1.0"
+  }
+}
