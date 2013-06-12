@@ -19,6 +19,7 @@ npm install \
   grunt-contrib-watch \
   grunt-contrib-connect \
   grunt-contrib-livereload \
+  grunt-open \
   --save-dev
 ```
 
@@ -49,4 +50,5 @@ npm install
 
   * [grunt-contrib-livereload](https://github.com/gruntjs/grunt-contrib-livereload) - using only de connect [middleware](https://github.com/gruntjs/grunt-contrib-livereload#the-livereload-task) to inject livereload script
 
+  * [grunt-open](https://github.com/onehealth/grunt-open)
 

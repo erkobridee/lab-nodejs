@@ -39,12 +39,20 @@ module.exports = function(grunt) {
       dev: {
         options: {
           port: 1337,
+          path: './<%= paths.app %>',
           middleware: function(connect, options) {
-            return [lrSnippet, folderMount(connect, './<%= paths.app %>/')];
+            return [lrSnippet, folderMount(connect, options.path)];
           }
         }
       }
+    },
+
+    open: {
+      dev: {
+        path: 'http://localhost:<%= connect.dev.options.port %>/'
+      }
     }
+
   };
 
   grunt.initConfig(gruntConfig);
@@ -54,7 +62,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-livereload');
+  grunt.loadNpmTasks('grunt-open');
 
-  grunt.registerTask('default', ['jshint', 'connect', 'watch']);
+  grunt.registerTask('default', ['jshint', 'connect', 'open', 'watch']); 
 
 };
