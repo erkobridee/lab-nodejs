@@ -1,0 +1,15 @@
+
+body {
+  background-color:#d0e4fe;
+}
+
+.p1 {
+  color: #0000FF;
+  text-decoration: underline;
+}
+
+.p2 {
+  width: 400px;
+  font-weight: bold;
+  text-align: center;
+}
