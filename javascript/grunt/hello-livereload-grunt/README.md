@@ -1,6 +1,19 @@
-# Commands on Mac
+# hello-livereload-grunt
 
-## Create commands list
+*By [@ErkoBridee](https://twitter.com/erkobridee)*
+
+## Prerequisites
+
+* Must have [Git](http://git-scm.com/) installed
+
+* Must have [node.js (at least v0.8.1)](http://nodejs.org/) installed with npm (Node Package Manager)
+
+* Must have [Grunt](https://github.com/gruntjs/grunt) node package installed globally.  `sudo npm install -g grunt-cli`
+
+
+## Commands on Mac
+
+### Create commands list
 
 ```
 mkdir hello-livereload-grunt
@@ -23,20 +36,20 @@ npm install \
   --save-dev
 ```
 
-## project cloned from git
+### project cloned from git
 
 ```
 npm install
 ```
 
-## Grunt commands
+### Grunt commands
 
 `grunt` - to check jshint, start server on port 1337 and watch some files.
 
 
 ## Links
 
-* [Grunt.js](http://gruntjs.com/configuring-tasks)
+* [Grunt.js: Configuring tasks](http://gruntjs.com/configuring-tasks)
 
 * [Grunt.js: Getting started](http://gruntjs.com/getting-started)
 
