@@ -48,7 +48,7 @@ npm install
 
   * [grunt-contrib-connect](https://github.com/gruntjs/grunt-contrib-connect)
 
-  * [grunt-contrib-livereload](https://github.com/gruntjs/grunt-contrib-livereload) - using only de connect [middleware](https://github.com/gruntjs/grunt-contrib-livereload#the-livereload-task) to inject livereload script
+  * [grunt-contrib-livereload](https://github.com/gruntjs/grunt-contrib-livereload) - using only the connect [middleware](https://github.com/gruntjs/grunt-contrib-livereload#the-livereload-task) to inject livereload script
 
   * [grunt-open](https://github.com/onehealth/grunt-open)
 
