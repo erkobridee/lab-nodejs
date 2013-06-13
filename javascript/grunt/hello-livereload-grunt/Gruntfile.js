@@ -31,7 +31,7 @@ module.exports = function(grunt) {
       dev: {
         options: {
           port: 1337,
-          basePoint: './<%= paths.app %>/',
+          base: './<%= paths.app %>/',
           middleware: require('./LivereloadMiddleware') 
         }
       }
