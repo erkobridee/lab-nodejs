@@ -39,7 +39,7 @@ npm install \
 
 bower init
 
-bower install jquery#1.10.1 --save-dev
+bower install jquery#1.10.1 --save
 
 ```
 
