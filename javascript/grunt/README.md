@@ -45,6 +45,8 @@
 
   * example: [exploratory-javascript-tests](https://github.com/pajtai/exploratory-javascript-tests)
 
+* [[GitHub] asciidisco / grunt-imagine](https://github.com/asciidisco/grunt-imagine) - Grunt tasks for optimizing & inlining images
+
 
 ## Tests
 
@@ -64,3 +66,6 @@
 * [Using Grunt.js with CSS](http://blog.pamelafox.org/2012/05/using-gruntjs-with-css.html) | [[GitHub] source grunt file](https://github.com/pamelafox/5lide/blob/master/editor/grunt.js)
 
 * [Otimize suas tarefas com o Grunt! | Luiz Felipe Tartarotti Fialho](http://www.felipefialho.com/blog/2013/grunt-voce-deveria-estar-usando/)
+
+* [Grunt Markdown](http://www.treasonx.com/posts/GruntMarkDown.html) - Markdown Preview using Grunt
+
