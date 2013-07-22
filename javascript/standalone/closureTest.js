@@ -1,3 +1,5 @@
+
+// define code scope
 (function () {
 
   //------------------------------------------
@@ -112,6 +114,7 @@
   aInstance.setPrivateAtt('new private attribute');
   log(aInstance.getPrivateAtt());
 
-})();
+})(); // eval and execute this defined code scope
+
 
 console.log(A); // ReferenceError: A is not defined
