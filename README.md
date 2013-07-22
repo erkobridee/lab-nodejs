@@ -13,6 +13,8 @@ Node.js test code lab
 
 * [GitHub : Joyent / Node.js : Wiki / Modules](https://github.com/joyent/node/wiki/modules)
 
+* [Node.js Infographic :: The State of Node | Strong Loop](http://strongloop.com/infographic)
+
 * [npm - Node Packaged Modules](https://npmjs.org/)
 
 * [npm Visualization | YASIV](http://www.yasiv.com/npm) | Sample: [Grunt npm dep](http://www.yasiv.com/npm#view/grunt)
@@ -25,6 +27,8 @@ Node.js test code lab
 
 
 ### Learn
+
+* [Teach Yourself Node.JS in 10 Steps | Pony Foo](http://blog.ponyfoo.com/2013/07/12/teach-yourself-nodejs-in-10-steps)
 
 * [How to Node](http://howtonode.org/)
 

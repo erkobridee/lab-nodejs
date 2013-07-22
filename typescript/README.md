@@ -24,6 +24,8 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
 
 * [TypeScript: A New Direction in Browser-Based Applications](http://blog.smartbear.com/software-quality/bid/275199/TypeScript-A-New-Direction-in-Browser-Based-Applications)
 
+* [My experience with TypeScript | Kinja Technology](http://tech.kinja.com/my-experience-with-typescript-710191610)
+
 
 ## Code Editor
 
