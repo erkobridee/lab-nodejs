@@ -12,6 +12,10 @@
 
 * [Smooth CoffeeScript](http://autotelicum.github.com/Smooth-CoffeeScript/SmoothCoffeeScript.html)
 
+* [Intro to CoffeeScript | Aseem Kishore](http://aseemk.com/blog/intro-to-coffeescript)
+
+* [Learn CoffeeScript | CodeSchool](http://www.codeschool.com/courses/coffeescript)
+
 * [Functional JavaScript with CoffeeScript and Node](http://www.ibm.com/developerworks/library/j-coffeescript/)
 
 ## Code Editor
