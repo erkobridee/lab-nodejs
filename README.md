@@ -95,6 +95,8 @@ Node.js test code lab
 
 * [Real Time Chat With NodeJS, Socket.io and ExpressJS | Nettuts+](http://net.tutsplus.com/tutorials/javascript-ajax/real-time-chat-with-nodejs-socket-io-and-expressjs/)
 
+* [NeDB: SQLite for Node | DailyJS](http://dailyjs.com/2013/08/01/nedb/)
+
 
 ### Use Cases
 
