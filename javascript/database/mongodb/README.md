@@ -77,3 +77,4 @@ Links
 
 * [Cyclop - Stupid simple control flow library](https://github.com/vesln/cyclop)
 
+* [[GitHub] luciotato / waitfor](https://github.com/luciotato/waitfor) - Sequential programming for node.js, end of callback hell
