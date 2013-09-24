@@ -11,7 +11,7 @@ Development test with frontend and some backend running in other server
   proxy : 
     from: localhost:1337/api 
     to: localhost:3000/api
-``
+```
 
 * backend : localhost:3000
 
