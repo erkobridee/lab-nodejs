@@ -50,7 +50,8 @@ npm install \
 
 npm install \
   express \
-  express-namespace
+  express-namespace \
+  --save
 
 ```
 
