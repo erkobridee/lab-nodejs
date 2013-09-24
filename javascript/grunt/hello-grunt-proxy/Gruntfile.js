@@ -75,7 +75,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('server', [
     'api-server', 
-    'configureProxies', 'connect:dev', 'open'
+    'configureProxies', 'open', 'connect:dev'
   ]); 
 
 };
