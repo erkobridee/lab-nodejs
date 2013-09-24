@@ -1,0 +1,26 @@
+{
+  "name": "hello-grunt-proxy",
+  "version": "0.1.0",
+  "description": "Grunt connect proxy redirect url request to other server",
+  "keywords": [
+    "gruntjs",
+    "connect",
+    "proxy",
+    "text",
+    "rewrite",
+    "url"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "dependencies": {
+    "express": "~3.4.0",
+    "express-namespace": "~0.1.1"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-open": "~0.2.2",
+    "grunt-connect-proxy": "~0.1.5"
+  }
+}
