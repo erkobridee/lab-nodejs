@@ -1,7 +1,7 @@
-lab-nodejs
-==========
+# lab-nodejs
 
 Node.js test code lab
+
 
 ## Links
 
@@ -135,7 +135,13 @@ Node.js test code lab
 
 #### pt_BR
 
+* [Node.js | Underground WebDev](http://udgwebdev.com/nodejs/)
+
 * [Node.js para leigos (Versão completa) | Underground WebDev](http://www.udgwebdev.com/nodejs-para-leigos/)
+
+* [Quer aprender Node.js? (Atualizado) | Underground WebDev](http://udgwebdev.com/quer-aprender-node-js-atualizado/)
+
+--
 
 * [NodeBR](http://nodebr.com/) - é um blog comunitário brasileiro sobre node.js, seu propósito é ensinar como desenvolver soluções em node assim como ensinar os conceitos fundamentais necessários para escrever um código eficiente.
 
@@ -146,6 +152,7 @@ Node.js test code lab
 * [Node.js com Express.js nos negócios | iMasters](http://imasters.com.br/front-end/javascript/node-js-com-express-js-nos-negocios/)
 
 * [Player.io](http://openblog.github.com/2013/03/15/player.io/) - Um media player que roda no navegador, feito com Node.JS, Socket.IO e é controlado pelo seu smartphone
+
 
 ## Geekli.st
 
