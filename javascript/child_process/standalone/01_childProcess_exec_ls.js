@@ -1,11 +1,22 @@
 // based on
 // http://docs.nodejitsu.com/articles/child-processes/how-to-spawn-a-child-process
 
-var childProcess = require('child_process')
-  , ls
+var childProcess = require('child_process'),
+    exec = childProcess.exec, 
+    ls
 ;
 
-ls = childProcess.exec('ls -lh', function (error, stdout, stderr) {
+exec('pwd', function(error, stdout, stderr) {
+  console.log(stdout);
+});
+
+/*
+exec('ls -lh', function(error, stdout, stderr) {
+  console.log(stdout);
+});
+*/
+
+ls = exec('ls -lh', function (error, stdout, stderr) {
   if (error) {
     console.log(error.stack);
     console.log('Error code: ' + error.code);

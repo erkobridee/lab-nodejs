@@ -1,0 +1,16 @@
+{
+  "name": "shelljs-test",
+  "version": "0.0.1",
+  "description": "shelljs tests",
+  "keywords": [
+    "shell",
+    "js",
+    "command",
+    "test"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "dependencies": {
+    "shelljs": "~0.2.6"
+  }
+}

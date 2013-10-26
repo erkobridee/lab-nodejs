@@ -9,3 +9,9 @@
 * [Node.js and Scala without mediators](http://blog.vasilrem.com/nodejs-and-scala-without-mediators) | [GitHub : nodejs-scala-connector](https://github.com/remeniuk/nodejs-scala-connector) - is an alternative approach for linking node.js to Scala (JVM) - no mediators are involved and system components communicate to each other directly. 
 
 * [GitHub : nearinfinity / Node Java](https://github.com/nearinfinity/node-java) - Bridge API to connect with existing Java APIs
+
+* [[GitHbb] arturadib / shelljs](https://github.com/arturadib/shelljs) - Portable Unix shell commands for Node.js
+
+## pt_BR
+
+* [Node.js para leigos - Child process | Underground WebDev](http://udgwebdev.com/node-js-para-leigos-child-process/)
