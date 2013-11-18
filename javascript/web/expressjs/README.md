@@ -11,6 +11,8 @@
 
 * [Jade](http://jade-lang.com/) - generates html output
 
+	* [Jade Mixins & Includes | TJ Holowaychuk](http://tjholowaychuk.com/post/7590787973/jade-mixins-includes)
+
 * [Ejs](https://github.com/visionmedia/ejs) - generates html output
 
 * [Stylus](http://learnboost.github.com/stylus/) - generates css output
