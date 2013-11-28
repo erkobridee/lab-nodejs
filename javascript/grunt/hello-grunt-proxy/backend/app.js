@@ -16,11 +16,11 @@ app.get('/hello.txt', function(req, res){
 
 //---
 
-app.namespace('/api', function() {
+app.namespace('/rest', function() {
 
   app.get('/', function(req, res) {
     var resources = [
-      {name: 'bookmark', url: '/bookmark'}
+      {name: 'bookmarks', url: '/bookmarks'}
     ];
 
     res.json(resources);

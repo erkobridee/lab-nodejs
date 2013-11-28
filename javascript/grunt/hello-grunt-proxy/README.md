@@ -85,6 +85,8 @@ grunt server
 
   * [grunt-connect-proxy](https://github.com/drewzboto/grunt-connect-proxy)
 
+    * [Using grunt-connect-proxy | frontend technology talk](http://www.fettblog.eu/blog/2013/09/20/using-grunt-connect-proxy/)
+
   * [grunt-open](https://github.com/jsoverson/grunt-open)
 
 
