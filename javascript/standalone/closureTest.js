@@ -30,12 +30,12 @@
     // private ------------------------------------------
 
       // vars
-    var privateAtt = 'private attribute value';
+    var privateSharedAtt = 'private shared attribute value';
 
       // function
     // var privateHelloMessage = function() {  // both ways to declare one function
-    function privateHelloMessage() {
-      return 'private hello message';
+    function privateSharedHelloMessage() {
+      return 'private shared hello message';
     };
 
 
@@ -51,16 +51,16 @@
 
         //---
 
-    ClassDef.prototype.setPrivateAtt = function(value) {
-      privateAtt = value;
+    ClassDef.prototype.setPrivateSharedAtt = function(value) {
+      privateSharedAtt = value;
     };
 
-    ClassDef.prototype.getPrivateAtt = function() {
-      return privateAtt;
+    ClassDef.prototype.getPrivateSharedAtt = function() {
+      return privateSharedAtt;
     };
 
-    ClassDef.prototype.getPrivateHelloMessage = function() {
-      return privateHelloMessage();
+    ClassDef.prototype.getPrivateSharedHelloMessage = function() {
+      return privateSharedHelloMessage();
     };
 
         //---
@@ -109,10 +109,10 @@
 
   log('------'); 
 
-  log(aInstance.getPrivateHelloMessage());
-  log(aInstance.getPrivateAtt());
-  aInstance.setPrivateAtt('new private attribute');
-  log(aInstance.getPrivateAtt());
+  log(aInstance.getPrivateSharedHelloMessage());
+  log(aInstance.getPrivateSharedAtt());
+  aInstance.setPrivateSharedAtt('new private shared attribute value');
+  log(aInstance.getPrivateSharedAtt());
 
 })(); // eval and execute this defined code scope
 
