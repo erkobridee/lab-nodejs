@@ -11,10 +11,11 @@
   //------------------------------------------
 
   // Class Scope
-  var A = (function() {
+  var ClassA = (function() {
 
     // Constructor
-    function ClassDef() {};
+    function ClassA() {};
+    var ClassDef = ClassA;
 
     // static ------------------------------------------
 
@@ -67,13 +68,13 @@
 
     ClassDef.prototype.say = function(message) {
       // if message not defined, set default value
-      msg = message || 'class A say something';
+      var msg = message || 'class A say something';
       log(msg); // call parent function
     };
 
     ClassDef.prototype.say2 = function(message) {
       // if message not defined, set default value
-      msg = message || 'class A say2 something';
+      var msg = message || 'class A say2 something';
       log(msg); // call parent function
     };
 
@@ -84,19 +85,17 @@
 
   })();
 
-  //------------------------------------------
-
-  log(A); // class defined
+  log(ClassA); // class defined
 
   log('------');
 
   // statics
-  log(A.staticAtt);
-  log(A.staticHelloMessage());
+  log(ClassA.staticAtt);
+  log(ClassA.staticHelloMessage());
   
   log('------');  
 
-  var aInstance = new A();
+  var aInstance = new ClassA();
   
   log(aInstance.publicAtt);
   aInstance.publicAtt = 'new value to public attribute';
@@ -114,7 +113,42 @@
   aInstance.setPrivateSharedAtt('new private shared attribute value');
   log(aInstance.getPrivateSharedAtt());
 
+  log('------');
+
+  //------------------------------------------
+
+  // Class Scope
+  var ClassB = (function(Extend) {
+
+    function ClassB() {}
+    var ClassDef = ClassB;
+
+    //ClassB.prototype = new Extend();
+    ClassB.prototype.__proto__ = Extend.prototype;
+
+    ClassB.prototype.say3 = function(message) {
+      this.say2('ClassB say3 call say2 from ClassA');
+    };
+
+    return ClassDef;
+
+  })(ClassA);
+
+  log(ClassB); // class defined
+
+  log('------');
+
+  var bInstance = new ClassB();
+
+  bInstance.say();
+  bInstance.say2();
+  bInstance.say3();
+
+  //------------------------------------------
+
+
 })(); // eval and execute this defined code scope
 
 
-console.log(A); // ReferenceError: A is not defined
+console.log(ClassA); // ReferenceError: ClassA is not defined
+console.log(ClassB); // ReferenceError: ClassB is not defined
