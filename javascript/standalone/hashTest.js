@@ -1,9 +1,28 @@
 var crypto = require('crypto');
 
-function hashString(value) {
-  hash = crypto.createHash('sha1');
+function hashString(value, algorithm) {
+  hash = crypto.createHash(algorithm);
   hash.update(value);
   return hash.digest('hex');
 }
 
-console.log(hashString(new Date().toString()));
+function logHash(value, algorithm) {
+  algorithm = algorithm || 'sha1';
+  console.log(
+    'algorithm: ' + algorithm + ' | ' +
+    'hash: ' + hashString(value, algorithm) + ' | ' +
+    'src: ' + value
+  );
+}
+
+logHash(new Date().toString());
+
+var msg = 'aloha 123 ipsum lorem';
+
+logHash(msg);
+logHash(msg, 'md5');
+
+msg = 'aloha 124 ipsum loren';
+
+logHash(msg);
+logHash(msg, 'md5');
