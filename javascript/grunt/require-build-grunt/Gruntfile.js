@@ -26,7 +26,8 @@ module.exports = function(grunt) {
     'cleanempty',
     'less:prod',
     'htmlmin',
-    'imagemin'
+    'imagemin',
+    'uglify'
   ]); 
 
   grunt.registerTask('server', function(target) {

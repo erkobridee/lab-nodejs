@@ -38,6 +38,7 @@ npm install \
   grunt-contrib-requirejs \
   grunt-contrib-htmlmin \
   grunt-contrib-imagemin \
+  grunt-contrib-uglify \
   grunt-cleanempty \
   grunt-html2js \
   --save-dev
@@ -97,6 +98,8 @@ npm install
   * [grunt-contrib-htmlmin](https://github.com/gruntjs/grunt-contrib-htmlmin)
 
   * [grunt-contrib-imagemin](https://github.com/gruntjs/grunt-contrib-imagemin)
+
+  * [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify)
 
   * [[GitHub] stevenvachon / grunt-cleanempty](https://github.com/stevenvachon/grunt-cleanempty) - Clean empty files and folders. 
 
