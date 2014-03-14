@@ -10,68 +10,15 @@ module.exports = {
     https://github.com/CaryLandholt/AngularFun/blob/master/Gruntfile.coffee
   */
 
-  /*
-  scripts: {
-
-    options: {
-
-      baseUrl: './<%= app.paths.src %>/',
-      
-      name: 'require.config',
-      
-      //mainConfigFile: './<%= app.paths.src %>/require.config.js',
-      mainConfigFile: './<%= app.paths.src %>/require.config.lite.js',
-
-      findNestedDependencies: true,
-      logLevel: 0,
-
-      onBuildWrite: function(moduleName, path, contents) {
-        var modulesToExclude, shouldExcludeModule;
-        
-        modulesToExclude = [
-          'require.config', 'require.config.lite', 
-          'require.load', 'require.mock.load'
-        ];
-        
-        shouldExcludeModule = modulesToExclude.indexOf(moduleName) >= 0;
-        if (shouldExcludeModule) {
-          return '';
-        }
-        return contents;
-      }, 
-
-      out: './<%= app.paths.dist %>/ng.bootstrap.js',
-      
-      preserveLicenseComments: false,
-      //useSourceUrl: true,
-      generateSourceMaps: true,
-      skipModuleInsertion: true,
-      
-      optimize: 'uglify2',
-      uglify: {
-        no_mangle: false
-      },
-
-      useStrict: true,
-      wrap: {
-        start: '(function() {\'use strict\';',
-        end: '})();'
-      }
-
-    }
-
-  }, */
-
   // https://github.com/kvindasAB/angular-enterprise-kickstart/blob/master/Gruntfile.js#L303
   compile: {
     options: {
       optimize: "uglify2",
-      baseUrl: './<%= app.paths.src %>/',
+      baseUrl: './<%= app.paths.build %>/',
       
-      //mainConfigFile: './<%= app.paths.src %>/require.config.js',
-      mainConfigFile: './<%= app.paths.src %>/require.config.lite.js',
+      mainConfigFile: './<%= app.paths.build %>/require.build.config.js',
 
-      name: 'require.config',
+      name: 'ng.app',
       out: './<%= app.paths.dist %>/ng.app.js',
 
       useStrict: true,

@@ -7,19 +7,26 @@ module.exports = function(grunt) {
 
   // load custom tasks
   grunt.loadTasks('helpers/grunt/tasks'); // grunt helloworld
-  grunt.task.run('helloworld');
+  //grunt.task.run('helloworld');
   
   //--- @begin: grunt tasks
 
   grunt.registerTask('default', ['jshint']); 
 
-  grunt.registerTask('build', [    
-    'clean:dist',
+  grunt.registerTask('cleanup', ['clean:dist', 'clean:build']); 
+
+  grunt.registerTask('build', [ 
+    'cleanup',
     'jshint',
-    'copy',
+    'copy:jstobuild',
+    'html2js:prod',
     'requirejs',
-    //'htmlbuild'
-    'cleanempty'
+    'clean:build',
+    'copy:todist',
+    'cleanempty',
+    'less:prod',
+    'htmlmin',
+    'imagemin'
   ]); 
 
   grunt.registerTask('server', function(target) {
