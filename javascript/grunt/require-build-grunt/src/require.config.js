@@ -1,34 +1,56 @@
 require({
 
-  // libraries dependencies
+  // libraries dependencies for fallback support
   paths: {
 
-    jquery: 'vendor/jquery/1.10.2/jquery.min',
+    jquery: [
+      'vendor/jquery/1.10.2/jquery.min'
+    ],
 
-    bootstrap: 'vendor/bootstrap/3.0.2/js/bootstrap.min',
+    bootstrap: [
+      'vendor/bootstrap/3.0.2/js/bootstrap.min'
+    ],
 
 
-    angular: 'vendor/angular.js/1.2.1/angular.min',
+    angular: [
+      'vendor/angular.js/1.2.1/angular.min'
+    ],
 
-    angularRoute: 'vendor/angular.js/1.2.1/angular-route.min',
+    angularRoute: [
+      'vendor/angular.js/1.2.1/angular-route.min'
+    ],
 
-    angularResource: 'vendor/angular.js/1.2.1/angular-resource.min',
+    angularResource: [
+      'vendor/angular.js/1.2.1/angular-resource.min'
+    ],
 
-    angularAnimate: 'vendor/angular.js/1.2.1/angular-animate.min',
+    angularAnimate: [
+      'vendor/angular.js/1.2.1/angular-animate.min'
+    ],
 
-    toaster: 'vendor/toaster/0.3.0/toaster',
+    toaster: [
+      'vendor/toaster/0.3.0/toaster'
+    ],
 
-    ngProgress: 'vendor/ngProgress/1.0.3/ngProgress.min',
+    ngProgress: [
+      'vendor/ngProgress/1.0.3/ngProgress.min'
+    ],
 
 
     // @begin: mock libs
-    angularMocks: 'vendor/angular.js/1.2.1/angular-mocks',
+    angularMocks: [
+      'vendor/angular.js/1.2.1/angular-mocks'
+    ],
 
-    angularMocksBackend: 'vendor/angular-mocks-backend/0.1.3/angular-mocks-backend',
+    angularMocksBackend: [
+      'vendor/angular-mocks-backend/0.1.3/angular-mocks-backend'
+    ],
     // @end: mock libs
 
 
-    lokijs: 'vendor/lokijs/0.0.1/lokijs.min'
+    lokijs: [
+      'vendor/lokijs/0.0.1/lokijs.min'
+    ]
 
   },
 
