@@ -34,9 +34,12 @@ npm install \
   grunt-contrib-clean \
   grunt-contrib-copy \
   grunt-contrib-connect \
+  grunt-contrib-less \
   grunt-contrib-requirejs \
+  grunt-contrib-htmlmin \
+  grunt-contrib-imagemin \
   grunt-cleanempty \
-  ? grunt-html-build \
+  grunt-html2js \
   --save-dev
 ```
 
@@ -91,6 +94,11 @@ npm install
 
   * [grunt-contrib-requirejs](https://github.com/gruntjs/grunt-contrib-requirejs)
 
-  * ??? [[GitHub] spatools / grunt-html-build](https://github.com/spatools/grunt-html-build) - Appends scripts and styles, Removes debug parts, append html partials, Template options
+  * [grunt-contrib-htmlmin](https://github.com/gruntjs/grunt-contrib-htmlmin)
+
+  * [grunt-contrib-imagemin](https://github.com/gruntjs/grunt-contrib-imagemin)
 
   * [[GitHub] stevenvachon / grunt-cleanempty](https://github.com/stevenvachon/grunt-cleanempty) - Clean empty files and folders. 
+
+  * [[GitHub] karlgoldstein / grunt-html2js](https://github.com/karlgoldstein/grunt-html2js) - Grunt plugin for converting AngularJS templates to JavaScript
+
