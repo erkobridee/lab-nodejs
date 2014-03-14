@@ -1,0 +1,118 @@
+<!doctype html>
+<html ng-controller="MainCtrl">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <title>Angular Standalone Boilerplate</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- css -->
+  <link href="vendor/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="styles/app.css" rel="stylesheet">
+
+  <!-- For IE less than 10 -->
+  <!--[if lt IE 10]>
+  <script type="text/javascript">
+  // Angular.js fallback
+  (function() {
+    var length, customTags = ['ng-include', 'ng-pluralize', 'ng-view', 'ng-repeat']
+      //.concat(['tabs', 'pane']) // TODO: ADD HERE APP CUSTOM TAGS
+      .concat(['ng:include', 'ng:pluralize', 'ng:view']); // Optionally these for CSS
+    length = customTags.length;
+    while (length--) { document.createElement(customTags[length]); }
+  })();
+
+  // IE - Avoid `console` errors in browsers that lack a console.
+  (function() {
+    var console, length, method, noop = function () {},
+    methods = [
+      'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+      'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
+      'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
+      'timeStamp', 'trace', 'warn'
+    ];
+    length = methods.length;
+    console = (window.console = window.console || {});
+    while (length--) {
+      method = methods[length];
+      // Only stub undefined methods.
+      if (!console[method]) {
+        console[method] = noop;
+      }
+    }
+  }());
+  </script>
+
+  <script src="vendor/html5shiv/3.7.0/html5shiv.js"></script>  
+  <script src="vendor/respond.js/1.3.0/respond.min.js"></script> 
+  <![endif]-->
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="shared/img/favicon.ico">
+
+</head>
+<body>
+<toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
+
+
+<!-- Wrap all page content here -->
+<div id="wrap">
+
+  <!-- navbar -->
+  <div ng-include="'app/main/templates/navbar.html'"></div>
+
+  <!-- @begin: ie warning alert -->  
+  <!--[if lt IE 7]><div class="container">
+  <br><br><br><br>
+  <div class="alert alert-danger">
+  <p>Your browser is <em>ancient!</em>
+    <a href="http://browsehappy.com/">Upgrade to a different browser</a> or
+    <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.
+  </p>
+  </div></div>
+  <![endif]-->
+
+  <!--[if lt IE 9]><div class="container">
+  <br><br><br><br>
+  <div class="alert alert-warning">
+    You are using an old version of Internet Explorer.
+    For better and safer browsing experience please <a href="http://www.microsoft.com/IE9">upgrade IE</a>
+    or install <a href="http://google.com/chrome">Google Chrome browser</a>.
+  </div></div>
+  <![endif]-->
+  <!-- @begin: ie warning alert -->  
+
+  <!-- loagind app -->
+  <div class="loading_app" ng-hide="appLoaded">
+    <p style="text-align:center">
+      <img src="shared/img/loading.gif"><br>Loading...
+    </p>
+  </div>
+
+  <!-- app content -->
+  <div class="container ng-view"></div>  
+
+</div>
+
+<!-- footer -->
+<div ng-include="'app/main/templates/footer.html'"></div>
+
+
+<!-- javascript's -->
+
+<!-- build:script vendors -->
+<!-- /build -->
+
+<!-- build:script bundle -->
+<script 
+  data-main="require.config" 
+  src="vendor/require.js/2.1.9/require.min.js"></script>
+<!-- /build -->
+
+</body>
+</html>

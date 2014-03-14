@@ -32,9 +32,11 @@ npm install \
   jshint-stylish \
   grunt-contrib-jshint \
   grunt-contrib-clean \
+  grunt-contrib-copy \
   grunt-contrib-connect \
   grunt-contrib-requirejs \
-  grunt-html-build \
+  grunt-cleanempty \
+  ? grunt-html-build \
   --save-dev
 ```
 
@@ -46,7 +48,7 @@ npm install
 
 ## Grunt commands
 
-* `grunt` - execute tasks : `['jshint', 'helloWorld']`
+* `grunt` - execute tasks : `['jshint', 'helloworld']`
 
 * ?
  
@@ -89,5 +91,6 @@ npm install
 
   * [grunt-contrib-requirejs](https://github.com/gruntjs/grunt-contrib-requirejs)
 
-  * [[GitHub] spatools / grunt-html-build](https://github.com/spatools/grunt-html-build) - Appends scripts and styles, Removes debug parts, append html partials, Template options
+  * ??? [[GitHub] spatools / grunt-html-build](https://github.com/spatools/grunt-html-build) - Appends scripts and styles, Removes debug parts, append html partials, Template options
 
+  * [[GitHub] stevenvachon / grunt-cleanempty](https://github.com/stevenvachon/grunt-cleanempty) - Clean empty files and folders. 
