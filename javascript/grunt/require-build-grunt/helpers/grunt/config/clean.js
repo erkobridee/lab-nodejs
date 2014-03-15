@@ -1,7 +1,7 @@
 module.exports = {
 
-  build: ['<%= app.paths.build %>/'],
+  build: ['<%= project.paths.build %>/'],
 
-  dist: ['<%= app.paths.dist %>/']
+  dist: ['<%= project.paths.dist %>/']
   
 };

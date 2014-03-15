@@ -8,10 +8,10 @@ module.exports = {
 
   dev: {
     src: [
-      '<%= app.paths.src %>/app/**/*.html',
-      '<%= app.paths.src %>/shared/**/*.html'
+      '<%= project.paths.src %>/app/**/*.html',
+      '<%= project.paths.src %>/shared/**/*.html'
     ],
-    dest: '<%= app.paths.build %>/app/main/templates/cache.js'
+    dest: '<%= project.paths.build %>/app/main/templates/cache.js'
   },
 
   prod: {

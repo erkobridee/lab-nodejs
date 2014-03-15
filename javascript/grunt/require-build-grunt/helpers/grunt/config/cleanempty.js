@@ -1,7 +1,7 @@
 module.exports = {
 
   dist: {
-    src: ['<%= app.paths.dist %>/**/*']
+    src: ['<%= project.paths.dist %>/**/*']
   }
 
 };

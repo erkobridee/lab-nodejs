@@ -14,12 +14,12 @@ module.exports = {
   compile: {
     options: {
       optimize: "uglify2",
-      baseUrl: './<%= app.paths.build %>/',
+      baseUrl: './<%= project.paths.build %>/',
       
-      mainConfigFile: './<%= app.paths.build %>/require.build.config.js',
+      mainConfigFile: './<%= project.paths.build %>/require.build.config.js',
 
       name: 'ng.app',
-      out: './<%= app.paths.dist %>/ng.app.js',
+      out: './<%= project.paths.dist %>/ng.app.js',
 
       useStrict: true,
       wrap: {

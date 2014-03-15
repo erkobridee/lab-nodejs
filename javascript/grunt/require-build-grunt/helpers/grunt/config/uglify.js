@@ -2,8 +2,8 @@ module.exports = {
 
   dist: {
     files: {
-      '<%= app.paths.dist %>/require.config.js': ['<%= app.paths.dist %>/require.config.js'] ,
-     '<%= app.paths.dist %>/shared/fallback/ie.js': ['<%= app.paths.dist %>/shared/fallback/ie.js'] 
+      '<%= project.paths.dist %>/require.config.js': ['<%= project.paths.dist %>/require.config.js'] ,
+     '<%= project.paths.dist %>/shared/fallback/ie.js': ['<%= project.paths.dist %>/shared/fallback/ie.js'] 
     }
   }
 

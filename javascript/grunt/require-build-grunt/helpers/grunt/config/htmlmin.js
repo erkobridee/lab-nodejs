@@ -7,9 +7,9 @@ module.exports = {
     },
     files: [{
       expand: true,
-      cwd: '<%= app.paths.dist %>/',
+      cwd: '<%= project.paths.dist %>/',
       src: 'index.html',
-      dest: '<%= app.paths.dist %>/',
+      dest: '<%= project.paths.dist %>/',
     }],
   }
 
