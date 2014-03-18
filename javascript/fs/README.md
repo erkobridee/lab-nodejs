@@ -11,3 +11,7 @@
 * [Remove a directory that is not empty in NodeJS | geedew](http://www.geedew.com/2012/10/24/remove-a-directory-that-is-not-empty-in-nodejs/)
 
 * [[Gist] bpedro / mkdir_p.js](https://gist.github.com/bpedro/742162) - nodejs implementation of recursive directory creation
+
+--
+
+* [Promises in Node.js with Q – An Alternative to Callbacks | StrongLoop](http://strongloop.com/strongblog/promises-in-node-js-with-q-an-alternative-to-callbacks/)
