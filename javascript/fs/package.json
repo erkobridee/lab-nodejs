@@ -1,0 +1,16 @@
+{
+  "name": "fs",
+  "version": "0.1.0",
+  "description": "file system tests",
+  "keywords": [
+    "fs",
+    "file",
+    "system",
+    "test"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "dependencies": {
+    "q": "^1.0.1"
+  }
+}

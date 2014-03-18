@@ -1,0 +1,17 @@
+{
+  "name": "ast",
+  "version": "0.1.0",
+  "description": "Abstract Syntax Tree tests",
+  "keywords": [
+    "ast",
+    "test",
+    "abstract",
+    "syntax",
+    "tree"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "dependencies": {
+    "esprima": "~1.0.4"
+  }
+}
