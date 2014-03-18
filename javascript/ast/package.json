@@ -10,5 +10,8 @@
     "tree"
   ],
   "author": "Erko Bridee",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "esprima": "~1.0.4"
+  }
 }
