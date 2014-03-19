@@ -20,6 +20,8 @@
 
 * [Making directory along with missing parents in Node.js | Lab Matrix](http://lmws.net/making-directory-along-with-missing-parents-in-node-js)
 
+* [[GitHub] jprichardson / node-fs-extra](https://github.com/jprichardson/node-fs-extra) - Node.js: extra methods for the fs object
+
 --
 
 * [Promises in Node.js with Q – An Alternative to Callbacks | StrongLoop](http://strongloop.com/strongblog/promises-in-node-js-with-q-an-alternative-to-callbacks/)
