@@ -28,7 +28,7 @@ var traverse = function(object, visitor) {
 var dirPath = '../src/',
     //filename = 'require.config.js', 
     //filename = 'consoleMsg.js', 
-    filename = 'varSum.js',
+    filename = 'varMultiply.js',
     filePath = dirPath + filename,
     encoding = 'utf-8';
 
