@@ -10,7 +10,17 @@
 
 * [Remove a directory that is not empty in NodeJS | geedew](http://www.geedew.com/2012/10/24/remove-a-directory-that-is-not-empty-in-nodejs/)
 
+--
+
+* [Storing data with Node.js writable streams | Code Winds](http://codewinds.com/blog/2013-08-19-nodejs-writable-streams.html)
+
+--
+
 * [[Gist] bpedro / mkdir_p.js](https://gist.github.com/bpedro/742162) - nodejs implementation of recursive directory creation
+
+* [Making directory along with missing parents in Node.js | Lab Matrix](http://lmws.net/making-directory-along-with-missing-parents-in-node-js)
+
+* [[GitHub] jprichardson / node-fs-extra](https://github.com/jprichardson/node-fs-extra) - Node.js: extra methods for the fs object
 
 --
 

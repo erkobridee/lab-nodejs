@@ -3,6 +3,8 @@ require({
   // libraries dependencies (fallback support)
   paths: {
 
+    loadash: 'vendor/loadash.js',
+
     jquery: [
       'http://cdn.host/lib/jquery.min',
       'vendor/jquery.min'

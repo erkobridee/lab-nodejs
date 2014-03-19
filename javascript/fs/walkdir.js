@@ -31,13 +31,25 @@ function walk(dir, done) {
 
 var dirname = '../standalone';
 
+var output = './output/walkdir.result.txt';
+
 walk(dirname, function(err, results) {
   if(err) {
     console.log('Error: ', err);
     return;
   }
 
+  var resultTxt = '\n\twalkdir.js\n\n';
+
   results.forEach(function(filename) {
-    console.log(filename);
+    resultTxt += filename + '\n';
+  });
+
+  console.log(resultTxt);
+
+  // http://nodejs.org/api/fs.html#fs_fs_writefile_filename_data_options_callback
+  fs.writeFile(output, resultTxt, function(err) {
+    if (err) throw err;
+    console.log('It\'s saved!');
   });
 });
