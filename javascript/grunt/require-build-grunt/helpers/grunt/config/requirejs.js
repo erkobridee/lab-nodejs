@@ -16,7 +16,7 @@ module.exports = {
       optimize: "uglify2",
       baseUrl: './<%= project.paths.build %>/',
       
-      mainConfigFile: './<%= project.paths.build %>/require.build.config.js',
+      mainConfigFile: './<%= project.require.build %>',
 
       name: 'ng.app',
       out: './<%= project.paths.dist %>/ng.app.js',
