@@ -20,6 +20,7 @@ module.exports = function(grunt) {
     'jshint',
     'copy:jstobuild',
     'html2js:prod',
+    'rewriterequireconfig',
     'requirejs',
     'clean:build',
     'copy:todist',
