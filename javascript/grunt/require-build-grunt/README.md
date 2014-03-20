@@ -41,6 +41,8 @@ npm install \
   grunt-contrib-uglify \
   grunt-cleanempty \
   grunt-html2js \
+  esprima \
+  escodegen \
   --save-dev
 ```
 
@@ -76,6 +78,12 @@ npm install
 * [[GitHub] firstandthird / load-grunt-config](https://github.com/firstandthird/load-grunt-config) - Grunt plugin that lets you break up your Gruntfile config by task. It was heavily inspired by [More maintainable Gruntfiles | Thomas Boyt](http://www.thomasboyt.com/2013/09/01/maintainable-grunt.html)
 
 * [[GitHub] sindresorhus / jshint-stylish](https://github.com/sindresorhus/jshint-stylish) - Stylish reporter for JSHint
+
+--
+
+* [[GitHub] ariya / esprima](https://github.com/ariya/esprima) - ECMAScript parsing infrastructure for multipurpose analysis
+
+* [[GitHub] Constellation / escodegen](https://github.com/Constellation/escodegen) - ECMAScript code generator
 
 --
 
