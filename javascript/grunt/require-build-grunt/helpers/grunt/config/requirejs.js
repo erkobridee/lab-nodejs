@@ -18,8 +18,8 @@ module.exports = {
       
       mainConfigFile: './<%= project.require.build %>',
 
-      name: 'ng.app',
-      out: './<%= project.paths.dist %>/ng.app.js',
+      name: '<%= project.require.name %>',
+      out: './<%= project.paths.dist %>/<%= project.require.name %>.js',
 
       useStrict: true,
       wrap: {
