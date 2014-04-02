@@ -1,9 +1,7 @@
 define(
 // require.js dependency injection
 [
-  './module',
-  './controllers/home',
-  './routes'
+  './allow-pass'
 ],
 
 // require.js module scope

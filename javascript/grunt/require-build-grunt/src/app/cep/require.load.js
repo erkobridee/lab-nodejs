@@ -2,7 +2,8 @@ define(
 // require.js dependency injection
 [
   './module',
-  './controllers/home',
+  './resource',
+  './controller',
   './routes'
 ],
 

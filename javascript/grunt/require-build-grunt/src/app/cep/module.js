@@ -3,11 +3,7 @@ define(
 [
   'angular',
   'angularRoute',
-  'angularResource',
-
-  './templates/cache',
-
-  '../cep/require.load'
+  'angularResource'
 ],
 
 // require.js module scope
@@ -17,16 +13,12 @@ function(ng) {
   // module definition
   return ng.module(
     // module name
-    'main',
+    'cep',
 
     // module dependencies
     [
       'ngRoute',
-      'ngResource',
-
-      'templatesCache',
-
-      'cep'
+      'ngResource'
     ]
   );
 
