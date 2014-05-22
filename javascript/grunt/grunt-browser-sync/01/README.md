@@ -33,7 +33,6 @@ npm install \
   load-grunt-config \
   jshint-stylish \
   grunt-contrib-jshint \
-  grunt-contrib-clean \
   grunt-browser-sync \
   --save-dev
 ```
