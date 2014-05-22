@@ -47,6 +47,8 @@
 
 * [[GitHub] asciidisco / grunt-imagine](https://github.com/asciidisco/grunt-imagine) - Grunt tasks for optimizing & inlining images
 
+* [[GitHub] shakyShane / grunt-browser-sync](https://github.com/shakyShane/grunt-browser-sync) - Grunt Task for keeping multiple browsers & devices in sync when building websites.
+
 
 ## Tests
 
