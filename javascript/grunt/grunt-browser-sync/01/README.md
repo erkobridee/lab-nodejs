@@ -60,10 +60,6 @@ grunt
 
   * [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint)
 
-  * [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify)
-
-  * [grunt-contrib-clean](https://github.com/gruntjs/grunt-contrib-clean)
-
   * [grunt-browser-sync](https://github.com/shakyShane/grunt-browser-sync)
 
     * [options](https://github.com/shakyShane/browser-sync/wiki/options) - [GitHub] shakyShane / browser-sync / wiki
