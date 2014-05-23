@@ -1,0 +1,28 @@
+{
+  "name": "grunt-browser-sync_02",
+  "version": "0.1.0",
+  "description": "browser sync test with watch task",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hello": "echo \"Hello World\""
+  },
+  "keywords": [
+    "browser",
+    "sync",
+    "test",
+    "gruntjs",
+    "watch"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "devDependencies": {
+    "jshint-stylish": "^0.2.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "load-grunt-config": "^0.9.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-less": "^0.11.0",
+    "grunt-browser-sync": "^0.9.1",
+    "grunt-contrib-clean": "^0.5.0"
+  }
+}

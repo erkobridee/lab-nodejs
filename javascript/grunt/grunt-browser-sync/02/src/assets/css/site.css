@@ -1,0 +1,7 @@
+body {
+  background-color: #00ff00;
+}
+p.msg {
+  color: #0000ff;
+  font-weight: bold;
+}
