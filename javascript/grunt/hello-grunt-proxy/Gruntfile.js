@@ -21,7 +21,7 @@ module.exports = function(grunt) {
           keepalive: true,
 
           middleware: function (connect, options) {
-            var config = [ 
+            var config = [
               // Serve static files.
               connect.static(options.base),
               // Make empty directories browsable.
@@ -32,12 +32,12 @@ module.exports = function(grunt) {
             config.unshift(proxy);
             return config;
           }
-        }      
+        }
       },
 
       proxies: [
         {
-          context: '/api',
+          context: '/rest',
           host: 'localhost',
           port: 3000
         }
@@ -59,7 +59,7 @@ module.exports = function(grunt) {
   // plugins
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-connect-proxy');  
+  grunt.loadNpmTasks('grunt-connect-proxy');
   grunt.loadNpmTasks('grunt-open');
 
 
@@ -71,11 +71,11 @@ module.exports = function(grunt) {
   });
 
 
-  grunt.registerTask('default', ['jshint']); 
+  grunt.registerTask('default', ['jshint']);
 
   grunt.registerTask('server', [
-    'api-server', 
+    'api-server',
     'configureProxies', 'open', 'connect:dev'
-  ]); 
+  ]);
 
 };
