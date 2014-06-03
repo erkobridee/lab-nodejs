@@ -10,7 +10,7 @@ module.exports = function(grunt) {
   );
 
   // custom tasks
-  grunt.loadTasks('helpers/grunt/tasks'); // grunt helloWorld
+  grunt.loadTasks('helpers/grunt/tasks'); // grunt helloworld
 
 
   //--- grunt tasks
