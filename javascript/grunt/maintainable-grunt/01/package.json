@@ -1,7 +1,8 @@
 {
-  "name": "maintainable-grunt",
-  "version": "0.1.0",
-  "description": "maintainable grunt example",
+  "name": "maintainable-grunt_01",
+  "version": "0.1.1",
+  "private": true,
+  "description": "maintainable grunt example 01",
   "keywords": [
     "grunt",
     "maintainable",
@@ -10,10 +11,11 @@
   "author": "Erko Bridee",
   "license": "MIT",
   "devDependencies": {
-    "grunt-open": "~0.2.2",
-    "grunt-contrib-jshint": "~0.6.4",
-    "load-grunt-config": "~0.5.0",
-    "grunt": "~0.4.1",
-    "grunt-contrib-connect": "~0.5.0"
+    "grunt-open": "^0.2.3",
+    "grunt-contrib-jshint": "^0.6.5",
+    "load-grunt-config": "^0.5.0",
+    "grunt": "^0.4.5",
+    "grunt-contrib-connect": "^0.5.0",
+    "time-grunt": "^0.3.1"
   }
 }
