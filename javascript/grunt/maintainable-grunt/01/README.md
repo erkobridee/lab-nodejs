@@ -1,4 +1,4 @@
-# maintainable-grunt
+# maintainable-grunt / 01
 
 *By [@ErkoBridee](https://twitter.com/erkobridee)*
 
@@ -16,9 +16,7 @@
 ### Create commands list
 
 ```
-mkdir maintainable-grunt
-
-cd maintainable-grunt
+mkdir 01 && cd 01
 
 touch README.md
 
@@ -33,6 +31,7 @@ npm install \
   grunt-contrib-jshint \
   grunt-contrib-connect \
   grunt-open \
+  time-grunt \
   load-grunt-config \
   --save-dev
 ```
