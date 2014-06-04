@@ -22,8 +22,6 @@ touch README.md
 
 npm init
 
-touch index.js 
-
 touch Gruntfile.js
 
 npm install \
