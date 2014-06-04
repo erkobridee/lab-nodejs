@@ -45,7 +45,7 @@ npm install
 
 ## Grunt commands
 
-* `grunt` - execute tasks : `['jshint', 'helloWorld']`
+* `grunt` - execute tasks : `['jshint', 'helloworld']`
 
 * `grunt server` - execute tasks :  `['open', 'connect:dev']`
 
@@ -53,8 +53,6 @@ npm install
 
 
 ## Project structure
-
-> TODO: review
 
 ```
 /root
