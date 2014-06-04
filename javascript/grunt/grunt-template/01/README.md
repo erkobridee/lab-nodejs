@@ -1,4 +1,4 @@
-# hello-grunt-template
+# grunt-template / 01
 
 *By [@ErkoBridee](https://twitter.com/erkobridee)*
 
@@ -16,9 +16,7 @@
 ### Create commands list
 
 ```
-mkdir hello-grunt-template
-
-cd hello-grunt-template
+mkdir 01 && cd 01
 
 touch README.md
 
@@ -42,7 +40,7 @@ npm install
 
 ### Grunt commands
 
-`grunt` - to check jshint.
+`grunt` - to check jshint
 
 `grunt dev` - generate index.html for development
 

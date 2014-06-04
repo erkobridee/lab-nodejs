@@ -1,6 +1,7 @@
 {
-  "name": "hello-grunt-template",
+  "name": "grunt-template_01",
   "version": "0.1.0",
+  "private": true,
   "author": "Erko Bridee",
   "license": "MIT",
   "readmeFilename": "README.md",
