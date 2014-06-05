@@ -2,28 +2,30 @@ module.exports = function(grunt) {
   'use strict';
 
   var gruntConfig = {
-    paths: {
-      app: 'app',
-      build: 'dist'
+    project: {
+      paths: {
+        templates: 'templates',
+        output: 'dist'
+      }
     },
 
     pkg: grunt.file.readJSON('package.json'),
 
     clean: {
-      build: ['<%= paths.build %>/']
+      build: ['<%= project.paths.output %>/']
     },
 
     jshint: {
       all: [
         'Gruntfile.js',
-        '<%= paths.app %>/**/*.js'
+        '<%= project.paths.templates %>/**/*.js'
       ]
     },
 
     template: {
       dev: {
         files: {
-          '<%= paths.build %>/index.html': '<%= paths.app %>/index.html'
+          '<%= project.paths.output %>/index.html': '<%= project.paths.templates %>/index.html'
         },
         options: {
           data: {
@@ -59,8 +61,8 @@ module.exports = function(grunt) {
   // tasks
   grunt.registerTask('default', ['jshint']);
 
-  grunt.registerTask('dev', ['clean','jshint', 'template:dev']); 
+  grunt.registerTask('dev', ['clean','jshint', 'template:dev']);
 
-  grunt.registerTask('prod', ['clean','jshint', 'template:prod']); 
+  grunt.registerTask('prod', ['clean','jshint', 'template:prod']);
 
 };
