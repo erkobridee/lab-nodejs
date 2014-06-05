@@ -1,5 +1,7 @@
 # grunt-template / 01
 
+First grunt-template test, generate a simple html based on template `templates/index.html`
+
 *By [@ErkoBridee](https://twitter.com/erkobridee)*
 
 ## Prerequisites
@@ -40,7 +42,7 @@ npm install
 
 ### Grunt commands
 
-`grunt` - to check jshint
+`grunt` - jshint and clean
 
 `grunt dev` - generate index.html for development
 
