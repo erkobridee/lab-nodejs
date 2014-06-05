@@ -1,6 +1,8 @@
 module.exports = function(grunt) {
   'use strict';
 
+  require('time-grunt')(grunt);
+
   var gruntConfig = {
     project: {
       paths: {
