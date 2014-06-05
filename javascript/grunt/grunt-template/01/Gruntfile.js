@@ -59,7 +59,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-template');
 
   // tasks
-  grunt.registerTask('default', ['jshint']);
+  grunt.registerTask('default', ['jshint', 'clean']);
 
   grunt.registerTask('dev', ['clean','jshint', 'template:dev']);
 
