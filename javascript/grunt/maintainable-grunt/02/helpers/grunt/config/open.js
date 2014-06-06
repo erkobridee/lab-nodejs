@@ -8,6 +8,6 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.loadNpmTasks('grunt-open');
+  //grunt.loadNpmTasks('grunt-open');
 
 };
