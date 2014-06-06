@@ -30,6 +30,7 @@ npm install \
   grunt-contrib-connect \
   grunt-open \
   time-grunt \
+  jit-grunt \
   load-grunt-config \
   --save-dev
 ```
@@ -65,13 +66,17 @@ npm install
 
 ## Links
 
-* [[GitHub] firstandthird / load-grunt-config](https://github.com/firstandthird/load-grunt-config) - Grunt plugin that lets you break up your Gruntfile config by task. It was heavily inspired by [More maintainable Gruntfiles | Thomas Boyt](http://www.thomasboyt.com/2013/09/01/maintainable-grunt.html)
-
---
-
 * [Grunt.js: Configuring tasks](http://gruntjs.com/configuring-tasks)
 
 * [Grunt.js: Getting started](http://gruntjs.com/getting-started)
+
+--
+
+* [time-grunt](https://github.com/sindresorhus/time-grunt)
+
+* [jit-grunt](https://github.com/shootaroo/jit-grunt)
+
+* [[GitHub] firstandthird / load-grunt-config](https://github.com/firstandthird/load-grunt-config) - Grunt plugin that lets you break up your Gruntfile config by task. It was heavily inspired by [More maintainable Gruntfiles | Thomas Boyt](http://www.thomasboyt.com/2013/09/01/maintainable-grunt.html)
 
 * **Grunt.js plugins**
 

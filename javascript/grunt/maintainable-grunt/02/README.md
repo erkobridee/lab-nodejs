@@ -32,6 +32,7 @@ npm install \
   grunt-contrib-connect \
   grunt-open \
   time-grunt \
+  jit-grunt \
   --save-dev
 ```
 
@@ -69,6 +70,12 @@ npm install
 * [Grunt.js: Configuring tasks](http://gruntjs.com/configuring-tasks)
 
 * [Grunt.js: Getting started](http://gruntjs.com/getting-started)
+
+--
+
+* [time-grunt](https://github.com/sindresorhus/time-grunt)
+
+* [jit-grunt](https://github.com/shootaroo/jit-grunt)
 
 * **Grunt.js plugins**
 
