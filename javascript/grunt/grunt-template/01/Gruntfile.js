@@ -14,10 +14,10 @@ module.exports = function(grunt) {
 
   //--- grunt tasks
 
-  grunt.registerTask('default', ['jshint', 'clean']);
+  grunt.registerTask('default', ['clean', 'jshint']);
 
-  grunt.registerTask('dev', ['clean','jshint', 'template:dev']);
+  grunt.registerTask('dev', ['default', 'template:dev']);
 
-  grunt.registerTask('prod', ['clean','jshint', 'template:prod']);
+  grunt.registerTask('prod', ['default', 'template:prod']);
 
 };
