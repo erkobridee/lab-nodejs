@@ -1,0 +1,15 @@
+{
+  "name": "inquirer-test",
+  "version": "0.1.0",
+  "private": true,
+  "description": "inquirer.js tests",
+  "keywords": [
+    "inquierer.js",
+    "test"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^0.5.1"
+  }
+}
