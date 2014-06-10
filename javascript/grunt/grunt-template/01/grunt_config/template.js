@@ -29,6 +29,4 @@ grunt.config('template', {
 
 });
 
-grunt.loadNpmTasks('grunt-template');
-
 };

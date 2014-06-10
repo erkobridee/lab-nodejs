@@ -31,6 +31,8 @@ npm install \
   grunt-contrib-jshint \
   grunt-contrib-clean \
   grunt-template \
+  time-grunt \
+  jit-grunt \
   --save-dev
 ```
 
