@@ -34,7 +34,7 @@ function select() {
       message: 'What do you want to watch?',
       choices: [
         {
-          name: 'Movie',
+          name: 'Movies',
           value: 1
         },
         {
