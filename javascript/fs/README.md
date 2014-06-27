@@ -22,6 +22,8 @@
 
 * [[GitHub] jprichardson / node-fs-extra](https://github.com/jprichardson/node-fs-extra) - Node.js: extra methods for the fs object
 
+* [[GitHub] kriskowal / q-io](https://github.com/kriskowal/q-io/) - Interfaces for IO using Q promises in JavaScript on Node
+
 --
 
 * [Promises in Node.js with Q – An Alternative to Callbacks | StrongLoop](http://strongloop.com/strongblog/promises-in-node-js-with-q-an-alternative-to-callbacks/)
