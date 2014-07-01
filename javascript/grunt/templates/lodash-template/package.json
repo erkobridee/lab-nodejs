@@ -1,0 +1,23 @@
+{
+  "name": "lodash-template",
+  "version": "0.1.0",
+  "description": "grunt generate files with lodash templates",
+  "keywords": [
+    "grunt",
+    "generate",
+    "template",
+    "lodash"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "devDependencies": {
+    "jit-grunt": "^0.7.0",
+    "lodash-node": "^2.4.1",
+    "grunt-contrib-clean": "^0.5.0",
+    "time-grunt": "^0.3.2",
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "q-io": "^1.11.2",
+    "q": "^1.0.1"
+  }
+}
