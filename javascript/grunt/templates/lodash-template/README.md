@@ -1,5 +1,7 @@
 # Lo-Dash template
 
+> not ready yeat
+
 grunt generate files with lodash templates
 
 *By [@ErkoBridee](https://twitter.com/erkobridee)*
