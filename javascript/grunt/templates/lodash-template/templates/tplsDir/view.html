@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lodash generate files</title>
+</head>
+<body>
+  <p>Hello <%= helpers.capitalize(name) %></p>
+
+<% if(users) { %>
+  <ul>
+<% _.forEach(users, function(u, i) { %>
+    <li><%= i %> - <%= u %></li>
+<% }); %>
+  </ul>
+<% } %>
+
+  <script type="text/javascript" src="libs/<%= helpers.updateFileName('util') %>.js"></script>
+  <script type="text/javascript" src="<%= helpers.updateFileName('logic') %>.js"></script>
+</body>
+</html>
