@@ -23,7 +23,7 @@ console.log('\n------------------------------------\n');
 var valuesToTpls = {
   name: 'useCase',
   users: ['user 1', 'user 2', 'user 3', 'user ...'],
-  updateFileName: true
+  updateFileName: false
 };
 
 
@@ -111,22 +111,6 @@ function generate(source, destination, values) {
 
     }).then(function(files) {
 
-      /*
-      files.forEach(function(file) {
-
-      });
-      */
-
-      /*
-        outputFileName = options.values.name + Capitalize( file.name )
-        outputFile = path.join( outputDir, options.values.name, file.directoty, outputFileName )
-        outputContent = templateCache[file.templateName](options.values)
-
-        write file
-      */
-
-      values.updateFileName = false;
-
       values.helpers = {};
 
       values.helpers.capitalize = function(value) {
@@ -149,16 +133,21 @@ function generate(source, destination, values) {
 
         var fileUrl, content;
 
-
+        // define file destination
         fileUrl = path.join( destination, values.name, file.directory, values.helpers.updateFileName( file.name ) );
         console.log( fileUrl );
 
+        // process template
         content = templateCache[file.templateName](values);
         console.log( content );
 
         console.log('\n------------------------------------\n');
 
-        return fileUrl;
+        // write file to disk
+        return fs.makeTree(path.dirname(fileUrl)).then(function() {
+          return fs.write(fileUrl, content);
+        });
+
       }));
 
 
