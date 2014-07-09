@@ -51,6 +51,17 @@ npm install
 
 ## Links
 
+> TODO:
+> * see the following code
+> https://github.com/karma-runner/karma-runner.github.com/blob/master/tasks/static.js
+>
+
+* [A closer look at Underscore templates | 2ality](http://www.2ality.com/2012/06/underscore-templates.html)
+
+* [View Helpers For Underscore Templates | LosTechies](http://lostechies.com/derickbailey/2012/04/26/view-helpers-for-underscore-templates/)
+
+--
+
 * [Lo-Dash](http://lodash.com/)
 
 * [[GitHub] lodash / lodash-node](https://github.com/lodash/lodash-node) - A collection of Lo-Dash methods as Node.js modules
@@ -59,13 +70,7 @@ npm install
 
   * [grunt.template | Grunt API](http://gruntjs.com/api/grunt.template#grunt.template.process)
 
-
-> TODO:
-> * see the following code
-> https://github.com/karma-runner/karma-runner.github.com/blob/master/tasks/static.js
->
-> * [A closer look at Underscore templates | 2ality](http://www.2ality.com/2012/06/underscore-templates.html)
-
+--
 
 * [[GitHub] kriskowal / q-io](https://github.com/kriskowal/q-io/) - Interfaces for IO using Q promises in JavaScript on Node
 
