@@ -26,31 +26,19 @@ var valuesToTpls = {
   updateFileName: false
 };
 
-
+/*
 var options = {
   src: '', // templates dir + template to load
   dest: '', // output dir
   values: { // values to process templates
     name: ''
     // nameCapitalized
-    // viewName
-    // utilScriptName
-    // logicScriptName
   }
 };
+*/
 
 
 //--- === ---
-
-function toJSON(value) {
-  return JSON.stringify(value, null, 2);
-}
-
-var filterOnlyFiles = function(path, stat) {
-  // ignore dot files like .DS_Store
-  var filename = path.split('/').pop();
-  return stat.isFile() && !filename.match(/^\./);
-};
 
 /*
   1 - load templates from directory
@@ -59,14 +47,53 @@ var filterOnlyFiles = function(path, stat) {
   4 - output files
 */
 
-
-var metadata = {};
-var templateCache = {};
-
-
 function generate(source, destination, values) {
 
+  //---------------------------------------------
+  // extend values with helpers
+  _.assign(values, {
+
+    helpers: {
+      capitalize: function(value) {
+        return _s.capitalize(value);
+      },
+
+      updateFileName: function(sName) {
+        var update = values.updateFileName || false;
+
+        if( update ) {
+          sName = values.name + _s.capitalize( sName );
+        }
+
+        return sName;
+      }
+    }
+
+  });
+
+  console.log(values);
+  //---------------------------------------------
+  // internal functions
+
+  function toJSON(value, beauty) {
+    beauty = beauty || false;
+    return beauty ? JSON.stringify(value, null, 2) : JSON.stringify(value);
+  }
+
+  function filterOnlyFiles(path, stat) {
+    // ignore dot files like .DS_Store
+    var filename = path.split('/').pop();
+    return stat.isFile() && !filename.match(/^\./);
+  }
+
+  //---------------------------------------------
+
+  var metadata = {};
+  var templateCache = {};
+
   var templateName, output;
+
+  //---------------------------------------------
 
   return fs.listTree(source, filterOnlyFiles) // list files
     .then(function(files) {
@@ -101,7 +128,7 @@ function generate(source, destination, values) {
 
       console.log('\n------------------------------------\n');
 
-      console.log( '\nmetadata: \n'); console.log(toJSON(metadata));
+      console.log( '\nmetadata: \n'); console.log(toJSON(metadata, true));
 
       console.log('\n------------------------------------\n');
 
@@ -111,44 +138,39 @@ function generate(source, destination, values) {
 
     }).then(function(files) {
 
-      values.helpers = {};
-
-      values.helpers.capitalize = function(value) {
-        return _s.capitalize(value);
-      };
-
-      values.helpers.updateFileName = function(sName) {
-        var update = values.updateFileName || false;
-
-        if( update ) {
-          sName = values.name + _s.capitalize( sName );
-        }
-
-        return sName;
-      };
-
       console.log('\n------------------------------------\n');
+
+      var fileUrl, content;
 
       Q.all(files.map(function(file) {
 
-        var fileUrl, content;
-
         // define file destination
-        fileUrl = path.join( destination, values.name, file.directory, values.helpers.updateFileName( file.name ) );
+        fileUrl = path.join(
+          destination, // output directory
+          values.name, // processed templates directory output
+          file.directory, // exist some sub directory ?
+          values.helpers.updateFileName( file.name ) // output file name
+        );
+
         console.log( fileUrl );
 
         // process template
         content = templateCache[file.templateName](values);
+
         console.log( content );
 
         console.log('\n------------------------------------\n');
 
-        // write file to disk
+        // create directories tree
         return fs.makeTree(path.dirname(fileUrl)).then(function() {
-          return fs.write(fileUrl, content);
+          return fs.write(fileUrl, content); // write file to disk
         });
 
-      }));
+      })).then(function() {
+        // cleanup variables
+        fileUrl = null;
+        content = null;
+      });
 
 
       return 'finished...';
