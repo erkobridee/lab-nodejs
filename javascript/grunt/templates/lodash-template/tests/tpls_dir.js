@@ -13,31 +13,6 @@ console.log('templates directory: \n' + templatesDir);
 console.log('templates to load: \n' + templates);
 console.log('\n------------------------------------\n');
 
-//---
-
-/*
-  1 - values for templates
-  2 - process values
-*/
-
-var valuesToTpls = {
-  name: 'useCase',
-  users: ['user 1', 'user 2', 'user 3', 'user ...'],
-  updateFileName: false
-};
-
-/*
-var options = {
-  src: '', // templates dir + template to load
-  dest: '', // output dir
-  values: { // values to process templates
-    name: ''
-    // nameCapitalized
-  }
-};
-*/
-
-
 //--- === ---
 
 /*
@@ -51,6 +26,7 @@ function generate(source, destination, values) {
 
   //---------------------------------------------
   // extend values with helpers
+
   _.assign(values, {
 
     helpers: {
@@ -87,16 +63,18 @@ function generate(source, destination, values) {
   }
 
   //---------------------------------------------
+  // internal variables
 
   var metadata = {};
   var templateCache = {};
 
-  var templateName, output;
-
   //---------------------------------------------
+  // templates processment flow
 
   return fs.listTree(source, filterOnlyFiles) // list files
     .then(function(files) {
+
+      var templateName, output;
 
       return Q.all(files.sort().map(function(filePath) {
 
@@ -122,7 +100,8 @@ function generate(source, destination, values) {
         });
 
       }));
-    }).then(function(files) { // template files readed
+    })
+    .then(function(files) { // template files readed
 
       console.log( '\nfiles: \n'); console.log(toJSON(files));
 
@@ -136,13 +115,15 @@ function generate(source, destination, values) {
 
       return files;
 
-    }).then(function(files) {
+    })
+    .then(function(files) {
 
       console.log('\n------------------------------------\n');
-
-      var fileUrl, content;
+      console.log('Processing templates and writing files\n\n');
 
       Q.all(files.map(function(file) {
+
+        var fileUrl, content;
 
         // define file destination
         fileUrl = path.join(
@@ -166,12 +147,11 @@ function generate(source, destination, values) {
           return fs.write(fileUrl, content); // write file to disk
         });
 
-      })).then(function() {
-        // cleanup variables
-        fileUrl = null;
-        content = null;
-      });
+      }));
 
+
+    })
+    .then(function() {
 
       return 'finished...';
 
@@ -179,12 +159,26 @@ function generate(source, destination, values) {
 
 }
 
+//--- === ---
+
+var valuesToTpls = {
+  name: 'useCase',
+  users: ['user 1', 'user 2', 'user 3', 'user ...'],
+  updateFileName: false
+};
+
+//--- === ---
+
 generate(templates, outputDir, valuesToTpls)
   .then(function(msg) {
     console.log(msg);
   })
   .then(function() {
-    console.log('end');
-  }, function(error) {
+    console.log('end generate() execution');
+  })
+  .catch(function(error) {
     console.log('error: ' + error);
+  })
+  .fin(function() {
+    console.log('That\'s it!');
   });
