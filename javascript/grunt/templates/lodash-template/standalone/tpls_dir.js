@@ -62,6 +62,19 @@ function generate(source, destination, values) {
     return stat.isFile() && !filename.match(/^\./);
   }
 
+  function TemplateProcessError(message, error) {
+    this.constructor.prototype.__proto__ = Error.prototype;
+    Error.captureStackTrace(this, this.constructor);
+    this.name = this.constructor.name;
+    this.message = message;
+
+    this.toString = function() {
+      var out = this.name + ': \n  ' + this.message;
+      if(error) out += '\nTemplate Error :\n  ' + error.stack;
+      return out;
+    }
+  }
+
   //---------------------------------------------
   // internal variables
 
@@ -93,7 +106,12 @@ function generate(source, destination, values) {
           };
 
           metadata[templateName] = output;
-          templateCache[templateName] = _.template(content);
+
+          try {
+            templateCache[templateName] = _.template(content);
+          } catch(err) {
+            throw new TemplateProcessError(filePath, err);
+          }
 
           return output;
 
@@ -177,7 +195,7 @@ generate(templates, outputDir, valuesToTpls)
     console.log('end generate() execution');
   })
   .catch(function(error) {
-    console.log('error: ' + error);
+    console.log(error.stack);
   })
   .fin(function() {
     console.log('That\'s it!');
