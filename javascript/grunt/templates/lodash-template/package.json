@@ -19,6 +19,7 @@
     "grunt-contrib-jshint": "^0.10.0",
     "q-io": "^1.11.2",
     "q": "^1.0.1",
-    "underscore.string": "^2.3.3"
+    "underscore.string": "^2.3.3",
+    "inquirer": "^0.5.1"
   }
 }
