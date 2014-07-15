@@ -10,7 +10,18 @@ var _     = require('lodash-node'),
   4 - output files
 */
 
-module.exports = function generate(options) {
+module.exports = function( options ) {
+
+  var debugFlag = false;
+  function log(msg) {
+    if(debugFlag) console.log(msg);
+  }
+
+
+  log('generate engine');
+  log( options );
+  log('\n------------------------------------\n');
+
 
   //---------------------------------------------
   // check options
@@ -25,11 +36,16 @@ module.exports = function generate(options) {
 
   if( !options ) throw new Error('options not defined');
 
+  if( options.debug ) debugFlag = true;
+
   if( !options.source )  throw new Error('options.source not defined');
+  var source = options.source;
 
   if( !options.destination )  throw new Error('options.destination not defined');
+  var destination = options.destination;
 
   if( !options.values )  throw new Error('options.values not defined');
+  var values = options.values;
 
   var _updateFileName = options.updateFileName || function( name ) { return name; };
 
@@ -70,6 +86,8 @@ module.exports = function generate(options) {
 
           return fs.read(filePath).then(function(content) { // read template file
 
+            log('read: ' + filePath);
+
             templateName = filePath.replace(source + '/', '');
 
             output = {
@@ -94,9 +112,11 @@ module.exports = function generate(options) {
 
         }));
       })
-      .then(function(files) { // compile and write files
+      .then(function(files) { // process templates and write files
 
-        Q.all(files.map(function(file) {
+        log('\n------------------------------------\n');
+
+        return Q.all(files.map(function(file) {
 
           var fileUrl, content;
 
@@ -108,13 +128,17 @@ module.exports = function generate(options) {
             _updateFileName( file.name ) // output file name
           );
 
+          log( fileUrl );
 
           // process template
           content = templateCache[file.templateName](values);
 
+          log( content );
+          log('\n------------------------------------\n');
 
           // create directories tree
           return fs.makeTree(path.dirname(fileUrl)).then(function() {
+            log('write file: ' + fileUrl);
             return fs.write(fileUrl, content); // write file to disk
           });
 
@@ -139,7 +163,7 @@ module.exports = function generate(options) {
       }
 
       return {
-        name: path.basename(filePath),
+        name: path.basename(source),
         templateCache: tplCache
       };
 
@@ -171,11 +195,11 @@ module.exports = function generate(options) {
   //---------------------------------------------
   // templates processment flow
 
-  // check if options.source is file or directory
   return fs.exists( source ).then(function( flag ) {
 
     if( flag ) {
 
+      // check if options.source is file or directory
       return fs.stat( source ).then(function( stat ) {
 
         if( stat.isDirectory() ) {
@@ -188,7 +212,7 @@ module.exports = function generate(options) {
 
         } else {
 
-          throw new Error( 'Invalid : ' + source );
+          throw new Error( 'Invalid : \n  ' + source );
 
         }
 
@@ -196,7 +220,7 @@ module.exports = function generate(options) {
 
     } else {
 
-      throw new Error( 'Not found : ' + source );
+      throw new Error( 'Not found : \n  ' + source );
 
     }
 
