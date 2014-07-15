@@ -34,7 +34,11 @@ npm install \
   grunt-contrib-clean \
   time-grunt \
   jit-grunt \
+  inquirer \
   lodash-node \
+  underscore.string \
+  q \
+  q-io \
   --save-dev
 ```
 
@@ -72,9 +76,15 @@ npm install
 
   * [grunt.template | Grunt API](http://gruntjs.com/api/grunt.template#grunt.template.process)
 
+* [[GitHub] epeli / underscore.string](https://github.com/epeli/underscore.string) - String manipulation extensions for Underscore.js javascript library
+
 --
 
+* [[GitHub] kriskowal / q](https://github.com/kriskowal/q) - A tool for making and composing asynchronous promises in JavaScript
+
 * [[GitHub] kriskowal / q-io](https://github.com/kriskowal/q-io/) - Interfaces for IO using Q promises in JavaScript on Node
+
+* [[GitHub] SBoudrias / Inquirer.js](https://github.com/SBoudrias/Inquirer.js) - A collection of common interactive command line user interfaces
 
 --
 
@@ -83,6 +93,10 @@ npm install
 * [Grunt.js: Configuring tasks](http://gruntjs.com/configuring-tasks)
 
 * [Dynamic Grunt Targets Using Templates | oncletom.io](https://oncletom.io/2013/dynamic-grunt-targets-using-templates/)
+
+* [[GitHub] shootaroo / jit-grunt](https://github.com/shootaroo/jit-grunt) - JIT(Just In Time) plugin loader for Grunt
+
+* [[GitHub] sindresorhus / time-grunt](https://github.com/sindresorhus/time-grunt) - Displays the execution time of grunt tasks
 
 * **Grunt.js plugins**
 
