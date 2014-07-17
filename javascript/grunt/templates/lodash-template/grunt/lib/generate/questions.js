@@ -121,6 +121,15 @@ function inputQuestion(name, message, defaultAnswer, fnValidate) {
 
 //---
 
+function askTemplate(key) {
+  return ask(questions.templates[key]).then(function(answer) {
+    if(answer.selected.type === 'question') return askTemplate(answer.selected.key);
+    return answer;
+  });
+}
+
+  //---
+
 function askYesNo(msg, defaultAnswer) {
   defaultAnswer = defaultAnswer || true;
   return ask({
@@ -131,12 +140,22 @@ function askYesNo(msg, defaultAnswer) {
   });
 }
 
-function askTemplate(key) {
-  return ask(questions.templates[key]).then(function(answer) {
-    if(answer.selected.type === 'question') return askTemplate(answer.selected.key);
-    return answer;
-  });
+function askNotEmptyAnswer(forValue) {
+  return ask(inputQuestion(
+    'input',
+    'Define ' + forValue + ':',
+    null,
+    function( value ) {
+      var valid =  !_.isEmpty(value) && !_.isNumber(value);
+      return valid || 'Please enter a ' + forValue;
+    }));
 }
+
+function askName() {
+  return askNotEmptyAnswer('name');
+}
+
+  //---
 
 function askAngularjsValues(options) {
   var restContext = 'rest',
@@ -164,14 +183,7 @@ function askAngularjsValues(options) {
 
   var output = {};
 
-  return ask(inputQuestion(
-    'input',
-    'Define name:',
-    null,
-    function( value ) {
-      var valid =  !_.isEmpty(value) && !_.isNumber(value);
-      return valid || "Please enter a name";
-    }))
+  return askName()
     .then(function(answer) {
       output.name = answer.input;
 
@@ -196,13 +208,55 @@ function askAngularjsValues(options) {
     });
 }
 
+function askGruntConfigValues() {
+  return askName()
+    .then(function(answer) {
+      return { 'name': answer.input };
+    });
+}
+
+function askHelloWorldValues() {
+  return askNotEmptyAnswer('greeting')
+    .then(function(answer) {
+      return { 'greeting': answer.input };
+    });
+}
+
+function askTplsDirValues() {
+  var output = {
+    'name': null,
+    'users': null
+  };
+
+  function askUserName() {
+    return askNotEmptyAnswer('user name')
+      .then(function(answer) {
+        if( !output.users ) output.users = [];
+        output.users.push( answer.input );
+        return askToAddUser();
+      });
+  }
+
+  function askToAddUser() {
+    return askYesNo('Add user?')
+      .then(function(answer) {
+        if(answer.value) return askUserName();
+      });
+  }
+
+  return askName()
+    .then(function(answer) {
+      output.name = answer.input;
+      return askToAddUser();
+    })
+    .then(function() {
+      return output;
+    });
+
+}
+
 /*
 TODO:
-
-- define grunt config values question
-- define hello world values question
-- define tplsDir values question
-
 - define output destination question
 */
 
@@ -237,13 +291,6 @@ start()
 })
 /*
 .then(function() {
-  return askYesNo('End here?').then(function(answer) {
-    console.log(answer.value);
-  });
-})
-*/
-/*
-.then(function() {
   return ask([
     inputQuestion('name', 'Define name:'),
     inputQuestion('route', 'Define route:'),
@@ -253,17 +300,40 @@ start()
     console.log( JSON.stringify(answers, null, 2) );
   });
 })
-.then(function() {
-  return ask(inputQuestion('name', 'Define name:', 'teste')).then(function(answer) {
-    console.log(answer.name);
-  });
-})
 */
 .then(function() {
-  return askAngularjsValues('apirest')
-    .then(function(answers) {
-      console.log( JSON.stringify(answers, null, 2) );
-    });
+  console.log( 'Angular.js Values' );
+  return askAngularjsValues('apirest');
+})
+.then(function(answers) {
+  console.log( JSON.stringify(answers, null, 2) );
+})
+
+
+.then(function() {
+  console.log( 'Grunt.js Config Values' );
+  return askGruntConfigValues();
+})
+.then(function(answers) {
+  console.log( JSON.stringify(answers, null, 2) );
+})
+
+
+.then(function() {
+  console.log( 'Hello World Values' );
+  return askHelloWorldValues();
+})
+.then(function(answers) {
+  console.log( JSON.stringify(answers, null, 2) );
+})
+
+
+.then(function() {
+  console.log( 'TplsDir Values' );
+  return askTplsDirValues();
+})
+.then(function(answers) {
+  console.log( JSON.stringify(answers, null, 2) );
 })
 ;
 
