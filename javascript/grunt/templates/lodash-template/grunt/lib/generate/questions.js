@@ -157,30 +157,7 @@ function askName() {
 
   //---
 
-function askAngularjsValues(options) {
-  var restContext = 'rest',
-      askResourceURL = false;
-
-  // @begin: check param
-  if( !options ) {
-
-    options = {
-      restContext: null,
-      askResourceURL: null
-    };
-
-  } else if( _.isBoolean( options ) ) {
-
-    askResourceURL = options;
-
-  } else if( _.isString( options ) ) {
-
-    restContext = options;
-    askResourceURL = true;
-
-  }
-  // @end: check param
-
+function askAngularjsPageValues() {
   var output = {};
 
   return askName()
@@ -191,20 +168,30 @@ function askAngularjsValues(options) {
     })
     .then(function(answer) {
       output.route = answer.input;
-
-      if(askResourceURL) {
-        return ask(inputQuestion(
-          'input',
-          'Define resource url:',
-          path.join(restContext, output.name)
-        ))
-        .then(function(answer) {
-          output.endpoint = answer.input;
-        });
-      }
     })
     .then(function() {
       return output;
+    });
+}
+
+function askAngularjsCrudValues(restContext) {
+  restContext = restContext || 'rest';
+
+  return askAngularjsPageValues()
+    .then(function(output) {
+
+      return ask(inputQuestion(
+        'input',
+        'Define resource url:',
+        path.join(restContext, output.name)
+      ))
+      .then(function(answer) {
+        output.endpoint = answer.input;
+      })
+      .then(function() {
+        return output;
+      });
+
     });
 }
 
@@ -303,7 +290,8 @@ start()
 */
 .then(function() {
   console.log( 'Angular.js Values' );
-  return askAngularjsValues('apirest');
+  return askAngularjsPageValues();
+  //return askAngularjsCrudValues('apirest');
 })
 .then(function(answers) {
   console.log( JSON.stringify(answers, null, 2) );
