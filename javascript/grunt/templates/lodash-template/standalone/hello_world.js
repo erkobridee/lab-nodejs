@@ -1,11 +1,11 @@
 var _ = require('lodash-node');
 
-var templateStr = 'hello <%= value %>';
+var templateStr = 'hello <%= greeting %>';
 
 console.log(templateStr);
 
 var templateValues = {
-  value: 'world'
+  greeting: 'world'
 };
 
 var compiledValue = _.template(templateStr, templateValues);

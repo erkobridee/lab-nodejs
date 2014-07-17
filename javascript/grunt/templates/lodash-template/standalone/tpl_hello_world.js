@@ -14,7 +14,7 @@ console.log( templateFile );
 //---
 
 var templateValues = {
-  value: 'world'
+  greeting: 'world'
 };
 
 //---
