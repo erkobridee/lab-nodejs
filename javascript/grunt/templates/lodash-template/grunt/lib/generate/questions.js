@@ -5,6 +5,16 @@ var path      = require('path'),
 
 //---
 
+var outputAnswers = {
+  source: '', // template
+  destination: '', // output
+  restContext: null,
+  debug: false,
+  values: null
+};
+
+//---
+
 function ask(questions, cb) {
   var promise = null;
 
@@ -119,6 +129,28 @@ function inputQuestion(name, message, defaultAnswer, fnValidate) {
   };
 }
 
+var askFor = {
+
+  'template': null,
+
+  'yes_no': null,
+  'not_empty_answer': null,
+  'name': null,
+
+  'values': {
+    'gruntjs_config': null,
+
+    'angularjs_page': null,
+    'angularjs_crud': null,
+
+    'hello_world': null,
+    'tplsDir': null
+  },
+
+  'output': null
+
+};
+
 //---
 
 function askTemplate(key) {
@@ -146,6 +178,7 @@ function askNotEmptyAnswer(forValue) {
     'Define ' + forValue + ':',
     null,
     function( value ) {
+      // TODO: verify white spaces
       var valid =  !_.isEmpty(value) && !_.isNumber(value);
       return valid || 'Please enter a ' + forValue;
     }));
@@ -174,16 +207,14 @@ function askAngularjsPageValues() {
     });
 }
 
-function askAngularjsCrudValues(restContext) {
-  restContext = restContext || 'rest';
-
+function askAngularjsCrudValues() {
   return askAngularjsPageValues()
     .then(function(output) {
 
       return ask(inputQuestion(
         'input',
         'Define resource url:',
-        path.join(restContext, output.name)
+        path.join(outputAnswers.restContext, output.name)
       ))
       .then(function(answer) {
         output.endpoint = answer.input;
@@ -249,26 +280,47 @@ TODO:
 
 //---
 
-var outputAnswers = {
-  source: '', // template
-  destination: '', // output
-  values: {}
-};
-
-//---
-
 console.log('generate questions');
 
 
 // TODO: module.exports =
 
-function start() {
+function start(options) {
+
+  //------------------------
+  // @begin: check options
+
+  /*
+  var options = {
+    source: '',
+    destination: '',
+    restContext: ''
+  };
+  */
+
+  if( !options ) throw new Error('options not defined');
+
+  if( !options.source )  throw new Error('options.source not defined');
+  outputAnswers.source = options.source;
+
+  if( !options.destination )  throw new Error('options.destination not defined');
+  outputAnswers.destination = options.destination;
+
+  outputAnswers.restContext = options.restContext || 'rest';
+
+  // @end: check options
+  //------------------------
+
   var deferred = Q.defer();
   deferred.resolve('ok');
   return deferred.promise;
 }
 
-start()
+start({
+  source: '/templates',
+  destination: '/dist',
+  restContext: 'apirest'
+})
 .then(function(msg) {
   return askTemplate('available');
 })
@@ -290,8 +342,8 @@ start()
 */
 .then(function() {
   console.log( 'Angular.js Values' );
-  return askAngularjsPageValues();
-  //return askAngularjsCrudValues('apirest');
+  //return askAngularjsPageValues();
+  return askAngularjsCrudValues();
 })
 .then(function(answers) {
   console.log( JSON.stringify(answers, null, 2) );
