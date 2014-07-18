@@ -119,6 +119,10 @@ _.forEach(templatesMap, function(val, key) {
 
 //---
 
+function hasWhiteSpace(s) {
+  return /\s/g.test(s);
+}
+
 function inputQuestion(name, message, defaultAnswer, fnValidate) {
   return {
     type: 'input',
@@ -129,39 +133,148 @@ function inputQuestion(name, message, defaultAnswer, fnValidate) {
   };
 }
 
+//---
+
 var askFor = {
 
-  'template': null,
-
-  'yes_no': null,
-  'not_empty_answer': null,
-  'name': null,
-
-  'values': {
-    'gruntjs_config': null,
-
-    'angularjs_page': null,
-    'angularjs_crud': null,
-
-    'hello_world': null,
-    'tplsDir': null
+  template: function(key) {
+    return ask(questions.templates[key])
+      .then(function(answer) {
+        if(answer.selected.type === 'question') {
+          return askFor.template(answer.selected.key);
+        }
+        return answer;
+      });
   },
+
+  yes_no: function(msg, defaultAnswer) {
+    defaultAnswer = defaultAnswer || true;
+    return ask({
+      type: 'confirm',
+      name: 'value',
+      message: msg,
+      default: defaultAnswer
+    });
+  },
+
+  not_empty_answer: function(forValue, checkWhitespaces) {
+    if(_.isUndefined(checkWhitespaces)) checkWhitespaces = true;
+    return ask(inputQuestion(
+      'input',
+      'Define ' + forValue + ':',
+      null,
+      function( value ) {
+        var msg = 'Please enter a ' + forValue;
+        var valid =  !_.isEmpty(value) && !_.isNumber(value);
+        if(valid && checkWhitespaces) {
+          valid = (hasWhiteSpace(value) ? msg + ' without whitespaces' : true);
+        }
+        return valid || msg;
+      }));
+  },
+
+  name: function() {
+    return askFor.not_empty_answer('name');
+  },
+
+
+  values: {
+
+    gruntjs_config: function() {
+      return askFor.name()
+        .then(function(answer) {
+          return { 'name': answer.input };
+        });
+    },
+
+
+    angularjs_page: function() {
+      var output = {};
+
+      return askFor.name()
+        .then(function(answer) {
+          output.name = answer.input;
+
+          return ask(inputQuestion('input', 'Define route:', output.name));
+        })
+        .then(function(answer) {
+          output.route = answer.input;
+        })
+        .then(function() {
+          return output;
+        });
+    },
+
+    angularjs_crud: function() {
+      return askFor.values['angularjs_page']()
+        .then(function(output) {
+
+          return ask(inputQuestion(
+            'input',
+            'Define resource url:',
+            path.join(outputAnswers.restContext, output.name)
+          ))
+          .then(function(answer) {
+            output.endpoint = answer.input;
+          })
+          .then(function() {
+            return output;
+          });
+
+        });
+    },
+
+
+    hello_world: function() {
+      return askFor.not_empty_answer('greeting', false)
+        .then(function(answer) {
+          return { 'greeting': answer.input };
+        });
+    },
+
+    tplsDir: function() {
+      var output = {
+        'name': null,
+        'users': null
+      };
+
+      function askUserName() {
+        return askFor.not_empty_answer('user name', false)
+          .then(function(answer) {
+            if( !output.users ) output.users = [];
+            output.users.push( answer.input );
+            return askToAddUser();
+          });
+      }
+
+      function askToAddUser() {
+        return askFor.yes_no('Add user?')
+          .then(function(answer) {
+            if(answer.value) return askUserName();
+          });
+      }
+
+      return askFor.name()
+        .then(function(answer) {
+          output.name = answer.input;
+          return askToAddUser();
+        })
+        .then(function() {
+          return output;
+        });
+
+    }
+
+  },
+
 
   'output': null
 
 };
 
-//---
-
-function askTemplate(key) {
-  return ask(questions.templates[key]).then(function(answer) {
-    if(answer.selected.type === 'question') return askTemplate(answer.selected.key);
-    return answer;
-  });
-}
-
   //---
 
+/*
 function askYesNo(msg, defaultAnswer) {
   defaultAnswer = defaultAnswer || true;
   return ask({
@@ -172,28 +285,35 @@ function askYesNo(msg, defaultAnswer) {
   });
 }
 
-function askNotEmptyAnswer(forValue) {
+
+function askNotEmptyAnswer(forValue, checkWhitespaces) {
+  if(_.isUndefined(checkWhitespaces)) checkWhitespaces = true;
   return ask(inputQuestion(
     'input',
     'Define ' + forValue + ':',
     null,
     function( value ) {
-      // TODO: verify white spaces
+      var msg = 'Please enter a ' + forValue;
       var valid =  !_.isEmpty(value) && !_.isNumber(value);
-      return valid || 'Please enter a ' + forValue;
+      if(valid && checkWhitespaces) {
+        valid = (hasWhiteSpace(value) ? msg + ' without whitespaces' : true);
+      }
+      return valid || msg;
     }));
 }
 
-function askName() {
-  return askNotEmptyAnswer('name');
-}
 
+function askName() {
+  return askFor.not_empty_answer('name');
+}
+*/
   //---
 
+/*
 function askAngularjsPageValues() {
   var output = {};
 
-  return askName()
+  return askFor.name()
     .then(function(answer) {
       output.name = answer.input;
 
@@ -225,16 +345,18 @@ function askAngularjsCrudValues() {
 
     });
 }
+*/
 
+/*
 function askGruntConfigValues() {
-  return askName()
+  return askFor.name()
     .then(function(answer) {
       return { 'name': answer.input };
     });
 }
 
 function askHelloWorldValues() {
-  return askNotEmptyAnswer('greeting')
+  return askFor.not_empty_answer('greeting', false)
     .then(function(answer) {
       return { 'greeting': answer.input };
     });
@@ -247,7 +369,7 @@ function askTplsDirValues() {
   };
 
   function askUserName() {
-    return askNotEmptyAnswer('user name')
+    return askFor.not_empty_answer('user name', false)
       .then(function(answer) {
         if( !output.users ) output.users = [];
         output.users.push( answer.input );
@@ -256,13 +378,13 @@ function askTplsDirValues() {
   }
 
   function askToAddUser() {
-    return askYesNo('Add user?')
+    return askFor.yes_no('Add user?')
       .then(function(answer) {
         if(answer.value) return askUserName();
       });
   }
 
-  return askName()
+  return askFor.name()
     .then(function(answer) {
       output.name = answer.input;
       return askToAddUser();
@@ -272,10 +394,15 @@ function askTplsDirValues() {
     });
 
 }
+*/
 
 /*
 TODO:
 - define output destination question
+  - ask to change output destination
+    - input new output destination
+  - check if directory/file exists
+    - ask to overwrite
 */
 
 //---
@@ -322,7 +449,7 @@ start({
   restContext: 'apirest'
 })
 .then(function(msg) {
-  return askTemplate('available');
+  return askFor.template('available')
 })
 .then(function(answer) {
   console.log( 'selected?' );
@@ -342,8 +469,7 @@ start({
 */
 .then(function() {
   console.log( 'Angular.js Values' );
-  //return askAngularjsPageValues();
-  return askAngularjsCrudValues();
+  return askFor.values['angularjs_crud']();
 })
 .then(function(answers) {
   console.log( JSON.stringify(answers, null, 2) );
@@ -352,7 +478,7 @@ start({
 
 .then(function() {
   console.log( 'Grunt.js Config Values' );
-  return askGruntConfigValues();
+  return askFor.values['gruntjs_config']();
 })
 .then(function(answers) {
   console.log( JSON.stringify(answers, null, 2) );
@@ -361,7 +487,7 @@ start({
 
 .then(function() {
   console.log( 'Hello World Values' );
-  return askHelloWorldValues();
+  return  askFor.values['hello_world']();
 })
 .then(function(answers) {
   console.log( JSON.stringify(answers, null, 2) );
@@ -370,7 +496,7 @@ start({
 
 .then(function() {
   console.log( 'TplsDir Values' );
-  return askTplsDirValues();
+  return askFor.values['tplsDir']();
 })
 .then(function(answers) {
   console.log( JSON.stringify(answers, null, 2) );
