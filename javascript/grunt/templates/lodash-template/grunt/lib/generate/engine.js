@@ -30,7 +30,10 @@ module.exports = function( options ) {
   var options = {
     source: '',
     destination: '',
-    values: {}
+    values: {},
+
+    debug: false,
+    updateFileName: function or string
   };
   */
 
@@ -47,7 +50,24 @@ module.exports = function( options ) {
   if( !options.values )  throw new Error('options.values not defined');
   var values = options.values;
 
-  var _updateFileName = options.updateFileName || function( name ) { return name; };
+  //---------------------------------------------
+
+  var _updateFileName = null;
+  if( _.isFunction( options.updateFileName ) ) {
+
+    _updateFileName = options.updateFileName;
+
+  } else if( _.isString( options.updateFileName ) ) {
+
+    _updateFileName = function( ignored ) {
+      return options.updateFileName;
+    };
+
+  } else {
+
+    _updateFileName = function( filename ) { return filename; };
+
+  }
 
   //---------------------------------------------
 
