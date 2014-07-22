@@ -1,13 +1,11 @@
 module.exports = function(grunt) {
   'use strict';
 
-  var _       = require('lodash-node');
-  var _s      = require( 'underscore.string' );
-  var path    = require( 'path' );
-  var engine  = require( '../lib/generate/engine' );
-
-
-  console.log(engine);
+  var _         = require('lodash-node');
+  var _s        = require( 'underscore.string' );
+  var path      = require( 'path' );
+  var engine    = require( '../lib/generate/engine' );
+  var questions = require( '../lib/generate/questions' );
 
   grunt.registerTask(
     'generate',
