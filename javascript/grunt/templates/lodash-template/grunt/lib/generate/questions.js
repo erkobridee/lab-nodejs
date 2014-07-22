@@ -1,6 +1,8 @@
 var path      = require('path'),
     _         = require('lodash-node'),
     Q         = require('q'),
+    fs        = require('q-io/fs'),
+    moment    = require('moment'),
     inquirer  = require('inquirer');
 
 //---
@@ -10,45 +12,46 @@ var outputAnswers = {
   destination: '', // output
   restContext: null,
   debug: false,
-  values: null
+  values: null,
+  updateFileName: null
 };
 
 //---
 
-function ask(questions, cb) {
-  var promise = null;
-
-  if( !cb ) {
-    var deferred = Q.defer();
-    cb = deferred.resolve;
-    promise = deferred.promise;
-  }
-
-  inquirer.prompt(questions, cb);
-
-  return promise;
-}
-
-//---
-
 var templates = {
+  'plain_text': {
+    type: 'file',
+    source: 'plain_text.txt',
+  },
   'hello_world': {
-    template: 'hello_world.jst'
+    type: 'file',
+    source: 'hello_world.jst',
+    destination: {
+      filename: 'hello_world.txt'
+    }
   },
   'tplsDir': {
-    template: '/tplsDir'
+    type: 'directory',
+    source: '/tplsDir'
   },
 
 
   'gruntjs_config': {
-    template: '/gruntjs/config.js',
-    destination: 'helpers/grunt/config'
+    type: 'file',
+    source: '/gruntjs/config.js',
+    destination: {
+      dirname: 'helpers/grunt/config'
+    }
   },
   'angularjs_page': {
-    template: '/angularjs/page'
+    type: 'directory',
+    source: '/angularjs/page',
+    destination: 'app'
   },
   'angularjs_crud': {
-    template: '/angularjs/crud'
+    type: 'directory',
+    source: '/angularjs/crud',
+    destination: 'app'
   }
 };
 
@@ -69,6 +72,10 @@ var questions = {
       name: 'selected',
       message: 'Select Template',
       choices: [
+        {
+          name: 'Plain Text File',
+          value: { type: 'template', key: 'plain_text' }
+        },
         {
           name: 'Hello World',
           value: { type: 'template', key: 'hello_world' }
@@ -109,14 +116,6 @@ var questions = {
 
 };
 
-/*
-_.forEach(templatesMap, function(val, key) {
-  console.log('key: ' + key);
-  console.log('value: ' + val);
-  console.log('---\n');
-});
-*/
-
 //---
 
 function hasWhiteSpace(s) {
@@ -135,6 +134,22 @@ function inputQuestion(name, message, defaultAnswer, fnValidate) {
 
 //---
 
+function ask(questions, cb) {
+  var promise = null;
+
+  if( !cb ) {
+    var deferred = Q.defer();
+    cb = deferred.resolve;
+    promise = deferred.promise;
+  }
+
+  inquirer.prompt(questions, cb);
+
+  return promise;
+}
+
+//---
+
 var askFor = {
 
   template: function(key) {
@@ -148,7 +163,7 @@ var askFor = {
   },
 
   yes_no: function(msg, defaultAnswer) {
-    defaultAnswer = defaultAnswer || true;
+    if( _.isUndefined( defaultAnswer ) ) defaultAnswer = true;
     return ask({
       type: 'confirm',
       name: 'value',
@@ -158,7 +173,7 @@ var askFor = {
   },
 
   not_empty_answer: function(forValue, checkWhitespaces) {
-    if(_.isUndefined(checkWhitespaces)) checkWhitespaces = true;
+    if( _.isUndefined( checkWhitespaces ) ) checkWhitespaces = true;
     return ask(inputQuestion(
       'input',
       'Define ' + forValue + ':',
@@ -225,6 +240,14 @@ var askFor = {
     },
 
 
+
+    plain_text: function() {
+      return askFor.not_empty_answer('content', false)
+        .then(function(answer) {
+          return { 'content': answer.input };
+        });
+    },
+
     hello_world: function() {
       return askFor.not_empty_answer('greeting', false)
         .then(function(answer) {
@@ -274,127 +297,44 @@ var askFor = {
 
   //---
 
-/*
-function askYesNo(msg, defaultAnswer) {
-  defaultAnswer = defaultAnswer || true;
-  return ask({
-    type: 'confirm',
-    name: 'value',
-    message: msg,
-    default: defaultAnswer
-  });
+function checkIfExists( checkPath ) {
+  return fs.exists( checkPath );
 }
 
+function renameOld( pathToRename ) {
+  return fs.stat( pathToRename )
+    .then(function( stat ) {
 
-function askNotEmptyAnswer(forValue, checkWhitespaces) {
-  if(_.isUndefined(checkWhitespaces)) checkWhitespaces = true;
-  return ask(inputQuestion(
-    'input',
-    'Define ' + forValue + ':',
-    null,
-    function( value ) {
-      var msg = 'Please enter a ' + forValue;
-      var valid =  !_.isEmpty(value) && !_.isNumber(value);
-      if(valid && checkWhitespaces) {
-        valid = (hasWhiteSpace(value) ? msg + ' without whitespaces' : true);
+      var target = '';
+      var now = moment().format('YYYYMMDDHHmmss');
+
+      if( stat.isDirectory() ) {
+
+        target = pathToRename + '_' + now;
+
+      } else if( stat.isFile() ) {
+
+        var dirname = path.dirname( pathToRename ),
+            extname = path.extname( pathToRename )
+            filename = path.basename( pathToRename, extname );
+
+        target = path.join( dirname, ( filename + '_' + now + extname ) );
+
+      } else {
+
+        throw new Error( 'Invalid : \n  ' + pathToRename );
+
       }
-      return valid || msg;
-    }));
+
+      return fs.rename( pathToRename, target )
+        .then(function() {
+          return 'renamed from: [' + pathToRename + '] to [' + target + ']';
+        });
+
+    });
 }
 
-
-function askName() {
-  return askFor.not_empty_answer('name');
-}
-*/
   //---
-
-/*
-function askAngularjsPageValues() {
-  var output = {};
-
-  return askFor.name()
-    .then(function(answer) {
-      output.name = answer.input;
-
-      return ask(inputQuestion('input', 'Define route:', output.name));
-    })
-    .then(function(answer) {
-      output.route = answer.input;
-    })
-    .then(function() {
-      return output;
-    });
-}
-
-function askAngularjsCrudValues() {
-  return askAngularjsPageValues()
-    .then(function(output) {
-
-      return ask(inputQuestion(
-        'input',
-        'Define resource url:',
-        path.join(outputAnswers.restContext, output.name)
-      ))
-      .then(function(answer) {
-        output.endpoint = answer.input;
-      })
-      .then(function() {
-        return output;
-      });
-
-    });
-}
-*/
-
-/*
-function askGruntConfigValues() {
-  return askFor.name()
-    .then(function(answer) {
-      return { 'name': answer.input };
-    });
-}
-
-function askHelloWorldValues() {
-  return askFor.not_empty_answer('greeting', false)
-    .then(function(answer) {
-      return { 'greeting': answer.input };
-    });
-}
-
-function askTplsDirValues() {
-  var output = {
-    'name': null,
-    'users': null
-  };
-
-  function askUserName() {
-    return askFor.not_empty_answer('user name', false)
-      .then(function(answer) {
-        if( !output.users ) output.users = [];
-        output.users.push( answer.input );
-        return askToAddUser();
-      });
-  }
-
-  function askToAddUser() {
-    return askFor.yes_no('Add user?')
-      .then(function(answer) {
-        if(answer.value) return askUserName();
-      });
-  }
-
-  return askFor.name()
-    .then(function(answer) {
-      output.name = answer.input;
-      return askToAddUser();
-    })
-    .then(function() {
-      return output;
-    });
-
-}
-*/
 
 /*
 TODO:
@@ -404,6 +344,157 @@ TODO:
   - check if directory/file exists
     - ask to overwrite
 */
+
+function askOutputFile() {
+
+  //-----------------------------------
+  // @begin: define output attributes
+  var outputDestination = outputAnswers.destination.dirname;
+  var selectedTemplate = outputAnswers.template;
+
+  var output = {
+    dirname: outputDestination,
+    file: null
+  };
+
+  if(selectedTemplate.destination) {
+    if(selectedTemplate.destination.dirname) output.dirname = selectedTemplate.destination.dirname;
+    if(selectedTemplate.destination.filename) {
+      var extname = path.extname( selectedTemplate.destination.filename );
+      output.file = {
+        name: path.basename( selectedTemplate.destination.filename, extname ),
+        ext: extname
+      };
+    }
+  }
+
+  if( !output.file ) {
+    if( outputAnswers.values.name ) {
+      output.file = {
+        name: outputAnswers.values.name,
+        ext: path.extname( selectedTemplate.source )
+      };
+    } else {
+      var extname = path.extname(  selectedTemplate.source  );
+      var basename = path.basename( selectedTemplate.source );
+      output.file = {
+        name: path.basename( basename, extname ),
+        ext: extname
+      };
+    }
+  }
+  //@end: define output attributes
+  //-----------------------------------
+
+  function getOutputPath() {
+    return path.join(output.dirname, output.file.name + output.file.ext);
+  }
+
+  //-----------------------------------
+
+  function askForChangeOutput( defaultAnswer ) {
+    if( _.isUndefined( defaultAnswer ) ) defaultAnswer = false;
+
+    var outputPath = getOutputPath();
+
+    var questionMsg = 'Change output:';
+    questionMsg += '\n    directory : ' + output.dirname;
+    questionMsg += '\n    file';
+    questionMsg += '\n      name    : ' + output.file.name;
+    questionMsg += '\n      ext     : ' + output.file.ext;
+    questionMsg += '\n    path      : ' + outputPath;
+    questionMsg += '\n';
+
+    return askFor.yes_no(questionMsg, defaultAnswer)
+      .then(function( answer ) {
+
+        console.log( 'respondido...' );
+
+        if( answer.value ) {
+
+          /* TODO:
+
+    2 - ask if user want to change output
+      yes:
+       ask to change? all path / output dir / output filename [use question list]
+
+          */
+
+        } else {
+
+          /* TODO:
+
+    3 - check if exists
+      yes:
+        overwrite?
+        not overwrite
+          ask to change? all path / output dir / output filename
+          */
+
+          console.log( outputPath );
+
+          return checkIfExists( outputPath )
+            .then(function (flag) {
+
+              console.log( 'file exists: ' + flag );
+
+              if( flag ){
+                // yes: ask to overwrite
+
+                  // yes: rename old
+
+                  // no: ask to change output
+
+                return askFor.yes_no('File already exists, overwrite?', false)
+                  .then(function( answer ) {
+
+                      if( answer.value ) { // overwrite file
+                        return renameOld( outputPath );
+                      } else { // ask to change output
+                        return askForChangeOutput( true ); // set default answer to true
+                      }
+
+                  });
+              }
+
+              return 'finished';
+
+            });
+
+        }
+
+        console.log( 'change? ' + answer.value );
+        return answer.value;
+      });
+
+  }
+
+
+  //-----------------------------------
+  return askForChangeOutput()
+    .then(function() {
+      // TODO: review ouput
+      return output;
+    });
+
+}
+
+
+
+function askOutputDirectory() {
+  return 'is directory';
+}
+
+
+function askOutput() {
+
+  if(outputAnswers.template.type === 'file') {
+    return askOutputFile();
+  } else if(outputAnswers.template.type === 'directory') {
+    return askOutputDirectory();
+  }
+
+}
 
 //---
 
@@ -431,7 +522,7 @@ function start(options) {
   outputAnswers.source = options.source;
 
   if( !options.destination )  throw new Error('options.destination not defined');
-  outputAnswers.destination = options.destination;
+  outputAnswers.destination = { dirname: options.destination };
 
   outputAnswers.restContext = options.restContext || 'rest';
 
@@ -445,61 +536,48 @@ function start(options) {
 
 start({
   source: '/templates',
-  destination: '/dist',
+  destination: '../../dist',
   restContext: 'apirest'
 })
 .then(function(msg) {
+  console.log( 'selecte template' );
   return askFor.template('available')
 })
 .then(function(answer) {
-  console.log( 'selected?' );
-  console.log( answer.selected );
-})
-/*
-.then(function() {
-  return ask([
-    inputQuestion('name', 'Define name:'),
-    inputQuestion('route', 'Define route:'),
-    inputQuestion('endpoint', 'Define resource URL:'),
-  ])
-  .then(function(answers) {
-    console.log( JSON.stringify(answers, null, 2) );
-  });
-})
-*/
-.then(function() {
-  console.log( 'Angular.js Values' );
-  return askFor.values['angularjs_crud']();
+  console.log( 'ask values for: ' + answer.selected.key );
+
+//-------------------------------------------
+  // @begin: define : source
+  var template = templates[answer.selected.key];
+
+  outputAnswers.template = template;
+
+  outputAnswers.source = path.join( outputAnswers.source, template.source );
+  // @end: define : source
+  //-------------------------------------------
+
+  return askFor.values[answer.selected.key]();
 })
 .then(function(answers) {
+  outputAnswers.values = answers;
   console.log( JSON.stringify(answers, null, 2) );
 })
-
-
 .then(function() {
-  console.log( 'Grunt.js Config Values' );
-  return askFor.values['gruntjs_config']();
-})
-.then(function(answers) {
-  console.log( JSON.stringify(answers, null, 2) );
-})
+  console.log( 'TODO: ask for output infos' );
 
+  return askOutput();
+})
+.then(function (answers) {
 
+  console.log(answers);
+
+})
 .then(function() {
-  console.log( 'Hello World Values' );
-  return  askFor.values['hello_world']();
-})
-.then(function(answers) {
-  console.log( JSON.stringify(answers, null, 2) );
-})
+  // TODO: ask to debug generate engine
 
-
-.then(function() {
-  console.log( 'TplsDir Values' );
-  return askFor.values['tplsDir']();
-})
-.then(function(answers) {
-  console.log( JSON.stringify(answers, null, 2) );
+  console.log( 'output object to engine' );
+  //return outputAnswers;
+  console.log( JSON.stringify(outputAnswers, null, 2) );
 })
 ;
 
