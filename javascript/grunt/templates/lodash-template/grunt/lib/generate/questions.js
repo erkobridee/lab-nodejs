@@ -357,9 +357,13 @@ function askOutputFile() {
     file: null
   };
 
-  if(selectedTemplate.destination) {
-    if(selectedTemplate.destination.dirname) output.dirname = selectedTemplate.destination.dirname;
-    if(selectedTemplate.destination.filename) {
+  if( selectedTemplate.destination ) {
+
+    if( selectedTemplate.destination.dirname ) {
+      output.dirname = selectedTemplate.destination.dirname;
+    }
+
+    if( selectedTemplate.destination.filename ) {
       var extname = path.extname( selectedTemplate.destination.filename );
       output.file = {
         name: path.basename( selectedTemplate.destination.filename, extname ),
@@ -392,59 +396,94 @@ function askOutputFile() {
 
   //-----------------------------------
 
+  function updateOutput() {
+
+    var whatToUpdate = {
+      type: 'list',
+      name: 'selected',
+      message: 'Update',
+      choices: [
+        {
+          name: 'Directory       : ' + output.dirname,
+          value: 'dirname'
+        },
+        {
+          name: 'File name       : ' + output.file.name,
+          value: 'filename'
+        },
+        {
+          name: 'File extension  : ' + output.file.ext,
+          value: 'fileext'
+        }
+      ]
+    };
+
+    var update = {
+      dirname: function() {
+        // TODO: review and define another input validator
+        return askFor.not_empty_answer('directory')
+          .then(function( answer ) {
+            output.dirname = answer.input;
+          });
+      },
+
+      filename: function() {
+        // TODO: review and define another input validator
+        return askFor.not_empty_answer('file name')
+          .then(function( answer ) {
+            output.file.name = answer.input;
+          });
+      },
+
+      fileext: function() {
+        // TODO: review and define another input validator
+        return askFor.not_empty_answer('file extension')
+          .then(function( answer ) {
+            var ext = answer.input;
+            if( ext.indexOf('.') !== 0 ) ext = '.' + ext;
+            output.file.ext = ext;
+          });
+      }
+    };
+
+    return ask(whatToUpdate)
+      .then(function(answer) {
+        return update[answer.selected]();
+      })
+      .then(function() {
+        return askForChangeOutput();
+      })
+    ;
+  }
+
+  //-----------------------------------
+
   function askForChangeOutput( defaultAnswer ) {
     if( _.isUndefined( defaultAnswer ) ) defaultAnswer = false;
 
     var outputPath = getOutputPath();
 
-    var questionMsg = 'Change output:';
+    var questionMsg = 'Change output';
     questionMsg += '\n    directory : ' + output.dirname;
     questionMsg += '\n    file';
     questionMsg += '\n      name    : ' + output.file.name;
     questionMsg += '\n      ext     : ' + output.file.ext;
     questionMsg += '\n    path      : ' + outputPath;
-    questionMsg += '\n';
+    questionMsg += '\n>>> ';
 
     return askFor.yes_no(questionMsg, defaultAnswer)
       .then(function( answer ) {
 
-        console.log( 'respondido...' );
-
         if( answer.value ) {
 
-          /* TODO:
-
-    2 - ask if user want to change output
-      yes:
-       ask to change? all path / output dir / output filename [use question list]
-
-          */
+          return updateOutput();
 
         } else {
-
-          /* TODO:
-
-    3 - check if exists
-      yes:
-        overwrite?
-        not overwrite
-          ask to change? all path / output dir / output filename
-          */
-
-          console.log( outputPath );
 
           return checkIfExists( outputPath )
             .then(function (flag) {
 
-              console.log( 'file exists: ' + flag );
-
-              if( flag ){
-                // yes: ask to overwrite
-
-                  // yes: rename old
-
-                  // no: ask to change output
-
+              if( flag ) {
                 return askFor.yes_no('File already exists, overwrite?', false)
                   .then(function( answer ) {
 
@@ -463,8 +502,6 @@ function askOutputFile() {
 
         }
 
-        console.log( 'change? ' + answer.value );
-        return answer.value;
       });
 
   }
@@ -473,8 +510,21 @@ function askOutputFile() {
   //-----------------------------------
   return askForChangeOutput()
     .then(function() {
-      // TODO: review ouput
-      return output;
+
+      // TODO: review
+
+      var fileOutput = {
+        dirname: output.dirname,
+        filename: (output.file.name + output.file.ext)
+      };
+
+      // @begin: update outputAnswers
+      outputAnswers.destination = fileOutput.dirname;
+      outputAnswers.updateFileName = fileOutput.filename;
+      delete outputAnswers.template;
+      // @end: update outputAnswers
+
+      return fileOutput;
     });
 
 }
@@ -497,11 +547,6 @@ function askOutput() {
 }
 
 //---
-
-console.log('generate questions');
-
-
-// TODO: module.exports =
 
 function start(options) {
 
@@ -529,56 +574,73 @@ function start(options) {
   // @end: check options
   //------------------------
 
+  /*
   var deferred = Q.defer();
   deferred.resolve('ok');
   return deferred.promise;
+  */
+
+  //console.log( 'selecte template' ); // TODO: remove
+
+  return askFor.template('available')
+    .then(function(answer) {
+      //console.log( 'ask values for: ' + answer.selected.key ); // TODO: remove
+
+      //-------------------------------------------
+      // @begin: define : source
+      var template = templates[answer.selected.key];
+
+      outputAnswers.template = template;
+
+      outputAnswers.source = path.join( outputAnswers.source, template.source );
+      // @end: define : source
+      //-------------------------------------------
+
+      return askFor.values[answer.selected.key]();
+    })
+    .then(function(answers) {
+      outputAnswers.values = answers;
+      //console.log( JSON.stringify(answers, null, 2) ); // TODO: remove
+    })
+    .then(function() {
+      //console.log( 'TODO: ask for output infos' ); // TODO: remove
+
+      return askOutput();
+    })
+    .then(function (answers) {
+
+      // TODO: update outputAnswers
+
+      console.log(answers); // TODO: remove
+
+      return askFor.yes_no('Debug generate engine', false);
+    })
+    .then(function( answer ) {
+
+      outputAnswers.debug = answer.value;
+      delete outputAnswers.restContext;
+
+      return outputAnswers;
+    });
+/*
+    .then(function( optionsToEngine ) {
+      console.log( 'options object to engine' );
+      console.log( JSON.stringify( optionsToEngine, null, 2 ) );
+    });
+*/
 }
 
+module.exports = start;
+
+//---
+
+// TODO: remove
 start({
   source: '/templates',
-  destination: '../../dist',
+  destination: '../../../dist',
   restContext: 'apirest'
 })
-.then(function(msg) {
-  console.log( 'selecte template' );
-  return askFor.template('available')
-})
-.then(function(answer) {
-  console.log( 'ask values for: ' + answer.selected.key );
-
-//-------------------------------------------
-  // @begin: define : source
-  var template = templates[answer.selected.key];
-
-  outputAnswers.template = template;
-
-  outputAnswers.source = path.join( outputAnswers.source, template.source );
-  // @end: define : source
-  //-------------------------------------------
-
-  return askFor.values[answer.selected.key]();
-})
-.then(function(answers) {
-  outputAnswers.values = answers;
-  console.log( JSON.stringify(answers, null, 2) );
-})
-.then(function() {
-  console.log( 'TODO: ask for output infos' );
-
-  return askOutput();
-})
-.then(function (answers) {
-
-  console.log(answers);
-
-})
-.then(function() {
-  // TODO: ask to debug generate engine
-
-  console.log( 'output object to engine' );
-  //return outputAnswers;
-  console.log( JSON.stringify(outputAnswers, null, 2) );
-})
-;
-
-
+.then(function( optionsToEngine ) {
+  console.log( 'options object to engine' );
+  console.log( JSON.stringify( optionsToEngine, null, 2 ) );
+});
