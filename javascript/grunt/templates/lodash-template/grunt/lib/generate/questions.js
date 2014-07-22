@@ -291,7 +291,15 @@ var askFor = {
   },
 
 
-  'output': null
+  output: {
+
+    check: null,
+
+    file: null,
+
+    directory: null
+
+  }
 
 };
 
