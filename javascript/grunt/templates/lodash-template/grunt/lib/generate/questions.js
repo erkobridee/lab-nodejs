@@ -5,7 +5,7 @@ var path      = require('path'),
     moment    = require('moment'),
     inquirer  = require('inquirer');
 
-//---
+//-----------------------------------------------------------------------------
 
 var outputAnswers = {
   source: '', // template
@@ -40,18 +40,18 @@ var templates = {
     type: 'file',
     source: '/gruntjs/config.js',
     destination: {
-      dirname: 'helpers/grunt/config'
+      dirname: 'helpers/grunt/config' // overwrite output destination
     }
   },
   'angularjs_page': {
     type: 'directory',
     source: '/angularjs/page',
-    destination: 'app'
+    destination: 'app' // concat with output destination
   },
   'angularjs_crud': {
     type: 'directory',
     source: '/angularjs/crud',
-    destination: 'app'
+    destination: 'app' // concat with output destination
   }
 };
 
@@ -116,7 +116,48 @@ var questions = {
 
 };
 
-//---
+//-----------------------------------------------------------------------------
+// @begin: file system utils
+
+function checkIfExists( checkPath ) {
+  return fs.exists( checkPath );
+}
+
+function renameOld( pathToRename ) {
+  return fs.stat( pathToRename )
+    .then(function( stat ) {
+
+      var target = '';
+      var now = moment().format('YYYYMMDDHHmmss');
+
+      if( stat.isDirectory() ) {
+
+        target = pathToRename + '_old_' + now;
+
+      } else if( stat.isFile() ) {
+
+        var dirname = path.dirname( pathToRename ),
+            extname = path.extname( pathToRename )
+            filename = path.basename( pathToRename, extname );
+
+        target = path.join( dirname, ( filename + '_' + now + extname ) );
+
+      } else {
+
+        throw new Error( 'Invalid : \n  ' + pathToRename );
+
+      }
+
+      return fs.rename( pathToRename, target )
+        .then(function() {
+          return 'renamed from: [' + pathToRename + '] to [' + target + ']';
+        });
+
+    });
+}
+
+// @end: file system utils
+//-----------------------------------------------------------------------------
 
 function hasWhiteSpace(s) {
   return /\s/g.test(s);
@@ -132,7 +173,7 @@ function inputQuestion(name, message, defaultAnswer, fnValidate) {
   };
 }
 
-//---
+//-----------------------------------------------------------------------------
 
 function ask(questions, cb) {
   var promise = null;
@@ -148,7 +189,8 @@ function ask(questions, cb) {
   return promise;
 }
 
-//---
+//-----------------------------------------------------------------------------
+// @begin: askFor
 
 var askFor = {
 
@@ -288,61 +330,34 @@ var askFor = {
 
     }
 
-  },
+  }, // @end: values
 
 
   output: {
 
-    check: null,
+    check: function() {
+      console.log( 'output.check: ' + outputAnswers.template.type ); // TODO: remove
+      return askFor.output[outputAnswers.template.type]();
+    },
 
-    file: null,
+    file: function() {
 
-    directory: null
+      return 'is file';
 
-  }
+    }, // @end: output.file
+
+    directory: function() {
+
+      return 'is directory';
+
+    } // @end: output.directory
+
+  } // @end: output
 
 };
 
-  //---
-
-function checkIfExists( checkPath ) {
-  return fs.exists( checkPath );
-}
-
-function renameOld( pathToRename ) {
-  return fs.stat( pathToRename )
-    .then(function( stat ) {
-
-      var target = '';
-      var now = moment().format('YYYYMMDDHHmmss');
-
-      if( stat.isDirectory() ) {
-
-        target = pathToRename + '_' + now;
-
-      } else if( stat.isFile() ) {
-
-        var dirname = path.dirname( pathToRename ),
-            extname = path.extname( pathToRename )
-            filename = path.basename( pathToRename, extname );
-
-        target = path.join( dirname, ( filename + '_' + now + extname ) );
-
-      } else {
-
-        throw new Error( 'Invalid : \n  ' + pathToRename );
-
-      }
-
-      return fs.rename( pathToRename, target )
-        .then(function() {
-          return 'renamed from: [' + pathToRename + '] to [' + target + ']';
-        });
-
-    });
-}
-
-  //---
+// @end: askFor
+//-----------------------------------------------------------------------------
 
 /*
 TODO:
@@ -357,8 +372,11 @@ function askOutputFile() {
 
   //-----------------------------------
   // @begin: define output attributes
+
   var outputDestination = outputAnswers.destination.dirname;
   var selectedTemplate = outputAnswers.template;
+
+  // TODO: check if template has helpers to assign to outputAnswers.values
 
   var output = {
     dirname: outputDestination,
@@ -367,17 +385,26 @@ function askOutputFile() {
 
   if( selectedTemplate.destination ) {
 
-    if( selectedTemplate.destination.dirname ) {
-      output.dirname = selectedTemplate.destination.dirname;
+    if( _.isString( selectedTemplate.destination ) ) {
+
+      output.dirname = path.join( output.dirname, selectedTemplate.destination );
+
+    } else {
+
+      if( selectedTemplate.destination.dirname ) {
+        output.dirname = selectedTemplate.destination.dirname;
+      }
+
+      if( selectedTemplate.destination.filename ) {
+        var extname = path.extname( selectedTemplate.destination.filename );
+        output.file = {
+          name: path.basename( selectedTemplate.destination.filename, extname ),
+          ext: extname
+        };
+      }
+
     }
 
-    if( selectedTemplate.destination.filename ) {
-      var extname = path.extname( selectedTemplate.destination.filename );
-      output.file = {
-        name: path.basename( selectedTemplate.destination.filename, extname ),
-        ext: extname
-      };
-    }
   }
 
   if( !output.file ) {
@@ -395,6 +422,7 @@ function askOutputFile() {
       };
     }
   }
+
   //@end: define output attributes
   //-----------------------------------
 
@@ -462,7 +490,7 @@ function askOutputFile() {
         return askForChangeOutput();
       })
     ;
-  }
+  } // @end: updateOutput()
 
   //-----------------------------------
 
@@ -512,10 +540,10 @@ function askOutputFile() {
 
       });
 
-  }
-
+  } // @end: askForChangeOutput( defaultAnswer )
 
   //-----------------------------------
+
   return askForChangeOutput()
     .then(function() {
 
@@ -537,12 +565,170 @@ function askOutputFile() {
 
 }
 
-
+//--- === --- !!! DIRECTORY !!! --- === ---
 
 function askOutputDirectory() {
-  return 'is directory';
+
+  //-----------------------------------
+  // @begin: define output attributes
+
+  var outputDestination = outputAnswers.destination.dirname;
+  var selectedTemplate = outputAnswers.template;
+
+  // TODO: check if template infos have helpers defined, assign to outputAnswers.values
+
+  var output = {
+
+    directory: {
+      base: outputDestination,
+      sub: '',
+      name: ''
+    }
+
+  };
+
+  if( selectedTemplate.destination ) {
+
+    if( _.isString( selectedTemplate.destination ) ) {
+
+      output.directory.sub = selectedTemplate.destination;
+
+    } else {
+
+      if( selectedTemplate.destination.dirname ) {
+        output.directory.base = selectedTemplate.destination.dirname;
+      }
+
+    }
+
+  }
+
+  if( outputAnswers.values && outputAnswers.values.name ) {
+    output.directory.name = outputAnswers.values.name;
+  }
+
+  //@end: define output attributes
+  //-----------------------------------
+
+  function getOutputPath() {
+    return path.join( output.directory.base, output.directory.sub, output.directory.name );
+  }
+
+  //-----------------------------------
+
+  function updateOutput() {
+
+    var whatToUpdate = {
+      type: 'list',
+      name: 'selected',
+      message: 'Update',
+      choices: [
+        {
+          name: 'Base directory  : ' + output.directory.base,
+          value: 'base'
+        },
+        {
+          name: 'Subdirectory    : ' + output.directory.sub,
+          value: 'sub'
+        }
+      ]
+    };
+
+    var update = {
+      base: function() {
+        // TODO: review and define another input validator
+        return askFor.not_empty_answer('base directory')
+          .then(function( answer ) {
+            output.directory.base = answer.input;
+          });
+      },
+
+      sub: function() {
+        // TODO: review and define another input validator
+        return askFor.not_empty_answer('subdirectory')
+          .then(function( answer ) {
+            output.directory.sub = answer.input;
+          });
+      }
+    };
+
+    return ask(whatToUpdate)
+      .then(function(answer) {
+        return update[answer.selected]();
+      })
+      .then(function() {
+        return askForChangeOutput();
+      })
+    ;
+  } // @end: updateOutput()
+
+  //-----------------------------------
+
+  function askForChangeOutput( defaultAnswer ) {
+    if( _.isUndefined( defaultAnswer ) ) defaultAnswer = false;
+
+    var outputPath = getOutputPath();
+
+    var questionMsg = 'Change output';
+    questionMsg += '\n    directory';
+    questionMsg += '\n      base     : ' + output.directory.base;
+    questionMsg += '\n      sub      : ' + output.directory.sub;
+    questionMsg += '\n      name     : ' + output.directory.name;
+    questionMsg += '\n    path       : ' + outputPath;
+    questionMsg += '\n>>> ';
+
+    return askFor.yes_no(questionMsg, defaultAnswer)
+      .then(function( answer ) {
+
+        if( answer.value ) {
+
+          return updateOutput();
+
+        } else {
+
+          return checkIfExists( outputPath )
+            .then(function (flag) {
+
+              if( flag ) {
+                return askFor.yes_no('Directory already exists, overwrite?', false)
+                  .then(function( answer ) {
+
+                      if( answer.value ) { // overwrite file
+                        return renameOld( outputPath );
+                      } else { // ask to change output
+                        return askForChangeOutput( true ); // set default answer to true
+                      }
+
+                  });
+              }
+
+              return 'finished';
+
+            });
+
+        }
+
+      });
+
+  } // @end: askForChangeOutput( defaultAnswer )
+
+  //-----------------------------------
+
+  return askForChangeOutput()
+    .then(function() {
+
+      // @begin: update outputAnswers
+      outputAnswers.destination = path.join( output.directory.base, output.directory.sub );
+      //outputAnswers.updateFileName = ??? >> check if some helper.updateFileName defined
+      delete outputAnswers.template;
+      // @end: update outputAnswers
+
+      return output;
+    });
+
 }
 
+//--- === ---
 
 function askOutput() {
 
@@ -611,8 +797,12 @@ function start(options) {
       //console.log( JSON.stringify(answers, null, 2) ); // TODO: remove
     })
     .then(function() {
-      //console.log( 'TODO: ask for output infos' ); // TODO: remove
-
+      return askFor.output.check();
+    })
+    .then(function(value) { // TODO: remove
+      console.log('askFor.output.check: ' + value);
+    })
+    .then(function() { // TODO: remove
       return askOutput();
     })
     .then(function (answers) {
