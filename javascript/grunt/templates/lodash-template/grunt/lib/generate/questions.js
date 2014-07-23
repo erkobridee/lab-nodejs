@@ -310,10 +310,14 @@ var askFor = {
         .then(function(answer) {
           output.name = answer.input;
 
-          return ask(inputQuestion('input', 'Define route:', output.name));
+          return ask(inputQuestion('input', 'Define route:', '/' + output.name));
         })
         .then(function(answer) {
-          output.route = answer.input;
+          var route = answer.input;
+          if( route.indexOf('/') === 0 ) {
+            route = route.slice(1, route.length);
+          }
+          output.route = route;
         })
         .then(function() {
           return output;
@@ -739,8 +743,21 @@ var askFor = {
       return askForChangeOutput()
         .then(function() {
 
+          function buildLocationAttribute() {
+            var location = '';
+
+            if( !_.isEmpty( output.directory.sub ) ) {
+              location += output.directory.sub + '/';
+            }
+
+            location += outputAnswers.values.name;
+
+            return location;
+          }
+
           // @begin: update outputAnswers
           checkTemplateHelpers();
+          outputAnswers.values.location = buildLocationAttribute();
           outputAnswers.destination = path.join( output.directory.base, output.directory.sub );
           // @end: update outputAnswers
 
