@@ -18,6 +18,15 @@ var outputAnswers = {
 
 //---
 
+// To assign on outputAnswers.values.helpers
+var commonHelpers = {
+  capitalize: function(value) {
+    return _s.capitalize(value);
+  }
+}
+
+//---
+
 var templates = {
   'plain_text': {
     type: 'file',
@@ -32,7 +41,12 @@ var templates = {
   },
   'tplsDir': {
     type: 'directory',
-    source: '/tplsDir'
+    source: '/tplsDir',
+    helpers: { // To assign on outputAnswers.values.helpers
+      updateFileName: function(sName) {
+        return values.name + _s.capitalize( sName );
+      }
+    }
   },
 
 
@@ -128,19 +142,20 @@ function renameOld( pathToRename ) {
     .then(function( stat ) {
 
       var target = '';
+      var infoString = '_old_';
       var now = moment().format('YYYYMMDDHHmmss');
 
       if( stat.isDirectory() ) {
 
-        target = pathToRename + '_old_' + now;
+        target = pathToRename + infoString + now;
 
       } else if( stat.isFile() ) {
 
         var dirname = path.dirname( pathToRename ),
-            extname = path.extname( pathToRename )
+            extname = path.extname( pathToRename ),
             filename = path.basename( pathToRename, extname );
 
-        target = path.join( dirname, ( filename + '_' + now + extname ) );
+        target = path.join( dirname, ( filename + infoString + now + extname ) );
 
       } else {
 
@@ -157,6 +172,42 @@ function renameOld( pathToRename ) {
 }
 
 // @end: file system utils
+//-----------------------------------------------------------------------------
+
+function checkTemplateHelpers() {
+
+  var selectedTemplate = outputAnswers.template,
+      updateFileName = null,
+      helpers = {};
+
+  _.assign( helpers, commonHelpers );
+
+  if( selectedTemplate.helpers ) {
+
+    _.assign( helpers, selectedTemplate.helpers );
+
+    updateFileName = selectedTemplate.helpers.updateFileName;
+    if(
+      updateFileName &&
+      _.isFunction( updateFileName )
+    ) {
+
+      outputAnswers.updateFileName = updateFileName;
+
+    }
+
+  }
+
+  _.assign( outputAnswers.values, { helpers: helpers } );
+
+  delete outputAnswers.template;
+
+  selectedTemplate = null;
+  updateFileName = null;
+  helpers = null;
+
+} // end: checkTemplateHelpers()
+
 //-----------------------------------------------------------------------------
 
 function hasWhiteSpace(s) {
@@ -263,7 +314,7 @@ var askFor = {
     },
 
     angularjs_crud: function() {
-      return askFor.values['angularjs_page']()
+      return askFor.values.angularjs_page()
         .then(function(output) {
 
           return ask(inputQuestion(
@@ -336,19 +387,359 @@ var askFor = {
   output: {
 
     check: function() {
-      console.log( 'output.check: ' + outputAnswers.template.type ); // TODO: remove
       return askFor.output[outputAnswers.template.type]();
     },
 
     file: function() {
 
-      return 'is file';
+      //-----------------------------------
+      // @begin: define output attributes
+
+      var outputDestination = outputAnswers.destination.dirname;
+      var selectedTemplate = outputAnswers.template;
+
+      var output = {
+        dirname: outputDestination,
+        file: null
+      };
+
+      if( selectedTemplate.destination ) {
+
+        if( _.isString( selectedTemplate.destination ) ) {
+
+          output.dirname = path.join( output.dirname, selectedTemplate.destination );
+
+        } else {
+
+          if( selectedTemplate.destination.dirname ) {
+            output.dirname = selectedTemplate.destination.dirname;
+          }
+
+          if( selectedTemplate.destination.filename ) {
+            var extname = path.extname( selectedTemplate.destination.filename );
+            output.file = {
+              name: path.basename( selectedTemplate.destination.filename, extname ),
+              ext: extname
+            };
+          }
+
+        }
+
+      }
+
+      if( !output.file ) {
+        if( outputAnswers.values.name ) {
+          output.file = {
+            name: outputAnswers.values.name,
+            ext: path.extname( selectedTemplate.source )
+          };
+        } else {
+          var extname = path.extname( selectedTemplate.source );
+          var basename = path.basename( selectedTemplate.source );
+          output.file = {
+            name: path.basename( basename, extname ),
+            ext: extname
+          };
+        }
+      }
+
+      //@end: define output attributes
+      //-----------------------------------
+
+      function getOutputPath() {
+        return path.join(output.dirname, output.file.name + output.file.ext);
+      }
+
+      //-----------------------------------
+
+      function updateOutput() {
+
+        var whatToUpdate = {
+          type: 'list',
+          name: 'selected',
+          message: 'Update',
+          choices: [
+            {
+              name: 'Directory       : ' + output.dirname,
+              value: 'dirname'
+            },
+            {
+              name: 'File name       : ' + output.file.name,
+              value: 'filename'
+            },
+            {
+              name: 'File extension  : ' + output.file.ext,
+              value: 'fileext'
+            }
+          ]
+        };
+
+        var update = {
+          dirname: function() {
+            // TODO: review and define another input validator
+            return askFor.not_empty_answer('directory')
+              .then(function( answer ) {
+                output.dirname = answer.input;
+              });
+          },
+
+          filename: function() {
+            // TODO: review and define another input validator
+            return askFor.not_empty_answer('file name')
+              .then(function( answer ) {
+                output.file.name = answer.input;
+              });
+          },
+
+          fileext: function() {
+            // TODO: review and define another input validator
+            return askFor.not_empty_answer('file extension')
+              .then(function( answer ) {
+                var ext = answer.input;
+                if( ext.indexOf('.') !== 0 ) ext = '.' + ext;
+                output.file.ext = ext;
+              });
+          }
+        };
+
+        return ask(whatToUpdate)
+          .then(function(answer) {
+            return update[answer.selected]();
+          })
+          .then(function() {
+            return askForChangeOutput();
+          })
+        ;
+      } // @end: updateOutput()
+
+      //-----------------------------------
+
+      function askForChangeOutput( defaultAnswer ) {
+        if( _.isUndefined( defaultAnswer ) ) defaultAnswer = false;
+
+        var outputPath = getOutputPath();
+
+        var questionMsg = 'Change output';
+        questionMsg += '\n    directory : ' + output.dirname;
+        questionMsg += '\n    file';
+        questionMsg += '\n      name    : ' + output.file.name;
+        questionMsg += '\n      ext     : ' + output.file.ext;
+        questionMsg += '\n    path      : ' + outputPath;
+        questionMsg += '\n>>> ';
+
+        return askFor.yes_no(questionMsg, defaultAnswer)
+          .then(function( answer ) {
+
+            if( answer.value ) {
+
+              return updateOutput();
+
+            } else {
+
+              return checkIfExists( outputPath )
+                .then(function (flag) {
+
+                  if( flag ) {
+                    return askFor.yes_no('File already exists, overwrite?', false)
+                      .then(function( answer ) {
+
+                          if( answer.value ) { // overwrite file
+                            return renameOld( outputPath );
+                          } else { // ask to change output
+                            return askForChangeOutput( true ); // set default answer to true
+                          }
+
+                      });
+                  }
+
+                  return 'finished';
+
+                });
+
+            }
+
+          });
+
+      } // @end: askForChangeOutput( defaultAnswer )
+
+      //-----------------------------------
+
+      return askForChangeOutput()
+        .then(function() {
+
+          // TODO: review : needed?
+          var fileOutput = {
+            dirname: output.dirname,
+            filename: (output.file.name + output.file.ext)
+          };
+
+          // @begin: update outputAnswers
+          checkTemplateHelpers();
+          outputAnswers.destination = fileOutput.dirname;
+          outputAnswers.updateFileName = fileOutput.filename;
+          // @end: update outputAnswers
+
+          return fileOutput;
+        });
 
     }, // @end: output.file
 
     directory: function() {
 
-      return 'is directory';
+      //-----------------------------------
+      // @begin: define output attributes
+
+      var outputDestination = outputAnswers.destination.dirname;
+      var selectedTemplate = outputAnswers.template;
+
+      var output = {
+
+        directory: {
+          base: outputDestination,
+          sub: '',
+          name: ''
+        }
+
+      };
+
+      if( selectedTemplate.destination ) {
+
+        if( _.isString( selectedTemplate.destination ) ) {
+
+          output.directory.sub = selectedTemplate.destination;
+
+        } else {
+
+          if( selectedTemplate.destination.dirname ) {
+            output.directory.base = selectedTemplate.destination.dirname;
+          }
+
+        }
+
+      }
+
+      if( outputAnswers.values && outputAnswers.values.name ) {
+        output.directory.name = outputAnswers.values.name;
+      }
+
+      //@end: define output attributes
+      //-----------------------------------
+
+      function getOutputPath() {
+        return path.join( output.directory.base, output.directory.sub, output.directory.name );
+      }
+
+      //-----------------------------------
+
+      function updateOutput() {
+
+        var whatToUpdate = {
+          type: 'list',
+          name: 'selected',
+          message: 'Update',
+          choices: [
+            {
+              name: 'Base directory  : ' + output.directory.base,
+              value: 'base'
+            },
+            {
+              name: 'Subdirectory    : ' + output.directory.sub,
+              value: 'sub'
+            }
+          ]
+        };
+
+        var update = {
+          base: function() {
+            // TODO: review and define another input validator
+            return askFor.not_empty_answer('base directory')
+              .then(function( answer ) {
+                output.directory.base = answer.input;
+              });
+          },
+
+          sub: function() {
+            // TODO: review and define another input validator
+            return askFor.not_empty_answer('subdirectory')
+              .then(function( answer ) {
+                output.directory.sub = answer.input;
+              });
+          }
+        };
+
+        return ask(whatToUpdate)
+          .then(function(answer) {
+            return update[answer.selected]();
+          })
+          .then(function() {
+            return askForChangeOutput();
+          })
+        ;
+      } // @end: updateOutput()
+
+      //-----------------------------------
+
+      function askForChangeOutput( defaultAnswer ) {
+        if( _.isUndefined( defaultAnswer ) ) defaultAnswer = false;
+
+        var outputPath = getOutputPath();
+
+        var questionMsg = 'Change output';
+        questionMsg += '\n    directory';
+        questionMsg += '\n      base     : ' + output.directory.base;
+        questionMsg += '\n      sub      : ' + output.directory.sub;
+        questionMsg += '\n      name     : ' + output.directory.name;
+        questionMsg += '\n    path       : ' + outputPath;
+        questionMsg += '\n>>> ';
+
+        return askFor.yes_no(questionMsg, defaultAnswer)
+          .then(function( answer ) {
+
+            if( answer.value ) {
+
+              return updateOutput();
+
+            } else {
+
+              return checkIfExists( outputPath )
+                .then(function (flag) {
+
+                  if( flag ) {
+                    return askFor.yes_no('Directory already exists, overwrite?', false)
+                      .then(function( answer ) {
+
+                          if( answer.value ) { // overwrite file
+                            return renameOld( outputPath );
+                          } else { // ask to change output
+                            return askForChangeOutput( true ); // set default answer to true
+                          }
+
+                      });
+                  }
+
+                  return 'finished';
+
+                });
+
+            }
+
+          });
+
+      } // @end: askForChangeOutput( defaultAnswer )
+
+      //-----------------------------------
+
+      return askForChangeOutput()
+        .then(function() {
+
+          // @begin: update outputAnswers
+          checkTemplateHelpers();
+          outputAnswers.destination = path.join( output.directory.base, output.directory.sub );
+          // @end: update outputAnswers
+
+          // TODO: review : needed?
+          return output;
+        });
 
     } // @end: output.directory
 
@@ -358,389 +749,6 @@ var askFor = {
 
 // @end: askFor
 //-----------------------------------------------------------------------------
-
-/*
-TODO:
-- define output destination question
-  - ask to change output destination
-    - input new output destination
-  - check if directory/file exists
-    - ask to overwrite
-*/
-
-function askOutputFile() {
-
-  //-----------------------------------
-  // @begin: define output attributes
-
-  var outputDestination = outputAnswers.destination.dirname;
-  var selectedTemplate = outputAnswers.template;
-
-  // TODO: check if template has helpers to assign to outputAnswers.values
-
-  var output = {
-    dirname: outputDestination,
-    file: null
-  };
-
-  if( selectedTemplate.destination ) {
-
-    if( _.isString( selectedTemplate.destination ) ) {
-
-      output.dirname = path.join( output.dirname, selectedTemplate.destination );
-
-    } else {
-
-      if( selectedTemplate.destination.dirname ) {
-        output.dirname = selectedTemplate.destination.dirname;
-      }
-
-      if( selectedTemplate.destination.filename ) {
-        var extname = path.extname( selectedTemplate.destination.filename );
-        output.file = {
-          name: path.basename( selectedTemplate.destination.filename, extname ),
-          ext: extname
-        };
-      }
-
-    }
-
-  }
-
-  if( !output.file ) {
-    if( outputAnswers.values.name ) {
-      output.file = {
-        name: outputAnswers.values.name,
-        ext: path.extname( selectedTemplate.source )
-      };
-    } else {
-      var extname = path.extname(  selectedTemplate.source  );
-      var basename = path.basename( selectedTemplate.source );
-      output.file = {
-        name: path.basename( basename, extname ),
-        ext: extname
-      };
-    }
-  }
-
-  //@end: define output attributes
-  //-----------------------------------
-
-  function getOutputPath() {
-    return path.join(output.dirname, output.file.name + output.file.ext);
-  }
-
-  //-----------------------------------
-
-  function updateOutput() {
-
-    var whatToUpdate = {
-      type: 'list',
-      name: 'selected',
-      message: 'Update',
-      choices: [
-        {
-          name: 'Directory       : ' + output.dirname,
-          value: 'dirname'
-        },
-        {
-          name: 'File name       : ' + output.file.name,
-          value: 'filename'
-        },
-        {
-          name: 'File extension  : ' + output.file.ext,
-          value: 'fileext'
-        }
-      ]
-    };
-
-    var update = {
-      dirname: function() {
-        // TODO: review and define another input validator
-        return askFor.not_empty_answer('directory')
-          .then(function( answer ) {
-            output.dirname = answer.input;
-          });
-      },
-
-      filename: function() {
-        // TODO: review and define another input validator
-        return askFor.not_empty_answer('file name')
-          .then(function( answer ) {
-            output.file.name = answer.input;
-          });
-      },
-
-      fileext: function() {
-        // TODO: review and define another input validator
-        return askFor.not_empty_answer('file extension')
-          .then(function( answer ) {
-            var ext = answer.input;
-            if( ext.indexOf('.') !== 0 ) ext = '.' + ext;
-            output.file.ext = ext;
-          });
-      }
-    };
-
-    return ask(whatToUpdate)
-      .then(function(answer) {
-        return update[answer.selected]();
-      })
-      .then(function() {
-        return askForChangeOutput();
-      })
-    ;
-  } // @end: updateOutput()
-
-  //-----------------------------------
-
-  function askForChangeOutput( defaultAnswer ) {
-    if( _.isUndefined( defaultAnswer ) ) defaultAnswer = false;
-
-    var outputPath = getOutputPath();
-
-    var questionMsg = 'Change output';
-    questionMsg += '\n    directory : ' + output.dirname;
-    questionMsg += '\n    file';
-    questionMsg += '\n      name    : ' + output.file.name;
-    questionMsg += '\n      ext     : ' + output.file.ext;
-    questionMsg += '\n    path      : ' + outputPath;
-    questionMsg += '\n>>> ';
-
-    return askFor.yes_no(questionMsg, defaultAnswer)
-      .then(function( answer ) {
-
-        if( answer.value ) {
-
-          return updateOutput();
-
-        } else {
-
-          return checkIfExists( outputPath )
-            .then(function (flag) {
-
-              if( flag ) {
-                return askFor.yes_no('File already exists, overwrite?', false)
-                  .then(function( answer ) {
-
-                      if( answer.value ) { // overwrite file
-                        return renameOld( outputPath );
-                      } else { // ask to change output
-                        return askForChangeOutput( true ); // set default answer to true
-                      }
-
-                  });
-              }
-
-              return 'finished';
-
-            });
-
-        }
-
-      });
-
-  } // @end: askForChangeOutput( defaultAnswer )
-
-  //-----------------------------------
-
-  return askForChangeOutput()
-    .then(function() {
-
-      // TODO: review
-
-      var fileOutput = {
-        dirname: output.dirname,
-        filename: (output.file.name + output.file.ext)
-      };
-
-      // @begin: update outputAnswers
-      outputAnswers.destination = fileOutput.dirname;
-      outputAnswers.updateFileName = fileOutput.filename;
-      delete outputAnswers.template;
-      // @end: update outputAnswers
-
-      return fileOutput;
-    });
-
-}
-
-//--- === --- !!! DIRECTORY !!! --- === ---
-
-function askOutputDirectory() {
-
-  //-----------------------------------
-  // @begin: define output attributes
-
-  var outputDestination = outputAnswers.destination.dirname;
-  var selectedTemplate = outputAnswers.template;
-
-  // TODO: check if template infos have helpers defined, assign to outputAnswers.values
-
-  var output = {
-
-    directory: {
-      base: outputDestination,
-      sub: '',
-      name: ''
-    }
-
-  };
-
-  if( selectedTemplate.destination ) {
-
-    if( _.isString( selectedTemplate.destination ) ) {
-
-      output.directory.sub = selectedTemplate.destination;
-
-    } else {
-
-      if( selectedTemplate.destination.dirname ) {
-        output.directory.base = selectedTemplate.destination.dirname;
-      }
-
-    }
-
-  }
-
-  if( outputAnswers.values && outputAnswers.values.name ) {
-    output.directory.name = outputAnswers.values.name;
-  }
-
-  //@end: define output attributes
-  //-----------------------------------
-
-  function getOutputPath() {
-    return path.join( output.directory.base, output.directory.sub, output.directory.name );
-  }
-
-  //-----------------------------------
-
-  function updateOutput() {
-
-    var whatToUpdate = {
-      type: 'list',
-      name: 'selected',
-      message: 'Update',
-      choices: [
-        {
-          name: 'Base directory  : ' + output.directory.base,
-          value: 'base'
-        },
-        {
-          name: 'Subdirectory    : ' + output.directory.sub,
-          value: 'sub'
-        }
-      ]
-    };
-
-    var update = {
-      base: function() {
-        // TODO: review and define another input validator
-        return askFor.not_empty_answer('base directory')
-          .then(function( answer ) {
-            output.directory.base = answer.input;
-          });
-      },
-
-      sub: function() {
-        // TODO: review and define another input validator
-        return askFor.not_empty_answer('subdirectory')
-          .then(function( answer ) {
-            output.directory.sub = answer.input;
-          });
-      }
-    };
-
-    return ask(whatToUpdate)
-      .then(function(answer) {
-        return update[answer.selected]();
-      })
-      .then(function() {
-        return askForChangeOutput();
-      })
-    ;
-  } // @end: updateOutput()
-
-  //-----------------------------------
-
-  function askForChangeOutput( defaultAnswer ) {
-    if( _.isUndefined( defaultAnswer ) ) defaultAnswer = false;
-
-    var outputPath = getOutputPath();
-
-    var questionMsg = 'Change output';
-    questionMsg += '\n    directory';
-    questionMsg += '\n      base     : ' + output.directory.base;
-    questionMsg += '\n      sub      : ' + output.directory.sub;
-    questionMsg += '\n      name     : ' + output.directory.name;
-    questionMsg += '\n    path       : ' + outputPath;
-    questionMsg += '\n>>> ';
-
-    return askFor.yes_no(questionMsg, defaultAnswer)
-      .then(function( answer ) {
-
-        if( answer.value ) {
-
-          return updateOutput();
-
-        } else {
-
-          return checkIfExists( outputPath )
-            .then(function (flag) {
-
-              if( flag ) {
-                return askFor.yes_no('Directory already exists, overwrite?', false)
-                  .then(function( answer ) {
-
-                      if( answer.value ) { // overwrite file
-                        return renameOld( outputPath );
-                      } else { // ask to change output
-                        return askForChangeOutput( true ); // set default answer to true
-                      }
-
-                  });
-              }
-
-              return 'finished';
-
-            });
-
-        }
-
-      });
-
-  } // @end: askForChangeOutput( defaultAnswer )
-
-  //-----------------------------------
-
-  return askForChangeOutput()
-    .then(function() {
-
-      // @begin: update outputAnswers
-      outputAnswers.destination = path.join( output.directory.base, output.directory.sub );
-      //outputAnswers.updateFileName = ??? >> check if some helper.updateFileName defined
-      delete outputAnswers.template;
-      // @end: update outputAnswers
-
-      return output;
-    });
-
-}
-
-//--- === ---
-
-function askOutput() {
-
-  if(outputAnswers.template.type === 'file') {
-    return askOutputFile();
-  } else if(outputAnswers.template.type === 'directory') {
-    return askOutputDirectory();
-  }
-
-}
-
-//---
 
 function start(options) {
 
@@ -768,7 +776,7 @@ function start(options) {
   // @end: check options
   //------------------------
 
-  /*
+  /* TODO: remove
   var deferred = Q.defer();
   deferred.resolve('ok');
   return deferred.promise;
@@ -799,17 +807,9 @@ function start(options) {
     .then(function() {
       return askFor.output.check();
     })
-    .then(function(value) { // TODO: remove
-      console.log('askFor.output.check: ' + value);
-    })
-    .then(function() { // TODO: remove
-      return askOutput();
-    })
-    .then(function (answers) {
+    .then(function ( answers ) {
 
-      // TODO: update outputAnswers
-
-      console.log(answers); // TODO: remove
+      //console.log( answers ); // TODO: remove
 
       return askFor.yes_no('Debug generate engine', false);
     })
@@ -822,15 +822,17 @@ function start(options) {
     });
 /*
     .then(function( optionsToEngine ) {
-      console.log( 'options object to engine' );
+      console.log( '\noptions object to engine:\n' );
       console.log( JSON.stringify( optionsToEngine, null, 2 ) );
+      console.log( optionsToEngine );
+      console.log( '\n' );
     });
 */
 }
 
 module.exports = start;
 
-//---
+//-----------------------------------------------------------------------------
 
 // TODO: remove
 start({
@@ -839,6 +841,7 @@ start({
   restContext: 'apirest'
 })
 .then(function( optionsToEngine ) {
-  console.log( 'options object to engine' );
-  console.log( JSON.stringify( optionsToEngine, null, 2 ) );
+  console.log( '\noptions object to engine:\n' );
+  console.log( optionsToEngine );
+  console.log( '\n' );
 });
