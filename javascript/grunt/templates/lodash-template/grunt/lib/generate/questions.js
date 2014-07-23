@@ -1,5 +1,6 @@
 var path      = require('path'),
     _         = require('lodash-node'),
+    _s        = require( 'underscore.string' ),
     Q         = require('q'),
     fs        = require('q-io/fs'),
     moment    = require('moment'),
@@ -44,6 +45,7 @@ var templates = {
     source: '/tplsDir',
     helpers: { // To assign on outputAnswers.values.helpers
       updateFileName: function(sName) {
+        var values = outputAnswers.values;
         return values.name + _s.capitalize( sName );
       }
     }
@@ -54,7 +56,9 @@ var templates = {
     type: 'file',
     source: '/gruntjs/config.js',
     destination: {
-      dirname: 'helpers/grunt/config' // overwrite output destination
+      // overwrite output destination
+      // dirname: 'helpers/grunt/config'
+      dirname: 'dist/grunt/helpers/grunt/config'
     }
   },
   'angularjs_page': {
@@ -72,9 +76,12 @@ var templates = {
 //---
 
 /*
+  macro flow view:
+
   1 - which template
   2 - values for selected template
   3 - change default output
+
 */
 
 var questions = {
@@ -820,14 +827,7 @@ function start(options) {
 
       return outputAnswers;
     });
-/*
-    .then(function( optionsToEngine ) {
-      console.log( '\noptions object to engine:\n' );
-      console.log( JSON.stringify( optionsToEngine, null, 2 ) );
-      console.log( optionsToEngine );
-      console.log( '\n' );
-    });
-*/
+
 }
 
 module.exports = start;
@@ -835,6 +835,8 @@ module.exports = start;
 //-----------------------------------------------------------------------------
 
 // TODO: remove
+// local tests
+/*
 start({
   source: '/templates',
   destination: '../../../dist',
@@ -845,3 +847,4 @@ start({
   console.log( optionsToEngine );
   console.log( '\n' );
 });
+*/
