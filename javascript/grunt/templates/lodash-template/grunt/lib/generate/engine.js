@@ -17,12 +17,6 @@ module.exports = function( options ) {
     if(debugFlag) console.log(msg);
   }
 
-
-  log('generate engine');
-  log( options );
-  log('\n------------------------------------\n');
-
-
   //---------------------------------------------
   // check options
 
@@ -68,6 +62,12 @@ module.exports = function( options ) {
     _updateFileName = function( filename ) { return filename; };
 
   }
+
+  //---------------------------------------------
+
+  log('\nrunning generate engine \noptions: \n');
+  log( options );
+  log('\n------------------------------------\n');
 
   //---------------------------------------------
 
@@ -175,6 +175,8 @@ module.exports = function( options ) {
 
     return fs.read(source).then(function(content) { // read template file
 
+      log('read: ' + source);
+
       var tplCache = null;
       try{
         tplCache = _.template(content);
@@ -190,6 +192,8 @@ module.exports = function( options ) {
     })
     .then(function(file) {
 
+      log('\n------------------------------------\n');
+
       var fileUrl, content;
 
       // define file destination
@@ -198,13 +202,17 @@ module.exports = function( options ) {
         _updateFileName( file.name ) // output file name
       );
 
+      log( fileUrl );
 
       // process template
       content = file.templateCache(values);
 
+      log( content );
+      log('\n------------------------------------\n');
 
       // create directories tree
       return fs.makeTree(path.dirname(fileUrl)).then(function() {
+        log('write file: ' + fileUrl);
         return fs.write(fileUrl, content); // write file to disk
       });
 
