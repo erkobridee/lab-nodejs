@@ -4,7 +4,8 @@ grunt.config('generate', {
 
   options: {
     templatesDir: '<%= project.paths.templates %>',
-    outputDir: '<%= project.paths.output %>'
+    outputDir: '<%= project.paths.output %>',
+    restContext: '<%= project.backend.context %>'
   }
 
 });
