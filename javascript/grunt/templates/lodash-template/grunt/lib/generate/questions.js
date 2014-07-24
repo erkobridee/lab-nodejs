@@ -70,6 +70,7 @@ var templates = {
     type: 'directory',
     source: '/angularjs/crud',
     destination: 'app' // concat with output destination
+    // TODO: define helpers?
   }
 };
 
@@ -795,22 +796,20 @@ function start(options) {
   if( !options.destination )  throw new Error('options.destination not defined');
   outputAnswers.destination = { dirname: options.destination };
 
-  outputAnswers.restContext = options.restContext || 'rest';
+  outputAnswers.restContext = 'rest';
+  if( options.restContext ) {
+    var restContext = options.restContext;
+    if( restContext.indexOf('/') === 0 ) {
+      restContext = restContext.slice(1, restContext.length);
+    }
+    outputAnswers.restContext = restContext;
+  }
 
   // @end: check options
   //------------------------
 
-  /* TODO: remove
-  var deferred = Q.defer();
-  deferred.resolve('ok');
-  return deferred.promise;
-  */
-
-  //console.log( 'selecte template' ); // TODO: remove
-
   return askFor.template('available')
     .then(function(answer) {
-      //console.log( 'ask values for: ' + answer.selected.key ); // TODO: remove
 
       //-------------------------------------------
       // @begin: define : source
@@ -823,19 +822,22 @@ function start(options) {
       //-------------------------------------------
 
       return askFor.values[answer.selected.key]();
+
     })
     .then(function(answers) {
+
       outputAnswers.values = answers;
-      //console.log( JSON.stringify(answers, null, 2) ); // TODO: remove
+
     })
     .then(function() {
+
       return askFor.output.check();
+
     })
     .then(function ( answers ) {
 
-      //console.log( answers ); // TODO: remove
-
       return askFor.yes_no('Debug generate engine', false);
+
     })
     .then(function( answer ) {
 
@@ -843,6 +845,7 @@ function start(options) {
       delete outputAnswers.restContext;
 
       return outputAnswers;
+
     });
 
 }
@@ -851,8 +854,12 @@ module.exports = start;
 
 //-----------------------------------------------------------------------------
 
-// TODO: remove
-// local tests
+/*
+  local tests
+  directly in this same directory
+  run command:
+    node questions.js
+*/
 /*
 start({
   source: '/templates',
