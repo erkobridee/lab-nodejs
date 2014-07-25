@@ -24,7 +24,7 @@ var commonHelpers = {
   capitalize: function(value) {
     return _s.capitalize(value);
   }
-}
+};
 
 //---
 
@@ -69,8 +69,12 @@ var templates = {
   'angularjs_crud': {
     type: 'directory',
     source: '/angularjs/crud',
-    destination: 'app' // concat with output destination
-    // TODO: define helpers?
+    destination: 'app', // concat with output destination
+    helpers: {
+      stringRegExpEscape: function(string) {
+        return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+      }
+    }
   }
 };
 
@@ -409,6 +413,8 @@ var askFor = {
 
       var outputDestination = outputAnswers.destination.dirname;
       var selectedTemplate = outputAnswers.template;
+      var extname = null;
+      var basename = null;
 
       var output = {
         dirname: outputDestination,
@@ -428,7 +434,7 @@ var askFor = {
           }
 
           if( selectedTemplate.destination.filename ) {
-            var extname = path.extname( selectedTemplate.destination.filename );
+            extname = path.extname( selectedTemplate.destination.filename );
             output.file = {
               name: path.basename( selectedTemplate.destination.filename, extname ),
               ext: extname
@@ -446,8 +452,8 @@ var askFor = {
             ext: path.extname( selectedTemplate.source )
           };
         } else {
-          var extname = path.extname( selectedTemplate.source );
-          var basename = path.basename( selectedTemplate.source );
+          extname = path.extname( selectedTemplate.source );
+          basename = path.basename( selectedTemplate.source );
           output.file = {
             name: path.basename( basename, extname ),
             ext: extname
