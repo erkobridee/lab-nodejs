@@ -59,26 +59,17 @@ function(module) {
 
         init: function( collection ) {
 
-          console.log( 'init <%= helpers.capitalize( name ) %>Collection' );
+          console.debug( 'init <%= helpers.capitalize( name ) %>Collection' );
 
           var seq = 0;
 
-          function createObject(_id, _name, _description) {
-            return {
-              id: _id,
-              name: _name,
-              description: _description
-            };
-          }
-
-          for (var i = 59; i >= 0; i--) {
-            collection.insert(
-              createObject(
-                seq++,
-                'fake name ' + (seq+1),
-                'some fake descrition ' + (seq+1)
-                )
-            );
+          for (var i = 42; i > 0; i--) {
+            collection.insert({
+              id          : seq,
+              name        : 'fake <%= helpers.capitalize( name ) %> name ' + (seq+1),
+              description : 'some fake <%= helpers.capitalize( name ) %> descrition ' + (seq+1)
+            });
+            seq++;
           }
 
         }
@@ -95,8 +86,9 @@ function(module) {
 
     var instance = new <%= helpers.capitalize( name ) %>Collection();
 
-    console.log( instance );
-    console.log( instance.list() );
+    console.debug( instance.sayMyName() );
+    console.debug( instance );
+    console.debug( instance.list() );
 
     return instance;
 
