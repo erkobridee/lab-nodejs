@@ -93,4 +93,6 @@ Values to templates:
 
   backend resource: <%= endpoint %>
 
+  backend resource regexp escape: <%= helpers.stringRegExpEscape( endpoint ) %>
+
 -------------------------------------------------------------------------------
