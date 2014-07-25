@@ -10,7 +10,7 @@ http://makandracards.com/makandra/15879-javascript-how-to-generate-a-regular-exp
 */
 
 RegExp.escape = function(string) {
-  return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')
+  return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
 };
 
 function buildRegexp(string) {
