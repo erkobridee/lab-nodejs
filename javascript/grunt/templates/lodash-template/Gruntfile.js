@@ -18,6 +18,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['clean', 'jshint']);
 
-  // TODO: define 'generate task
+  // grunt generate task defined
+  // run command 'grunt generate'
 
 };
