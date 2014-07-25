@@ -71,18 +71,27 @@ module.exports = function( options ) {
 
   //---------------------------------------------
 
-  function TemplateProcessError(message, error) {
-    this.constructor.prototype.__proto__ = Error.prototype;
-    Error.captureStackTrace(this, this.constructor);
-    this.name = this.constructor.name;
-    this.message = message;
+  var TemplateProcessError = (function() {
 
-    this.toString = function() {
-      var out = this.name + ': \n  ' + this.message;
-      if(error) out += '\nTemplate Error :\n  ' + error.stack;
-      return out;
+    function TemplateProcessError(message, error) {
+      Error.captureStackTrace(this, this.constructor);
+      this.name = this.constructor.name;
+      this.message = message;
+
+      this.toString = function() {
+        var out = this.name + ': \n  ' + this.message;
+        if(error) out += '\nTemplate Error :\n  ' + error.stack;
+        return out;
+      };
     }
-  }
+    var ClassDef = TemplateProcessError;
+
+    ClassDef.prototype = new Error();
+    ClassDef.prototype.constructor = TemplateProcessError;
+
+    return ClassDef;
+
+  })();
 
   //---------------------------------------------
 
