@@ -1,3 +1,8 @@
+//
+// templates for:
+// https://github.com/erkobridee/angularjs-ee-boilerplate
+//
+
 
 TODO:
 
