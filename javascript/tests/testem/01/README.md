@@ -1,6 +1,6 @@
 # Testem / 01
 
-> Hello testem 
+> Hello Testem 
 
 
 ## Prerequisites
