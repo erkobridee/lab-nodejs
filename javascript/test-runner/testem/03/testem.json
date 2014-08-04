@@ -1,0 +1,14 @@
+{
+  "test_page": "tests_runner2.html",
+  "src_files": [
+    "src/**/*.js",
+    "tests/**/*.spec.js"
+  ],
+  "launch_in_dev": [
+    "chrome"
+  ],
+  "routes": {
+    "/tests_runner.html": "test_page/jasmine_jquery.mustache",
+    "/tests_runner2.html": "test_page/jasmine2_jquery.mustache"
+  }
+}

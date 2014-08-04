@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <title>Test'em</title>
+  <link rel="stylesheet" href="/testem/jasmine2.css">
+</head>
+<body>
+  <div><p>&nbsp;&nbsp;&nbsp;&nbsp;Test'em : custom page : Jasmine 2 + JQuery</p></div>
+
+
+  <div id="jasmine_content"></div>
+
+
+  <!-- js scripts -->
+
+  <script src="/testem/jasmine2.js"></script>
+  <script src="/testem/jasmine2-html.js"></script>
+  <script src="/testem/jasmine2-boot.js"></script>
+  <script type="text/javascript">
+  (function() {
+    'use strict';
+    window._executeLate = window.onload;
+    window.onload = function() {};
+  })();
+  </script>
+
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+
+  {{#serve_files}}<script src="{{src}}"{{#attrs}} {{&.}} {{/attrs}}></script>{{/serve_files}}
+
+  <script type="text/javascript">
+  (function() {
+    'use strict';
+
+    $( document ).ready(function() {
+      console.log( "document ready!" );
+      console.log( "Execute Jasmine..." );
+
+      // Initialize the HTML Reporter and execute the environment (setup by `boot.js`)
+      window._executeLate();
+    });
+
+  })();
+  </script>
+</body>
+</html>
