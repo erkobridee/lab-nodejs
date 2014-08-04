@@ -1,6 +1,6 @@
-# Testem / 02
+# Test'em / 02
 
-> Testem with some code organization
+> Test'em with some code organization
 
 
 ## Prerequisites
