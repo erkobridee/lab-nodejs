@@ -16,6 +16,8 @@
 
   * [01](05_angular/01) - Test'em and angular.js application
 
+  * [02](05_angular/02) - Test'em and require.js + angular.js modular application
+
 
 ## Links
 
