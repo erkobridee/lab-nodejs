@@ -19,7 +19,7 @@
   <script type="text/javascript">
   (function() {
     'use strict';
-    window._executeLate = window.onload;
+    window._executeLater = window.onload;
     window.onload = function() {};
   })();
   </script>
@@ -37,7 +37,7 @@
       console.log( "Execute Jasmine..." );
 
       // Initialize the HTML Reporter and execute the environment (setup by `boot.js`)
-      window._executeLate();
+      window._executeLater();
     });
 
   })();
