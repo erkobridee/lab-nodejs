@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <title>Test'em</title>
+  <link rel="stylesheet" href="/testem/jasmine.css">
+</head>
+<body>
+  <div><p>&nbsp;&nbsp;&nbsp;&nbsp;Test'em : custom page : Jasmine + Require.js</p></div>
+
+
+  <div id="jasmine_content"></div>
+
+  <div id="to_jquery"></div>
+
+  <!-- js scripts -->
+
+  <script src="/testem.js"></script>
+  <script src="/testem/jasmine.js"></script>
+  <script src="/testem/jasmine-html.js"></script>
+  <script type="text/javascript">
+  (function() {
+    'use strict';
+
+    var jasmineEnv = jasmine.getEnv();
+    jasmineEnv.addReporter(new jasmine.HtmlReporter);
+
+    window._executeLate = function() { jasmineEnv.execute(); };
+
+  })();
+  </script>
+
+  <script src="/bower_components/requirejs/require.js"></script>
+
+  {{#serve_files}}<script src="{{src}}"{{#attrs}} {{&.}} {{/attrs}}></script>{{/serve_files}}
+
+</body>
+</html>

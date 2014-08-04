@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <title>Test'em</title>
+  <link rel="stylesheet" href="/testem/jasmine2.css">
+</head>
+<body>
+  <div><p>&nbsp;&nbsp;&nbsp;&nbsp;Test'em : custom page : Jasmine 2 + Require.js</p></div>
+
+
+  <div id="jasmine_content"></div>
+
+  <div id="to_jquery"></div>
+
+  <!-- js scripts -->
+
+  <script src="/testem.js"></script>
+  <script src="/testem/jasmine2.js"></script>
+  <script src="/testem/jasmine2-html.js"></script>
+  <script src="/testem/jasmine2-boot.js"></script>
+  <script type="text/javascript">
+  (function() {
+    'use strict';
+    window._executeLate = window.onload;
+    window.onload = function() {};
+  })();
+  </script>
+
+  <script src="/bower_components/requirejs/require.js"></script>
+
+  {{#serve_files}}<script src="{{src}}"{{#attrs}} {{&.}} {{/attrs}}></script>{{/serve_files}}
+
+</body>
+</html>

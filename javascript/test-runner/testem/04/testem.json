@@ -1,0 +1,26 @@
+{
+  "test_page": "tests_runner2.html",
+
+  "routes": {
+    "/tests_runner.html": "test_page/jasmine.mustache",
+    "/tests_runner2.html": "test_page/jasmine2.mustache"
+  },
+
+  "src_files": [
+    "src/**/*.js",
+    "tests/**/*.spec.js"
+  ],
+
+  "src_files_ignore": [
+    "src/require.config.js"
+  ],
+
+  "serve_files": [
+    "tests/app/**/*.spec.js",
+    "tests/require.config.js"
+  ],
+
+  "launch_in_dev": [
+    "chrome"
+  ]
+}
