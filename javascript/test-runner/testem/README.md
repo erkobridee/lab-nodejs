@@ -12,6 +12,10 @@
 
 * [04](04) - Test'em and require.js application
 
+* 05 - angular.js
+
+  * [01](05_angular/01) - Test'em and angular.js application
+
 
 ## Links
 
