@@ -76,11 +76,11 @@
   function onRequireReadyHandler() {
     console.log( 'onRequireReadyHandler' );
 
-    if( window._executeLate ) {
+    if( window._executeLater ) {
       $( document ).ready(function() {
         console.log( "document ready!" );
         console.log( "Execute Jasmine..." );
-        window._executeLate();
+        window._executeLater();
       });
     }
   }

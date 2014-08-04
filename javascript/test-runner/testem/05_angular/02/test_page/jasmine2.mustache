@@ -13,19 +13,18 @@
 
   <!-- js scripts -->
 
-  <script src="/testem.js"></script>
   <script src="/testem/jasmine2.js"></script>
   <script src="/testem/jasmine2-html.js"></script>
   <script src="/testem/jasmine2-boot.js"></script>
   <script type="text/javascript">
   (function() {
     'use strict';
-    window._executeLate = window.onload;
+    window._executeLater = window.onload;
     window.onload = function() {};
   })();
   </script>
+  <script src="/testem.js"></script>
 
-  <script src="/bower_components/requirejs/require.js"></script>
 
   {{#serve_files}}<script src="{{src}}"{{#attrs}} {{&.}} {{/attrs}}></script>{{/serve_files}}
 

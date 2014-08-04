@@ -1,5 +1,5 @@
 {
-  "test_page": "tests_runner2.html",
+  "test_page": "tests_runner.html",
 
   "routes": {
     "/tests_runner.html": "test_page/jasmine.mustache",
@@ -16,6 +16,8 @@
   ],
 
   "serve_files": [
+    "bower_components/requirejs/require.js",
+
     "tests/require.config.js"
   ],
 
