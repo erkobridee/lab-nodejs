@@ -10,6 +10,8 @@
 
 * [03](03) - custom test page for Test'em
 
+* [04](04) - Test'em and require.js application
+
 
 ## Links
 
