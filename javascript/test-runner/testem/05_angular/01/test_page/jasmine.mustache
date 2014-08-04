@@ -14,7 +14,6 @@
 
   <!-- js scripts -->
 
-  <script src="/testem.js"></script>
   <script src="/testem/jasmine.js"></script>
   <script src="/testem/jasmine-html.js"></script>
   <script type="text/javascript">
@@ -24,10 +23,11 @@
     var jasmineEnv = jasmine.getEnv();
     jasmineEnv.addReporter(new jasmine.HtmlReporter);
 
-    window._executeLate = function() { jasmineEnv.execute(); };
+    window._executeLater = function() { jasmineEnv.execute(); };
 
   })();
   </script>
+  <script src="/testem.js"></script>
 
   {{#serve_files}}<script src="{{src}}"{{#attrs}} {{&.}} {{/attrs}}></script>{{/serve_files}}
 
