@@ -25,6 +25,7 @@ $ sudo npm install -g testem
 ## Run command
 
 ```bash
+$ bower install
 $ testem
 ```
 
