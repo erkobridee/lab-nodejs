@@ -1,0 +1,58 @@
+{
+  "test_page": "tests_runner2.html",
+
+  "routes": {
+    "/tests_runner.html": "test_page/jasmine.mustache",
+    "/tests_runner2.html": "test_page/jasmine2.mustache"
+  },
+
+  "src_files": [
+    "src/**/*.js",
+    "tests/**/*.spec.js"
+  ],
+
+  "src_files_ignore": [
+    "src/require.config.js"
+  ],
+
+  "serve_files": [
+    "bower_components/jquery/dist/jquery.min.js",
+    "bower_components/angular/angular.min.js",
+    "bower_components/angular-route/angular-route.min.js",
+    "bower_components/angular-resource/angular-resource.min.js",
+    "bower_components/angular-mocks/angular-mocks.js",
+
+    "src/modules/dep1/module.js",
+    "src/modules/dep1/controller.js",
+    "src/modules/dep1/filter.js",
+    "src/modules/dep1/factory.js",
+    "src/modules/dep1/service.js",
+    "src/modules/dep1/directives/depWelcome.js",
+    "src/modules/dep1/directives/depWidgetInline.js",
+    "src/modules/dep1/directives/depWidgetOutline.js",
+
+    "src/main/module.js",
+    "src/main/routes.js",
+    "src/home/controller.js",
+    "src/about/controller.js",
+    "src/main/start.js",
+
+
+    "tests/main/module.spec.js",
+    "tests/main/routes.spec.js",
+    "tests/home/controller.spec.js",
+    "tests/about/controller.spec.js",
+    "tests/modules/dep1/module.spec.js",
+    "tests/modules/dep1/controller.spec.js",
+    "tests/modules/dep1/filter.spec.js",
+    "tests/modules/dep1/factory.spec.js",
+    "tests/modules/dep1/service.spec.js",
+    "tests/modules/dep1/directives/depWelcome.spec.js",
+    "tests/modules/dep1/directives/depWidgetInline.spec.js",
+    "tests/modules/dep1/directives/depWidgetOutline.spec.js"
+  ],
+
+  "launch_in_dev": [
+    "chrome"
+  ]
+}
