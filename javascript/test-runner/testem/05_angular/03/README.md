@@ -2,7 +2,7 @@
 
 > Test'em and require.js + angular.js modular application
 >
-> code and test specs together in same module directory
+> code and test specs together in same directory module
 
 
 ## Prerequisites
