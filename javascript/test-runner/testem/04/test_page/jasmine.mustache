@@ -24,7 +24,7 @@
     var jasmineEnv = jasmine.getEnv();
     jasmineEnv.addReporter(new jasmine.HtmlReporter);
 
-    window._executeLate = function() { jasmineEnv.execute(); };
+    window._executeLater = function() { jasmineEnv.execute(); };
 
   })();
   </script>
