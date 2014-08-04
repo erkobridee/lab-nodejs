@@ -1,6 +1,6 @@
-# Testem / 03
+# Test'em / 03
 
-> Testem with custom test page
+> Test'em with custom test page
 
 
 ## Prerequisites
