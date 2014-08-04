@@ -18,6 +18,8 @@
 
   * [02](05_angular/02) - Test'em and require.js + angular.js modular application
 
+  * [03](05_angular/03) - Test'em and require.js + angular.js modular application | code and test specs together in same module directory
+
 
 ## Links
 
