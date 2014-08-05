@@ -2,7 +2,24 @@
 
 * [[GitHub] airportyh / testem](https://github.com/airportyh/testem) - Test'em 'Scripts! A test runner that makes Javascript unit testing fun
 
---
+
+## Prerequisites
+
+* Must have [PhantomJS](http://phantomjs.org/) installed
+
+> on Mac for example, unzip on `/Application/phantomjs`
+>
+> edit your .bach_profile and add
+
+```bash
+export PHANTOMJS_HOME=/Application/phantomjs
+export PHANTOMJS=$PHANTOMJS_HOME/bin
+
+export PATH=$PATH:$PHANTOMJS
+```
+
+
+## Examples
 
 * [01](01) - first Test'em contact
 
