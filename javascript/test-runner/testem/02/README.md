@@ -15,11 +15,38 @@
 $ sudo npm install -g testem
 ```
 
+* Must have [PhantomJS](http://phantomjs.org/) installed
+
+> on Mac for example, unzip on `/Application/phantomjs`
+>
+> edit your .bach_profile and add
+
+```bash
+export PHANTOMJS_HOME=/Application/phantomjs
+export PHANTOMJS=$PHANTOMJS_HOME/bin
+
+export PATH=$PATH:$PHANTOMJS
+```
+
 
 ## Run command
 
+> Run this command while in dev
+
 ```bash
 $ testem
+```
+
+> Command to CI
+
+```bash
+$ testem ci
+```
+
+> See available and launchers config for dev and CI
+
+```bash
+$ testem launchers
 ```
 
 

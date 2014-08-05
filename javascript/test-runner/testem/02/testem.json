@@ -6,5 +6,8 @@
   ],
   "launch_in_dev": [
     "chrome"
+  ],
+  "launch_in_ci": [
+    "phantomjs"
   ]
 }
