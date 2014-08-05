@@ -19,7 +19,6 @@
   "license": "MIT",
   "devDependencies": {
     "shelljs": "^0.3.0",
-    "ng-html2js": "^1.1.0",
     "yargs": "^1.3.1"
   }
 }
