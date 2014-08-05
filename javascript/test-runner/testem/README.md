@@ -4,13 +4,13 @@
 
 ## test'em commands
 
-> development mode
+* development mode
 
 ```bash
 $ testem 
 ```
 
-> continuous integration (CI) mode
+* continuous integration (CI) mode
 
   >  by default will run defined tests in all available launchers, or in some specifc launcher if `launch_in_ci` is defined in `testem.json` or `testem.yml`
 
@@ -18,7 +18,7 @@ $ testem
 $ testem ci
 ```
 
-> list available launchers (web browsers)
+* list available launchers (web browsers)
 
 ```bash
 $ testem launchers
