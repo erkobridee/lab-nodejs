@@ -8,25 +8,6 @@ describe('Unit: Testing modules.dep1 depWidgetOutline Directive', function() {
     //load the module
     module('modules.dep1');
     module('modules/dep1/directives/depWidget.tpl.html');
-    /*
-    module('modules.dep1', function($provide) {
-
-      // decorate directive
-      // http://angular-tips.com/blog/2013/09/experiment-decorating-directives/
-
-      $provide.decorator('depWidgetOutlineDirective', function($delegate) {
-          var directive = $delegate[0];
-
-          //console.log(directive);
-
-          directive.templateUrl = null;
-          directive.template = '<div class="widget"><div class="title">{{title}}</div><div class="content" ng-transclude></div></div>';
-
-          return $delegate;
-      });
-
-    });
-    */
 
     // inject dependencies
     inject(function($rootScope, $compile, $templateCache) {
