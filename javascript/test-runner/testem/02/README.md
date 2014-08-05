@@ -54,5 +54,7 @@ $ testem launchers
 
 * [[GitHub] airportyh / testem](https://github.com/airportyh/testem) - Test'em 'Scripts! A test runner that makes Javascript unit testing fun
 
+  * [[YouTube] Showing off Testem's continuous integration (CI) mode](http://www.youtube.com/watch?v=Js16Cj80HKY)
+
 * [Jasmine BDD Sublime Text plugin](https://sublime.wbond.net/packages/Jasmine%20BDD)
 

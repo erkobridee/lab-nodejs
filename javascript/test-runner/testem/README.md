@@ -47,3 +47,5 @@ export PATH=$PATH:$PHANTOMJS
   * [[GitHub] joe-zim-javascript-blog / Jasmine-Testem-Boilerplate](https://github.com/joe-zim-javascript-blog/Jasmine-Testem-Boilerplate) - Boilerplate code for projects using Jasmine with Testem for unit testing
 
 * [Configurando um ambiente de teste unitário Jasmine com Testem | iMasters](http://imasters.com.br/front-end/javascript/configurando-um-ambiente-de-teste-unitario-jasmine-com-testem/)
+
+* [[YouTube] Showing off Testem's continuous integration (CI) mode](http://www.youtube.com/watch?v=Js16Cj80HKY)
