@@ -6,7 +6,9 @@ describe('Unit: Testing modules.dep1 depWidgetOutline Directive', function() {
   beforeEach(function() {
 
     //load the module
-    //module('modules.dep1');
+    module('modules.dep1');
+    module('modules/dep1/directives/depWidget.tpl.html');
+    /*
     module('modules.dep1', function($provide) {
 
       // decorate directive
@@ -24,6 +26,7 @@ describe('Unit: Testing modules.dep1 depWidgetOutline Directive', function() {
       });
 
     });
+    */
 
     // inject dependencies
     inject(function($rootScope, $compile, $templateCache) {
