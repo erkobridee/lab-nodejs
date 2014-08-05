@@ -36,3 +36,9 @@ $ testem
 
 * [Jasmine BDD Sublime Text plugin](https://sublime.wbond.net/packages/Jasmine%20BDD)
 
+--
+
+> TODO: see how to use
+
+* [[GitHub] yaru22 / ng-html2js](https://github.com/yaru22/ng-html2js) - Standalone script to turn Angular template into js and put it in a module
+
