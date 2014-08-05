@@ -2,6 +2,28 @@
 
 * [[GitHub] airportyh / testem](https://github.com/airportyh/testem) - Test'em 'Scripts! A test runner that makes Javascript unit testing fun
 
+## test'em commands
+
+> development mode
+
+```bash
+$ testem 
+```
+
+> continuous integration (CI) mode
+
+  >  by default will run defined tests in all available launchers, or in some specifc launcher if `launch_in_ci` is defined in `testem.json` or `testem.yml`
+
+```bash
+$ testem ci
+```
+
+> list available launchers (web browsers)
+
+```bash
+$ testem launchers
+```
+
 
 ## Prerequisites
 
