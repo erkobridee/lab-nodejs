@@ -37,6 +37,7 @@
     "src/about/controller.js",
     "src/main/start.js",
 
+    "cache/**/*.js",
 
     "tests/main/module.spec.js",
     "tests/main/routes.spec.js",
@@ -52,7 +53,14 @@
     "tests/modules/dep1/directives/depWidgetOutline.spec.js"
   ],
 
+  "before_tests": "node scripts/make-cache-ng-html.js src cache",
+  "on_exit": "node scripts/remove-cache-ng-html.js cache",
+
   "launch_in_dev": [
     "chrome"
+  ],
+
+  "launch_in_ci": [
+    "phantomjs"
   ]
 }
