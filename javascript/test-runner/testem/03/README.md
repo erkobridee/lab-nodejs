@@ -30,7 +30,7 @@ $ sudo npm install -g testem
 $ testem 
 ```
 
-> Remenber to install bower components first
+> Remember to install bower components first
 
 ```bash
 $ bower install

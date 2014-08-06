@@ -41,7 +41,7 @@ $ karma init
 $ karma start karma.conf.js
 ```
 
-> First remenber to run
+> Remember to install node dependencies first
 
 ```bash
 $ npm install
