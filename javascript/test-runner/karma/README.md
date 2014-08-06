@@ -8,6 +8,8 @@
 
 * Must have [PhantomJS](http://phantomjs.org/) installed
 
+  * Manual installation
+
 > Download, unzip file in some accessible directory and add `/bin` subdirectory to PATH environment variable.
 >
 > On Mac for example, unzip on `/Application/phantomjs` and edit your `.bach_profile` with the following sample
@@ -18,6 +20,15 @@ export PHANTOMJS=$PHANTOMJS_HOME/bin
 
 export PATH=$PATH:$PHANTOMJS
 ```
+  
+  * npm installation global package
+
+> That will install phantomjs as global package, resolve which yours SO, then download respective PhantomJS 'zip' package, uncompress inside global `/node_modules/phantomjs/lib/phantom` and finally create a link `phantomjs` pointing to PhantomJS binary, that allow us to `$ phantomjs <phantom arguments>`
+
+```bash
+$ sudo npm install -g phantomjs
+```
+
 
 ### Karma Commandline Interface
 
@@ -34,6 +45,10 @@ $ sudo npm install -g karma-cli
 
 
 ## Links
+
+* [PhantomJS](http://phantomjs.org/)
+
+  * [[GitHub] Medium / phantomjs](https://github.com/Medium/phantomjs) - NPM wrapper for installing phantomjs
 
 * [Karma Runner](https://karma-runner.github.io/)
 
