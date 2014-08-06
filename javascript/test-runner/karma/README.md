@@ -1,21 +1,10 @@
 # Karma Runner
 
-* [Karma Runner](https://karma-runner.github.io/)
-
-  * [[GitHub] karma-runner / karma](https://github.com/karma-runner/karma) - Spectacular Test Runner for JavaScript
-
-
 ## Prerequisites
 
 * Must have [Git](http://git-scm.com/) installed
 
 * Must have [node.js (at least v0.10.x)](http://nodejs.org/) installed with npm (Node Package Manager)
-
-* Must have *Karma cli* node package installed globally.
-
-```bash
-$ sudo npm install -g karma-cli
-```
 
 * Must have [PhantomJS](http://phantomjs.org/) installed
 
@@ -30,15 +19,25 @@ export PHANTOMJS=$PHANTOMJS_HOME/bin
 export PATH=$PATH:$PHANTOMJS
 ```
 
+### Karma Commandline Interface
+
+```bash
+$ sudo npm install -g karma-cli
+```
+
 
 ## Examples
 
 * [01](01) - first Karma contact
 
-> TODO: define
+> TODO: define more examples
 
 
 ## Links
+
+* [Karma Runner](https://karma-runner.github.io/)
+
+  * [[GitHub] karma-runner / karma](https://github.com/karma-runner/karma) - Spectacular Test Runner for JavaScript
 
 * [[GitHub] vojtajina / ng-directive-testing](https://github.com/vojtajina/ng-directive-testing) - Simple example of testing Angular's directives
 
