@@ -15,12 +15,22 @@
   ],
 
   "serve_files": [
+    "bower_components/angular/angular.min.js",
+    "templatesCached/**/*.js",
+
     "bower_components/requirejs/require.js",
 
     "tests/require.config.js"
   ],
 
+  "before_tests": "node scripts/make-cache-ng-html.js src templatesCached",
+  "on_exit": "node scripts/remove-cache-ng-html.js templatesCached",
+
   "launch_in_dev": [
     "chrome"
+  ],
+
+  "launch_in_ci": [
+    "phantomjs"
   ]
 }
