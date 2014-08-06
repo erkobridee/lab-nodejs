@@ -16,6 +16,8 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "karma": "^0.12.21"
+    "karma": "^0.12.21",
+    "karma-jasmine": "^0.1.5",
+    "karma-chrome-launcher": "^0.1.4"
   }
 }
