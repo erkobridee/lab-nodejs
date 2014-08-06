@@ -30,12 +30,22 @@ $ touch README.md
 $ npm init
 
 $ npm install karma --save-dev
+
+$ karma init
 ```
 
 
 ## Karma commands
 
-> TODO: define content
+```bash
+$ karma start karma.conf.js
+```
+
+> First remenber to run
+
+```bash
+$ npm install
+```
 
 
 ## Links
