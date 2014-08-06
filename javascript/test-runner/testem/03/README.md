@@ -15,18 +15,39 @@
 $ sudo npm install -g bower
 ```
 
-* Must have *Testem* node package installed globally.
+* Must have [Test'em](https://github.com/airportyh/testem) node package installed globally.
 
 ```bash
 $ sudo npm install -g testem
 ```
 
 
-## Run command
+## Test'em commands
+
+* development mode
+
+```bash
+$ testem 
+```
+
+> Remenber to install bower components first
 
 ```bash
 $ bower install
-$ testem
+```
+
+* continuous integration (CI) mode
+
+  >  by default will run defined tests in all available launchers, or in some specifc launcher if `launch_in_ci` is defined in `testem.json` or `testem.yml`
+
+```bash
+$ testem ci
+```
+
+* list available launchers (web browsers)
+
+```bash
+$ testem launchers
 ```
 
 
