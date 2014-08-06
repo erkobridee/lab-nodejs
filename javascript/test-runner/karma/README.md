@@ -8,9 +8,9 @@
 
 * Must have [PhantomJS](http://phantomjs.org/) installed
 
-> on Mac for example, unzip on `/Application/phantomjs`
+> Download, unzip file in some accessible directory and add `/bin` subdirectory to PATH environment variable.
 >
-> edit your .bach_profile and add
+> On Mac for example, unzip on `/Application/phantomjs` and edit your `.bach_profile` with the following sample
 
 ```bash
 export PHANTOMJS_HOME=/Application/phantomjs
