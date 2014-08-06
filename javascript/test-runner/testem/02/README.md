@@ -9,41 +9,45 @@
 
 * Must have [node.js (at least v0.10.x)](http://nodejs.org/) installed with npm (Node Package Manager)
 
-* Must have *Testem* node package installed globally.
+* Must have [Test'em](https://github.com/airportyh/testem) node package installed globally.
 
 ```bash
 $ sudo npm install -g testem
 ```
 
-* Must have [PhantomJS](http://phantomjs.org/) installed
+* Must have [PhantomJS](http://phantomjs.org/) installed.
 
-> on Mac for example, unzip on `/Application/phantomjs`
+> Download, unzip file in some accessible directory and add `/bin` subdirectory to PATH environment variable.
 >
-> edit your .bach_profile and add
+> On Mac for example, unzip on `/Application/phantomjs` and edit your `.bach_profile` with the following sample
 
 ```bash
 export PHANTOMJS_HOME=/Application/phantomjs
 export PHANTOMJS=$PHANTOMJS_HOME/bin
 
+...
+
 export PATH=$PATH:$PHANTOMJS
 ```
 
 
-## Run command
+## Test'em commands
 
-> Run this command while in dev
+* development mode
 
 ```bash
-$ testem
+$ testem 
 ```
 
-> Command to CI
+* continuous integration (CI) mode
+
+  >  by default will run defined tests in all available launchers, or in some specifc launcher if `launch_in_ci` is defined in `testem.json` or `testem.yml`
 
 ```bash
 $ testem ci
 ```
 
-> See available and launchers config for dev and CI
+* list available launchers (web browsers)
 
 ```bash
 $ testem launchers
