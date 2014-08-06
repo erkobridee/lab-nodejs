@@ -1,4 +1,4 @@
-describe('Unit: Testing dep1 depWidgetOutline Directive', function() {
+describe('Unit: Testing modules.dep1 depWidgetOutline Directive', function() {
 
   var scope, compile;
 
@@ -6,24 +6,8 @@ describe('Unit: Testing dep1 depWidgetOutline Directive', function() {
   beforeEach(function() {
 
     //load the module
-    //module('modules.dep1');
-    module('dep1', function($provide) {
-
-      // decorate directive
-      // http://angular-tips.com/blog/2013/09/experiment-decorating-directives/
-
-      $provide.decorator('depWidgetOutlineDirective', function($delegate) {
-          var directive = $delegate[0];
-
-          //console.log(directive);
-
-          directive.templateUrl = null;
-          directive.template = '<div class="widget"><div class="title">{{title}}</div><div class="content" ng-transclude></div></div>';
-
-          return $delegate;
-      });
-
-    });
+    module('dep1');
+    module('app/dep1/directives/depWidget.tpl.html');
 
     // inject dependencies
     inject(function($rootScope, $compile, $templateCache) {
