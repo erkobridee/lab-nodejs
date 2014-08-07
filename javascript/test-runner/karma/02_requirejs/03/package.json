@@ -1,0 +1,30 @@
+{
+  "name": "karma-02-requirejs-03",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://github.com/erkobridee/lab-nodejs",
+  "authors": [
+    "Erko Bridee de Almeida Cabrera <erko.bridee@gmail.com>"
+  ],
+  "description": "Karma Runner and require.js application. Tests spec's loaded by tests/require.specs.load.js added on require config deps array.",
+  "scripts": {
+    "dev": "karma start configs/karma.dev.conf.js",
+    "test": "karma start configs/karma.ci.conf.js"
+  },
+  "keywords": [
+    "test",
+    "karma"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "karma": "^0.12.21",
+    "karma-jasmine": "^0.1.5",
+    "requirejs": "^2.1.14",
+    "karma-requirejs": "^0.2.2",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-firefox-launcher": "^0.1.3",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "shelljs": "^0.3.0",
+    "karma-junit-reporter": "^0.2.2"
+  }
+}
