@@ -41,11 +41,14 @@ $ sudo npm install -g karma-cli
 
 * [01](01) - first Karma contact
 
-* 02 - require.js
+* 02 - Karma Runner and require.js application
 
-  * [01](02_requirejs/01) - Karma Runner and require.js application. Tests spec's included on Karma Runner test page.
+  * [01](02_requirejs/01) - Tests spec's included on Karma Runner test page.
 
-  * [02](02_requirejs/02) - Karma Runner and require.js application. Tests spec's defined inside require AMD and loaded by require.js config deps array.
+  * [02](02_requirejs/02) - Tests spec's defined inside require AMD and loaded by require.js config deps array.
+
+  * [03](02_requirejs/03) - Tests spec's loaded by `tests/require.specs.load.js` added on require config deps array.
+
 
 > TODO: define more examples
 
