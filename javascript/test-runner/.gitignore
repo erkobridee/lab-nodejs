@@ -2,6 +2,8 @@
 templatesCached
 cache
 
+tests_out
+
 build
 
 dist
