@@ -30,21 +30,36 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      // source files, that you wanna generate coverage for
+      // do not include tests or libraries
+      // (these files will be instrumented by Istanbul)
+      'src/**/*.js': ['coverage']
     },
 
-
-    // https://karma-runner.github.io/0.12/plus/jenkins.html
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['junit'],
+    reporters: ['junit', 'coverage'],
+
+    // https://karma-runner.github.io/0.12/plus/jenkins.html
+
     junitReporter: {
-      outputFile: 'tests_out/test-results.xml'
+      outputFile: 'tests_out/junit/test-results.xml'
     },
 
+    // https://github.com/karma-runner/karma-coverage
+    // https://github.com/yahoo/istanbul
+
+    // optionally, configure the reporter
+    coverageReporter: {
+      type : 'lcovonly', // produces an lcov.info file
+      dir : 'tests_out/coverage/'
+    },
+
+
     // web server port
-    port: 9876,
+    port: 9871,
 
 
     // enable / disable colors in the output (reporters and logs)
