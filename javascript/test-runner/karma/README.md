@@ -1,5 +1,7 @@
 # Karma Runner
 
+> v0.12.x
+
 ## Prerequisites
 
 * Must have [Git](http://git-scm.com/) installed
