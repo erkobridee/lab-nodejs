@@ -14,6 +14,6 @@ function($) {
     return 'Hello ' + ( value || 'World' );
   };
 
-   return Hello;
+  return Hello;
 
 });
