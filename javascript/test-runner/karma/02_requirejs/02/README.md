@@ -32,6 +32,13 @@ $ node scripts/setup
 $ karma start configs/karma.dev.conf.js
 ```
 
+> check code coverage : `npm run coverage` that will call the following command
+
+```bash
+$ karma start configs/karma.coverage.conf.js
+```
+
+
 * continuous integration (CI) mode
 
 > `npm test` will call the following command
