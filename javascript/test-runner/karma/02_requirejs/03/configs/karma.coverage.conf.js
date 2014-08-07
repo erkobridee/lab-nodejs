@@ -17,8 +17,16 @@ module.exports = function(config) {
       'tests/require.config.js',
       {pattern: 'src/**/*.js', included: false, served: true},
       {pattern: 'tests/**/*.js', included: false, served: true},
-      {pattern: 'bower_components/**/*.{js,map}', included: false, served: true},
+      {pattern: 'bower_components/**/*.{js,map}', included: false, served: true, watched: false},
     ],
+
+
+    // list of files to exclude
+    exclude: [
+      'src/require.config.js',
+      'bower_components/**/src/**/*'
+    ],
+
 
     // list of files to exclude
     exclude: [
@@ -40,26 +48,20 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['junit', 'coverage'],
-
-    // https://karma-runner.github.io/0.12/plus/jenkins.html
-
-    junitReporter: {
-      outputFile: 'tests_out/junit/test-results.xml'
-    },
+    reporters: ['coverage'],
 
     // https://github.com/karma-runner/karma-coverage
     // https://github.com/yahoo/istanbul
 
     // optionally, configure the reporter
     coverageReporter: {
-      type : 'lcovonly', // produces an lcov.info file
+      type : 'html',
       dir : 'tests_out/coverage/'
     },
 
 
     // web server port
-    port: 9871,
+    port: 9872,
 
 
     // enable / disable colors in the output (reporters and logs)
@@ -68,7 +70,7 @@ module.exports = function(config) {
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_WARN,
+    logLevel: config.LOG_INFO,
 
 
     // enable / disable watching file and executing tests whenever any file changes
