@@ -15,12 +15,9 @@
     }
   });
 
-  console.log( allTestFiles );
-
   require.config({
 
     // Karma serves files under /base, which is the basePath from your config file
-    //baseUrl: '/base/src',
     baseUrl: '/base',
 
     // libraries dependencies (fallback support)
