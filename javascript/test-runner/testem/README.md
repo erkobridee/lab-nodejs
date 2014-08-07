@@ -6,9 +6,11 @@
 
 * Must have [node.js (at least v0.10.x)](http://nodejs.org/) installed with npm (Node Package Manager)
 
-* Must have [Test'em](https://github.com/airportyh/testem) node package installed globally.
+* Must have [Test'em](https://github.com/airportyh/testem) node package installed globally
 
-* Must have [PhantomJS](http://phantomjs.org/) installed.
+* Must have [PhantomJS](http://phantomjs.org/) installed
+
+  * Manual installation
 
 > Download, unzip file in some accessible directory and add `/bin` subdirectory to PATH environment variable.
 >
@@ -18,9 +20,15 @@
 export PHANTOMJS_HOME=/Application/phantomjs
 export PHANTOMJS=$PHANTOMJS_HOME/bin
 
-...
-
 export PATH=$PATH:$PHANTOMJS
+```
+  
+  * npm installation global package
+
+> That will install phantomjs as global package, resolve which yours SO, then download respective PhantomJS 'zip' package, uncompress inside global `/node_modules/phantomjs/lib/phantom` and finally create a link `phantomjs` pointing to PhantomJS binary, that allow us to `$ phantomjs <phantom arguments>`
+
+```bash
+$ sudo npm install -g phantomjs
 ```
 
 

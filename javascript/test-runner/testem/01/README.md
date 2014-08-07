@@ -9,7 +9,7 @@
 
 * Must have [node.js (at least v0.10.x)](http://nodejs.org/) installed with npm (Node Package Manager)
 
-* Must have *Testem* node package installed globally.
+* Must have [Test'em](https://github.com/airportyh/testem) node package installed globally
 
 ```bash
 $ sudo npm install -g testem

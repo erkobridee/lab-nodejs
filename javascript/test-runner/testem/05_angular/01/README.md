@@ -9,31 +9,20 @@
 
 * Must have [node.js (at least v0.10.x)](http://nodejs.org/) installed with npm (Node Package Manager)
 
-* Must have [Test'em](https://github.com/airportyh/testem) node package installed globally.
+* Must have [bower](http://bower.io/) node package installed globally
 
-* Must have [PhantomJS](http://phantomjs.org/) installed.
+* Must have [Test'em](https://github.com/airportyh/testem) node package installed globally
 
-> Download, unzip file in some accessible directory and add `/bin` subdirectory to PATH environment variable.
->
-> On Mac for example, unzip on `/Application/phantomjs` and edit your `.bach_profile` with the following sample
-
-```bash
-export PHANTOMJS_HOME=/Application/phantomjs
-export PHANTOMJS=$PHANTOMJS_HOME/bin
-
-...
-
-export PATH=$PATH:$PHANTOMJS
-```
-
-* Run the following command to setup development prerequisites
-
-```bash
-$ node scripts/setup.js
-```
+* Must have [PhantomJS](http://phantomjs.org/) installed
 
 
 ## Test'em commands
+
+> Remember to setup environment first
+
+```bash
+$ node scripts/setup
+```
 
 * development mode
 

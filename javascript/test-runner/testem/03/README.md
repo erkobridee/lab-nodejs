@@ -9,13 +9,13 @@
 
 * Must have [node.js (at least v0.10.x)](http://nodejs.org/) installed with npm (Node Package Manager)
 
-* Must have [bower](http://bower.io/) node package installer globally.
+* Must have [bower](http://bower.io/) node package installed globally
 
 ```bash
 $ sudo npm install -g bower
 ```
 
-* Must have [Test'em](https://github.com/airportyh/testem) node package installed globally.
+* Must have [Test'em](https://github.com/airportyh/testem) node package installed globally
 
 ```bash
 $ sudo npm install -g testem
@@ -24,16 +24,16 @@ $ sudo npm install -g testem
 
 ## Test'em commands
 
-* development mode
-
-```bash
-$ testem 
-```
-
 > Remember to install bower components first
 
 ```bash
 $ bower install
+```
+
+* development mode
+
+```bash
+$ testem 
 ```
 
 * continuous integration (CI) mode
