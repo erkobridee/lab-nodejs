@@ -1,38 +1,29 @@
+var sharedConfig = require('./karma.shared.conf');
+
 module.exports = function(config) {
+
+  var shared = sharedConfig();
+
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '../',
+    basePath: shared.basePath,
 
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine', 'requirejs'],
+    frameworks: shared.frameworks,
 
 
     // https://karma-runner.github.io/0.12/config/files.html
 
     // list of files / patterns to load in the browser
-    files: [
-      'tests/require.config.js',
-      {pattern: 'src/**/*.js', included: false, served: true},
-      {pattern: 'tests/**/*.js', included: false, served: true},
-      {pattern: 'bower_components/**/*.{js,map}', included: false, served: true, watched: false},
-    ],
+    files: shared.files,
+
 
 
     // list of files to exclude
-    exclude: [
-      'src/require.config.js',
-      'bower_components/**/src/**/*'
-    ],
-
-
-    // list of files to exclude
-    exclude: [
-      'src/require.config.js',
-      'bower_components/**/src/**/*'
-    ],
+    exclude: shared.exclude,
 
 
     // preprocess matching files before serving them to the browser
@@ -71,7 +62,7 @@ module.exports = function(config) {
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_DISABLE,
 
 
     // enable / disable watching file and executing tests whenever any file changes
