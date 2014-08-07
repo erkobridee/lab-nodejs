@@ -41,6 +41,8 @@ $ sudo npm install -g karma-cli
 
 * [01](01) - first Karma contact
 
+* [02](02) - Karma Runner and require.js application. Tests spec's included on Karma Runner test page.
+
 > TODO: define more examples
 
 
