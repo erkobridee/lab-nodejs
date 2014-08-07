@@ -9,6 +9,7 @@
   "description": "Karma Runner and require.js application. Tests spec's defined inside require AMD and loaded by require.js config deps array.",
   "scripts": {
     "dev": "karma start configs/karma.dev.conf.js",
+    "coverage": "karma start configs/karma.coverage.conf.js",
     "test": "karma start configs/karma.ci.conf.js"
   },
   "keywords": [
