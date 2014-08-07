@@ -16,25 +16,6 @@
 * Must have [PhantomJS](http://phantomjs.org/) installed
 
 
-## Commands on Mac
-
-### Create commands list
-
-```bash
-$ mkdir 02
-
-$ cd 02
-
-$ touch README.md
-
-$ npm init
-
-$ npm install karma --save-dev
-
-$ karma init
-```
-
-
 ## Karma commands
 
 > Remember to setup environment first
