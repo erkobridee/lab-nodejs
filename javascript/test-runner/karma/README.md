@@ -59,12 +59,24 @@ $ sudo npm install -g karma-cli
 
   * [[GitHub] Medium / phantomjs](https://github.com/Medium/phantomjs) - NPM wrapper for installing phantomjs
 
+--
+
 * [Karma Runner](https://karma-runner.github.io/)
 
   * [[GitHub] karma-runner / karma](https://github.com/karma-runner/karma) - Spectacular Test Runner for JavaScript
+
+--
 
 * [[GitHub] vojtajina / ng-directive-testing](https://github.com/vojtajina/ng-directive-testing) - Simple example of testing Angular's directives
 
   * [[GitHub] karma-runner / karma-ng-html2js-preprocessor](https://github.com/karma-runner/karma-ng-html2js-preprocessor) - A Karma plugin. Compile AngularJS templates to JavaScript on the fly
 
 * [Full-Spectrum Testing with AngularJS and Testacular | Year of Moo](http://www.yearofmoo.com/2013/01/full-spectrum-testing-with-angularjs-and-testacular.html) | [[GitHub] AngularJS - Testing Article](https://github.com/yearofmoo-articles/AngularJS-Testing-Article)
+
+--
+
+* Coverage
+
+  * [[GitHub] karma-runner / karma-coverage](https://github.com/karma-runner/karma-coverage) - A Karma plugin. Generate code coverage using [Istanbul](https://github.com/yahoo/istanbul).
+
+  * [Integrating Karma 0.8 tests in Maven with Sonar(Cube) test coverage | JDriven Blog](http://blog.jdriven.com/2013/08/integrating-karma-test-runner-in-maven-with-sonarcube-test-coverage/)
