@@ -1,4 +1,4 @@
-# Karma Runner / 02
+# Karma Runner / 02 require.js / 01
 
 > Karma Runner and require.js application. Tests spec's included on Karma Runner test page.
 
