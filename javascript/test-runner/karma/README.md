@@ -77,6 +77,8 @@ $ sudo npm install -g karma-cli
 
   * [[GitHub] karma-runner / karma-ng-html2js-preprocessor](https://github.com/karma-runner/karma-ng-html2js-preprocessor) - A Karma plugin. Compile AngularJS templates to JavaScript on the fly
 
+* [Introduction to unit test: Directives | Angular Tips](http://angular-tips.com/blog/2014/06/introduction-to-unit-test-directives/)
+
 * [Full-Spectrum Testing with AngularJS and Testacular | Year of Moo](http://www.yearofmoo.com/2013/01/full-spectrum-testing-with-angularjs-and-testacular.html) | [[GitHub] AngularJS - Testing Article](https://github.com/yearofmoo-articles/AngularJS-Testing-Article)
 
 --
