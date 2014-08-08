@@ -51,8 +51,12 @@ $ sudo npm install -g karma-cli
 
   * [03](02_requirejs/03) - Tests spec's loaded by `tests/require.specs.load.js` added on require config deps array.
 
+* 03 - Karma Runner and angular.js application
 
-> TODO: define more examples
+  * [01](03_angular/01) - Vendors Libs, Application Source and Tests spec's included on Karma Runner test page.
+
+
+> TODO: define more angular.js examples
 
 
 ## Links
