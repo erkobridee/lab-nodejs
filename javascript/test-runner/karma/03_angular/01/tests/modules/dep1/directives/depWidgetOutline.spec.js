@@ -27,6 +27,11 @@ describe('Unit: Testing modules.dep1 depWidgetOutline Directive', function() {
       scope.$digest();
     });
 
+    it('should have scope title text \'outline widget\'', function() {
+      var isolated = element.isolateScope();
+      expect(isolated.title).toEqual('outline widget');
+    });
+
     it("should have widget css class", function() {
       /*
       console.log(element);

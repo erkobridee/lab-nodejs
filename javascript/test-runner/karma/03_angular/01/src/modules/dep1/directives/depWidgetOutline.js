@@ -16,16 +16,20 @@ function() {
     transclude: true,
 
     scope: {
-      title: '@'
+      //title: '@'
     },
 
     //template: '<div class="widget"><div class="title">{{title}}</div><div class="content" ng-transclude></div></div>',
     templateUrl: 'modules/dep1/directives/depWidget.tpl.html',
 
     link: function(scope, element, attrs) {
-      //console.log('depWidgetOutLine directive link');
+      /*
       // fallback
-      if(!scope.title) scope.title = attrs.title || '';
+      if(!scope.title && attrs.title) {
+        scope.title = attrs.title;
+      }
+      */
+      scope.title = attrs.title;
     }
 
 
