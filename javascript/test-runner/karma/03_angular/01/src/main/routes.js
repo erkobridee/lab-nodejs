@@ -26,6 +26,13 @@ function($routeProvider) {
           templateUrl: 'modules/dep1/tpl.html'
         }
       )
+      .when(
+        '/github',
+        {
+          controller: 'GitHubCtrl',
+          templateUrl: 'modules/github/tpl.html'
+        }
+      )
       .otherwise({
         redirectTo:'/'
       });
