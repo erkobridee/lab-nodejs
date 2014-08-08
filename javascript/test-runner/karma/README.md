@@ -83,6 +83,8 @@ $ sudo npm install -g karma-cli
 
 --
 
+* [karma-jasmine-html-reporter | npm](https://www.npmjs.org/package/karma-jasmine-html-reporter)
+
 * Coverage
 
   * [[GitHub] karma-runner / karma-coverage](https://github.com/karma-runner/karma-coverage) - A Karma plugin. Generate code coverage using [Istanbul](https://github.com/yahoo/istanbul).
