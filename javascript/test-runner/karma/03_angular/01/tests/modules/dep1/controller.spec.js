@@ -27,4 +27,12 @@ describe('Unit: Testing modules.dep1 Controller', function() {
     expect(scope.sum(123, 321)).toBe(444);
   });
 
+  it('should make text exciting: aloha!!!', function () {
+    expect(scope.toExciteMsg('aloha')).toBe('aloha!!!');
+  });
+
+  it('should make question text: Where to go???', function () {
+    expect(scope.toQuestionMsg('Where to go')).toBe('Where to go???');
+  });
+
 });

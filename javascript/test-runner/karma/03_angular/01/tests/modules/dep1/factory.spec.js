@@ -27,9 +27,14 @@ describe('Unit: Testing modules.dep1 Factory', function() {
   });
 
   // check to see if it does what it's supposed to do
-  it('should make text exciting', function () {
+  it('should make text exciting: aloha!!!', function () {
     var result = factory.exciteText('aloha');
     expect(result).toBe('aloha!!!');
+  });
+
+  it('should make text exciting: Hello!!!', function () {
+    var result = factory.exciteText();
+    expect(result).toBe('Hello!!!');
   });
 
 });

@@ -27,9 +27,14 @@ describe('Unit: Testing modules.dep1 Service', function() {
   });
 
   // check to see if it does what it's supposed to do
-  it('should make question text', function () {
+  it('should make question text: Where to go???', function () {
     var result = service.questionText('Where to go');
     expect(result).toBe('Where to go???');
+  });
+
+  it('should make question text: Hello???', function () {
+    var result = service.questionText();
+    expect(result).toBe('Hello???');
   });
 
 });
