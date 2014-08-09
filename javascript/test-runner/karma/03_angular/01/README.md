@@ -53,8 +53,14 @@ $ karma start configs/karma.ci.conf.js
 
 * [[GitHub] karma-runner / karma](https://github.com/karma-runner/karma) - Spectacular Test Runner for JavaScript
 
+* [karma-jasmine-html-reporter | npm](https://www.npmjs.org/package/karma-jasmine-html-reporter)
+
 * [[GitHub] karma-runner / karma-ng-html2js-preprocessor](https://github.com/karma-runner/karma-ng-html2js-preprocessor) - A Karma plugin. Compile AngularJS templates to JavaScript on the fly
 
-* [karma-jasmine-html-reporter | npm](https://www.npmjs.org/package/karma-jasmine-html-reporter)
+* [[GitHub] karma-runner / karma-coverage](https://github.com/karma-runner/karma-coverage) - A Karma plugin. Generate code coverage using [Istanbul](https://github.com/yahoo/istanbul).
+
+  * [[GitHub ISSUE] karma-runner / karma | Excluding files from preprocessor #508](https://github.com/karma-runner/karma/issues/508) - closed
+
+--
 
 * [[GitHub] vojtajina / ng-directive-testing](https://github.com/vojtajina/ng-directive-testing) - Simple example of testing Angular's directives

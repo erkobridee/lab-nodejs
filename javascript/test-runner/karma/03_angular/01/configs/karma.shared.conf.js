@@ -15,10 +15,10 @@ module.exports = function() {
 
     // list of files / patterns to load in the browser
     files: [
-      {pattern: 'bower_components/**/*.map', included: false, served: true, watched: false},
-      {pattern: 'bower_components/jquery/dist/*.min.js', included: true, served: true, watched: false},
-      {pattern: 'bower_components/angular/*.{css,min.js}', included: true, served: true, watched: false},
-      {pattern: 'bower_components/angular-*/*{.css,-mocks.js,.min.js}', included: true, served: true, watched: false},
+      {pattern: 'src/bower_components/**/*.map', included: false, served: true, watched: false},
+      {pattern: 'src/bower_components/jquery/dist/*.min.js', included: true, served: true, watched: false},
+      {pattern: 'src/bower_components/angular/*.{css,min.js}', included: true, served: true, watched: false},
+      {pattern: 'src/bower_components/angular-*/*{.css,-mocks.js,.min.js}', included: true, served: true, watched: false},
 
       // ensure javascript application source load order
       'src/modules/dep1/module.js',
@@ -77,7 +77,7 @@ module.exports = function() {
         // source files, that you wanna generate coverage for
         // do not include tests or libraries
         // (these files will be instrumented by Istanbul)
-        'src/**/*.js': ['coverage']
+        'src/!(bower_components)/**/*.js': ['coverage']
       }
     },
 
