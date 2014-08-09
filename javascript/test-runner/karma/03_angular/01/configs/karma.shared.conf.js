@@ -30,6 +30,10 @@ module.exports = function() {
       'src/modules/dep1/directives/depWidgetInline.js',
       'src/modules/dep1/directives/depWidgetOutline.js',
 
+      'src/modules/github/module.js',
+      'src/modules/github/resource.js',
+      'src/modules/github/controller.js',
+
       'src/main/module.js',
       'src/main/routes.js',
       'src/home/controller.js',
@@ -44,6 +48,7 @@ module.exports = function() {
       'tests/main/routes.spec.js',
       'tests/home/controller.spec.js',
       'tests/about/controller.spec.js',
+
       'tests/modules/dep1/module.spec.js',
       'tests/modules/dep1/controller.spec.js',
       'tests/modules/dep1/filter.spec.js',
@@ -51,7 +56,11 @@ module.exports = function() {
       'tests/modules/dep1/service.spec.js',
       'tests/modules/dep1/directives/depWelcome.spec.js',
       'tests/modules/dep1/directives/depWidgetInline.spec.js',
-      'tests/modules/dep1/directives/depWidgetOutline.spec.js'
+      'tests/modules/dep1/directives/depWidgetOutline.spec.js',
+
+      'tests/modules/github/module.spec.js',
+      'tests/modules/github/resource.spec.js',
+      'tests/modules/github/controller.spec.js'
     ],
 
 
