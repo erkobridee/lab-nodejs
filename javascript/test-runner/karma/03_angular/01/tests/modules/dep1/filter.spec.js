@@ -1,4 +1,4 @@
-describe('Unit: Testing modules.dep1 Filter', function() {
+describe('Testing modules.dep1 Filter', function() {
 
   var filter;
 

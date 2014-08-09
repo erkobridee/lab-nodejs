@@ -1,4 +1,4 @@
-describe('Unit: Testing modules.dep1 depWelcome Directive', function() {
+describe('Testing modules.dep1 depWelcome Directive', function() {
 
   var scope, compile;
 

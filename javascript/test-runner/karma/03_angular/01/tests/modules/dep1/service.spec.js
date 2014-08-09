@@ -1,4 +1,4 @@
-describe('Unit: Testing modules.dep1 Service', function() {
+describe('Testing modules.dep1 Service', function() {
 
   var service;
 

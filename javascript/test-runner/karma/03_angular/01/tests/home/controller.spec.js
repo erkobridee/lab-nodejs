@@ -1,4 +1,4 @@
-describe('Unit: Testing Home Controller', function() {
+describe('Testing Home Controller', function() {
 
   var ctrl, scope;
 

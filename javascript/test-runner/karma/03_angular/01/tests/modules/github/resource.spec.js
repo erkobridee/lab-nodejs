@@ -1,4 +1,4 @@
-describe("Unit: Testing modules.github Resource", function() {
+describe("Testing modules.github Resource", function() {
 
   var resource;
 

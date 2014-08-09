@@ -1,4 +1,4 @@
-describe('Unit: Testing modules.dep1 Controller', function() {
+describe('Testing modules.dep1 Controller', function() {
 
   var ctrl, scope;
 

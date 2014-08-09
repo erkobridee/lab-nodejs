@@ -1,4 +1,4 @@
-describe('Unit: Testing modules.dep1 depWidgetOutline Directive', function() {
+describe('Testing modules.dep1 depWidgetOutline Directive', function() {
 
   var scope, compile;
 

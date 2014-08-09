@@ -68,11 +68,29 @@ describe('Angular.js \'app\' Routes', function() {
         expect(route.routes['/dep1'].controller).toBe('Dep1Ctrl');
       });
 
-      it('should map to templateUrl depModule/tpl.html', function() {
+      it('should map to templateUrl modules/dep1/tpl.html', function() {
         expect(route.routes['/dep1'].templateUrl).toEqual('modules/dep1/tpl.html');
       });
 
     });
+
+
+    describe('location \'/github\'', function() {
+
+      it('should be defined', function() {
+        expect(route.routes['/github']).toBeDefined();
+      });
+
+      it('should map to controller GitHubCtrl', function() {
+        expect(route.routes['/github'].controller).toBe('GitHubCtrl');
+      });
+
+      it('should map to templateUrl modules/github/tpl.html', function() {
+        expect(route.routes['/github'].templateUrl).toEqual('modules/github/tpl.html');
+      });
+
+    });
+
 
     describe('otherwise is the empty string', function() {
 

@@ -1,4 +1,4 @@
-describe('Unit: Testing modules.dep1 Factory', function() {
+describe('Testing modules.dep1 Factory', function() {
 
   var factory;
 

@@ -1,4 +1,4 @@
-describe('Unit: Testing modules.github Controller', function() {
+describe('Testing modules.github Controller', function() {
 
   var ctrl, scope, httpBackend;
 
