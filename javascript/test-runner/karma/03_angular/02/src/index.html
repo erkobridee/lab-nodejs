@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-controller="MainCtrl">
+<head>
+  <meta charset="UTF-8">
+  <title>(Require.js + Angular.js) Application</title>
+
+  <link rel="stylesheet" href="bower_components/angular/angular-csp.css">
+
+  <link rel="stylesheet" href="app/dep1/directives/depWidget.css">
+
+</head>
+<body>
+
+  <div ng-view></div>
+
+  <!-- javascript -->
+  <script
+    data-main="require.config"
+    src="bower_components/requirejs/require.js"></script>
+
+</body>
+</html>
