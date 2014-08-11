@@ -22,8 +22,14 @@ describe('Angular.js \'modules.github\' Module', function() {
       deps = module.value('appName').requires;
     });
 
-    it('should have ngResource as a dependency', function() {
-      expect(hasModule('ngResource')).toEqual(true);
+    var mainDeps = [
+      'ngResource'
+    ];
+
+    mainDeps.forEach(function( depName ) {
+      it('should have ' + depName +  ' as a dependency', function() {
+        expect(hasModule( depName )).toEqual(true);
+      });
     });
 
   });
