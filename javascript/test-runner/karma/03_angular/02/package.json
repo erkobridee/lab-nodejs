@@ -6,7 +6,7 @@
   "authors": [
     "Erko Bridee de Almeida Cabrera <erko.bridee@gmail.com>"
   ],
-  "description": "Karma Runner and require.js + angular.js modular application. Vendors Libs, Application Source and Tests specs included on Karma Runner test page.",
+  "description": "Karma Runner and require.js + angular.js modular application. Vendors Libs, Application Source and Tests specs loaded by require.js on Karma Runner test page.",
   "scripts": {
     "dev": "karma start configs/karma.dev.conf.js",
     "coverage": "karma start configs/karma.coverage.conf.js",

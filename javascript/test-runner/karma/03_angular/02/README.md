@@ -1,6 +1,6 @@
 # Karma Runner / 03 angular.js / 02
 
-> Karma Runner and require.js + angular.js modular application. Vendors Libs, Application Source and Tests spec's included on Karma Runner test page.
+> Karma Runner and require.js + angular.js modular application. Vendors Libs, Application Source and Tests spec's loaded by require.js on Karma Runner test page.
 
 
 ## Prerequisites
