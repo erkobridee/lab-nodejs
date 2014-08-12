@@ -22,14 +22,11 @@ module.exports = function() {
       // load app source and test's specs
       'tests/require.config.js',
 
-      // app source
+      // app source and tests specs
       {pattern: 'src/**/*.{js,css}', included: false, served: true},
 
       // cache templates
-      'src/**/*.html',
-
-      // app tests specs
-      {pattern: 'tests/**/*.js', included: false, served: true}
+      'src/**/*.html'
 
     ],
 
@@ -50,7 +47,8 @@ module.exports = function() {
         // source files, that you wanna generate coverage for
         // do not include tests or libraries
         // (these files will be instrumented by Istanbul)
-        'src/!(bower_components)/*!(tests)*/*.js': ['coverage']
+        //'src/!(bower_components)/*!(tests)*/!(require.load).js': ['coverage']
+        '{src,src/!(bower_components)/!(tests){,/!(tests)}}/!(require.load).js': ['coverage']
       }
     },
 

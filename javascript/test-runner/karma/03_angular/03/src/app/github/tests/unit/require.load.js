@@ -4,8 +4,7 @@ define(
   './module.spec',
   './routes.spec',
   './resource.spec',
-  './controller.spec',
-  './routes.spec'
+  './controller.spec'
 ],
 
 // require.js module scope
