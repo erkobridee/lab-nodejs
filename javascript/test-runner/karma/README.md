@@ -61,7 +61,8 @@ $ sudo npm install -g karma-cli
 
     * [02](03_angular/02) - Vendors Libs, Application Source and Tests spec's loaded by require.js on Karma Runner test page.
 
-    * 03 - TODO: define 
+    * [03](03_angular/03) - Code and test specs together in same directory module. Vendors Libs, Application Source and Tests spec's loaded by require.js on Karma Runner test page.
+
 
 ## Links
 
