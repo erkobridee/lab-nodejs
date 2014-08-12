@@ -111,3 +111,7 @@ $ sudo npm install -g karma-cli
 --
 
 * Projects with Karma Runner
+
+  * [[GitHub] angular / angular-seed](https://github.com/angular/angular-seed) - Seed project for angular apps
+
+  * [[GitHub] CleverStack / angular-seed](https://github.com/CleverStack/angular-seed) - The AngularJS based Modular Frontend for CleverStack, MEAN and so much more
