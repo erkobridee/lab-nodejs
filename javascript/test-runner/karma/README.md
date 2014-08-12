@@ -94,8 +94,20 @@ $ sudo npm install -g karma-cli
 
 --
 
+* Task Runner
+
+  * [[GitHub] karma-runner / grunt-karma](https://github.com/karma-runner/grunt-karma) - Grunt plugin for Karma
+
+  * [[GitHub] karma-runner / gulp-karma](https://github.com/karma-runner/gulp-karma) - Example of using Karma with Gulp
+
+--
+
 * [[GitHub] vojtajina / ng-directive-testing](https://github.com/vojtajina/ng-directive-testing) - Simple example of testing Angular's directives
 
 * [Introduction to unit test: Directives | Angular Tips](http://angular-tips.com/blog/2014/06/introduction-to-unit-test-directives/)
 
 * [Full-Spectrum Testing with AngularJS and Testacular | Year of Moo](http://www.yearofmoo.com/2013/01/full-spectrum-testing-with-angularjs-and-testacular.html) | [[GitHub] AngularJS - Testing Article](https://github.com/yearofmoo-articles/AngularJS-Testing-Article)
+
+--
+
+* Projects with Karma Runner
