@@ -4,7 +4,7 @@ require({
   paths: {
 
     jquery: [
-      '/bower_components/jquery/dist/jquery.min'
+      'bower_components/jquery/dist/jquery.min'
     ]
 
   },

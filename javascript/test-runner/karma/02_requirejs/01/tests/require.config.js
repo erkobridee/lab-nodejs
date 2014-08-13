@@ -10,7 +10,7 @@ require.config({
   paths: {
 
     jquery: [
-      '/base/bower_components/jquery/dist/jquery.min'
+      'bower_components/jquery/dist/jquery.min'
     ]
 
   },
