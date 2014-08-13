@@ -24,7 +24,7 @@
     paths: {
 
       jquery: [
-        '/base/bower_components/jquery/dist/jquery.min'
+        'src/bower_components/jquery/dist/jquery.min'
       ]
 
     },
