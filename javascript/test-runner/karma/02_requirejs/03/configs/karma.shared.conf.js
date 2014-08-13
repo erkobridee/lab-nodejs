@@ -18,15 +18,27 @@ module.exports = function() {
       'tests/require.config.js',
       {pattern: 'src/**/*.js', included: false, served: true},
       {pattern: 'tests/**/*.js', included: false, served: true},
-      {pattern: 'bower_components/**/*.{js,map}', included: false, served: true, watched: false},
+      {pattern: 'src/bower_components/**/*.{js,map}', included: false, served: true, watched: false},
     ],
 
 
     // list of files to exclude
     exclude: [
       'src/require.config.js',
-      'bower_components/**/src/**/*'
-    ]
+      'src/bower_components/**/src/**/*'
+    ],
+
+    // preprocess matching files before serving them to the browser
+    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+    preprocessors: {
+      dev: {},
+      ci: {
+        // source files, that you wanna generate coverage for
+        // do not include tests or libraries
+        // (these files will be instrumented by Istanbul)
+        'src/!(bower_components)/**/!(require.load).js': ['coverage']
+      }
+    }
 
   };
 
