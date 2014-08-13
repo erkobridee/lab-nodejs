@@ -67,6 +67,8 @@ $ sudo npm install -g karma-cli
 
   * [01](04_grunt/01) - First Grunt Karma contact
 
+  * [02](04_grunt/02) - Grunt with Karma and Watch tasks
+
 
 ## Links
 
