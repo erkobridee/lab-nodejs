@@ -18,7 +18,7 @@
 
 ## Karma commands
 
-> Remember to setup environment first
+> Remember to setup environment first: `npm run setup`
 
 ```bash
 $ node scripts/setup
