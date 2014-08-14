@@ -28,23 +28,25 @@ $ npm start
 
 * development mode 
 
-  * Project only
+> Project only
 
 ```bash
 $ grunt project
 ```
 
-  * Karma only
+> Karma only
 
 ```bash
 $ grunt spec:unit
 ```
 
-  * Project and Karma
+> Project and Karma
 
 ```bash
 $ grunt dev
 ```
+
+--
 
 > check code coverage : `npm run coverage` that will call the following command
 
