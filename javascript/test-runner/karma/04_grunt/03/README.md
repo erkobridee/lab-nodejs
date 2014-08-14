@@ -18,7 +18,7 @@
 
 ## Commands
 
-> Start development : [ `npm run setup`, `grunt dev` ]
+> Setup environment and dtart development : [ `npm run setup`, `grunt dev` ]
 
 ```bash
 $ npm start
