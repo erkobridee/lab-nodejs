@@ -69,6 +69,8 @@ $ sudo npm install -g karma-cli
 
   * [02](04_grunt/02) - Grunt with Karma and Watch tasks
 
+  * [03](04_grunt/03) - Require.js Application
+
 
 ## Links
 
