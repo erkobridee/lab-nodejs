@@ -21,9 +21,9 @@ $ sudo npm install -g grunt-cli
 ### Create commands list
 
 ```bash
-$ mkdir 01
+$ mkdir 02
 
-$ cd 01
+$ cd 02
 
 $ touch README.md
 
