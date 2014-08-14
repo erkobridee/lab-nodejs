@@ -1,0 +1,45 @@
+{
+  "name": "karma-04-grunt-03",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://github.com/erkobridee/lab-nodejs",
+  "authors": [
+    "Erko Bridee de Almeida Cabrera <erko.bridee@gmail.com>"
+  ],
+  "description": "Karma Runner and require.js application with Grunt.js. Tests spec's loaded by tests/require.specs.load.js added on require config deps array.",
+  "scripts": {
+    "prestart": "npm run setup",
+    "start": "echo \"start development\n\" && grunt dev",
+    "test": "grunt spec:ci",
+    "coverage": "grunt spec:coverage",
+    "setup": "node scripts/setup",
+    "testos": "node scripts/testos"
+  },
+  "keywords": [
+    "test",
+    "karma",
+    "grunt"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "karma": "^0.12.21",
+    "requirejs": "^2.1.14",
+    "karma-requirejs": "^0.2.2",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-firefox-launcher": "^0.1.3",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "shelljs": "^0.3.0",
+    "karma-junit-reporter": "^0.2.2",
+    "karma-coverage": "^0.2.5",
+    "grunt-karma": "^0.8.3",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-connect": "^0.8.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-concurrent": "^0.5.0",
+    "karma-jasmine": "^0.2.2",
+    "karma-jasmine-html-reporter": "^0.1.5",
+    "grunt-newer": "^0.7.0"
+  }
+}
