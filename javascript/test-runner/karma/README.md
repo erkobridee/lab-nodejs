@@ -71,6 +71,8 @@ $ sudo npm install -g karma-cli
 
   * [03](04_grunt/03) - Require.js Application
 
+  * [04](04_grunt/04) - Angular.js + Require.js Application
+
 
 ## Links
 
