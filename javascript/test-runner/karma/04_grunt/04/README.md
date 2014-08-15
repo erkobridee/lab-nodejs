@@ -91,4 +91,6 @@ $ grunt spec:ci
 
     * [grunt-concurrent](https://github.com/sindresorhus/grunt-concurrent)
 
+    * [grunt-open](https://github.com/jsoverson/grunt-open)
+
     * [grunt-newer](https://github.com/tschaub/grunt-newer)
