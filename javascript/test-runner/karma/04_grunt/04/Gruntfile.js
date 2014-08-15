@@ -21,23 +21,48 @@ module.exports = function(grunt) {
 
     karma: {
 
-      unitSingleRun: {
-        configFile: 'configs/karma.dev.conf.js',
+      specs: {
+        configFile: 'configs/karma.conf.js'
+      },
+
+      singleRun: {
+        configFile: 'configs/karma.conf.js',
         browsers: ['PhantomJS'],
         singleRun: true
       },
 
       unit: {
-        configFile: 'configs/karma.dev.conf.js',
+        configFile: 'configs/karma.conf.js',
+        browsers: ['Chrome'],
+        autoWatch: false,
         background: true
       },
 
       coverage: {
-        configFile: 'configs/karma.coverage.conf.js'
+        configFile: 'configs/karma.conf.js',
+        reporters: ['progress', 'coverage'],
+        browsers: ['PhantomJS'],
+        singleRun: true,
+        coverageReporter: {
+          type : 'html',
+          dir : 'tests_out/coverage/',
+          subdir: 'html'
+        }
       },
 
       ci: {
-        configFile: 'configs/karma.ci.conf.js'
+        configFile: 'configs/karma.conf.js',
+        reporters: ['junit', 'coverage'],
+        browsers: ['PhantomJS'],
+        singleRun: true,
+        junitReporter: {
+          outputFile: 'tests_out/junit/test-results.xml'
+        },
+        coverageReporter: {
+          type : 'lcovonly', // produces an lcov.info file
+          dir : 'tests_out/coverage/',
+          subdir: '.'
+        }
       }
 
     },
@@ -53,14 +78,23 @@ module.exports = function(grunt) {
         ],
         tasks: ['newer:jshint:project'],
         options: {
-          livereload: true
+          livereload: 35728
         }
       },
 
-      spec: {
+      coverage: {
+        files: [
+          'tests_out/coverage/html/index.html'
+        ],
+        options: {
+          livereload: 35729
+        }
+      },
+
+      unit: {
         files: ['src/**/*.js', 'tests/**/*.js'],
         tasks: ['newer:jshint:project', 'karma:unit:run'],
-      }
+      },
 
     },
 
@@ -77,13 +111,23 @@ module.exports = function(grunt) {
         }
       },
 
-      livereload: {
+      project: {
         options: {
           port: 9000,
           hostname: '*',
           base: 'src',
           open: 'http://localhost:9000',
-          livereload: true
+          livereload: 35728
+        }
+      },
+
+      coverage: {
+        options: {
+          port: 9001,
+          hostname: '*',
+          base: 'tests_out/coverage/html',
+          open: 'http://localhost:9001',
+          livereload: 35729
         }
       },
 
@@ -91,7 +135,7 @@ module.exports = function(grunt) {
 
     concurrent: {
       dev: {
-        tasks: ['project', 'spec:unit'],
+        tasks: ['project', 'coverage', 'spec:unit'],
         options: {
           logConcurrentOutput: true
         }
@@ -120,13 +164,17 @@ module.exports = function(grunt) {
   grunt.registerTask('spec:coverage', ['default', 'karma:coverage']);
   grunt.registerTask('spec:ci', ['default', 'karma:ci']);
 
-  grunt.registerTask('spec:unit', ['karma:unitSingleRun', 'karma:unit:start', 'watch:spec']);
-
-  grunt.registerTask('project', ['connect:livereload', 'watch:project']);
+  grunt.registerTask('spec:unit', ['karma:unit:start', 'watch:unit']);
 
   //---
 
-  grunt.registerTask('dev', ['default', 'concurrent:dev']);
+  grunt.registerTask('project', ['connect:project', 'watch:project']);
+  grunt.registerTask('coverage', ['connect:coverage', 'watch:coverage']);
+
+
+  //---
+
+  grunt.registerTask('dev', ['default', 'karma:singleRun', 'concurrent:dev']);
 
 
 };
