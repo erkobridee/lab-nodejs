@@ -4,6 +4,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
 
+
     jshint: {
       grunt: ['Gruntfile.js'],
       project: [
@@ -14,35 +15,86 @@ module.exports = function(grunt) {
     },
 
 
+
     clean: {
       reports: ['tests_out']
     },
 
 
+
     karma: {
 
-      specs: {
-        configFile: 'configs/karma.conf.js'
+      options: {
+        // frameworks to use
+        // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+        frameworks: ['jasmine', 'requirejs'],
+
+        // https://karma-runner.github.io/0.12/config/files.html
+
+        // list of files / patterns to load in the browser
+        files: [
+          {pattern: 'src/bower_components/angular/angular.{min.js, map, css}', included: true, served: true, watched:false},
+          {pattern: 'src/bower_components/**/*.{js, map, css}', included: false, served: true, watched:false},
+
+          // load app source and test's specs
+          'tests/require.config.js',
+
+          // app source and tests specs
+          {pattern: 'src/**/*.{js,css}', included: false, served: true},
+
+          // cache templates
+          'src/**/*.html'
+        ],
+
+        // list of files to exclude
+        exclude: [
+          'src/require.config.js',
+          'bower_components/**/src/**/*'
+        ],
+
+        // preprocess matching files before serving them to the browser
+        // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+        preprocessors: {
+          'src/**/*.html': ['ng-html2js'],
+          // source files, that you wanna generate coverage for
+          // do not include tests or libraries
+          // (these files will be instrumented by Istanbul)
+          '{src,src/!(bower_components)/!(tests){,/!(tests)}}/!(require.load).js': ['coverage']
+        },
+
+        ngHtml2JsPreprocessor: {
+          // strip this from the file path
+          stripPrefix: 'src/'
+        },
+
+        // start these browsers
+        // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+        browsers: ['PhantomJS', 'Chrome', 'Firefox'],
+
+        logLevel: 'INFO',
+
+        // web server port
+        port: 9876
+
       },
 
-      singleRun: {
-        configFile: 'configs/karma.conf.js',
-        browsers: ['PhantomJS'],
-        singleRun: true
+      specs: {
+        reporters: ['html', 'progress']
       },
 
       unit: {
-        configFile: 'configs/karma.conf.js',
+        reporters: ['html', 'progress', 'coverage'],
         browsers: ['Chrome'],
         autoWatch: false,
-        background: true
+        background: true,
+        coverageReporter: '<%= karma.coverage.coverageReporter %>'
       },
 
       coverage: {
-        configFile: 'configs/karma.conf.js',
-        reporters: ['progress', 'coverage'],
+        reporters: ['coverage'],
         browsers: ['PhantomJS'],
         singleRun: true,
+        logLevel: 'ERROR',
         coverageReporter: {
           type : 'html',
           dir : 'tests_out/coverage/',
@@ -51,10 +103,10 @@ module.exports = function(grunt) {
       },
 
       ci: {
-        configFile: 'configs/karma.conf.js',
         reporters: ['junit', 'coverage'],
         browsers: ['PhantomJS'],
         singleRun: true,
+        logLevel: 'ERROR',
         junitReporter: {
           outputFile: 'tests_out/junit/test-results.xml'
         },
@@ -66,6 +118,7 @@ module.exports = function(grunt) {
       }
 
     },
+
 
 
     watch: {
@@ -97,6 +150,15 @@ module.exports = function(grunt) {
       },
 
     },
+
+
+
+    open: {
+      coverage: {
+        path: 'tests_out/coverage/html/index.html'
+      }
+    },
+
 
 
     connect: {
@@ -133,6 +195,8 @@ module.exports = function(grunt) {
 
     },
 
+
+
     concurrent: {
       dev: {
         tasks: ['project', 'coverage', 'spec:unit'],
@@ -153,6 +217,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-concurrent');
+  grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-newer');
 
   //---
@@ -161,8 +226,9 @@ module.exports = function(grunt) {
 
   //---
 
-  grunt.registerTask('spec:coverage', ['default', 'karma:coverage']);
   grunt.registerTask('spec:ci', ['default', 'karma:ci']);
+
+  grunt.registerTask('spec:coverage', ['default', 'karma:coverage', 'open:coverage']);
 
   grunt.registerTask('spec:unit', ['karma:unit:start', 'watch:unit']);
 
@@ -174,7 +240,7 @@ module.exports = function(grunt) {
 
   //---
 
-  grunt.registerTask('dev', ['default', 'karma:singleRun', 'concurrent:dev']);
+  grunt.registerTask('dev', ['default', 'karma:coverage', 'concurrent:dev']);
 
 
 };
