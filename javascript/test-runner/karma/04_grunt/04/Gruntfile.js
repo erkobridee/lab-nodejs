@@ -203,6 +203,13 @@ module.exports = function(grunt) {
         options: {
           logConcurrentOutput: true
         }
+      },
+
+      specs: {
+        tasks: ['coverage', 'spec:unit'],
+        options: {
+          logConcurrentOutput: true
+        }
       }
     }
 
@@ -242,5 +249,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('dev', ['default', 'karma:coverage', 'concurrent:dev']);
 
+  grunt.registerTask('specs', ['default', 'karma:coverage', 'concurrent:specs']);
 
 };
