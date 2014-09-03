@@ -1,12 +1,12 @@
 # Runners
 
-* [Tasks Runner](/task)
+* [Tasks Runner](task)
 
-  * [Grunt.js](/task/grunt)
+  * [Grunt.js](task/grunt)
 
 
-* [Tests Runner](/test)
+* [Tests Runner](test)
 
-  * [Karma](/test/karma)
+  * [Karma](test/karma)
 
-  * [Testem](/test/testem)
+  * [Testem](test/testem)
