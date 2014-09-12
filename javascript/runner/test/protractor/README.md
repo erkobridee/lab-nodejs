@@ -21,7 +21,7 @@
 
 --
 
-* [Protractor vs. Selenium: Battle of the Frameworks | Applitools Eyes](http://testautomation.applitools.com/post/94994807787/protractor-vs-selenium-battle-of-the-frameworks)
+* [Protractor vs. Selenium: Battle of the Frameworks | Applitools Eyes](http://testautomation.applitools.com/post/94994807787/protractor-vs-selenium-battle-of-the-frameworks) - 2014/08/17
 
 --
 
