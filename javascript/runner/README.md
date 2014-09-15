@@ -10,3 +10,5 @@
   * [Karma](test/karma)
 
   * [Testem](test/testem)
+
+  * [Protractor](test/protractor)
