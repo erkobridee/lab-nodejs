@@ -7,6 +7,12 @@
 
 * [Tests Runner](test)
 
-  * [Karma](test/karma)
+  * unit
 
-  * [Testem](test/testem)
+    * [Karma](test/karma)
+
+    * [Testem](test/testem)
+
+  * e2e
+
+    * [Protractor](test/protractor)
