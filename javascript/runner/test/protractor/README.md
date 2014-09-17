@@ -3,6 +3,29 @@
 [Protractor](http://angular.github.io/protractor) is an end-to-end test framework for [AngularJS](http://angularjs.org/) applications. Protractor is a [Node.js](http://nodejs.org/) program built on top of [WebDriverJS](https://code.google.com/p/selenium/wiki/WebDriverJs). Protractor runs tests against your application running in a real browser, interacting with it as a user would.
 
 
+## Examples
+
+* [01](01) - Basic examples
+
+
+## Known Issues
+
+* Firefox
+
+  * [Firefox 32.0 does not work with Selenium | Mozilla Support](https://support.mozilla.org/en-US/questions/1018296) - 2014/09/03
+
+  * Old known issue on Firefox + Selenium
+
+    * [Issue 4699: WebDriver cannot connect to Firefox 16 on OS X](https://code.google.com/p/selenium/issues/detail?id=4699)
+
+    * [Issue 7104: Firefox WebDriver doesn't work with Firefox 28](https://code.google.com/p/selenium/issues/detail?id=7104)
+
+    * [Issue 7702:  Firefox 32](https://code.google.com/p/selenium/issues/detail?id=7702)
+
+  * SOLUTION for Firefox 24, 31 and 32 [keep selenium server jar always up to date]
+
+    * update selenium server to v2.43.0 or above >> [CHANGELOG](https://selenium.googlecode.com/git/java/CHANGELOG) 
+
 ## Links
 
 * [SeleniumHQ](http://www.seleniumhq.org/) - Browser Automation
@@ -12,6 +35,8 @@
 * [Protractor E2E Testing Resources | AngularJS 4U](http://angularjs4u.com/protractor/protractor-e2e-testing-resources/)
 
 * [Practical End-to-End Testing with Protractor | ng-newsletter](http://www.ng-newsletter.com/posts/practical-protractor.html)
+
+* [End to End Testing with Protractor | The Jackal of Javascript](http://thejackalofjavascript.com/end-to-end-testing-with-protractor/)
 
 * [[YouTube] An Introduction to AngularJS End to End Testing with Protractor](https://www.youtube.com/watch?v=idb6hOxlyb8)
 
