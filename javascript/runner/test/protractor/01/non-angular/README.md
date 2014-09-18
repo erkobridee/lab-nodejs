@@ -1,12 +1,22 @@
 # Protractor / 01 / non-angular
 
-Search for `javascript` on main [wikipedia](https://www.wikipedia.org/) page
+* Search for `javascript` on main [wikipedia](https://www.wikipedia.org/) page
+
+* Search [Correios CEP on mobile site](http://m.correios.com.br/movel/buscaCep.do)
 
 
 ## Links
 
 
 * [Jasmine BDD Sublime Text plugin](https://sublime.wbond.net/packages/Jasmine%20BDD)
+
+--
+
+* [Selenium | Google Code](https://code.google.com/p/selenium/)
+
+* [WebDriverJS | Selenium Wiki - Google Code](https://code.google.com/p/selenium/wiki/WebDriverJs)
+
+* [Accessing Forms using Selenium WebDriver | Guru 99](http://www.guru99.com/accessing-forms-in-webdriver.html)
 
 --
 

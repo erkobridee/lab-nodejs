@@ -30,6 +30,14 @@
 
 * [SeleniumHQ](http://www.seleniumhq.org/) - Browser Automation
 
+* [Selenium | Google Code](https://code.google.com/p/selenium/)
+
+* [WebDriverJS | Selenium Wiki - Google Code](https://code.google.com/p/selenium/wiki/WebDriverJs)
+
+* [Accessing Forms using Selenium WebDriver | Guru 99](http://www.guru99.com/accessing-forms-in-webdriver.html)
+
+--
+
 * [[GitHub] angular / protractor](https://github.com/angular/protractor) - E2E test framework for Angular apps
 
 * [Protractor E2E Testing Resources | AngularJS 4U](http://angularjs4u.com/protractor/protractor-e2e-testing-resources/)
