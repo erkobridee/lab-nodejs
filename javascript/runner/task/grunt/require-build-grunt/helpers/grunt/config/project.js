@@ -1,11 +1,9 @@
+var config = require('../../../config')();
+
 module.exports = {
 
-  paths: {
-    src: './src',
-    build: './temp',
-    dist: './dist'
-  },
-  
+  paths: config.paths,
+
   require: {
     name: 'ng.app',
     config: '<%= project.paths.src %>/require.config.js',
