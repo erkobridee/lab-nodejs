@@ -5,7 +5,8 @@ module.exports = function() {
 
   var paths = {
 
-    src: './src',
+    // src: './src/amd-style',
+    src: './src/commonjs-style',
     build: '.temp',
     dist: './dist'
 

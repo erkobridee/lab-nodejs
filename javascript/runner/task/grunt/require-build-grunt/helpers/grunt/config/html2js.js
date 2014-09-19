@@ -4,7 +4,7 @@ module.exports = {
     module: 'templatesCache',
     base: '<%= project.paths.src %>',
     fileHeaderString: 'define([\'angular\'], function(angular) { \n',
-    fileFooterString: '\n});'
+    fileFooterString: '\nreturn { name: \'<%= html2js.options.module %>\' };\n});'
   },
 
   dev: {
