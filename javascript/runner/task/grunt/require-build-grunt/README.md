@@ -54,9 +54,11 @@ npm install
 
 ## Grunt commands
 
-* `grunt` - execute tasks : `['jshint', 'helloworld']`
+* `grunt` - execute tasks : `['jshint']`
 
-* ?
+* `grunt server` - development code
+
+* `grunt server:dist` - production build
  
 
 ## Project structure
@@ -68,6 +70,7 @@ npm install
       /config   >> gruntConfig >> seek link : [GitHub] firstandthird / load-grunt-config
       /tasks    >> custom tasks
   /src          >> project source code
+  config.js     >> projetc global configs for grunt tasks
   Gruntfile.js
   package.json
 ```
