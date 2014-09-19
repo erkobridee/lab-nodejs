@@ -2,6 +2,7 @@ module.exports = {
 
   options: {
     module: 'templatesCache',
+    base: '<%= project.paths.src %>',
     fileHeaderString: 'define([\'angular\'], function(angular) { \n',
     fileFooterString: '\n});'
   },
