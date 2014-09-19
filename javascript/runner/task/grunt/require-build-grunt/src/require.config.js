@@ -4,15 +4,15 @@ require({
   paths: {
 
     angular: [
-      'http://code.angularjs.org/1.2.15/angular.min'
+      'https://erkobridee.github.io/cdn/ajax/libs/angular.js/1.2.15/angular.min'
     ],
 
     angularRoute: [
-      'http://code.angularjs.org/1.2.15/angular-route.min'
+      'https://erkobridee.github.io/cdn/ajax/libs/angular.js/1.2.15/angular-route.min'
     ],
 
     angularResource: [
-      'http://code.angularjs.org/1.2.15/angular-resource.min'
+      'https://erkobridee.github.io/cdn/ajax/libs/angular.js/1.2.15/angular-resource.min'
     ]
 
   },
