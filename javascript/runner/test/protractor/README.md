@@ -30,13 +30,17 @@
 
 ## Links
 
-* [SeleniumHQ](http://www.seleniumhq.org/) - Browser Automation
+* Selenium
 
-* [Selenium | Google Code](https://code.google.com/p/selenium/)
+  * [SeleniumHQ](http://www.seleniumhq.org/) - Browser Automation
 
-* [WebDriverJS | Selenium Wiki - Google Code](https://code.google.com/p/selenium/wiki/WebDriverJs)
+  * [Selenium | Google Code](https://code.google.com/p/selenium/)
 
-* [Accessing Forms using Selenium WebDriver | Guru 99](http://www.guru99.com/accessing-forms-in-webdriver.html)
+  * [WebDriverJS | Selenium Wiki - Google Code](https://code.google.com/p/selenium/wiki/WebDriverJs)
+
+  * [Accessing Forms using Selenium WebDriver | Guru 99](http://www.guru99.com/accessing-forms-in-webdriver.html)
+
+  * [An Introduction to WebDriver Using the JavaScript Bindings | Tuts+ Code Tutorial](http://code.tutsplus.com/tutorials/an-introduction-to-webdriver-using-the-javascript-bindings--cms-21855)
 
 --
 
