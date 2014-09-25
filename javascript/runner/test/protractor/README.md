@@ -7,7 +7,7 @@
 
 * [01](01) - Basic examples
 
-* 02 - Basic examples with Grunt.js
+* [02](02) - Basic examples with Grunt.js
 
 
 ## Known Issues
