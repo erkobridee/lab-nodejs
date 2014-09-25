@@ -70,6 +70,10 @@
 
 --
 
+* [End to End Testing with AngularJS, Protractor, Grunt & Maven | Asgard Designs](http://www.asgarddesigns.com.au/2013/11/end-to-end-testing-with-angularjs-protractor-grunt-and-maven/)
+
+--
+
 * Grunt.js
 
   * [[GitHub] teerapap / grunt-protractor-runner](https://github.com/teerapap/grunt-protractor-runner) - A Grunt plugin for running protractor runner
