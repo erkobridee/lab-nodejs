@@ -92,21 +92,21 @@
   // statics
   log(ClassA.staticAtt);
   log(ClassA.staticHelloMessage());
-  
-  log('------');  
+
+  log('------');
 
   var aInstance = new ClassA();
-  
+
   log(aInstance.publicAtt);
   aInstance.publicAtt = 'new value to public attribute';
   log(aInstance.publicAtt);
 
-  log('------'); 
+  log('------');
 
   aInstance.say();
   aInstance.say2();
 
-  log('------'); 
+  log('------');
 
   log(aInstance.getPrivateSharedHelloMessage());
   log(aInstance.getPrivateSharedAtt());
