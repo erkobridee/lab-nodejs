@@ -20,3 +20,5 @@ $ sudo npm install -g grunt-cli
 
 * [remote angular application](01-remote-angular-app)
 
+* [local angular application](02-local-angular-app)
+
