@@ -24,9 +24,9 @@ $ sudo npm install -g grunt-cli
 ### Create commands links
 
 ```bash
-$ mkdir angular
+$ mkdir 01-remote-angular-app
 
-$ cd angular
+$ cd 01-remote-angular-app
 
 $ touch README.md
 
