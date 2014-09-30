@@ -1,6 +1,6 @@
 # Protractor / 03
 
-> e2e test's for more complex angular application with require.js
+> e2e test's for more complex angular application with require.js, Protractor executed by Grunt.js task
 
 **TODO:** check how to generate test's report output
 
