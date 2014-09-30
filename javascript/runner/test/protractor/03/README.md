@@ -1,6 +1,9 @@
-# Protractor / 02 / 03
+# Protractor / 03
 
 > e2e test's for more complex angular application with require.js
+
+**TODO:** check how to generate test's report output
+
 
 ## Prerequisites
 
@@ -89,7 +92,7 @@ $ grunt
 
 * run e2e tests with protractor
 
-  * start web server, run application and e2e test's
+> start web server, run application and e2e test's
 
 ```bash
 $ grunt e2e
