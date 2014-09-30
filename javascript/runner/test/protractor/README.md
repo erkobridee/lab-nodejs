@@ -9,6 +9,8 @@
 
 * [02](02) - Basic examples with Grunt.js
 
+* [03](03) - e2e test's for more complex angular application with require.js, Protractor executed by Grunt.js task
+
 
 ## Known Issues
 
