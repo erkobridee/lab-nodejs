@@ -1,0 +1,27 @@
+{
+  "name": "protractor-03",
+  "version": "0.1.0",
+  "homepage": "https://github.com/erkobridee/lab-nodejs",
+  "authors": [
+    "Erko Bridee <erko.bridee@gmail.com>"
+  ],
+  "description": "selenium tests",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "grunt",
+    "tests",
+    "e2e",
+    "protractor"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": "1.11.1",
+    "requirejs": "2.1.14",
+    "angular": "1.2.21",
+    "angular-resource": "1.2.21",
+    "angular-route": "1.2.21",
+    "angular-mocks": "1.2.21"
+  }
+}
