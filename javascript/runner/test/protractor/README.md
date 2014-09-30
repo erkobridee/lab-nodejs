@@ -30,6 +30,7 @@
 
     * update selenium server to v2.43.0 or above >> [CHANGELOG](https://selenium.googlecode.com/git/java/CHANGELOG) 
 
+
 ## Links
 
 * Selenium
@@ -66,9 +67,15 @@
 
 * [Getting Started with Protractor and Page Objects for AngularJS E2E Testing | Gaslight](http://teamgaslight.com/blog/getting-started-with-protractor-and-page-objects-for-angularjs-e2e-testing)
 
+* [Testing with Angular.JS | Ruben Vermeersch](https://savanne.be/articles/testing-with-angular-js/)
+
 * [Protractor for AngularJS: writing end-to-end test has never been so fun](http://ramonvictor.github.io/protractor/slides/#/) - A step-by-step presentaion on Protractor End-to-End Testing for AngularJS
 
-* [Testing with Angular.JS | Ruben Vermeersch](https://savanne.be/articles/testing-with-angular-js/)
+* [[Slides] E2E Testing with angular.js and protractor](http://slides.com/andrewschmadel/e2e-testing-with-angular-js-and-protractor)
+
+* [Testing Angular Apps End-to-End with Protractor | Moveline's Developer](http://product.moveline.com/testing-angular-apps-end-to-end-with-protractor.html)
+
+* [Protractor e2e Testing | Learn Ionic](http://learn.ionicframework.com/formulas/Protractor/)
 
 --
 
