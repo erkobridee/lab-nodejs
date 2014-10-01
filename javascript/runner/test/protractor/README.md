@@ -79,6 +79,14 @@
 
 --
 
+* Protractor issue with angular $timeout, use [$interval](https://github.com/angular/angular.js/blob/master/src/ng/interval.js#L55) instead
+
+  * [[StackOverflow] get text of element during angular $timeout in protractor](https://stackoverflow.com/questions/24041920/get-text-of-element-during-angular-timeout-in-protractor)
+
+  * [Protractor - issue 49 : comment about the problem](https://github.com/angular/protractor/issues/49#issuecomment-26443073) 
+
+--
+
 * [End to End Testing with AngularJS, Protractor, Grunt & Maven | Asgard Designs](http://www.asgarddesigns.com.au/2013/11/end-to-end-testing-with-angularjs-protractor-grunt-and-maven/)
 
 --
