@@ -53,6 +53,8 @@
 
 * [[GitHub] angular / protractor](https://github.com/angular/protractor) - E2E test framework for Angular apps
 
+* [angular,js protractor e2e cheatsheet | Health to the Web](http://webslainte.blogspot.com.br/2014/01/angular-js-protractor-e2e-cheatsheet.html) - 2014/01/15
+
 * [[SlideShare] Introduction to Protractor](http://www.slideshare.net/FlorianFesseler/introduction-to-protractor) - 2014/06/04
 
   * [[GitHub] ffesseler / angular-app](https://github.com/ffesseler/angular-app/tree/protractor) - Reference application for AngularJS
