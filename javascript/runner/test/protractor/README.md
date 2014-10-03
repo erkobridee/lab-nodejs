@@ -55,9 +55,17 @@
 
 * [angular,js protractor e2e cheatsheet | Health to the Web](http://webslainte.blogspot.com.br/2014/01/angular-js-protractor-e2e-cheatsheet.html) - 2014/01/15
 
-* [[SlideShare] Introduction to Protractor](http://www.slideshare.net/FlorianFesseler/introduction-to-protractor) - 2014/06/04
+* Slides
 
-  * [[GitHub] ffesseler / angular-app](https://github.com/ffesseler/angular-app/tree/protractor) - Reference application for AngularJS
+  * [[SlideShare] Introduction to Protractor](http://www.slideshare.net/FlorianFesseler/introduction-to-protractor) - 2014/06/04
+
+    * [[GitHub] ffesseler / angular-app](https://github.com/ffesseler/angular-app/tree/protractor) - Reference application for AngularJS
+
+  * [Protractor for AngularJS: writing end-to-end test has never been so fun](http://ramonvictor.github.io/protractor/slides/) - A step-by-step presentaion on Protractor End-to-End Testing for AngularJS
+
+  * [E2E Testing with Protractor](https://pascalprecht.github.io/slides/e2e-testing-with-protractor/) - A framework for easily creating beautiful presentations using HTML
+
+  * [[Slides] E2E Testing with angular.js and protractor](http://slides.com/andrewschmadel/e2e-testing-with-angular-js-and-protractor)
 
 * [Protractor E2E Testing Resources | AngularJS 4U](http://angularjs4u.com/protractor/protractor-e2e-testing-resources/)
 
@@ -70,10 +78,6 @@
 * [Getting Started with Protractor and Page Objects for AngularJS E2E Testing | Gaslight](http://teamgaslight.com/blog/getting-started-with-protractor-and-page-objects-for-angularjs-e2e-testing)
 
 * [Testing with Angular.JS | Ruben Vermeersch](https://savanne.be/articles/testing-with-angular-js/)
-
-* [Protractor for AngularJS: writing end-to-end test has never been so fun](http://ramonvictor.github.io/protractor/slides/#/) - A step-by-step presentaion on Protractor End-to-End Testing for AngularJS
-
-* [[Slides] E2E Testing with angular.js and protractor](http://slides.com/andrewschmadel/e2e-testing-with-angular-js-and-protractor)
 
 * [Testing Angular Apps End-to-End with Protractor | Moveline's Developer](http://product.moveline.com/testing-angular-apps-end-to-end-with-protractor.html)
 
