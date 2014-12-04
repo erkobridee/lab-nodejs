@@ -6,6 +6,8 @@
 
 * [RequireJS Optimizer | Require.js](http://requirejs.org/docs/optimization.html#basics)
 
+* [Optimize (Concatenate and Minify) RequireJS Projects | Web Development is Easy!](http://www.webdeveasy.com/optimize-requirejs-projects/)
+
 * [Using r.js to Optimize Your RequireJS Project | Tech.pro](http://tech.pro/blog/1639/using-rjs-to-optimize-your-requirejs-project)
 
 * [Building a Library with RequireJS | SitePoint](http://www.sitepoint.com/building-library-with-requirejs/) - Emre Guneyler describes how RequireJS, a dependency management library, can be used to build a library using AMD modules and an application to use the library
