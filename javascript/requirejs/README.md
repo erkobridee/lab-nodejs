@@ -21,6 +21,8 @@
 
 * [Building a Library with RequireJS | SitePoint](http://www.sitepoint.com/building-library-with-requirejs/) - Emre Guneyler describes how RequireJS, a dependency management library, can be used to build a library using AMD modules and an application to use the library
 
+* [RequireJS – Optimizing and Building One File](http://orizens.com/wp/topics/requirejs-optimizing-and-building-one-file/)
+
 * [Modular HTML components with RequireJS | simonsmith.io](http://simonsmith.io/modular-html-components-with-requirejs/)
 
 * [Source Modification With r.js | Merrick Christensen](http://merrickchristensen.com/articles/build-angular-with-requirejs.html) - An overview of source modification with r.js. Using ngmin and Angular.js as an example
