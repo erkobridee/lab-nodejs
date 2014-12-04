@@ -1,0 +1,21 @@
+{
+  "name": "requirejs_build-01",
+  "version": "1.0.0",
+  "description": "require.js optimization build 01 test",
+  "scripts": {
+    "start": "npm run node_server",
+    "python_server": "python -m SimpleHTTPServer 1337",
+    "node_server": "node node_modules/.bin/http-server"
+  },
+  "keywords": [
+    "requirejs",
+    "build",
+    "optimization",
+    "test"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.7.3"
+  }
+}
