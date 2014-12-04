@@ -1,4 +1,4 @@
-# Require.js
+# Require.js Build
 
 * [Require.js](http://requirejs.org/)
 
@@ -6,8 +6,7 @@
 
   * [[GitHub] CaryLandholt / Tutorial RequireJS TheBasics](https://github.com/CaryLandholt/Tutorial-RequireJS-TheBasics)
 
-
-## Build
+--
 
 * [RequireJS Optimizer | Require.js](http://requirejs.org/docs/optimization.html)
 
