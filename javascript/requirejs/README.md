@@ -4,7 +4,7 @@
 
 ## Build
 
-* [RequireJS Optimizer | Require.js](http://requirejs.org/docs/optimization.html#basics)
+* [RequireJS Optimizer | Require.js](http://requirejs.org/docs/optimization.html)
 
 * [Optimize (Concatenate and Minify) RequireJS Projects | Web Development is Easy!](http://www.webdeveasy.com/optimize-requirejs-projects/)
 
