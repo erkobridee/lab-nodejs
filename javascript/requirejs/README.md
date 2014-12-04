@@ -19,8 +19,8 @@
 
   * [[GitHub] CaryLandholt / Tutorial RequireJS Optimizer](https://github.com/CaryLandholt/Tutorial-RequireJS-Optimizer)
 
-* [Source Modification With r.js | Merrick Christensen](http://merrickchristensen.com/articles/build-angular-with-requirejs.html) - An overview of source modification with r.js. Using ngmin and Angular.js as an example
-
 * [Building a Library with RequireJS | SitePoint](http://www.sitepoint.com/building-library-with-requirejs/) - Emre Guneyler describes how RequireJS, a dependency management library, can be used to build a library using AMD modules and an application to use the library
 
 * [Modular HTML components with RequireJS | simonsmith.io](http://simonsmith.io/modular-html-components-with-requirejs/)
+
+* [Source Modification With r.js | Merrick Christensen](http://merrickchristensen.com/articles/build-angular-with-requirejs.html) - An overview of source modification with r.js. Using ngmin and Angular.js as an example
