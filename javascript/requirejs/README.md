@@ -11,6 +11,10 @@
 
 * [RequireJS Optimizer | Require.js](http://requirejs.org/docs/optimization.html)
 
+  * [[GitHub] jrburke / r.js](https://github.com/jrburke/r.js) - Runs RequireJS in Node and Rhino, and used to run the RequireJS optimizer
+
+--
+
 * [Optimize (Concatenate and Minify) RequireJS Projects | Web Development is Easy!](http://www.webdeveasy.com/optimize-requirejs-projects/)
 
 * [Using r.js to Optimize Your RequireJS Project | Tech.pro](http://tech.pro/blog/1639/using-rjs-to-optimize-your-requirejs-project)
