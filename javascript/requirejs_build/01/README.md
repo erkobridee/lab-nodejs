@@ -58,7 +58,7 @@ $ node r.js -o concatenated-uglified-noLicenseComments.build.js
 #### all in one
 
 ```bash
-$ node r.js -o all-in-one.js
+$ node r.js -o all-in-one.build.js
 ```
 
 > **output:** `./dist/all-in-one.min.js`
