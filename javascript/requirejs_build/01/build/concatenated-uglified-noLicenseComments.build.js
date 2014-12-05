@@ -2,6 +2,6 @@
   baseUrl: '../scripts',
   mainConfigFile: '../scripts/require.config.js',
   name: '../scripts/require.config',
-  out: '../dist/concatenated-uglified-noLicenseComments-modules.js',
+  out: '../dist/concatenated-uglified-noLicenseComments.js',
   preserveLicenseComments: false
 })
