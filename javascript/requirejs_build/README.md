@@ -27,9 +27,11 @@
 
 * [RequireJS – Optimizing and Building One File](http://orizens.com/wp/topics/requirejs-optimizing-and-building-one-file/)
 
-* [Modular HTML components with RequireJS | simonsmith.io](http://simonsmith.io/modular-html-components-with-requirejs/)
-
 * [Source Modification With r.js | Merrick Christensen](http://merrickchristensen.com/articles/build-angular-with-requirejs.html) - An overview of source modification with r.js. Using ngmin and Angular.js as an example
+
+* [Modular HTML components with RequireJS | simonsmith.io](http://simonsmith.io/modular-html-components-with-requirejs/)
+  
+  * [[GitHub] simonsmith / modular-html-requirejs](https://github.com/simonsmith/modular-html-requirejs) - Modular HTML components with RequireJS
 
 
 ## Node.js
