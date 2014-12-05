@@ -34,32 +34,32 @@ $ npm start
 #### concatenated
 
 ```bash
-$ node r.js -o concatenated-modules.build.js
+$ node r.js -o concatenated.build.js
 ```
 
-> **output:** `./dist/concatenated-modules.js`
+> **output:** `./dist/concatenated.js`
 
 #### concatenated uglified
 
 ```bash
-$ node r.js -o concatenated-uglified-modules.build.js
+$ node r.js -o concatenated-uglified.build.js
 ```
 
-> **output:** `./dist/concatenated-uglified-modules.js`
+> **output:** `./dist/concatenated-uglified.js`
 
-#### concatenated uglified noLicenseComments modules
+#### concatenated uglified noLicenseComments
 
 ```bash
-$ node r.js -o concatenated-uglified-noLicenseComments-modules.build.js
+$ node r.js -o concatenated-uglified-noLicenseComments.build.js
 ```
 
-> **output:** `./dist/concatenated-uglified-noLicenseComments-modules.js`
+> **output:** `./dist/concatenated-uglified-noLicenseComments.js`
 
 #### all in one
 
 ```bash
-$ node r.js -o build.js
+$ node r.js -o all-in-one.js
 ```
 
-> **output:** `./dist/scripts.min.js`
+> **output:** `./dist/all-in-one.min.js`
 
