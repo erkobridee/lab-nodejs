@@ -5,11 +5,11 @@ define(function(require) {
 
   console.log('running...');
 
-  var jrender = require('./jquery-render');
+  var jrender = require('./render/jquery');
 
   jrender.append();
 
-  var vrender = require('./vanilla-render');
+  var vrender = require('./render/vanilla');
 
   vrender.append();
 
