@@ -10,3 +10,12 @@ Based on:
 --
 
 > TODO: define content
+
+<!--
+  see:
+
+  https://github.com/jrburke/r.js/blob/master/build/example.build.js
+
+  https://github.com/requirejs/example-multipage/blob/master/tools/build.js
+
+-->
