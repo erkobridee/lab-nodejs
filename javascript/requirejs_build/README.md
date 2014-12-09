@@ -22,6 +22,8 @@
 
   * [[GitHub] jrburke / r.js](https://github.com/jrburke/r.js) - Runs RequireJS in Node and Rhino, and used to run the RequireJS optimizer
 
+    * [[GitHub] jrburke / r.js / build / example.build.js](https://github.com/jrburke/r.js/blob/master/build/example.build.js)
+
 --
 
 * [Optimize (Concatenate and Minify) RequireJS Projects | Web Development is Easy!](http://www.webdeveasy.com/optimize-requirejs-projects/)
