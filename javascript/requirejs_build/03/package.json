@@ -1,0 +1,24 @@
+{
+  "name": "requirejs_build-03",
+  "version": "1.0.0",
+  "description": "require.js optimization build 03 test",
+  "scripts": {
+    "start": "npm run node_server",
+    "python_server": "python -m SimpleHTTPServer 1337",
+    "node_server": "node node_modules/.bin/http-server",
+    "build": "r.js -o build.js"
+  },
+  "keywords": [
+    "requirejs",
+    "build",
+    "optimization",
+    "test",
+    "angularjs",
+    "ocLazyLoad"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.7.3"
+  }
+}
