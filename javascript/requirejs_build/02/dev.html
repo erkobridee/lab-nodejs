@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>dev - Require.js Build 02</title>
+
+  <link rel="stylesheet" href="src/css/site.css">
+
+</head>
+<body>
+
+  <h1>Test site</h1>
+
+  <nav class="nav" id="nav">
+      <h2>Navigation modules</h2>
+  </nav>
+
+
+   <div class="carousel">
+       <h2>Carousel module</h2>
+   </div>
+
+
+  <script
+    data-main="src/scripts/require.config"
+    src="vendor/require.js/2.1.15/require.min.js"></script>
+
+  <script>require(['page/nav']);</script>
+  <script>require(['page/carousel']);</script>
+
+</body>
+</html>

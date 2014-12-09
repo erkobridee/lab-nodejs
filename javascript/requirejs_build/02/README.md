@@ -7,15 +7,37 @@ Based on:
   * [[GitHub] simonsmith / modular-html-requirejs](https://github.com/simonsmith/modular-html-requirejs) - Modular HTML components with RequireJS
 
 
---
+## Prerequisites
 
-> TODO: define content
+* Must have [Git](http://git-scm.com/) installed
 
-<!--
-  see:
+* Must have [node.js (at least v0.10.x)](http://nodejs.org/) installed with npm (Node Package Manager)
 
-  https://github.com/jrburke/r.js/blob/master/build/example.build.js
+* Must have [require.js](http://requirejs.org/) node package installed globally. `sudo npm install -g requirejs`
 
-  https://github.com/requirejs/example-multipage/blob/master/tools/build.js
 
--->
+## Commands
+
+> Remember to install node dependencies first
+
+```bash
+$ npm install
+```
+
+### Web Server
+
+```bash
+$ npm start
+```
+
+### Require.js Build
+
+```bash
+$ r.js -o build.js
+```
+
+or 
+
+```bash
+$ npm run build
+```
