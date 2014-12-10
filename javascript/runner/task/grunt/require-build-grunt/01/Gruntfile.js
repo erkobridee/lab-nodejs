@@ -1,21 +1,28 @@
 module.exports = function(grunt) {
   'use strict';
 
-  grunt.log.writeln('\nloading grunt plugins and configs...');
-  require('load-grunt-config')(grunt, {configPath: __dirname+'/helpers/grunt/config'});
-  grunt.log.writeln('...done\n');
+  require('time-grunt')(grunt);
+  require('jit-grunt')(grunt)({
+    customTasksDir: 'helpers/grunt/tasks'
+  });
 
-  // load custom tasks
-  grunt.loadTasks('helpers/grunt/tasks'); // grunt helloworld
+  // Initialize config
+  grunt.initConfig({
+    pkg: require('./package.json')
+  });
+
+  // load tasks config per file
+  grunt.loadTasks('helpers/grunt/config');
+
   //grunt.task.run('helloworld');
-  
+
   //--- @begin: grunt tasks
 
-  grunt.registerTask('default', ['jshint']); 
+  grunt.registerTask('default', ['jshint']);
 
-  grunt.registerTask('cleanup', ['clean:dist', 'clean:build']); 
+  grunt.registerTask('cleanup', ['clean:dist', 'clean:build']);
 
-  grunt.registerTask('build', [ 
+  grunt.registerTask('build', [
     'cleanup',
     'jshint',
     'copy:jstobuild',
@@ -29,18 +36,18 @@ module.exports = function(grunt) {
     'htmlmin',
     'imagemin',
     'uglify'
-  ]); 
+  ]);
 
   grunt.registerTask('server', function(target) {
     if (target === 'dist') {
       return grunt.task.run([
         'build',
         'connect:dist'
-      ]); 
+      ]);
     }
 
     // dev
-    return grunt.task.run([ 
+    return grunt.task.run([
       'connect:dev'
     ]);
   });
