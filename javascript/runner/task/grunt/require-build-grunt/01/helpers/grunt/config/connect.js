@@ -1,4 +1,6 @@
-module.exports = {
+module.exports = function(grunt) {
+
+grunt.config('connect', {
 
   dev: {
     options: {
@@ -7,7 +9,7 @@ module.exports = {
       hostname: '*',
       open: 'http://localhost:<%= connect.dev.options.port %>',
       keepalive: true
-    }      
+    }
   },
 
   dist: {
@@ -17,7 +19,9 @@ module.exports = {
       hostname: '*',
       open: 'http://localhost:<%= connect.dist.options.port %>',
       keepalive: true
-    }      
+    }
   }
+
+});
 
 };
