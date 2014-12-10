@@ -1,4 +1,6 @@
-module.exports = {
+module.exports = function(grunt) {
+
+grunt.config('html2js', {
 
   options: {
     module: 'templatesCache',
@@ -31,5 +33,7 @@ module.exports = {
     src: '<%= html2js.dev.src %>',
     dest: '<%= html2js.dev.dest %>'
   }
+
+});
 
 };
