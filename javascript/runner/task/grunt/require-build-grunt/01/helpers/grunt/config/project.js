@@ -1,6 +1,8 @@
+module.exports = function(grunt) {
+
 var config = require('../../../config')();
 
-module.exports = {
+grunt.config('project', {
 
   paths: config.paths,
 
@@ -9,5 +11,7 @@ module.exports = {
     config: '<%= project.paths.src %>/require.config.js',
     build: '<%= project.paths.build %>/require.build.config.js'
   }
+
+});
 
 };
