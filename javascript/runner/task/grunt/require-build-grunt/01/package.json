@@ -1,8 +1,8 @@
 {
-  "name": "require-build-grunt",
+  "name": "require-build-grunt_01",
+  "private": true,
   "version": "0.1.0",
-  "description": "requirejs build example",
-  "main": "Gruntfile.js",
+  "description": "requirejs build example 01",
   "keywords": [
     "grunt",
     "requirejs",
