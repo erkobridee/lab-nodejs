@@ -1,4 +1,6 @@
-module.exports = {
+module.exports = function(grunt) {
+
+grunt.config('imagemin', {
 
   dist: {
     options: {
@@ -13,5 +15,7 @@ module.exports = {
       }
     ]
   }
+
+});
 
 };
