@@ -1,8 +1,8 @@
 # Gulp
 
-* [gulp.js](http://gulpjs.com) - the streaming build system
+* [gulp.js](http://gulpjs.com) - use of streams and code-over-configuration makes for a simpler and more intuitive build
 
-  * [[GitHub] gulpjs / gulp](https://github.com/gulpjs/gulp)
+  * [[GitHub] gulpjs / gulp](https://github.com/gulpjs/gulp) - the streaming build system
 
 --
 
