@@ -1,4 +1,6 @@
-module.exports = {
+module.exports = function(grunt) {
+
+grunt.config('requirejs', {
 
   /*
     http://tech.pro/blog/1639/using-rjs-to-optimize-your-requirejs-project
@@ -15,7 +17,7 @@ module.exports = {
     options: {
       optimize: "uglify2",
       baseUrl: './<%= project.paths.build %>/',
-      
+
       mainConfigFile: './<%= project.require.build %>',
 
       name: '<%= project.require.name %>',
@@ -25,8 +27,10 @@ module.exports = {
       wrap: {
         start: '(function() {\'use strict\';',
         end: '})();'
-      }      
+      }
     }
   }
+
+});
 
 };
