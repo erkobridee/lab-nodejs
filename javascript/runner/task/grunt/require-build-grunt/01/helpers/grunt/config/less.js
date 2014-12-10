@@ -1,4 +1,6 @@
-module.exports = {
+module.exports = function(grunt) {
+
+grunt.config('less', {
 
   dev: {
     options: {
@@ -20,5 +22,7 @@ module.exports = {
       '<%= project.paths.dist %>/styles/app.css': '<%= project.paths.src %>/styles/less/app.less'
     }
   }
-  
+
+});
+
 };
