@@ -1,4 +1,4 @@
-# maintainable-grunt
+# require-build-grunt
 
 *By [@ErkoBridee](https://twitter.com/erkobridee)*
 
