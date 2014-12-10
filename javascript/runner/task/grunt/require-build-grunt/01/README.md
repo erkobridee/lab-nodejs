@@ -16,9 +16,9 @@
 ### Create commands list
 
 ```
-mkdir require-build-grunt
+mkdir 01
 
-cd require-build-grunt
+cd 01
 
 touch README.md
 
@@ -28,7 +28,8 @@ touch Gruntfile.js
 
 npm install \
   grunt \
-  load-grunt-config \
+  jit-grunt \
+  time-grunt \
   jshint-stylish \
   grunt-contrib-jshint \
   grunt-contrib-clean \
