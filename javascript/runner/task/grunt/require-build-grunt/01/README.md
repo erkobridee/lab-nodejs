@@ -79,8 +79,6 @@ npm install
 
 ## Links
 
-* [[GitHub] firstandthird / load-grunt-config](https://github.com/firstandthird/load-grunt-config) - Grunt plugin that lets you break up your Gruntfile config by task. It was heavily inspired by [More maintainable Gruntfiles | Thomas Boyt](http://www.thomasboyt.com/2013/09/01/maintainable-grunt.html)
-
 * [[GitHub] sindresorhus / jshint-stylish](https://github.com/sindresorhus/jshint-stylish) - Stylish reporter for JSHint
 
 --
@@ -117,3 +115,6 @@ npm install
 
   * [[GitHub] karlgoldstein / grunt-html2js](https://github.com/karlgoldstein/grunt-html2js) - Grunt plugin for converting AngularJS templates to JavaScript
 
+  * [[GitHub] shootaroo / jit-grunt](https://github.com/shootaroo/jit-grunt) - JIT(Just In Time) plugin loader for Grunt
+
+  * [[GitHub] sindresorhus / time-grunt](https://github.com/sindresorhus/time-grunt) - Display the elapsed execution time of grunt tasks
