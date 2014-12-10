@@ -1,4 +1,6 @@
-module.exports = {
+module.exports = function(grunt) {
+
+grunt.config('htmlmin', {
 
   dist: {
     options: {
@@ -12,5 +14,7 @@ module.exports = {
       dest: '<%= project.paths.dist %>/',
     }],
   }
+
+});
 
 };
