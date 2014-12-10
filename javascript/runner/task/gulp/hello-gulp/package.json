@@ -1,0 +1,19 @@
+{
+  "name": "hello-gulp",
+  "private": true,
+  "version": "1.0.0",
+  "description": "First gulp test",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "test",
+    "hello"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.8.10"
+  }
+}
