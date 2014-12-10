@@ -6,6 +6,11 @@ grunt.config('project', {
 
   paths: config.paths,
 
+  frontend: {
+    host: config.frontend.webhost,
+    port: config.frontend.webserver
+  },
+
   require: {
     name: 'ng.app',
     config: '<%= project.paths.src %>/require.config.js',

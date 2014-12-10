@@ -1,6 +1,8 @@
 module.exports = function() {
   'use strict';
 
+  var getIpAddress = require('./helpers/lib/localip');
+
   //----------------------------------------------------------------------------
 
   var paths = {
@@ -14,8 +16,18 @@ module.exports = function() {
 
   //----------------------------------------------------------------------------
 
+  var frontend = {
+
+    webhost: getIpAddress(),
+    webserver: 1337
+
+  }; // @end: frontend
+
+  //----------------------------------------------------------------------------
+
   return {
-    paths:      paths
+    paths:      paths,
+    frontend:   frontend
   };
 
 };

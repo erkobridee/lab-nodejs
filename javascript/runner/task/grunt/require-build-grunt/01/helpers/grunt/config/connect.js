@@ -4,20 +4,20 @@ grunt.config('connect', {
 
   dev: {
     options: {
-      port: 1337,
+      port: '<%= project.frontend.port %>',
       base: '<%= project.paths.src %>',
       hostname: '*',
-      open: 'http://localhost:<%= connect.dev.options.port %>',
+      open: 'http://<%= project.frontend.host %>:<%= connect.dev.options.port %>',
       keepalive: true
     }
   },
 
   dist: {
     options: {
-      port: 1337,
+      port: '<%= project.frontend.port %>',
       base: '<%= project.paths.dist %>',
       hostname: '*',
-      open: 'http://localhost:<%= connect.dist.options.port %>',
+      open: 'http://<%= project.frontend.host %>:<%= connect.dist.options.port %>',
       keepalive: true
     }
   }
