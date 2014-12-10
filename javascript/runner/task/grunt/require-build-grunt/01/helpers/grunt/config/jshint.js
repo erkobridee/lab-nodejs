@@ -1,5 +1,7 @@
-module.exports = {
-  
+module.exports = function(grunt) {
+
+grunt.config('jshint', {
+
   options: {
     reporter: require('jshint-stylish')
   },
@@ -18,4 +20,6 @@ module.exports = {
     '<%= project.paths.src %>/{,shared/,app/}*.js'
   ]
 
-}; 
+});
+
+};
