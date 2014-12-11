@@ -33,7 +33,7 @@ function walk(dir, done) {
 
 var dirname = '../../standalone';
 
-var output = './output/walkdir.result.txt';
+var output = '../output/walkdir.result.txt';
 
 
 walk(dirname, function(err, results) {
@@ -58,10 +58,11 @@ walk(dirname, function(err, results) {
 
 function writeFile(filename, content) {
 
-  // http://nodejs.org/api/fs.html#fs_fs_writefile_filename_data_options_callback
-  fs.writeFile(filename, content, function(err) {
-    if (err) throw err;
-    console.log('It\'s saved!');
-  });
+  var writer = require('../libs/writer');
+
+  writer( filename, content )
+    .then(function() {
+      console.log('It\'s saved!');
+    });
 
 }
