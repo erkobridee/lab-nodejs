@@ -1,5 +1,6 @@
 {
   "name": "fs",
+  "private": true,
   "version": "0.1.0",
   "description": "file system tests",
   "keywords": [
@@ -10,7 +11,8 @@
   ],
   "author": "Erko Bridee",
   "license": "MIT",
-  "dependencies": {
-    "q": "^1.0.1"
+  "devDependencies": {
+    "q": "^1.1.2",
+    "q-io": "^1.11.6"
   }
 }
