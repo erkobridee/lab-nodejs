@@ -29,11 +29,15 @@ function walk(dir, done) {
   });
 }
 
-var dirname = '../standalone';
+//------------------------------------------------------------------------------
+
+var dirname = '../../standalone';
 
 var output = './output/walkdir.result.txt';
 
+
 walk(dirname, function(err, results) {
+
   if(err) {
     console.log('Error: ', err);
     return;
@@ -47,9 +51,17 @@ walk(dirname, function(err, results) {
 
   console.log(resultTxt);
 
+  writeFile( output, resultTxt );
+
+});
+
+
+function writeFile(filename, content) {
+
   // http://nodejs.org/api/fs.html#fs_fs_writefile_filename_data_options_callback
-  fs.writeFile(output, resultTxt, function(err) {
+  fs.writeFile(filename, content, function(err) {
     if (err) throw err;
     console.log('It\'s saved!');
   });
-});
+
+}
