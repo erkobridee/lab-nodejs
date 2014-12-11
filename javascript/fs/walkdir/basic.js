@@ -43,7 +43,7 @@ walk(dirname, function(err, results) {
     return;
   }
 
-  var resultTxt = '\n\twalkdir.js\n\n';
+  var resultTxt = '\n  walkdir/basic.js\n\n';
 
   results.forEach(function(filename) {
     resultTxt += filename + '\n';
