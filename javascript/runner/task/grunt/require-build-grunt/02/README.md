@@ -46,6 +46,8 @@ npm install \
   grunt-html2js \
   esprima \
   escodegen \
+  q \
+  q-io \
   --save-dev
 ```
 
