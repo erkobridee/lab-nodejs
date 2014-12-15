@@ -2,23 +2,39 @@ var path  = require('path'),
     Q     = require('q'),
     fs    = require('q-io/fs');
 
-// TODO: change to option object parameter
-function processDirectory(
-  source, fileMatch, removeBase,
-  mainModule, excludeModule
-) {
+// sample
+/*
+options = {
+  source: './src/app/modules',
+  fileMatch: /\.js$/,
+  removeBase: 'src/',
+  mainModule: 'ng.app',
+  excludeModule: 'require.config'
+}
+*/
+function processDirectory( options ) {
 
-  //--- TODO: review
+  if( !options ) throw new Error('options not defined');
 
-  mainModule = mainModule || 'ng.app';
-  excludeModule = excludeModule || 'require.config';
+  if( !options.source )  throw new Error('options.source not defined');
+  var source = options.source;
 
-  //---
+  if( !options.fileMatch )  throw new Error('options.fileMatch not defined');
+  var fileMatch = options.fileMatch;
+  // fileMatch = fileMatch || /\.js$/; // only .js
 
-  fileMatch = fileMatch || /\.js$/; // only .js
+  if( !options.removeBase )  throw new Error('options.removeBase not defined');
+  var removeBase = options.removeBase;
 
   if( typeof removeBase !== 'string' ) removeBase = false;
   console.log( removeBase );
+
+  //---
+
+  var mainModule = options.mainModule || 'ng.app';
+  var excludeModule = options.excludeModule || 'require.config';
+
+  //---
 
   function filterOnlyFiles(path, stat) {
 
