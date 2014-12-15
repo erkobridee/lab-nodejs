@@ -6,6 +6,14 @@ var removeBase = 'src/';
 // var removeBase = 1;
 
 findRequireModules(source, fileMatch, removeBase)
+  .then(function modules(modulesArray) {
+
+    console.log(modulesArray);
+
+  });
+
+/* old
+findRequireModules(source, fileMatch, removeBase)
   .then(function filesPath(files) {
 
     var resultTxt = '\nrequire.js modules\n\n';
@@ -32,3 +40,4 @@ function addModule(filename) {
     exclude: ['require.config']
   };
 }
+*/

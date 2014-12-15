@@ -2,7 +2,18 @@ var path  = require('path'),
     Q     = require('q'),
     fs    = require('q-io/fs');
 
-function processDirectory(source, fileMatch, removeBase) {
+// TODO: change to option object parameter
+function processDirectory(
+  source, fileMatch, removeBase,
+  mainModule, excludeModule
+) {
+
+  //--- TODO: review
+
+  mainModule = mainModule || 'ng.app';
+  excludeModule = excludeModule || 'require.config';
+
+  //---
 
   fileMatch = fileMatch || /\.js$/; // only .js
 
@@ -27,6 +38,14 @@ function processDirectory(source, fileMatch, removeBase) {
     return filePath;
   }
 
+  function addModule(filename) {
+    var name = filename.replace( '.js', '' );
+    return {
+      name: name,
+      exclude: [excludeModule]
+    };
+  }
+
   return fs
     .listTree(source, filterOnlyFiles) // list files
     .then(function orderFiles(files) {
@@ -34,6 +53,13 @@ function processDirectory(source, fileMatch, removeBase) {
         return updatedFilePath( filePath );
       }));
     })
+    .then(function defineModulesArray(files) {
+      var modules = [{ name: mainModule }];
+      files.forEach(function(filename) {
+        modules.push(addModule(filename));
+      });
+      return modules;
+    });
     ;
 
 }
