@@ -10,11 +10,25 @@ findRequireModules(source, fileMatch, removeBase)
 
     var resultTxt = '\nrequire.js modules\n\n';
 
+    var modules = [{name: 'ng.app'}];
+
     files.forEach(function(filename) {
       resultTxt += filename + '\n';
+
+      modules.push(addModule(filename));
     });
 
     console.log( resultTxt );
 
+    console.log( modules );
+
   });
 
+
+function addModule(filename) {
+  var name = filename.replace( '.js', '' );
+  return {
+    name: name,
+    exclude: ['require.config']
+  };
+}
