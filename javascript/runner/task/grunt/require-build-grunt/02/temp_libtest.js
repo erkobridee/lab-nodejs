@@ -1,4 +1,4 @@
-var findRequireModules = require('./helpers/lib/find-require-modules');
+var findRequireModules = require('./helpers/lib/requirejs/find-modules');
 
 var source = './src/app/modules';
 var fileMatch = /package\.js$/;
