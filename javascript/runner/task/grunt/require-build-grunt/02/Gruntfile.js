@@ -18,6 +18,9 @@ module.exports = function(grunt) {
 
   //--- @begin: grunt tasks
 
+  // TODO: review
+  grunt.registerTask('temp', ['configrequire']);
+
   grunt.registerTask('default', ['jshint']);
 
   grunt.registerTask('cleanup', ['clean:dist', 'clean:build']);
