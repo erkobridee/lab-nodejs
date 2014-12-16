@@ -27,7 +27,6 @@ function processDirectory( options ) {
   var removeBase = options.removeBase;
 
   if( typeof removeBase !== 'string' ) removeBase = false;
-  console.log( removeBase );
 
   //---
 

@@ -19,7 +19,7 @@ module.exports = function(grunt) {
   //--- @begin: grunt tasks
 
   // TODO: review
-  grunt.registerTask('temp', ['configrequire']);
+  grunt.registerTask('temp', ['configrequire', 'helloworld']);
 
   grunt.registerTask('default', ['jshint']);
 
