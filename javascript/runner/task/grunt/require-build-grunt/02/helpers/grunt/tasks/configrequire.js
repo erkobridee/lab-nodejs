@@ -1,5 +1,11 @@
 module.exports = function(grunt) {
 
+  // TODO: remove
+  function toJSON(value) {
+    return JSON.stringify(value, null, 2);
+  }
+
+
   grunt.registerTask('configrequire', 'Configure Require.js', function() {
 
     var requireFindModules = require('../../lib/requirejs/find-modules');
@@ -14,7 +20,7 @@ module.exports = function(grunt) {
     // TODO: remove
     console.log( '------------------------------' );
     console.log( 'project.require.findModules:' );
-    console.log( JSON.stringify(project.require.findModules, null, 2) );
+    console.log( toJSON(project.require.findModules) );
     console.log( '------------------------------' );
 
 
@@ -60,11 +66,20 @@ module.exports = function(grunt) {
         }
       };
 
-      // TODO: define
-      // grunt.config('requirejs', { ... });
+      // TODO: remove
+      console.log( '------------------------------' );
+      console.log( 'config object:' );
+      console.log( toJSON(config) );
+
+
+      grunt.config('requirejs', config);
+
 
       // TODO: remove
-      console.log( JSON.stringify(config, null, 2) );
+      console.log( '------------------------------' );
+      console.log( 'grunt requirejs config object:' );
+      console.log( toJSON(grunt.config.get('requirejs')) );
+      console.log( '------------------------------' );
 
     }
 
