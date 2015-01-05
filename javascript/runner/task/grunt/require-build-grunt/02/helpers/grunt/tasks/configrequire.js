@@ -42,13 +42,13 @@ module.exports = function(grunt) {
           options: {
             optimize: 'uglify2',
 
-            // removeCombined: true,
-            // findNestedDependencies: true,
+            removeCombined: true,
+            findNestedDependencies: true,
 
-            baseUrl: './<%= project.paths.build %>/',
+            baseUrl: './',
             // TODO: review
-            appDir: './<%= project.paths.build %>', // source dir
-            dir: './<%= project.paths.dist %>', // ouput dir
+            appDir: '<%= project.paths.build %>', // source dir
+            dir: '<%= project.paths.dist %>', // ouput dir
 
             mainConfigFile: './<%= project.require.build %>',
 

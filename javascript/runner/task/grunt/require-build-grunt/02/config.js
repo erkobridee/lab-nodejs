@@ -26,7 +26,7 @@ module.exports = function() {
         fileMatch: /package\.js$/,
         removeBase: 'src/',
         mainModule: 'ng.app',
-        excludeModule: 'require.config'
+        excludeModule: 'require.build.config'
       }
     }
 
