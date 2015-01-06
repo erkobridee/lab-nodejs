@@ -12,7 +12,9 @@
     "example"
   ],
   "scripts": {
-    "outdated": "npm outdated --depth=0"
+    "outdated": "npm outdated --depth=0",
+    "make_cache": "node scripts/make-cache-ng-html.js src/app templatesCached",
+    "remove_cache": "node scripts/remove-cache-ng-html.js templatesCached"
   },
   "author": "Erko Bridee",
   "license": "MIT",
@@ -35,6 +37,8 @@
     "jshint-stylish": "^0.4.0",
     "q": "^1.1.2",
     "q-io": "^1.11.6",
-    "time-grunt": "^1.0.0"
+    "shelljs": "^0.3.0",
+    "time-grunt": "^1.0.0",
+    "yargs": "^1.3.3"
   }
 }
