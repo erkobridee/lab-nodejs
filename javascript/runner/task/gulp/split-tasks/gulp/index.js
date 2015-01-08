@@ -9,8 +9,19 @@
 var gulp      = require('gulp');
 var $         = require('./helpers/$');
 
+
 require('./tasks/webserver')(gulp, $);
 require('./tasks/clean')(gulp, $);
 require('./tasks/jshint')(gulp, $);
 require('./tasks/build')(gulp, $);
 require('./tasks/default')(gulp, $);
+
+
+/*
+var fs        = require('fs');
+var tasks     = fs.readdirSync('./gulp/tasks/');
+
+tasks.forEach(function(task) {
+  require('./tasks/' + task)(gulp, $);
+});
+*/
