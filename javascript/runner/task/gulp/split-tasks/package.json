@@ -4,7 +4,8 @@
   "description": "gulp split tasks test",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "outdated": "npm outdated --depth=0"
+    "outdated": "npm outdated --depth=0",
+    "build": "gulp --release"
   },
   "keywords": [
     "gulp",
