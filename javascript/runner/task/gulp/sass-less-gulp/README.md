@@ -71,18 +71,14 @@ $ gulp clean
 ```bach
 $ gulp
 ```
-> build css form SASS files (*.scss), 
-> copy `src/fonts/`,
-> to `./dist`
+> build css form SASS files (*.scss) and copy `src/fonts/` to `./dist`
 
 --
 
 ```bach
 $ gulp --cdn
 ```
-> build css form SASS files (*.scss), 
-> copy `src/fonts/`,
-> to `./dist/${package.name}/${package.version}`
+> build css form SASS files (*.scss) and copy `src/fonts/` to `./dist/${package.name}/${package.version}`
 
 --
 
@@ -90,9 +86,7 @@ $ gulp --cdn
 $ gulp --release
 ```
 
-> build css and minify form SASS files (*.scss), 
-> copy `src/fonts/`,
-> to `./dist`
+> build css and minify form SASS files (*.scss) and copy `src/fonts/` to `./dist`
 
 --
 
@@ -100,9 +94,7 @@ $ gulp --release
 $ gulp --release --cdn
 ```
 
-> build css and minify form SASS files (*.scss), 
-> copy `src/fonts/`,
-> to `./dist/${package.name}/${package.version}`
+> build css and minify form SASS files (*.scss) and copy `src/fonts/` to `./dist/${package.name}/${package.version}`
 
 --
 
@@ -110,18 +102,14 @@ $ gulp --release --cdn
 $ gulp --less
 ```
 
-> build css form LESS files (*.less), 
-> copy `src/fonts/`,
-> to `./dist`
+> build css form LESS files (*.less) and copy `src/fonts/` to `./dist`
 --
 
 ```bash
 $ gulp --less --cdn
 ```
 
-> build css form LESS files (*.less), 
-> copy `src/fonts/`,
-> to `./dist/${package.name}/${package.version}`
+> build css form LESS files (*.less) and copy `src/fonts/` to `./dist/${package.name}/${package.version}`
 
 --
 
@@ -129,9 +117,7 @@ $ gulp --less --cdn
 $ gulp --less --release
 ```
 
-> build css and minify form LESS files (*.less), 
-> copy `src/fonts/`,
-> to `./dist`
+> build css and minify form LESS files (*.less) and copy `src/fonts/` to `./dist`
 
 --
 
@@ -139,9 +125,7 @@ $ gulp --less --release
 $ gulp --less --release --cdn
 ```
 
-> build css and minify form LESS files (*.less), 
-> copy `src/fonts/`,
-> to `./dist/${package.name}/${package.version}`
+> build css and minify form LESS files (*.less) and copy `src/fonts/` to `./dist/${package.name}/${package.version}`
 
 
 ## Links
