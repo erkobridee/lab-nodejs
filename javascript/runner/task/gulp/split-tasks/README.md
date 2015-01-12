@@ -47,7 +47,7 @@ npm install \
 npm install
 ```
 
-### Pulp commands
+### Gulp commands
 
 * webserver
 

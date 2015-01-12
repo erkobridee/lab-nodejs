@@ -27,7 +27,7 @@ function loadTasks(tasksDir) {
   var files = fs.readdirSync(tasksDir);
   // load tasks from files
   files.forEach(function(filename) {
-    loadTask(path.join(tasksDir, filename))
+    loadTask(path.join(tasksDir, filename));
   });
 }
 
@@ -37,4 +37,4 @@ module.exports = function(tasksDir) {
   } else {
     console.error('Tasks directory "' + tasksDir + '" not found.');
   }
-}
+};
