@@ -4,10 +4,14 @@ var $         = require('./$');
 
 //---
 
+var outputCssDir = path.join( $.outputDir, 'css' );
+
+//---
+
 var distCssStream = $.lazypipe()
-  .pipe($.minifyCss)
-  .pipe($.rename, { suffix: '.min' })
-  .pipe(gulp.dest, $.outputDir);
+  .pipe( $.minifyCss )
+  .pipe( $.rename, { suffix: '.min' } )
+  .pipe( gulp.dest, outputCssDir );
 
 //---
 
@@ -26,7 +30,7 @@ $.streams.less = function() {
     .pipe( $.if( $.config.debug, $.debug() ) )
     .pipe( $.less() )
     .pipe( autoprefix() )
-    .pipe( gulp.dest( $.outputDir ) )
+    .pipe( gulp.dest( outputCssDir ) )
     .pipe( $.if( $.config.release, distCssStream() ) )
     .on( 'error', $.util.log );
 
@@ -40,7 +44,7 @@ $.streams.sass = function() {
     .pipe( $.if( $.config.debug, $.debug() ) )
     .pipe( $.sass() )
     .pipe( autoprefix() )
-    .pipe( gulp.dest( $.outputDir ) )
+    .pipe( gulp.dest( outputCssDir ) )
     .pipe( $.if( $.config.release, distCssStream() ) )
     .on( 'error', $.util.log );
 
