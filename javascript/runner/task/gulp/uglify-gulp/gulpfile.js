@@ -4,10 +4,14 @@ var gulp    = require('gulp');
 var rename  = require('gulp-rename');
 var uglify  = require('gulp-uglify');
 
+//---
+
 var config = {
   src: 'src',
   dist: 'dist'
 };
+
+//---
 
 gulp.task('clean:css', function(cb) {
   del([
@@ -17,15 +21,20 @@ gulp.task('clean:css', function(cb) {
 
 gulp.task('clean', ['clean:css']);
 
+//---
+
 gulp.task('build', function() {
-  gulp
-    .src(path.join(config.src, 'hello-uglify.js'))
-    .pipe(uglify())
+
+  return gulp
+    .src( path.join( config.src, 'hello-uglify.js' ) )
+    .pipe( uglify() )
     // .pipe(rename('hello-uglify.min.js'))
     .pipe(rename({
-      extname: '.min.js'
+      // extname: '.min.js'
+      suffix: '.min'
     }))
-    .pipe(gulp.dest(config.dist))
+    .pipe( gulp.dest( config.dist ) )
+
 });
 
-gulp.task('default', ['build']);
+gulp.task('default', ['clean', 'build']);

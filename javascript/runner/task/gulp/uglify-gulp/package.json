@@ -1,7 +1,7 @@
 {
   "name": "uglify-gulp",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "gulp uglify and rename test",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
