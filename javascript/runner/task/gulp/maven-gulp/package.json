@@ -1,0 +1,28 @@
+{
+  "name": "maven-gulp",
+  "private": true,
+  "version": "0.1.0",
+  "description": "gulp uglify and rename test running by maven",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "outdated": "npm outdated --depth=0",
+    "setup": "node scripts/setup",
+    "maven": "node scripts/maven",
+    "testos": "node scripts/testos"
+  },
+  "keywords": [
+    "maven",
+    "gulp",
+    "uglify",
+    "rename",
+    "test"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "devDependencies": {
+    "del": "^1.1.1",
+    "gulp": "^3.8.10",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.0.2"
+  }
+}
