@@ -18,8 +18,9 @@ var pkg = module.exports.pkg = require('../../../package.json');
 //---
 
 var configs = require('../../config');
-var args = require('yargs').argv;
+var localip = require('../../lib/localip')();
 
+var args = require('yargs').argv;
 
 var is = module.exports.is = {
   release: args.release || false,
@@ -38,8 +39,11 @@ var paths = module.exports.paths = configs.paths;
 
 var config = module.exports.config = {};
 
+var serverPort = parseInt(args.port, 10) || configs.webserver.port || 8000;
+
 config.webserver = {
   directoryListing: args.directoryListing || configs.webserver.directoryListing || false,
   livereload: args.livereload || configs.webserver.livereload || false,
-  port: parseInt(args.port, 10) || configs.webserver.port || 8000
+  port: serverPort,
+  open: 'http://' + localip + ':' + serverPort
 };

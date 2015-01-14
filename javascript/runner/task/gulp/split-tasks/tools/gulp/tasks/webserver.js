@@ -7,7 +7,7 @@ module.exports = function(gulp, $) {
       port: $.config.webserver.port,
       directoryListing: $.config.webserver.directoryListing,
       host: '0.0.0.0',
-      open: 'http://localhost:' + $.config.webserver.port
+      open: $.config.webserver.open
     };
 
     return gulp.src( '.' )
