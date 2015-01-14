@@ -13,18 +13,18 @@ var path = module.exports.path  = require('path');
 //---
 
 var pkg = module.exports.pkg = require('../../../package.json');
-// var pkg = module.exports.pkg = rootRequire('package.json');
 
 //---
 
 var configs = require('../../config');
-var localip = require('../../lib/localip')();
 
 var args = require('yargs').argv;
 
 var is = module.exports.is = {
+  debug: args.degub || false,
   release: args.release || false,
-  cdn: args.cdn || false
+  cdn: args.cdn || false,
+  less: args.less || false
 };
 
 var paths = module.exports.paths = configs.paths;
@@ -37,13 +37,9 @@ var paths = module.exports.paths = configs.paths;
   paths.outputDir = output;
 })();
 
-var config = module.exports.config = {};
+//---
 
-var serverPort = parseInt(args.port, 10) || configs.webserver.port || 8000;
+// to share streams to gulp tasks
+module.exports.streams = {};
 
-config.webserver = {
-  directoryListing: args.directoryListing || configs.webserver.directoryListing || false,
-  livereload: args.livereload || configs.webserver.livereload || false,
-  port: serverPort,
-  open: 'http://' + localip + ':' + serverPort
-};
+//---

@@ -24,7 +24,12 @@ function loadTask(filepath) {
 }
 
 function loadTasks(tasksDir) {
-  var files = fs.readdirSync(tasksDir);
+  var files = fs
+    .readdirSync(tasksDir)
+    .filter(function isValid(file) {
+      return (file !== '.DS_store' && file.indexOf('.') !== 0);
+    });
+
   // load tasks from files
   files.forEach(function(filename) {
     loadTask(path.join(tasksDir, filename));

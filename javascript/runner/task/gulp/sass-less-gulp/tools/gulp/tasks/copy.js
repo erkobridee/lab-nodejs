@@ -6,7 +6,7 @@ module.exports = function(gulp, $) {
 
     return gulp
       .src( path.join( $.paths.src.fonts, $.paths.fontsfilename ) + '.*' )
-      .pipe( gulp.dest( path.join( $.outputDir, 'fonts' ) ) );
+      .pipe( gulp.dest( path.join( $.paths.outputDir, 'fonts' ) ) );
 
   });
 
