@@ -2,8 +2,6 @@ module.exports = function(gulp, $) {
 
   gulp.task('webserver', function() {
 
-    console.log( $.config.webserver );
-
     var serverConfig = {
       livereload: $.config.webserver.livereload,
       port: $.config.webserver.port,
@@ -12,8 +10,8 @@ module.exports = function(gulp, $) {
       open: 'http://localhost:' + $.config.webserver.port
     };
 
-    return gulp.src('.')
-      .pipe($.webserver(serverConfig));
+    return gulp.src( '.' )
+      .pipe( $.webserver( serverConfig ) );
 
   });
 

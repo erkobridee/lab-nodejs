@@ -5,24 +5,35 @@ module.exports = require('gulp-load-plugins')();
 //---
 
 // Expose some other modules (local or not)
-module.exports.lazypipe = require('lazypipe');
-module.exports.del = require('del');
+module.exports.lazypipe         = require('lazypipe');
+module.exports.del              = require('del');
+
+var path = module.exports.path  = require('path');
 
 //---
 
-module.exports.pkg = require('../../package.json');
+var pkg = module.exports.pkg = require('../../package.json');
 
 //---
-
-var args = require('yargs').argv;
-
-module.exports.is = {
-  release: args.release || false
-};
 
 var configs = require('../config');
+var args = require('yargs').argv;
 
-module.exports.paths = configs.paths;
+
+var is = module.exports.is = {
+  release: args.release || false,
+  cdn: args.cdn || false
+};
+
+var paths = module.exports.paths = configs.paths;
+
+(function() {
+  if( is.cdn ) {
+    var output = paths.dist || 'dist';
+    output = path.join( output, pkg.name, pkg.version );
+    paths.cdnOutput = output;
+  }
+})();
 
 var config = module.exports.config = {};
 

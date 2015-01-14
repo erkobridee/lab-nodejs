@@ -1,7 +1,5 @@
 module.exports = function(gulp, $) {
 
-  var path = require('path');
-
   gulp.task('build:js', ['clean:dist', 'jshint:project'], function() {
 
     var releaseStream = $.lazypipe()
@@ -9,14 +7,13 @@ module.exports = function(gulp, $) {
       .pipe( $.rename, { suffix: '.min' } );
 
     return gulp
-      .src( path.join( $.paths.src, '*.js' ) )
-      /*
-      .pipe( $.uglify() )
-      .pipe( $.rename( { extname: '.min.js' } ) )
-      */
-      // .pipe(releaseStream())
+      .src( $.path.join( $.paths.src, '*.js' ) )
       .pipe( $.if( $.is.release, releaseStream() ) )
-      .pipe( gulp.dest( $.paths.dist ) );
+      .pipe(
+        $.is.cdn ?
+        gulp.dest( $.paths.cdnOutput ) :
+        gulp.dest( $.paths.dist )
+      );
 
   });
 
