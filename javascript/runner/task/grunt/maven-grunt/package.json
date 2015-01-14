@@ -1,0 +1,28 @@
+{
+  "name": "maven-grunt",
+  "private": true,
+  "version": "0.1.0",
+  "description": "grunt uglify test running by maven",
+  "jsMainName": "index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "outdated": "npm outdated --depth=0",
+    "setup": "node scripts/setup",
+    "maven": "node scripts/maven",
+    "testos": "node scripts/testos"
+  },
+  "keywords": [
+    "maven",
+    "grunt",
+    "test",
+    "uglify"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.7.0"
+  }
+}
