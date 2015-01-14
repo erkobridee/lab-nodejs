@@ -6,6 +6,7 @@ module.exports = {
   },
 
   webserver: {
+    directoryListing: true,
     livereload: false,
     port: 1337
   }

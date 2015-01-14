@@ -13,13 +13,13 @@ var config = {
 
 //---
 
-gulp.task('clean:css', function(cb) {
+gulp.task('clean:dist', function(cb) {
   del([
     config.dist
   ], cb);
 });
 
-gulp.task('clean', ['clean:css']);
+gulp.task('clean', ['clean:dist']);
 
 //---
 
@@ -28,9 +28,7 @@ gulp.task('build', function() {
   return gulp
     .src( path.join( config.src, 'hello-uglify.js' ) )
     .pipe( uglify() )
-    // .pipe(rename('hello-uglify.min.js'))
     .pipe(rename({
-      // extname: '.min.js'
       suffix: '.min'
     }))
     .pipe( gulp.dest( config.dist ) )

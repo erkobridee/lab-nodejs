@@ -1,0 +1,46 @@
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+#-----------
+# node.js
+
+node
+node_modules
+npm-debug.log
+
+#-----------
+# project files
+
+dist
+
+#-----------
+# Windows
+
+**/.db
+
+#-----------
+# Mac OS X
+
+**/.DS_Store
+
+# Thumbnails
+**/._*
+
+# Files that might appear on external disk
+**/.Spotlight-V100
+**/.Trashes
+
+#-----------
+# eclipse
+.project
+.settings
+
+#-----------
+# Webstorm
+**/.idea
