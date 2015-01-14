@@ -30,11 +30,11 @@ var is = module.exports.is = {
 var paths = module.exports.paths = configs.paths;
 
 (function() {
+  var output = paths.dist || 'dist';
   if( is.cdn ) {
-    var output = paths.dist || 'dist';
     output = path.join( output, pkg.name, pkg.version );
-    paths.cdnOutput = output;
   }
+  paths.outputDir = output;
 })();
 
 var config = module.exports.config = {};

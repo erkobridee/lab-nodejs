@@ -9,11 +9,7 @@ module.exports = function(gulp, $) {
     return gulp
       .src( $.path.join( $.paths.src, '*.js' ) )
       .pipe( $.if( $.is.release, releaseStream() ) )
-      .pipe(
-        $.is.cdn ?
-        gulp.dest( $.paths.cdnOutput ) :
-        gulp.dest( $.paths.dist )
-      );
+      .pipe( gulp.dest( $.paths.outputDir ) );
 
   });
 
