@@ -15,13 +15,19 @@ module.exports.pkg = require('../../package.json');
 //---
 
 var args = require('yargs').argv;
+
+module.exports.is = {
+  release: args.release || false
+};
+
 var configs = require('../config');
 
 module.exports.paths = configs.paths;
 
-// Expose all supported args from command line
-module.exports.config = {
-  release: args.release || false,
+var config = module.exports.config = {};
+
+config.webserver = {
+  directoryListing: args.directoryListing || configs.webserver.directoryListing || false,
   livereload: args.livereload || configs.webserver.livereload || false,
   port: parseInt(args.port, 10) || configs.webserver.port || 8000
 };

@@ -15,7 +15,7 @@ module.exports = function(gulp, $) {
       .pipe( $.rename( { extname: '.min.js' } ) )
       */
       // .pipe(releaseStream())
-      .pipe( $.if( $.config.release, releaseStream() ) )
+      .pipe( $.if( $.is.release, releaseStream() ) )
       .pipe( gulp.dest( $.paths.dist ) );
 
   });
