@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "description": "gulp split tasks test",
   "scripts": {
-    "preinstall": "echo \"installing...\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "outdated": "npm outdated --depth=0",
-    "build": "gulp --release"
+    "setup": "node tools/scripts/setup",
+    "testos": "node tools/scripts/testos",
+    "build": "gulp --release",
+    "build_cdn": "gulp --release --cdn"
   },
   "keywords": [
     "gulp",
