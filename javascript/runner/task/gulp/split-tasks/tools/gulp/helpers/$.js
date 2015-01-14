@@ -12,11 +12,12 @@ var path = module.exports.path  = require('path');
 
 //---
 
-var pkg = module.exports.pkg = require('../../package.json');
+var pkg = module.exports.pkg = require('../../../package.json');
+// var pkg = module.exports.pkg = rootRequire('package.json');
 
 //---
 
-var configs = require('../config');
+var configs = require('../../config');
 var args = require('yargs').argv;
 
 

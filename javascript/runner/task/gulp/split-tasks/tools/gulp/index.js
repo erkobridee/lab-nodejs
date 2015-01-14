@@ -30,5 +30,5 @@ tasks.forEach(function(task) {
 var loadTasks = require('./helpers/loadTasks');
 
 // load tasks config per file
-loadTasks('gulp/tasks');
+loadTasks('tools/gulp/tasks');
 
