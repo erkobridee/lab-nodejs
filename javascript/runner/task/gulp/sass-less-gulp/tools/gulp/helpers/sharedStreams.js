@@ -1,10 +1,9 @@
-var path      = require('path');
 var gulp      = require('gulp');
 var $         = require('./$');
 
 //---
 
-var outputCssDir = path.join( $.outputDir, 'css' );
+var outputCssDir = $.path.join( $.paths.outputDir, 'css' );
 
 //---
 
@@ -26,12 +25,12 @@ function autoprefix() {
 $.streams.less = function() {
 
   return gulp
-    .src( path.join( $.paths.src.less, $.paths.mainfilename + '.less' ) )
-    .pipe( $.if( $.config.debug, $.debug() ) )
+    .src( $.path.join( $.paths.src.less, $.paths.mainfilename + '.less' ) )
+    .pipe( $.if( $.is.debug, $.debug() ) )
     .pipe( $.less() )
     .pipe( autoprefix() )
     .pipe( gulp.dest( outputCssDir ) )
-    .pipe( $.if( $.config.release, distCssStream() ) )
+    .pipe( $.if( $.is.release, distCssStream() ) )
     .on( 'error', $.util.log );
 
 };
@@ -40,12 +39,12 @@ $.streams.less = function() {
 $.streams.sass = function() {
 
   return gulp
-    .src( path.join( $.paths.src.sass, $.paths.mainfilename + '.scss' ) )
-    .pipe( $.if( $.config.debug, $.debug() ) )
+    .src( $.path.join( $.paths.src.sass, $.paths.mainfilename + '.scss' ) )
+    .pipe( $.if( $.is.debug, $.debug() ) )
     .pipe( $.sass() )
     .pipe( autoprefix() )
     .pipe( gulp.dest( outputCssDir ) )
-    .pipe( $.if( $.config.release, distCssStream() ) )
+    .pipe( $.if( $.is.release, distCssStream() ) )
     .on( 'error', $.util.log );
 
 };

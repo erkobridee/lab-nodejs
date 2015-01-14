@@ -12,16 +12,16 @@ module.exports = function(gulp, $) {
 
   //---
 
-  gulp.task('jshint:gulp', function() {
+  gulp.task('jshint:tools', function() {
 
     return gulp.src([
         'gulpfile.js',
-        'gulp/**/*.js'
+        'tools/**/*.js'
       ])
       .pipe( jshintStream() );
 
   });
 
-  gulp.task('jshint', ['jshint:gulp']);
+  gulp.task('jshint', ['jshint:tools']);
 
 };
