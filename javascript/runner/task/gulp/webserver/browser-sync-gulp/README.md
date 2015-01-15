@@ -53,14 +53,59 @@ npm install
 ## Gulp commands
 
 ```
+gulp dev
+```
+
+> development flow with browserSync support
+
+```
+gulp dist
+```
+
+> test distribuction files
+
+```
 gulp
 ```
+
+> alias to dev task
+
 
 ## Links
 
 ### Node.js
 
+* [[GitHub] sindresorhus / jshint-stylish](https://github.com/sindresorhus/jshint-stylish) - Stylish reporter for JSHint
+
+* [[GitHub] spiralx / jshint-summary](https://github.com/spiralx/jshint-summary) - JSHint reporter with customisable colours and verbosity
+
+* [[GitHub] shakyShane / browser-sync](https://github.com/shakyShane/browser-sync) - Keep multiple browsers & devices in sync when building websites
+
 * [[GitHub] shakyShane / gulp-browser-sync](https://github.com/shakyShane/gulp-browser-sync) - How to use the BrowserSync module with gulp - [doc](http://www.browsersync.io/docs/gulp/) | [site](http://www.browsersync.io/)
+
+* [[GitHub] gulpjs / gulp](https://github.com/gulpjs/gulp) - The streaming build system
+
+* [[GitHub] OverZealous / run-sequence](https://github.com/OverZealous/run-sequence) - Run a series of dependent gulp tasks in order
+
+* [[GitHub] OverZealous / lazypipe](https://github.com/OverZealous/lazypipe) - Lazily create a pipeline out of reusable components. Useful for gulp
+
+* [[GitHub] sindresorhus / del](https://github.com/sindresorhus/del) - Delete files/folders using globs
+
+* [[GitHub] jackfranklin / gulp-load-plugins](https://github.com/jackfranklin/gulp-load-plugins) - Automatically load in gulp plugins
+
 
 ### Gulp plugins
 
+* [[GitHub] robrich / gulp-if](https://github.com/robrich/gulp-if) - Conditionally run a task
+
+* [[GitHub] sindresorhus / gulp-filter](https://github.com/sindresorhus/gulp-filter) - Filter files in a vinyl stream
+
+* [[GitHub] dlmanning / gulp-sass](https://github.com/dlmanning/gulp-sass) - SASS plugin for gulp
+
+* [[GitHub] jonathanepollack / gulp-minify-css](https://github.com/jonathanepollack/gulp-minify-css) - A Gulp plugin that minifies css with clean-css
+
+* [[GitHub] hparra / gulp-rename](https://github.com/hparra/gulp-rename) - Rename files easily
+
+* [[GitHub] spenceralger / gulp-jshint](https://github.com/spenceralger/gulp-jshint) - JSHint plugin for gulp
+
+* [[GitHub] terinjokes / gulp-uglify](https://github.com/terinjokes/gulp-uglify) - Minify files with UglifyJS
