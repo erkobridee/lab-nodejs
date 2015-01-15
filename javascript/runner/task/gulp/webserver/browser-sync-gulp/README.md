@@ -25,6 +25,7 @@ npm init
 touch gulpfile.js
 
 npm install \
+  yargs \
   jshint-stylish \
   jshint-summary \
   browser-sync \
@@ -32,6 +33,7 @@ npm install \
   lazypipe \
   del \
   gulp \
+  gulp-load-plugins \
   gulp-if \
   gulp-filter \
   gulp-sass \
@@ -39,7 +41,7 @@ npm install \
   gulp-rename \
   gulp-jshint \
   gulp-uglify \
-  gulp-load-plugins \
+  gulp-plumber \
   --save-dev
 
 ```
@@ -70,10 +72,30 @@ gulp
 
 > alias to dev task
 
+```
+gulp --release
+```
+
+> run build:prod gulp task
+
+```
+gulp --release --preview
+```
+
+> run dist gulp task
+
+```
+gulp --release --preview --cdn
+```
+
+> generate files following cdn dir path structure and run dist gulp task
+
 
 ## Links
 
 ### Node.js
+
+* [[GitHub] chevex / yargs](https://github.com/chevex/yargs)
 
 * [[GitHub] sindresorhus / jshint-stylish](https://github.com/sindresorhus/jshint-stylish) - Stylish reporter for JSHint
 
@@ -95,6 +117,8 @@ gulp
 
 
 ### Gulp plugins
+
+* [[GitHub] floatdrop / gulp-plumber](https://github.com/floatdrop/gulp-plumber) - Fix for Node pipes panic unpiping on error
 
 * [[GitHub] robrich / gulp-if](https://github.com/robrich/gulp-if) - Conditionally run a task
 
