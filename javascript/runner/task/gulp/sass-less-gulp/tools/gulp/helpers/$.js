@@ -1,45 +1,58 @@
+var args = require('yargs').argv;
+
+//---
 
 // Expose all Gulp plugins found
-module.exports = require('gulp-load-plugins')();
+var $ = module.exports = require('gulp-load-plugins')();
+
+//---
+
+// shared streams to gulp tasks
+$.streams = {};
 
 //---
 
 // Expose some other modules (local or not)
-module.exports.lazypipe         = require('lazypipe');
-module.exports.del              = require('del');
-
-var path = module.exports.path  = require('path');
-
-//---
-
-var pkg = module.exports.pkg = require('../../../package.json');
+$.path            = require('path');
+$.del             = require('del');
+$.lazypipe        = require('lazypipe');
+$.runSequence     = require('run-sequence');
 
 //---
 
-var configs = require('../../config');
-
-var args = require('yargs').argv;
-
-var is = module.exports.is = {
-  debug: args.degub || false,
-  release: args.release || false,
-  cdn: args.cdn || false,
-  less: args.less || false
+$.onError = function (err) {
+  $.util.log(err);
 };
 
-var paths = module.exports.paths = configs.paths;
+//---
 
-(function() {
-  var output = paths.dist || 'dist';
-  if( is.cdn ) {
-    output = path.join( output, pkg.name, pkg.version );
-  }
-  paths.outputDir = output;
-})();
+$.is = {
+  debug     : args.debug || false,
+  release   : args.release || false,
+  cdn       : args.cdn || false,
+  less      : args.less || false
+};
 
 //---
 
-// to share streams to gulp tasks
-module.exports.streams = {};
+$.pkg = require('../../../package.json');
 
+$.localip = require('../../lib/localip')();
+
+$.config = require('../../config');
+
+//---
+// @begin: define output dir
+
+(function() {
+
+  var output = $.config.paths.dist || 'dist';
+  if( $.is.cdn && $.is.release ) {
+    output = $.path.join( output, $.pkg.name, $.pkg.version );
+  }
+  $.config.paths.outputDir = output;
+
+})();
+
+// @end: define output dir
 //---
