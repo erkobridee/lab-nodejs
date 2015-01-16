@@ -1,29 +1,16 @@
 module.exports = function(gulp, $) {
 
-  gulp.task('default', ['jshint', 'build', 'copy'], function() {
+  gulp.task('help', $.taskListing);
 
-    $.util.log('');
-    $.util.log('project: ' + $.pkg.name + ' v' + $.pkg.version);
-    $.util.log('description: ' + $.pkg.description);
-    $.util.log('');
+  //---
 
-    var msg = '';
-    if( $.is.less ) {
-      msg += 'LESS compiled';
-    } else {
-      msg += 'SASS compiled';
-    }
+  gulp.task('flow:default', ['jshint', 'build', 'copy']);
 
-    if( $.is.release ) {
-      msg += ' + minifed';
-    }
+  //--
 
-    if( $.is.cdn ) {
-      msg += ' and prepared to CDN deploy';
-    }
+  gulp.task('default', ['flow:default'], function() {
 
-    $.util.log('>> ' + msg);
-    $.util.log('');
+    $.projectInfoMsg();
 
   });
 
