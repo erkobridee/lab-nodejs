@@ -18,7 +18,7 @@ module.exports = function(gulp, $) {
       [
         'copy:html',
         'sass:prod',
-        'uglify:js'
+        'uglify:main.js'
       ],
       done
     );

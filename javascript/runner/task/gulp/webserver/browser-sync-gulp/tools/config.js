@@ -30,6 +30,12 @@ module.exports = (function() {
 
   //---
 
+  config.js = {
+    main: config.paths.src + '/scripts/main.js'
+  };
+
+  //---
+
   config.htmls = [
     config.paths.src + '/**/*.html'
   ];
