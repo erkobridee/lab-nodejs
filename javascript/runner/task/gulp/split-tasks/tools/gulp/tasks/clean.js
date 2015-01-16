@@ -5,7 +5,7 @@ module.exports = function(gulp, $) {
 
   gulp.task('clean:dist', function(cb) {
     $.del([
-      $.paths.dist
+      $.config.paths.dist
     ], cb);
   });
 

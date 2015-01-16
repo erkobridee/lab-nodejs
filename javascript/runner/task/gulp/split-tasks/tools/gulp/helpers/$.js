@@ -1,49 +1,78 @@
+var args = require('yargs').argv;
+
+//---
 
 // Expose all Gulp plugins found
-module.exports = require('gulp-load-plugins')();
+var $ = module.exports = require('gulp-load-plugins')();
 
 //---
 
 // Expose some other modules (local or not)
-module.exports.lazypipe         = require('lazypipe');
-module.exports.del              = require('del');
-
-var path = module.exports.path  = require('path');
-
-//---
-
-var pkg = module.exports.pkg = require('../../../package.json');
-// var pkg = module.exports.pkg = rootRequire('package.json');
+$.path            = require('path');
+$.del             = require('del');
+$.lazypipe        = require('lazypipe');
 
 //---
 
-var configs = require('../../config');
-var localip = require('../../lib/localip')();
+$.onError = function (err) {
+  $.util.log(err);
+};
 
-var args = require('yargs').argv;
+//---
 
-var is = module.exports.is = {
+$.is = {
+  debug: args.debug || false,
   release: args.release || false,
   cdn: args.cdn || false
 };
 
-var paths = module.exports.paths = configs.paths;
+//---
+
+$.pkg = require('../../../package.json');
+
+$.localip = require('../../lib/localip')();
+
+$.config = require('../../config');
+
+//---
+// @begin: define output dir
 
 (function() {
-  var output = paths.dist || 'dist';
-  if( is.cdn ) {
-    output = path.join( output, pkg.name, pkg.version );
+
+  var output = $.config.paths.dist || 'dist';
+  if( $.is.cdn && $.is.release ) {
+    output = $.path.join( output, $.pkg.name, $.pkg.version );
   }
-  paths.outputDir = output;
+  $.config.paths.outputDir = output;
+
 })();
 
-var config = module.exports.config = {};
+// @end: define output dir
+//---
+// @begin: check webserver configs
 
-var serverPort = parseInt(args.port, 10) || configs.webserver.port || 8000;
+(function() {
 
-config.webserver = {
-  directoryListing: args.directoryListing || configs.webserver.directoryListing || false,
-  livereload: args.livereload || configs.webserver.livereload || false,
-  port: serverPort,
-  open: 'http://' + localip + ':' + serverPort
-};
+  $.config
+    .webserver = $.config.webserver || {};
+
+  $.config
+    .webserver
+    .port = parseInt(args.port, 10) || $.config.webserver.port || 3000;
+
+  $.config
+    .webserver
+    .directoryListing = args.directoryListing || $.config.webserver.directoryListing || false;
+
+  $.config
+    .webserver
+    livereload = args.livereload || $.config.webserver.livereload || false;
+
+  $.config
+    .webserver
+    .open = 'http://' + $.localip + ':' + $.config.webserver.port;
+
+})();
+
+// @end: check webserver configs
+//---

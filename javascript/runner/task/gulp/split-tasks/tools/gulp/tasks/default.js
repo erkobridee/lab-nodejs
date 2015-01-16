@@ -1,10 +1,10 @@
 module.exports = function(gulp, $) {
 
   gulp.task('default', ['build'], function() {
-    console.log('');
-    console.log('project: ' + $.pkg.name + ' v' + $.pkg.version);
-    console.log('description: ' + $.pkg.description);
-    console.log('');
+    $.util.log('');
+    $.util.log('project: ' + $.pkg.name + ' v' + $.pkg.version);
+    $.util.log('description: ' + $.pkg.description);
+    $.util.log('');
   });
 
 };

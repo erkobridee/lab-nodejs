@@ -30,6 +30,9 @@ npm install \
   gulp-if \
   gulp-rename \
   gulp-webserver \
+  gulp-plumber \
+  gulp-util \
+  gulp-debug \
   gulp-uglify \
   gulp-jshint \
   jshint-summary \
@@ -137,10 +140,16 @@ $ gulp
 
 * [[GitHub] gulpjs / gulp](https://github.com/gulpjs/gulp) - The streaming build system
 
+* [[GitHub] jackfranklin / gulp-load-plugins](https://github.com/jackfranklin/gulp-load-plugins) - Automatically load in gulp plugins
+
 
 #### Gulp plugins
 
-* [[GitHub] jackfranklin / gulp-load-plugins](https://github.com/jackfranklin/gulp-load-plugins) - Automatically load in gulp plugins
+* [[GitHub] gulpjs / gulp-util](https://github.com/gulpjs/gulp-util) - Utilities for gulp plugins
+
+* [[GitHub] sindresorhus / gulp-debug](https://github.com/sindresorhus/gulp-debug) - Debug vinyl file streams
+
+* [[GitHub] floatdrop / gulp-plumber](https://github.com/floatdrop/gulp-plumber) - Fix for Node pipes panic unpiping on error
 
 * [[GitHub] robrich / gulp-if](https://github.com/robrich/gulp-if) - Conditionally run a task
 

@@ -24,7 +24,7 @@ module.exports = function(gulp, $) {
 
   gulp.task('jshint:project', function() {
 
-    return gulp.src( $.paths.src + '/**/*.js' )
+    return gulp.src( $.config.paths.src + '/**/*.js' )
       .pipe( jshintStream() );
 
   });

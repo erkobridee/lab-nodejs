@@ -7,9 +7,11 @@ module.exports = function(gulp, $) {
       .pipe( $.rename, { suffix: '.min' } );
 
     return gulp
-      .src( $.path.join( $.paths.src, '*.js' ) )
+      .src( $.path.join( $.config.paths.src, '*.js' ) )
+      .pipe( $.if( $.is.debug, $.debug() ) )
+      .pipe( $.plumber() )
       .pipe( $.if( $.is.release, releaseStream() ) )
-      .pipe( gulp.dest( $.paths.outputDir ) );
+      .pipe( gulp.dest( $.config.paths.outputDir ) );
 
   });
 
