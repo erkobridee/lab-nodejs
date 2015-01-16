@@ -14,6 +14,16 @@ module.exports = (function() {
     build: '.temp'
   };
 
+  config.jshint = {
+    tools: [
+      'gulpfile.js',
+      'tools/**/*.js'
+    ],
+    project: [
+      config.paths.src + '/**/*.js'
+    ]
+  };
+
   config.webserver = {
     port: 1337
   };

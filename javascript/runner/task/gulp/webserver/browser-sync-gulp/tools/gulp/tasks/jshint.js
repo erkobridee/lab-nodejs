@@ -7,17 +7,12 @@ module.exports = function(gulp, $) {
     .pipe( $.jshint.reporter, 'fail' );
 
   gulp.task('jshint:tools', function() {
-    return gulp.src([
-        'gulpfile.js',
-        'tools/**/*.js'
-      ])
+    return gulp.src( $.config.jshint.tools )
       .pipe( jshintStream() );
   });
 
   gulp.task('jshint:project', function() {
-    return gulp.src(
-        $.config.paths.src + '/**/*.js'
-      )
+    return gulp.src( $.config.jshint.project )
       .pipe( jshintStream() );
   });
 
