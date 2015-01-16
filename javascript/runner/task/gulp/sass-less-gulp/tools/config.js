@@ -32,7 +32,7 @@ module.exports = (function() {
 
   config.styles = {
     sass: {
-      main    : config.paths.src + '/scss/' + stylefilename + '.sass',
+      main    : config.paths.src + '/scss/' + stylefilename + '.scss',
       project : config.paths.src + '/scss/**/*.sass'
     },
     less: {
