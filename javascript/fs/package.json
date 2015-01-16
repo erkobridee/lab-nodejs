@@ -12,7 +12,10 @@
   "author": "Erko Bridee",
   "license": "MIT",
   "devDependencies": {
+    "del": "^1.1.1",
+    "map-stream": "0.0.5",
     "q": "^1.1.2",
-    "q-io": "^1.11.6"
+    "q-io": "^1.11.6",
+    "vinyl-fs": "^0.3.13"
   }
 }
