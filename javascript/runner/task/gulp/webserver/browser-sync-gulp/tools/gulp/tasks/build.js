@@ -16,7 +16,7 @@ module.exports = function(gulp, $) {
       'clean',
       'jshint:project',
       [
-        'copy:html',
+        'copy:htmls',
         'sass:prod',
         'uglify:main.js'
       ],

@@ -1,7 +1,7 @@
 module.exports = function(gulp, $) {
 
   gulp.task('sass:dev', function() {
-    return gulp.src( $.config.sass )
+    return gulp.src( $.config.styles.main )
       .pipe( $.if( $.is.debug, $.debug() ) )
       .pipe( $.plumber() )
       .pipe( $.sass({ onError: $.onError }) )
@@ -11,7 +11,7 @@ module.exports = function(gulp, $) {
   });
 
   gulp.task('sass:prod', function() {
-    return gulp.src( $.config.sass )
+    return gulp.src( $.config.styles.main )
       .pipe( $.if( $.is.debug, $.debug() ) )
       .pipe( $.plumber() )
       .pipe( $.sass({ onError: $.onError }) )

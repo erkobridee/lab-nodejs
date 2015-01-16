@@ -1,7 +1,7 @@
 module.exports = function(gulp, $) {
 
-  gulp.task('copy:html', function() {
-    return gulp.src( $.config.htmls )
+  gulp.task('copy:htmls', function() {
+    return gulp.src( $.config.html.project )
     .pipe( gulp.dest( $.config.paths.outputDir ) );
   });
 

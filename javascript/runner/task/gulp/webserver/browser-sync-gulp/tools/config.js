@@ -18,33 +18,28 @@ module.exports = (function() {
 
   //---
 
-  config.jshint = {
+  config.js = {
+    main: config.paths.src + '/scripts/main.js',
+    project: config.paths.src + '/scripts/**/*.js',
     tools: [
       'gulpfile.js',
       'tools/**/*.js'
-    ],
-    project: [
-      config.paths.src + '/**/*.js'
     ]
   };
 
   //---
 
-  config.js = {
-    main: config.paths.src + '/scripts/main.js'
+  config.styles = {
+    main: config.paths.src + '/styles/main.scss',
+    project: config.paths.src + '/styles/**/*.scss'
   };
 
   //---
 
-  config.htmls = [
-    config.paths.src + '/**/*.html'
-  ];
-
-  //---
-
-  config.sass = [
-    config.paths.src + '/styles/main.scss'
-  ];
+  config.html = {
+    main: config.paths.src + '/index.html',
+    project: config.paths.src + '/**/*.html'
+  }
 
   //---
 
