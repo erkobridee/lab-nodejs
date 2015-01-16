@@ -1,6 +1,7 @@
 module.exports = function(gulp, $) {
 
   gulp.task('default', ['jshint', 'build', 'copy'], function() {
+
     $.util.log('');
     $.util.log('project: ' + $.pkg.name + ' v' + $.pkg.version);
     $.util.log('description: ' + $.pkg.description);
@@ -23,6 +24,7 @@ module.exports = function(gulp, $) {
 
     $.util.log('>> ' + msg);
     $.util.log('');
+
   });
 
 };
