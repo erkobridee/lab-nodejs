@@ -82,7 +82,7 @@ $.log = function(msg) {
   } else {
     $.util.log($.util.colors.blue(msg));
   }
-}
+};
 
 $.onError = function(err) {
   $.log(err);
@@ -108,6 +108,6 @@ $.projectInfoMsg = function() {
     $.log('>> ' + msg);
     $.log('');
   }
-}
+};
 
 //---

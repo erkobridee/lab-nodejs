@@ -10,7 +10,6 @@ module.exports = function(gulp, $) {
       .pipe( gulp.dest( $.path.join( $.config.paths.build, 'styles' ) ) )
       .pipe( $.filter( '**/*.css' ) )
       .pipe( $.if( $.browserSync.active, $.reload({stream: true}) ) );
-      ;
   });
 
   gulp.task('sass:prod', function() {

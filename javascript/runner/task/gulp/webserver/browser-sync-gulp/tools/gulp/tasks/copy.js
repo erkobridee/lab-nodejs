@@ -5,6 +5,6 @@ module.exports = function(gulp, $) {
       $.config.paths.src + '/**/*.html'
     )
     .pipe( gulp.dest( $.config.paths.outputDir ) );
-  })
+  });
 
 };
