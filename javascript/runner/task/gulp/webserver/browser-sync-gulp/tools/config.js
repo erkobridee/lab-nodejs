@@ -36,6 +36,12 @@ module.exports = (function() {
 
   //---
 
+  config.sass = [
+    config.paths.src + '/styles/main.scss'
+  ];
+
+  //---
+
   config.webserver = {
     port: 1337
   };
