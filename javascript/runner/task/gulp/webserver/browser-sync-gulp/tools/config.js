@@ -1,13 +1,23 @@
-module.exports = {
+module.exports = (function() {
 
-  paths: {
+  var config = {};
+
+  config.root = './';
+
+  config.packages = [
+    './package.json'
+  ];
+
+  config.paths = {
     src: 'src',
     dist: 'dist',
     build: '.temp'
-  },
+  };
 
-  webserver: {
+  config.webserver = {
     port: 1337
-  }
+  };
 
-};
+  return config;
+
+})();
