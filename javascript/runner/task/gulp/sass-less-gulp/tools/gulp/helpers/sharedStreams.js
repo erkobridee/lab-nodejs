@@ -15,9 +15,7 @@ var distCssStream = $.lazypipe()
 //---
 
 function autoprefix() {
-  return $.autoprefixer({browsers: [
-    'last 2 versions', 'last 4 Android versions'
-  ]});
+  return $.autoprefixer( $.config.autoprefixer );
 }
 
 //---
@@ -25,12 +23,7 @@ function autoprefix() {
 $.streams.less = function() {
 
   return gulp
-    .src(
-      $.path.join(
-        $.config.paths.src.less,
-        $.config.paths.mainfilename + '.less'
-      )
-    )
+    .src( $.config.styles.less.main )
     .pipe( $.if( $.is.debug, $.debug() ) )
     .pipe( $.plumber() )
     .pipe( $.less() )
@@ -45,12 +38,7 @@ $.streams.less = function() {
 $.streams.sass = function() {
 
   return gulp
-    .src(
-      $.path.join(
-        $.config.paths.src.sass,
-        $.config.paths.mainfilename + '.scss'
-      )
-    )
+    .src( $.config.styles.sass.main )
     .pipe( $.if( $.is.debug, $.debug() ) )
     .pipe( $.plumber() )
     .pipe( $.sass() )

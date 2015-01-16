@@ -14,10 +14,8 @@ module.exports = function(gulp, $) {
 
   gulp.task('jshint:tools', function() {
 
-    return gulp.src([
-        'gulpfile.js',
-        'tools/**/*.js'
-      ])
+    return gulp
+      .src( $.config.js.tools )
       .pipe( jshintStream() );
 
   });
