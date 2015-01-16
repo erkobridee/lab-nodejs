@@ -14,7 +14,7 @@ $.reload          = $.browserSync.reload;
 //---
 
 $.onError = function (err) {
-  console.log(err);
+  $.util.log(err);
 };
 
 //---

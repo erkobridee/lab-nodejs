@@ -23,7 +23,7 @@ $.reload          = $.browserSync.reload;
 //---
 
 $.onError = function (err) {
-  console.log(err);
+  $.util.log(err);
 };
 
 //---
@@ -48,7 +48,7 @@ $.config = require('../../config');
 
 (function() {
   var output = $.config.paths.dist || 'dist';
-  if( $.is.cdn ) {
+  if( $.is.cdn && $.is.release ) {
     output = $.path.join( output, $.pkg.name, $.pkg.version );
   }
   $.config.paths.outputDir = output;
