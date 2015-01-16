@@ -34,6 +34,7 @@ npm install \
   del \
   gulp \
   gulp-load-plugins \
+  gulp-task-listing \
   gulp-if \
   gulp-filter \
   gulp-sass \
@@ -139,3 +140,5 @@ gulp --release --preview --cdn
 * [[GitHub] spenceralger / gulp-jshint](https://github.com/spenceralger/gulp-jshint) - JSHint plugin for gulp
 
 * [[GitHub] terinjokes / gulp-uglify](https://github.com/terinjokes/gulp-uglify) - Minify files with UglifyJS
+
+* [[GitHub] OverZealous / gulp-task-listing](https://github.com/OverZealous/gulp-task-listing) - Provides an easy way to get a listing of your tasks from your gulpfile
