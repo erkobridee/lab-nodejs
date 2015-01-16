@@ -5,23 +5,29 @@ module.exports = function(gulp, $) {
 
   //---
 
-  gulp.task('default', function(cb) {
+  gulp.task('help', $.taskListing);
+
+  //---
+
+  gulp.task('default', function(done) {
+
+    $.projectInfoMsg();
 
     if( $.is.release ) {
 
       if( $.is.preview ) {
 
-        $.runSequence('dist', cb);
+        $.runSequence('dist', done);
 
       } else {
 
-        $.runSequence('build:prod', cb);
+        $.runSequence('build:prod', done);
 
       }
 
     } else {
 
-      $.runSequence('dev', cb);
+      $.runSequence('dev', done);
 
     }
 

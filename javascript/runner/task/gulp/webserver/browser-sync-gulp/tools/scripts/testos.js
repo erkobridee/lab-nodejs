@@ -1,4 +1,4 @@
-var async_exec = require('child_process').exec
+var async_exec = require('child_process').exec;
 
 // http://documentup.com/arturadib/shelljs
 async_exec('npm install shelljs', function (err, stdout, stderr) {

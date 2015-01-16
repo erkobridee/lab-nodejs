@@ -34,6 +34,7 @@ npm install \
   del \
   gulp \
   gulp-load-plugins \
+  gulp-task-listing \
   gulp-if \
   gulp-filter \
   gulp-sass \
@@ -44,6 +45,8 @@ npm install \
   gulp-plumber \
   gulp-util \
   gulp-debug \
+  gulp-print \
+  gulp-bump \
   --save-dev
 
 ```
@@ -139,3 +142,9 @@ gulp --release --preview --cdn
 * [[GitHub] spenceralger / gulp-jshint](https://github.com/spenceralger/gulp-jshint) - JSHint plugin for gulp
 
 * [[GitHub] terinjokes / gulp-uglify](https://github.com/terinjokes/gulp-uglify) - Minify files with UglifyJS
+
+* [[GitHub] alexgorbatchev / gulp-print](https://github.com/alexgorbatchev/gulp-print) - This is a very basic gulp plugin that prints names of files
+
+* [[GitHub] stevelacy / gulp-bump](https://github.com/stevelacy/gulp-bump) - Bump any semvar JSON version with gulp
+
+* [[GitHub] OverZealous / gulp-task-listing](https://github.com/OverZealous/gulp-task-listing) - Provides an easy way to get a listing of your tasks from your gulpfile
