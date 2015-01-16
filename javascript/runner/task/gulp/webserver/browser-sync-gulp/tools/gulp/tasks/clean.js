@@ -1,15 +1,15 @@
 module.exports = function(gulp, $) {
 
-  gulp.task('clean:build', function(cb) {
+  gulp.task('clean:build', function(done) {
     $.del([
       $.config.paths.build
-    ], cb);
+    ], done);
   });
 
-  gulp.task('clean:dist', function(cb) {
+  gulp.task('clean:dist', function(done) {
     $.del([
       $.config.paths.dist
-    ], cb);
+    ], done);
   });
 
   gulp.task('clean', ['clean:build', 'clean:dist']);
