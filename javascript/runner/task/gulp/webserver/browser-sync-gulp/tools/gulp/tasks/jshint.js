@@ -7,9 +7,10 @@ module.exports = function(gulp, $) {
     .pipe( $.jshint.reporter, 'fail' );
 
   gulp.task('jshint:tools', function() {
-    return gulp.src(
-        'gulpfile.js'
-      )
+    return gulp.src([
+        'gulpfile.js',
+        'tools/**/*.js'
+      ])
       .pipe( jshintStream() );
   });
 
