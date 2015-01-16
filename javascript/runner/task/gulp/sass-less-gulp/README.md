@@ -31,6 +31,7 @@ npm install \
   gulp-rename \
   gulp-jshint \
   jshint-summary \
+  gulp-plumber \
   gulp-less \
   gulp-sass \
   gulp-minify-css \
@@ -40,6 +41,7 @@ npm install \
   del \
   lazypipe \
   yargs \
+  run-sequence \
   --save-dev
 
 ```
@@ -141,16 +143,20 @@ $ gulp --less --release --cdn
 
 * [[GitHub] spiralx / jshint-summary](https://github.com/spiralx/jshint-summary) - JSHint reporter with customisable colours and verbosity
 
+* [[GitHub] OverZealous / run-sequence](https://github.com/OverZealous/run-sequence) - Run a series of dependent gulp tasks in order
+
 * [[GitHub] sindresorhus / del](https://github.com/sindresorhus/del) - Delete files/folders using globs
 
 * [[GitHub] OverZealous / lazypipe](https://github.com/OverZealous/lazypipe) - Lazily create a pipeline out of reusable components. Useful for gulp
 
 * [[GitHub] gulpjs / gulp](https://github.com/gulpjs/gulp) - The streaming build system
 
+* [[GitHub] jackfranklin / gulp-load-plugins](https://github.com/jackfranklin/gulp-load-plugins) - Automatically load in gulp plugins
+
 
 #### Gulp plugins
 
-* [[GitHub] jackfranklin / gulp-load-plugins](https://github.com/jackfranklin/gulp-load-plugins) - Automatically load in gulp plugins
+* [[GitHub] floatdrop / gulp-plumber](https://github.com/floatdrop/gulp-plumber) - Fix for Node pipes panic unpiping on error
 
 * [[GitHub] robrich / gulp-if](https://github.com/robrich/gulp-if) - Conditionally run a task
 
