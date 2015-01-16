@@ -1,7 +1,3 @@
-var args = require('yargs').argv;
-
-//---
-
 // Expose all Gulp plugins found
 var $ = module.exports = require('gulp-load-plugins')();
 
@@ -20,17 +16,15 @@ $.runSequence     = require('run-sequence');
 
 //---
 
-$.onError = function (err) {
-  $.util.log(err);
-};
+$.args = require('yargs').argv;
 
 //---
 
 $.is = {
-  debug     : args.debug || false,
-  release   : args.release || false,
-  cdn       : args.cdn || false,
-  less      : args.less || false
+  debug     : $.args.debug || false,
+  release   : $.args.release || false,
+  cdn       : $.args.cdn || false,
+  less      : $.args.less || false
 };
 
 //---
@@ -55,4 +49,54 @@ $.config = require('../../config');
 })();
 
 // @end: define output dir
+//---
+
+/**
+ * Log a message or series of messages using chalk's blue color.
+ * Can pass in a string, object or array.
+ */
+$.log = function(msg) {
+  if (typeof(msg) === 'object') {
+    for (var item in msg) {
+      if (msg.hasOwnProperty(item)) {
+        $.util.log($.util.colors.blue(msg[item]));
+      }
+    }
+  } else {
+    $.util.log($.util.colors.blue(msg));
+  }
+};
+
+$.onError = function(err) {
+  $.log(err);
+};
+
+//---
+
+$.projectInfoMsg = function() {
+  $.log('');
+  $.log('project: ' + $.pkg.name + ' v' + $.pkg.version);
+  $.log('description: ' + $.pkg.description);
+  $.log('');
+
+  var msg = '';
+  if( $.is.less ) {
+    msg += 'LESS compiled';
+  } else {
+    msg += 'SASS compiled';
+  }
+
+  if( $.is.release ) {
+    msg += ' + minifed';
+  }
+
+  if( $.is.cdn ) {
+    msg += ' and prepared to CDN deploy';
+  }
+
+  $.log('>> ' + msg);
+  $.log('');
+
+};
+
 //---

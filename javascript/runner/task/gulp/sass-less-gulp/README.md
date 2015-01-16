@@ -38,6 +38,9 @@ npm install \
   gulp-autoprefixer \
   gulp-util \
   gulp-debug \
+  gulp-bump \
+  gulp-print \
+  gulp-task-listing \
   del \
   lazypipe \
   yargs \
@@ -175,3 +178,9 @@ $ gulp --less --release --cdn
 * [[GitHub] gulpjs / gulp-util](https://github.com/gulpjs/gulp-util) - Utilities for gulp plugins
 
 * [[GitHub] sindresorhus / gulp-debug](https://github.com/sindresorhus/gulp-debug) - Debug vinyl file streams
+
+* [[GitHub] alexgorbatchev / gulp-print](https://github.com/alexgorbatchev/gulp-print) - This is a very basic gulp plugin that prints names of files
+
+* [[GitHub] stevelacy / gulp-bump](https://github.com/stevelacy/gulp-bump) - Bump any semvar JSON version with gulp
+
+* [[GitHub] OverZealous / gulp-task-listing](https://github.com/OverZealous/gulp-task-listing) - Provides an easy way to get a listing of your tasks from your gulpfile
