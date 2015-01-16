@@ -29,10 +29,10 @@ $.onError = function (err) {
 //---
 
 $.is = {
-  debug: args.debug || false,
-  release: args.release || false,
-  preview: args.preview || false,
-  cdn: args.cdn || false
+  debug     : args.debug || false,
+  release   : args.release || false,
+  preview   : args.preview || false,
+  cdn       : args.cdn || false
 };
 
 //---

@@ -21,9 +21,9 @@ $.onError = function (err) {
 //---
 
 $.is = {
-  debug: args.debug || false,
-  release: args.release || false,
-  cdn: args.cdn || false
+  debug     : args.debug || false,
+  release   : args.release || false,
+  cdn       : args.cdn || false
 };
 
 //---
