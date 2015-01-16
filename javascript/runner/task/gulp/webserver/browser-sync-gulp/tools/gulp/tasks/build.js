@@ -1,17 +1,17 @@
 module.exports = function(gulp, $) {
 
-  gulp.task('build:dev', function(cb) {
+  gulp.task('build:dev', function(done) {
     $.runSequence(
       'clean',
       [
         'sass:dev',
         'jshint:project'
       ],
-      cb
+      done
     );
   });
 
-  gulp.task('build:prod', function(cb) {
+  gulp.task('build:prod', function(done) {
     $.runSequence(
       'clean',
       'jshint:project',
@@ -20,7 +20,7 @@ module.exports = function(gulp, $) {
         'sass:prod',
         'uglify:js'
       ],
-      cb
+      done
     );
   });
 
