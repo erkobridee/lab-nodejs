@@ -42,6 +42,8 @@ npm install \
   gulp-jshint \
   gulp-uglify \
   gulp-plumber \
+  gulp-util \
+  gulp-debug \
   --save-dev
 
 ```
@@ -117,6 +119,10 @@ gulp --release --preview --cdn
 
 
 ### Gulp plugins
+
+* [[GitHub] gulpjs / gulp-util](https://github.com/gulpjs/gulp-util) - Utilities for gulp plugins
+
+* [[GitHub] sindresorhus / gulp-debug](https://github.com/sindresorhus/gulp-debug) - Debug vinyl file streams
 
 * [[GitHub] floatdrop / gulp-plumber](https://github.com/floatdrop/gulp-plumber) - Fix for Node pipes panic unpiping on error
 

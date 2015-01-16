@@ -4,6 +4,7 @@ module.exports = function(gulp, $) {
     return gulp.src(
         $.config.paths.src + '/styles/main.scss'
       )
+      .pipe( $.if( $.is.debug, $.debug() ) )
       .pipe( $.plumber() )
       .pipe( $.sass({ onError: $.onError }) )
       .pipe( gulp.dest( $.path.join( $.config.paths.build, 'styles' ) ) )
@@ -16,6 +17,7 @@ module.exports = function(gulp, $) {
     return gulp.src(
           $.config.paths.src + '/styles/main.scss'
        )
+      .pipe( $.if( $.is.debug, $.debug() ) )
       .pipe( $.plumber() )
       .pipe( $.sass({ onError: $.onError }) )
       .pipe( $.minifyCss() )
