@@ -9,9 +9,7 @@ module.exports = function(gulp, $) {
 
   //---
 
-  gulp.task('default', function(done) {
-
-    $.projectInfoMsg();
+  gulp.task('flow:default', function(done) {
 
     if( $.is.release ) {
 
@@ -30,6 +28,14 @@ module.exports = function(gulp, $) {
       $.runSequence('dev', done);
 
     }
+
+  });
+
+  //---
+
+  gulp.task('default', ['flow:default'], function() {
+
+    $.projectInfoMsg();
 
   });
 
