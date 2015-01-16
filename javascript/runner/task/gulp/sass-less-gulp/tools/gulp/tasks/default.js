@@ -4,7 +4,11 @@ module.exports = function(gulp, $) {
 
   //---
 
-  gulp.task('default', ['jshint', 'build', 'copy'], function() {
+  gulp.task('flow:default', ['jshint', 'build', 'copy']);
+
+  //--
+
+  gulp.task('default', ['flow:default'], function() {
 
     $.projectInfoMsg();
 
