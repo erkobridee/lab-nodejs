@@ -1,7 +1,3 @@
-var args = require('yargs').argv;
-
-//---
-
 // Expose all Gulp plugins found
 var $ = module.exports = require('gulp-load-plugins')();
 
@@ -22,11 +18,15 @@ $.reload          = $.browserSync.reload;
 
 //---
 
+$.args = require('yargs').argv;
+
+//---
+
 $.is = {
-  debug     : args.debug || false,
-  release   : args.release || false,
-  preview   : args.preview || false,
-  cdn       : args.cdn || false
+  debug     : $.args.debug || false,
+  release   : $.args.release || false,
+  preview   : $.args.preview || false,
+  cdn       : $.args.cdn || false
 };
 
 //---
@@ -61,7 +61,7 @@ $.config = require('../../config');
 
   $.config
     .webserver
-    .port = parseInt(args.port, 10) || $.config.webserver.port || 3000;
+    .port = parseInt($.args.port, 10) || $.config.webserver.port || 3000;
 
 })();
 
