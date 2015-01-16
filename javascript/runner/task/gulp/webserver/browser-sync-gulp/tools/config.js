@@ -8,11 +8,15 @@ module.exports = (function() {
     './package.json'
   ];
 
+  //---
+
   config.paths = {
     src: 'src',
     dist: 'dist',
     build: '.temp'
   };
+
+  //---
 
   config.jshint = {
     tools: [
@@ -23,6 +27,14 @@ module.exports = (function() {
       config.paths.src + '/**/*.js'
     ]
   };
+
+  //---
+
+  config.htmls = [
+    config.paths.src + '/**/*.html'
+  ];
+
+  //---
 
   config.webserver = {
     port: 1337
