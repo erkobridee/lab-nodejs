@@ -11,9 +11,17 @@ var config = {
 
 //---
 
-var log = function(file, cb) {
+var transformFile = function(file, cb) {
 
-  console.log(file.path);
+  console.log(file.path); console.log(file.relative);
+  if(file.isBuffer()) {
+    var content = file.contents.toString();
+    content += '\naloha...\nok.';
+    file.contents = new Buffer(content);
+    console.log();
+  }
+  console.log('');
+
   cb(null, file);
 
 };
@@ -24,7 +32,7 @@ var run = function() {
       config.src + '/**/*',
       '!' + config.src + '/**/*.noop'
     ])
-    .pipe( map( log ) )
+    .pipe( map( transformFile ) )
     .pipe( fs.dest( config.dest ) );
 
 };
