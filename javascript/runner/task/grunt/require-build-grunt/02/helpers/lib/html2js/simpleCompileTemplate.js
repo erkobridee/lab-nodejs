@@ -11,34 +11,42 @@
 
 var util = require('util');
 
+//---
 
+var TEMPLATE = [
+  'angular.module(\'%s\', []).run(["$templateCache", function($templateCache) {',
+  '  $templateCache.put(\'%s\',\n    \'%s\');',
+  '}]);'
+].join('\n');
 
-//
-// Constants
-//
+var TEMPLATE_DECLARED_MODULE = [
+  'angular.module(\'%s\').run([\'$templateCache\', function($templateCache) {',
+  '  $templateCache.put(\'%s\',\n    \'%s\');',
+  '}]);'
+].join('\n');
 
-var TEMPLATE = 'angular.module(\'%s\', []).run(["$templateCache", function($templateCache) {\n' +
-    '  $templateCache.put(\'%s\',\n    \'%s\');\n' +
-    '}]);\n';
-
-var SINGLE_MODULE_TPL = '(function(module) {\n' +
-    'try {\n' +
-    '  module = angular.module(\'%s\');\n' +
-    '} catch (e) {\n' +
-    '  module = angular.module(\'%s\', []);\n' +
-    '}\n' +
-    'module.run(["$templateCache", function($templateCache) {\n' +
-    '  $templateCache.put(\'%s\',\n    \'%s\');\n' +
-    '}]);\n' +
-    '})();\n';
-
+var SINGLE_MODULE_TPL = [
+  '(function(module) {',
+  'try {',
+  '  module = angular.module(\'%s\');',
+  '} catch (e) {',
+  '  module = angular.module(\'%s\', []);',
+  '}',
+  'module.run(["$templateCache", function($templateCache) {',
+  '  $templateCache.put(\'%s\',\n    \'%s\');',
+  '}]);',
+  '})();'
+].join('\n');
 
 //
 // Helper
 //
 
 var escapeContent = function(content) {
-  return content.replace(/\\/g, '\\\\').replace(/'/g, '\\\'').replace(/\r?\n/g, '\\n\' +\n    \'');
+  return content
+    .replace(/\\/g, '\\\\')
+    .replace(/'/g, '\\\'')
+    .replace(/\r?\n/g, '\\n\' +\n    \'');
 };
 
 
@@ -46,14 +54,22 @@ var escapeContent = function(content) {
 // Main script
 //
 
-module.exports = function (fileName, content, moduleName) {
-  var escapedContent = escapeContent(content);
+module.exports = function (fileUrl, content, options) {
+  var escapedContent = escapeContent(content), moduleName;
+
+  if(options && options.moduleName) {
+    moduleName = options.moduleName;
+  }
 
   var output = null;
   if (moduleName) {
-    output = util.format(SINGLE_MODULE_TPL, moduleName, moduleName, fileName, escapedContent);
+    if(options.declareModule === false) {
+      output = util.format(TEMPLATE_DECLARED_MODULE, moduleName, fileUrl, escapedContent);
+    } else {
+      output = util.format(SINGLE_MODULE_TPL, moduleName, moduleName, fileUrl, escapedContent);
+    }
   } else {
-    output = util.format(TEMPLATE, fileName, fileName, escapedContent);
+    output = util.format(TEMPLATE, fileUrl, fileUrl, escapedContent);
   }
 
   return output;

@@ -1,3 +1,7 @@
+/*
+  build with node.js File System
+*/
+
 
 // http://documentup.com/arturadib/shelljs
 require('shelljs/global');
@@ -8,6 +12,23 @@ var html2js = require('../helpers/lib/html2js/simpleCompileTemplate');
 
 // https://github.com/chevex/yargs
 var argv = require('yargs').argv;
+
+//---------------------------------------------------------------------------
+
+var minify = require('html-minifier').minify;
+
+var config = {
+  htmlmin: {
+    collapseBooleanAttributes: true,
+    collapseWhitespace: true,
+    removeAttributeQuotes: true,
+    removeComments: true,
+    removeEmptyAttributes: true,
+    removeRedundantAttributes: true,
+    removeScriptTypeAttributes: true,
+    removeStyleLinkTypeAttributes: true
+  }
+};
 
 //---------------------------------------------------------------------------
 
@@ -39,7 +60,12 @@ function processFile(file) {
   //console.log( outputFile );
 
   inputAlias = inputAlias.replace(/\\/g, '/');
-  var output = html2js(inputAlias, content, moduleName);
+
+  if(config.htmlmin) content = minify(content, config.htmlmin);
+
+  var output = html2js(inputAlias, content, {
+    moduleName: moduleName
+  });
 
   if (outputFile) {
     fs.writeFileSync(outputFile, output, 'utf8');
