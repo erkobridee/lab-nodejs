@@ -124,14 +124,19 @@ npm install
 * [[GitHub] sindresorhus / time-grunt](https://github.com/sindresorhus/time-grunt) - Display the elapsed execution time of grunt tasks
 
 
-### Gulp
+### Streams
+
+* [[GitHub] rschmukler / stream-series](https://github.com/rschmukler/stream-series) - Merge streams and emit in order
+
+
+#### Gulp
 
 * [Gulp-style stream piping in Grunt, or anywhere else | Evan You](http://blog.evanyou.me/2013/12/29/gulp-piping/)
 
 * [Gulp.js](http://gulpjs.com/) - the streaming build system
 
 
-#### Gulp plugins
+##### Gulp plugins
 
 * [[GitHub] jonschlinkert / gulp-htmlmin](https://github.com/jonschlinkert/gulp-htmlmin/) - Minify HTML
 
