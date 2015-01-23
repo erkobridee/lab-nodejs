@@ -91,7 +91,7 @@ npm install
 
 * [[GitHub] Constellation / escodegen](https://github.com/Constellation/escodegen) - ECMAScript code generator
 
---
+### Grunt.js
 
 * [Grunt.js](http://gruntjs.com)
 
@@ -99,26 +99,42 @@ npm install
 
 * [Grunt.js: Getting started](http://gruntjs.com/getting-started)
 
-* **Grunt.js plugins**
+#### Grunt.js plugins
 
-  * [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint)
+* [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint)
 
-  * [grunt-contrib-clean](https://github.com/gruntjs/grunt-contrib-clean)
+* [grunt-contrib-clean](https://github.com/gruntjs/grunt-contrib-clean)
 
-  * [grunt-contrib-connect](https://github.com/gruntjs/grunt-contrib-connect)
+* [grunt-contrib-connect](https://github.com/gruntjs/grunt-contrib-connect)
 
-  * [grunt-contrib-requirejs](https://github.com/gruntjs/grunt-contrib-requirejs)
+* [grunt-contrib-requirejs](https://github.com/gruntjs/grunt-contrib-requirejs)
 
-  * [grunt-contrib-htmlmin](https://github.com/gruntjs/grunt-contrib-htmlmin)
+* [grunt-contrib-htmlmin](https://github.com/gruntjs/grunt-contrib-htmlmin)
 
-  * [grunt-contrib-imagemin](https://github.com/gruntjs/grunt-contrib-imagemin)
+* [grunt-contrib-imagemin](https://github.com/gruntjs/grunt-contrib-imagemin)
 
-  * [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify)
+* [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify)
 
-  * [[GitHub] stevenvachon / grunt-cleanempty](https://github.com/stevenvachon/grunt-cleanempty) - Clean empty files and folders. 
+* [[GitHub] stevenvachon / grunt-cleanempty](https://github.com/stevenvachon/grunt-cleanempty) - Clean empty files and folders. 
 
-  * [[GitHub] karlgoldstein / grunt-html2js](https://github.com/karlgoldstein/grunt-html2js) - Grunt plugin for converting AngularJS templates to JavaScript
+* [[GitHub] karlgoldstein / grunt-html2js](https://github.com/karlgoldstein/grunt-html2js) - Grunt plugin for converting AngularJS templates to JavaScript
 
-  * [[GitHub] shootaroo / jit-grunt](https://github.com/shootaroo/jit-grunt) - JIT(Just In Time) plugin loader for Grunt
+* [[GitHub] shootaroo / jit-grunt](https://github.com/shootaroo/jit-grunt) - JIT(Just In Time) plugin loader for Grunt
 
-  * [[GitHub] sindresorhus / time-grunt](https://github.com/sindresorhus/time-grunt) - Display the elapsed execution time of grunt tasks
+* [[GitHub] sindresorhus / time-grunt](https://github.com/sindresorhus/time-grunt) - Display the elapsed execution time of grunt tasks
+
+
+### Gulp
+
+* [Gulp-style stream piping in Grunt, or anywhere else | Evan You](http://blog.evanyou.me/2013/12/29/gulp-piping/)
+
+* [Gulp.js](http://gulpjs.com/) - the streaming build system
+
+
+#### Gulp plugins
+
+* [[GitHub] jonschlinkert / gulp-htmlmin](https://github.com/jonschlinkert/gulp-htmlmin/) - Minify HTML
+
+* [[GitHub] marklagendijk / gulp-ng-html2js](https://github.com/marklagendijk/gulp-ng-html2js/) - Gulp plugin for compiling the HTML files of your Angular app to Javascript
+
+* [[GitHub] miickel / gulp-angular-templatecache](https://github.com/miickel/gulp-angular-templatecache) - Concatenates and registers AngularJS templates in the $templateCache [with require.js and browserify support]

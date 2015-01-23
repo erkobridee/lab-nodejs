@@ -1,22 +1,20 @@
 /*
-  build with node.js vinyl-fs
+  build with node.js gulp and plugins
 */
 
 
 // http://documentup.com/arturadib/shelljs
 require('shelljs/global');
 
-// var fs = require('fs');
-var path = require('path');
-var generateModuleDeclaration = require('../helpers/lib/html2js/simpleCompileTemplate');
-
 // https://github.com/chevex/yargs
 var argv = require('yargs').argv;
 
 //---------------------------------------------------------------------------
 
-var map   = require('map-stream');
-var fs    = require('vinyl-fs');
+var gulp            = require('gulp');
+var htmlmin         = require('gulp-htmlmin');
+var html2js         = require('gulp-ng-html2js');
+var templateCache   = require('gulp-angular-templatecache');
 
 //---------------------------------------------------------------------------
 
@@ -46,92 +44,17 @@ if( argv._.length > 0 ) {
 }
 
 //---------------------------------------------------------------------------
-// [GitHub] wearefractal / replace-ext
-// https://github.com/wearefractal/replace-ext/blob/master/index.js
-
-function replaceExtension(npath, ext) {
-  if (typeof npath !== 'string') return npath;
-  if (npath.length === 0) return npath;
-
-  var nFileName = path.basename(npath, path.extname(npath))+ext;
-  return path.join(path.dirname(npath), nFileName);
-}
-
-//---------------------------------------------------------------------------
-
-function htmlmin(options) {
-
-// [GitHub] jonschlinkert / gulp-htmlmin
-// https://github.com/jonschlinkert/gulp-htmlmin/blob/master/index.js
-
-  function minifyHtml(file, cb) {
-    if(file.isStream()) {
-      return cb(new Error('htmlmin: Streaming not supported'));
-    }
-
-    if(file.isNull()) { return cb(null, file); }
-
-    if(file.isBuffer()) {
-      file.contents = new Buffer( minify( String( file.contents ), options ) );
-    }
-
-    return cb(null, file);
-  }
-
-  //---
-
-  return map( minifyHtml );
-
-}
-
-function html2js(options) {
-
-// based on:
-// [GitHub] marklagendijk / gulp-ng-html2js
-// https://github.com/marklagendijk/gulp-ng-html2js/blob/master/index.js
-
-  function ngHtml2Js(file, cb) {
-    if(file.isStream()) {
-      return cb(new Error('html2js: Streaming not supported'));
-    }
-
-    if(file.isNull()) { return cb(null, file); }
-
-    if(file.isBuffer()) {
-      var filePath = getFileUrl(file);
-      file.contents = new Buffer( generateModuleDeclaration( filePath, String( file.contents ) ) );
-      file.path = replaceExtension(file.path, '.js');
-    }
-
-    return cb(null, file);
-  }
-
-  function getFileUrl(file) {
-    // Start with the relative file path
-    var url = file.relative;
-
-    // Replace '\' with '/' (Windows)
-    url = url.replace(/\\/g, "/");
-
-    return url;
-  }
-
-  //---
-
-  return map( ngHtml2Js )
-}
-
-//---------------------------------------------------------------------------
 
 // do job
 (function() {
   echo('\ncreating templates cache for angular');
 
-  fs
+  gulp
     .src([ source + '/**/*.html' ])
     .pipe( htmlmin( config.htmlmin ) )
     .pipe( html2js() )
-    .pipe( fs.dest( destination ) )
+    // .pipe( templateCache() )
+    .pipe( gulp.dest( destination ) )
     .on('end', function() {
       echo('\nOK!');
     });
