@@ -91,6 +91,13 @@ npm install
 
 * [[GitHub] Constellation / escodegen](https://github.com/Constellation/escodegen) - ECMAScript code generator
 
+--
+
+* [[GitHub] kriskowal / q](https://github.com/kriskowal/q) - A tool for making and composing asynchronous promises in JavaScript 
+
+* [[GitHub] kriskowal / q-io](https://github.com/kriskowal/q-io) - Interfaces for IO using Q promises in JavaScript on Node
+
+
 ### Grunt.js
 
 * [Grunt.js](http://gruntjs.com)
