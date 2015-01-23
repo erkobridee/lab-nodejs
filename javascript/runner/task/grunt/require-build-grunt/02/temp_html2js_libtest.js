@@ -1,9 +1,7 @@
+/*
 var findLocations = require('./helpers/lib/html2js/findLocations');
 var checkLocations = require('./helpers/lib/html2js/checkLocations');
 var makeCache = require('./helpers/lib/html2js/makeCache')
-
-// var html2js = require('./helpers/lib/html2js');
-
 
 var source = './src/app';
 var destination = './templatesCached';
@@ -36,5 +34,23 @@ findLocations({
   console.log( '...ended \n' );
   console.log( results );
 });
+*/
 
+//------------------------------------------------------------------------------
 
+var html2js = require('./helpers/lib/html2js');
+
+var options = {
+  source        : './src/app',
+  destination   : './templatesCached',
+  fileMatch     : /package\.js$/,
+  // ignorePath    : 'lazy/load',
+  ignorePath    : '!',
+  removeBase    : 'src/app/'
+};
+
+html2js( options )
+  .then(function( results ) {
+    console.log( '...ended \n' );
+    console.log( results );
+  });
