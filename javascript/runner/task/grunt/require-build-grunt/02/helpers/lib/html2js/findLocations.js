@@ -25,10 +25,13 @@ function processDirectory( options ) {
   if( !options.removeBase )  throw new Error('options.removeBase not defined');
   var removeBase = options.removeBase;
 
-  if( typeof removeBase !== 'string' ) removeBase = false;
+  if( typeof removeBase !== 'string' ) {
+    removeBase = false;
+  } else {
+    if( removeBase.match(/^\.\//) ) removeBase = removeBase.replace('./', '');
+  }
 
-  if( !options.ignorePath )  throw new Error('options.ignorePath not defined');
-  var ignorePath = options.ignorePath;
+  var ignorePath = options.ignorePath || '!';
 
   //---
 

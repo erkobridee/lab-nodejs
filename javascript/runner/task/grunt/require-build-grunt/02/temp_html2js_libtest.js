@@ -45,8 +45,8 @@ var options = {
   destination   : './templatesCached',
   fileMatch     : /package\.js$/,
   // ignorePath    : 'lazy/load',
-  ignorePath    : '!',
-  removeBase    : 'src/app/'
+  // ignorePath    : '!',
+  removeBase    : './src/app/'
 };
 
 html2js( options )

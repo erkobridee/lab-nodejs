@@ -17,7 +17,9 @@ grunt.config('project', {
     build: '<%= project.paths.build %>/require.build.config.js',
 
     findModules: config.frontend.requirejs.findModules
-  }
+  },
+
+  html2js: config.frontend.html2js
 
 });
 

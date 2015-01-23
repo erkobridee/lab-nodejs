@@ -28,6 +28,15 @@ module.exports = function() {
         mainModule: 'ng.app',
         excludeModule: 'require.build.config'
       }
+    },
+
+    html2js: {
+      source        : paths.src + '/app',
+      destination   : paths.build,
+      fileMatch     : /package\.js$/,
+      // ignorePath    : 'lazy/load',
+      // ignorePath    : '!',
+      removeBase    : paths.src + '/app'
     }
 
   }; // @end: frontend

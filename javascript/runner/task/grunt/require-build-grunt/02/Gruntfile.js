@@ -30,7 +30,8 @@ module.exports = function(grunt) {
     'cleanup',
     'jshint',
     'copy:jstobuild',
-    'html2js:prod',
+    // 'html2js:prod',
+    'templatesCache',
     'rewriterequireconfig',
     'configrequire',
     'requirejs',
@@ -46,7 +47,7 @@ module.exports = function(grunt) {
   grunt.registerTask('server', function(target) {
     if (target === 'dist') {
       return grunt.task.run([
-        // 'build',
+        'build',
         'connect:dist'
       ]);
     }
