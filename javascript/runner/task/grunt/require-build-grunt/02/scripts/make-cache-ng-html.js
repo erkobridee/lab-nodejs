@@ -11,6 +11,8 @@ var argv = require('yargs').argv;
 
 //---------------------------------------------------------------------------
 
+var series          = require('stream-series');
+
 var gulp            = require('gulp');
 var htmlmin         = require('gulp-htmlmin');
 var html2js         = require('gulp-ng-html2js');
@@ -49,16 +51,71 @@ if( argv._.length > 0 ) {
 (function() {
   echo('\ncreating templates cache for angular');
 
-  gulp
-    .src([ source + '/**/*.html' ])
-    .pipe( htmlmin( config.htmlmin ) )
-    .pipe( html2js() )
-    // .pipe( templateCache() )
-    .pipe( gulp.dest( destination ) )
-    .on('end', function() {
-      echo('\nOK!');
-    });
+  // gulp
+    // .src([ source + '/**/*.html' ])
+    // .pipe( htmlmin( config.htmlmin ) )
+    // .pipe( html2js() )
+    // .pipe( gulp.dest( destination ) )
+
+  function done() {
+    echo('\nOK!');
+  }
+
+  // makeCache( done );
+
+  makeCache2().on('end', done);
 
 })();
 
 //---------------------------------------------------------------------------
+
+function makeCache(done) {
+
+  function runCoreStream(cb) {
+    console.log(source);
+    gulp
+      .src([ source + '/core/**/*.html' ])
+      .pipe( htmlmin( config.htmlmin ) )
+      .pipe( templateCache() )
+      .pipe( gulp.dest( destination + '/app/core' ) )
+      .on('end', function() {
+        if(cb) cb();
+      });
+  }
+
+  function runModulesStream(cb) {
+    gulp
+      .src([ source + '/modules/**/*.html' ])
+      .pipe( htmlmin( config.htmlmin ) )
+      .pipe( templateCache() )
+      .pipe( gulp.dest( destination + '/app/modules' ) )
+      .on('end', function() {
+        if(cb) cb();
+      });
+  }
+
+  runCoreStream(
+    runModulesStream(done)
+  );
+
+}
+
+
+function makeCache2() {
+
+  var coreStream = gulp
+    .src([ source + '/core/**/*.html' ])
+    .pipe( htmlmin( config.htmlmin ) )
+    .pipe( templateCache() )
+    .pipe( gulp.dest( destination + '/app/core' ) );
+
+
+  var modulesStream = gulp
+    .src([ source + '/modules/**/*.html' ])
+    .pipe( htmlmin( config.htmlmin ) )
+    .pipe( templateCache() )
+    .pipe( gulp.dest( destination + '/app/modules' ) );
+
+  return series(coreStream, modulesStream);
+
+}
