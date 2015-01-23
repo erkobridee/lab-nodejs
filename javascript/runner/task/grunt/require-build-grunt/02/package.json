@@ -36,6 +36,7 @@
     "gulp": "^3.8.10",
     "gulp-angular-templatecache": "^1.5.0",
     "gulp-htmlmin": "^1.0.0",
+    "gulp-inject-string": "0.0.2",
     "gulp-ng-html2js": "^0.1.8",
     "html-minifier": "^0.6.9",
     "jit-grunt": "^0.9.0",

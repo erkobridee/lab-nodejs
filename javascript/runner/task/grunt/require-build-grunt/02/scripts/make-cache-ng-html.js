@@ -17,6 +17,7 @@ var gulp            = require('gulp');
 var htmlmin         = require('gulp-htmlmin');
 var html2js         = require('gulp-ng-html2js');
 var templateCache   = require('gulp-angular-templatecache');
+var injectString    = require('gulp-inject-string');
 
 //---------------------------------------------------------------------------
 
@@ -69,7 +70,7 @@ if( argv._.length > 0 ) {
 
 })();
 
-//---------------------------------------------------------------------------
+//==============================================================================
 
 function makeCache(done) {
 
@@ -102,6 +103,7 @@ function makeCache(done) {
 
 }
 
+//==============================================================================
 
 function makeCache2() {
 
@@ -152,6 +154,8 @@ function makeCache2() {
 
 }
 
+//==============================================================================
+
 function makeCache3() {
 
   function templateCacheStream(options) {
@@ -189,7 +193,7 @@ function makeCache3() {
       .pipe( gulp.dest( options.destination + '/app/' + options.location ) );
   }
 
-  function cacheStreamFromLocation(location) {
+  function defineTemplatesCacheStream(location) {
     return templateCacheStream({
       source: source,
       destination: destination,
@@ -198,20 +202,45 @@ function makeCache3() {
     });
   }
 
+  //---
+
+  function updatePackageStream(options) {
+    return gulp
+      .src([ options.source + '/' + options.location + '/package.js' ])
+      .pipe( injectString.before( 'return ', 'require(\'./templatesCache\');\n  ' ) )
+      .pipe( gulp.dest( options.destination + '/app/' + options.location ) );
+  }
+
+  function defineUpdatePackageStream(location) {
+    return updatePackageStream({
+      source: source,
+      destination: destination,
+      location: location
+    });
+  }
+
+  //---
+
+  var locations = [
+    'core',
+    // 'modules',
+    // 'modules/pages',
+    'modules/pages/about',
+    'modules/pages/aloha',
+    'modules/pages/help',
+    // 'modules/useCases',
+    'modules/useCases/crud',
+    'modules/useCases/dashboard'
+  ];
+
+  //---
+
   var streams = [];
 
-  streams.push( cacheStreamFromLocation( 'core' ) );
-
-  // streams.push( cacheStreamFromLocation( 'modules' ) );
-
-  // streams.push( cacheStreamFromLocation( 'modules/pages' ) );
-  streams.push( cacheStreamFromLocation( 'modules/pages/about' ) );
-  streams.push( cacheStreamFromLocation( 'modules/pages/aloha' ) );
-  streams.push( cacheStreamFromLocation( 'modules/pages/help' ) );
-
-  // streams.push( cacheStreamFromLocation( 'modules/useCases' ) );
-  streams.push( cacheStreamFromLocation( 'modules/useCases/crud' ) );
-  streams.push( cacheStreamFromLocation( 'modules/useCases/dashboard' ) );
+  locations.forEach(function( location ) {
+    streams.push( defineTemplatesCacheStream( location ) );
+    streams.push( defineUpdatePackageStream( location ) );
+  });
 
   return series(streams);
 
