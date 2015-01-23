@@ -21,8 +21,6 @@ var injectString    = require('gulp-inject-string');
 
 //---------------------------------------------------------------------------
 
-var minify = require('html-minifier').minify;
-
 var config = {
   htmlmin: {
     collapseBooleanAttributes: true,
