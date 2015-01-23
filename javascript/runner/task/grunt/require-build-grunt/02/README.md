@@ -126,6 +126,14 @@ npm install
 
 ### Streams
 
+* [[GitHub] wearefractal / vinyl](https://github.com/wearefractal/vinyl) - Virtual file format
+
+* [[GitHub] wearefractal / vinyl-fs](https://github.com/wearefractal/vinyl-fs) - Vinyl adapter for the file system
+
+* [[GitHub] dominictarr / map-stream](https://github.com/dominictarr/map-stream)
+
+* [[GitHub] rvagg / through2](https://github.com/rvagg/through2) - Tiny wrapper around Node streams2 Transform to avoid explicit subclassing noise
+
 * [[GitHub] rschmukler / stream-series](https://github.com/rschmukler/stream-series) - Merge streams and emit in order
 
 
@@ -143,3 +151,5 @@ npm install
 * [[GitHub] marklagendijk / gulp-ng-html2js](https://github.com/marklagendijk/gulp-ng-html2js/) - Gulp plugin for compiling the HTML files of your Angular app to Javascript
 
 * [[GitHub] miickel / gulp-angular-templatecache](https://github.com/miickel/gulp-angular-templatecache) - Concatenates and registers AngularJS templates in the $templateCache [with require.js and browserify support]
+
+* [[GitHub] Schmicko / gulp-inject-string](https://github.com/Schmicko/gulp-inject-string) - Inject HTML snippets in build

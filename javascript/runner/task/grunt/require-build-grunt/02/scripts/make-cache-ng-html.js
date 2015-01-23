@@ -63,7 +63,9 @@ if( argv._.length > 0 ) {
 
   // makeCache( done );
 
-  makeCache2().on('end', done);
+  // makeCache2().on('end', done);
+
+  makeCache3().on('end', done);
 
 })();
 
@@ -103,19 +105,114 @@ function makeCache(done) {
 
 function makeCache2() {
 
+  var templateHeader = [
+  'define(function(require) {',
+  '  \'use strict\';',
+  '',
+  '  var module = require(\'./module\');',
+  '',
+  '  module.run(runner);',
+  '',
+  '  //---',
+  '',
+  '  runner.$inject = [\'$templateCache\'];',
+  '',
+  '  function runner($templateCache) {',
+  ''
+  ].join('\n');
+
+  var templateFooter = [
+  '',
+  '  }',
+  '});'
+  ].join('\n');
+
   var coreStream = gulp
     .src([ source + '/core/**/*.html' ])
     .pipe( htmlmin( config.htmlmin ) )
-    .pipe( templateCache() )
+    .pipe( templateCache('templatesCache.js', {
+      root: 'app/core',
+      templateHeader: templateHeader,
+      templateFooter: templateFooter
+    }) )
     .pipe( gulp.dest( destination + '/app/core' ) );
 
 
   var modulesStream = gulp
     .src([ source + '/modules/**/*.html' ])
     .pipe( htmlmin( config.htmlmin ) )
-    .pipe( templateCache() )
+    .pipe( templateCache('templatesCache.js', {
+      root: 'app/modules',
+      templateHeader: templateHeader,
+      templateFooter: templateFooter
+    }) )
     .pipe( gulp.dest( destination + '/app/modules' ) );
 
   return series(coreStream, modulesStream);
+
+}
+
+function makeCache3() {
+
+  function templateCacheStream(options) {
+
+    var templateHeader = [
+    'define(function(require) {',
+    '  \'use strict\';',
+    '',
+    '  var module = require(\'./module\');',
+    '',
+    '  module.run(runner);',
+    '',
+    '  //---',
+    '',
+    '  runner.$inject = [\'$templateCache\'];',
+    '',
+    '  function runner($templateCache) {',
+    ''
+    ].join('\n');
+
+    var templateFooter = [
+    '',
+    '  }',
+    '});'
+    ].join('\n');
+
+    return gulp
+      .src([ options.source + '/' + options.location + '/**/*.html' ])
+      .pipe( htmlmin( options.htmlmin ) )
+      .pipe( templateCache('templatesCache.js', {
+        root: 'app/' + options.location,
+        templateHeader: templateHeader,
+        templateFooter: templateFooter
+      }) )
+      .pipe( gulp.dest( options.destination + '/app/' + options.location ) );
+  }
+
+  function cacheStreamFromLocation(location) {
+    return templateCacheStream({
+      source: source,
+      destination: destination,
+      location: location,
+      htmlmin: config.htmlmin
+    });
+  }
+
+  var streams = [];
+
+  streams.push( cacheStreamFromLocation( 'core' ) );
+
+  // streams.push( cacheStreamFromLocation( 'modules' ) );
+
+  // streams.push( cacheStreamFromLocation( 'modules/pages' ) );
+  streams.push( cacheStreamFromLocation( 'modules/pages/about' ) );
+  streams.push( cacheStreamFromLocation( 'modules/pages/aloha' ) );
+  streams.push( cacheStreamFromLocation( 'modules/pages/help' ) );
+
+  // streams.push( cacheStreamFromLocation( 'modules/useCases' ) );
+  streams.push( cacheStreamFromLocation( 'modules/useCases/crud' ) );
+  streams.push( cacheStreamFromLocation( 'modules/useCases/dashboard' ) );
+
+  return series(streams);
 
 }
