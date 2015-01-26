@@ -8,11 +8,9 @@ module.exports = function(grunt) {
 
     var project = grunt.config.get('project');
 
-    grunt.log.writeln('Creating templates cached files...');
-
     html2js( project.html2js )
       .then(function( results ) {
-        grunt.log.writeln('Templates cached files created');
+        grunt.log.writeln('...done');
         done();
       });
 

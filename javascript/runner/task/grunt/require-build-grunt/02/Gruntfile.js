@@ -19,7 +19,7 @@ module.exports = function(grunt) {
   //--- @begin: grunt tasks
 
   // TODO: review
-  grunt.registerTask('temp', ['configrequire', 'helloworld']);
+  grunt.registerTask('temp', ['configRequire', 'helloworld']);
 
 
   grunt.registerTask('default', ['jshint']);
@@ -30,18 +30,19 @@ module.exports = function(grunt) {
     'cleanup',
     'jshint',
     'copy:jstobuild',
-    // 'html2js:prod',
     'templatesCache',
-    'rewriterequireconfig',
-    'configrequire',
+    'rewriteRequireConfig',
+    'configRequire',
     'requirejs',
     'clean:build',
     'copy:todist',
     'cleanempty',
+    'concat:requireConfigDist',
     'less:prod',
     'htmlmin',
     'imagemin',
-    'uglify'
+    'uglify',
+    'clean:distUnusedFiles'
   ]);
 
   grunt.registerTask('server', function(target) {

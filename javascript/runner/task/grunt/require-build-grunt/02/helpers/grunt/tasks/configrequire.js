@@ -6,47 +6,46 @@ module.exports = function(grunt) {
   }
 
 
-  grunt.registerTask('configrequire', 'Configure Require.js', function() {
+  grunt.registerTask('configRequire', 'Configure Require.js', function() {
 
     var requireFindModules = require('../../lib/requirejs/find-modules');
     var done = this.async();
 
-    // TODO: remove
-    grunt.log.writeln('Configure Require.js');
-
-
     var project = grunt.config.get('project');
-
-    // TODO: remove
-    console.log( '------------------------------' );
-    console.log( 'project.require.findModules:' );
-    console.log( toJSON(project.require.findModules) );
-    console.log( '------------------------------' );
-
 
     requireFindModules(project.require.findModules)
       .then(function modules( modulesArray ) {
 
         configureRequirejsTask( modulesArray );
 
-        return done();
+        grunt.log.writeln('...done');
+        done();
       });
 
     //---
 
     function configureRequirejsTask( modulesArray ) {
 
-      // TODO: review
+/*
+  http://tech.pro/blog/1639/using-rjs-to-optimize-your-requirejs-project
+
+  http://requirejs.org/docs/optimization.html
+
+  https://github.com/jrburke/r.js/blob/master/build/example.build.js
+
+  https://github.com/CaryLandholt/AngularFun/blob/master/Gruntfile.coffee
+
+  https://github.com/kvindasAB/angular-enterprise-kickstart/blob/master/Gruntfile.js#L303
+*/
+
       var config = {
         compile: {
           options: {
-            optimize: 'uglify2',
-
             removeCombined: true,
             findNestedDependencies: true,
 
             baseUrl: './',
-            // TODO: review
+
             appDir: '<%= project.paths.build %>', // source dir
             dir: '<%= project.paths.dist %>', // ouput dir
 
@@ -54,32 +53,34 @@ module.exports = function(grunt) {
 
             modules: modulesArray,
 
-            // name: '<%= project.require.name %>',
-            // out: './<%= project.paths.dist %>/<%= project.require.name %>.js',
-
             useStrict: true,
             wrap: {
               start: '(function() {\'use strict\';',
               end: '})();'
+            },
+
+            optimize: 'uglify2',
+            uglify2: {
+              mangle:                 true,
+              compress: {
+                'drop_console':       true,
+                'drop_debugger':      true,
+                'dead_code':          true,
+                'join_vars':          true,
+                'if_return':          true,
+                'negate_iife':        true,
+                booleans:             true,
+                loops:                true,
+                unused:               true
+              }
             }
+
           }
         }
       };
 
-      // TODO: remove
-      console.log( '------------------------------' );
-      console.log( 'config object:' );
-      console.log( toJSON(config) );
-
-
+      // define require.js config task
       grunt.config('requirejs', config);
-
-
-      // TODO: remove
-      console.log( '------------------------------' );
-      console.log( 'grunt requirejs config object:' );
-      console.log( toJSON(grunt.config.get('requirejs')) );
-      console.log( '------------------------------' );
 
     }
 
