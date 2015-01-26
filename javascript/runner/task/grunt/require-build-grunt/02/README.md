@@ -38,6 +38,7 @@ npm install \
   grunt-contrib-copy \
   grunt-contrib-connect \
   grunt-contrib-less \
+  grunt-contrib-concat \
   grunt-contrib-requirejs \
   grunt-contrib-htmlmin \
   grunt-contrib-imagemin \
@@ -47,6 +48,10 @@ npm install \
   escodegen \
   q \
   q-io \
+  gulp \
+  gulp-htmlmin \
+  gulp-angular-templatecache \
+  gulp-inject-string \
   --save-dev
 ```
 
