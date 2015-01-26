@@ -43,7 +43,6 @@ npm install \
   grunt-contrib-imagemin \
   grunt-contrib-uglify \
   grunt-cleanempty \
-  grunt-html2js \
   esprima \
   escodegen \
   q \
@@ -114,6 +113,8 @@ npm install
 
 * [grunt-contrib-connect](https://github.com/gruntjs/grunt-contrib-connect)
 
+* [grunt-contrib-concat](https://github.com/gruntjs/grunt-contrib-concat)
+
 * [grunt-contrib-requirejs](https://github.com/gruntjs/grunt-contrib-requirejs)
 
 * [grunt-contrib-htmlmin](https://github.com/gruntjs/grunt-contrib-htmlmin)
@@ -123,8 +124,6 @@ npm install
 * [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify)
 
 * [[GitHub] stevenvachon / grunt-cleanempty](https://github.com/stevenvachon/grunt-cleanempty) - Clean empty files and folders. 
-
-* [[GitHub] karlgoldstein / grunt-html2js](https://github.com/karlgoldstein/grunt-html2js) - Grunt plugin for converting AngularJS templates to JavaScript
 
 * [[GitHub] shootaroo / jit-grunt](https://github.com/shootaroo/jit-grunt) - JIT(Just In Time) plugin loader for Grunt
 
