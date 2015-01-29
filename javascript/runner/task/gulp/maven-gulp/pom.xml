@@ -9,6 +9,13 @@
   <version>0.1.0</version>
   <packaging>pom</packaging>
 
+  <properties>
+    <encoding>UTF-8</encoding>
+    <frontend-maven-plugin.version>0.0.20</frontend-maven-plugin.version>
+    <node.version>0.10.30</node.version>
+    <npm.version>1.4.21</npm.version>
+  </properties>
+
   <build>
 
     <plugins>
@@ -17,7 +24,7 @@
 
         <groupId>com.github.eirslett</groupId>
         <artifactId>frontend-maven-plugin</artifactId>
-        <version>0.0.20</version>
+        <version>${frontend-maven-plugin.version}</version>
 
         <executions>
 
@@ -27,8 +34,8 @@
               <goal>install-node-and-npm</goal>
             </goals>
             <configuration>
-              <nodeVersion>v0.10.30</nodeVersion>
-              <npmVersion>1.4.21</npmVersion>
+              <nodeVersion>v${node.version}</nodeVersion>
+              <npmVersion>${npm.version}</npmVersion>
             </configuration>
           </execution>
 
