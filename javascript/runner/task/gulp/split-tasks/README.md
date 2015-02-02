@@ -34,6 +34,10 @@ npm install \
   gulp-util \
   gulp-debug \
   gulp-uglify \
+  gulp-insert \
+  gulp-bump \
+  gulp-task-listing \
+  gulp-print \
   gulp-jshint \
   jshint-summary \
   del \
@@ -159,4 +163,12 @@ $ gulp
 
 * [[GitHub] terinjokes / gulp-uglify](https://github.com/terinjokes/gulp-uglify) - Minify files with UglifyJS
 
+* [[GitHub] rschmukler / gulp-insert](https://github.com/rschmukler/gulp-insert) - string mutation library for gulp
+
 * [[GitHub] schickling / gulp-webserver](https://github.com/schickling/gulp-webserver) - Streaming gulp plugin to run a local webserver with LiveReload
+
+* [[GitHub] alexgorbatchev / gulp-print](https://github.com/alexgorbatchev/gulp-print) - This is a very basic gulp plugin that prints names of files
+
+* [[GitHub] stevelacy / gulp-bump](https://github.com/stevelacy/gulp-bump) - Bump any semvar JSON version with gulp
+
+* [[GitHub] OverZealous / gulp-task-listing](https://github.com/OverZealous/gulp-task-listing) - Provides an easy way to get a listing of your tasks from your gulpfile
