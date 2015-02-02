@@ -5,10 +5,6 @@ module.exports = function(gulp, $) {
 
   //---
 
-  gulp.task('help', $.taskListing);
-
-  //---
-
   gulp.task('flow:default', function(done) {
 
     if( $.is.release ) {

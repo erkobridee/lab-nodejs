@@ -16,6 +16,7 @@ module.exports = function(gulp, $) {
       .pipe( $.plumber() )
       .pipe( $.sass({ onError: $.onError }) )
       .pipe( $.minifyCss() )
+      .pipe( $.insert.prepend( $.config.banner ) )
       .pipe( gulp.dest( $.path.join( $.config.paths.outputDir, 'styles' ) ) );
   });
 

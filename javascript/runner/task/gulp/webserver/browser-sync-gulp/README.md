@@ -43,6 +43,7 @@ npm install \
   gulp-jshint \
   gulp-uglify \
   gulp-plumber \
+  gulp-insert \
   gulp-util \
   gulp-debug \
   gulp-print \
@@ -142,6 +143,8 @@ gulp --release --preview --cdn
 * [[GitHub] spenceralger / gulp-jshint](https://github.com/spenceralger/gulp-jshint) - JSHint plugin for gulp
 
 * [[GitHub] terinjokes / gulp-uglify](https://github.com/terinjokes/gulp-uglify) - Minify files with UglifyJS
+
+* [[GitHub] rschmukler / gulp-insert](https://github.com/rschmukler/gulp-insert) - string mutation library for gulp
 
 * [[GitHub] alexgorbatchev / gulp-print](https://github.com/alexgorbatchev/gulp-print) - This is a very basic gulp plugin that prints names of files
 
