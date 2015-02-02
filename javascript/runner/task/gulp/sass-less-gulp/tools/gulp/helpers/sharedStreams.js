@@ -1,6 +1,9 @@
 var gulp      = require('gulp');
 var $         = require('./$');
 
+// shared streams to gulp tasks
+var streams = $.streams = {};
+
 //---
 
 var outputCssDir = $.path.join( $.config.paths.outputDir, 'css' );
@@ -20,7 +23,7 @@ function autoprefix() {
 
 //---
 
-$.streams.less = function() {
+streams.less = function() {
 
   return gulp
     .src( $.config.styles.less.main )
@@ -36,7 +39,7 @@ $.streams.less = function() {
 };
 
 
-$.streams.sass = function() {
+streams.sass = function() {
 
   return gulp
     .src( $.config.styles.sass.main )

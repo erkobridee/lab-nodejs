@@ -3,11 +3,6 @@ var $ = module.exports = require('gulp-load-plugins')();
 
 //---
 
-// shared streams to gulp tasks
-$.streams = {};
-
-//---
-
 // Expose some other modules (local or not)
 $.path            = require('path');
 $.del             = require('del');
@@ -21,10 +16,10 @@ $.args = require('yargs').argv;
 //---
 
 $.is = {
-  debug     : $.args.debug || false,
-  release   : $.args.release || false,
-  cdn       : $.args.cdn || false,
-  less      : $.args.less || false
+  debug     : !!$.args.debug,
+  release   : !!$.args.release,
+  cdn       : !!$.args.cdn,
+  less      : !!$.args.less
 };
 
 //---
