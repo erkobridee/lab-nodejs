@@ -36,6 +36,7 @@ npm install \
   gulp-sass \
   gulp-minify-css \
   gulp-autoprefixer \
+  gulp-insert \
   gulp-util \
   gulp-debug \
   gulp-bump \
@@ -174,6 +175,8 @@ $ gulp --less --release --cdn
 * [[GitHub] jonathanepollack / gulp-minify-css](https://github.com/jonathanepollack/gulp-minify-css) - A Gulp plugin that minifies css with clean-css
 
 * [[GitHub] sindresorhus / gulp-autoprefixer](https://github.com/sindresorhus/gulp-autoprefixer) - Prefix CSS
+
+* [[GitHub] rschmukler / gulp-insert](https://github.com/rschmukler/gulp-insert) - string mutation library for gulp
 
 * [[GitHub] gulpjs / gulp-util](https://github.com/gulpjs/gulp-util) - Utilities for gulp plugins
 

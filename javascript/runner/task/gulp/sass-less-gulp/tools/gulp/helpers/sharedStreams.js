@@ -28,6 +28,7 @@ $.streams.less = function() {
     .pipe( $.plumber() )
     .pipe( $.less() )
     .pipe( autoprefix() )
+    .pipe( $.insert.prepend( $.config.banner ) )
     .pipe( gulp.dest( outputCssDir ) )
     .pipe( $.if( $.is.release, distCssStream() ) )
     .on( 'error', $.onError );
@@ -43,6 +44,7 @@ $.streams.sass = function() {
     .pipe( $.plumber() )
     .pipe( $.sass() )
     .pipe( autoprefix() )
+    .pipe( $.insert.prepend( $.config.banner ) )
     .pipe( gulp.dest( outputCssDir ) )
     .pipe( $.if( $.is.release, distCssStream() ) )
     .on( 'error', $.onError );
