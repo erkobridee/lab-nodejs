@@ -15,13 +15,13 @@ console.log(os.networkInterfaces());
 console.log('-------------------------------------------------------');
 console.log('\n');
 
-console.log('os.hostname'); 
+console.log('os.hostname');
 console.log('\t' + os.hostname());
 
-console.log('os.loadavg'); 
+console.log('os.loadavg');
 console.log('\t' + os.loadavg());
 
-console.log('os.uptime'); 
+console.log('os.uptime');
 console.log('\t' + os.uptime());
 
 console.log('os.freemem');
@@ -47,6 +47,24 @@ console.log('\t' + os.tmpDir());
 
 console.log('os.EOL');
 console.log('\t' + JSON.stringify(os.EOL));
+
+console.log('-------------------------------------------------------');
+console.log('\n');
+
+// https://github.com/isaacs/osenv/blob/master/osenv.js
+
+var isWindows = process.platform === 'win32';
+
+function getUserHome() {
+  // return process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE;
+  return ( isWindows ? process.env.USERPROFILE : process.env.HOME );
+}
+
+console.log( 'isWindows: ' + isWindows );
+
+console.log('user home:');
+console.log('\t' +getUserHome() );
+console.log('\n');
 
 console.log('-------------------------------------------------------');
 console.log('\n');
