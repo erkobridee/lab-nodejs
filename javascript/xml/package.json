@@ -1,0 +1,21 @@
+{
+  "name": "node-and-xml",
+  "version": "0.1.0",
+  "description": "nodejs xml tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "outdated": "npm outdated --depth=0"
+  },
+  "keywords": [
+    "test",
+    "node",
+    "xml",
+    "node-xml2js"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "devDependencies": {
+    "xml2js": "^0.4.4"
+  }
+}

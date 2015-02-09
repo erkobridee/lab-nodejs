@@ -1,0 +1,33 @@
+<templateSet group="ng_ee_requirejs">
+  <template name="rconf" value="require({&#10;&#10;  // libraries dependencies (fallback support)&#10;  paths: {&#10;&#10;    $lib$: [&#10;      'vendor/$lib$.min'&#10;    ]$END$&#10;  &#10;  },&#10;  &#10;  // define js scripts dependencies&#10;  shim: {&#10;  &#10;    /*&#10;    '$lib$': {&#10;      deps: [],&#10;      exports: ''&#10;    }&#10;    */&#10;  &#10;  },&#10;  &#10;  priority: [&#10;    '$lib$'&#10;  ],&#10;&#10;  deps: ['./start$mainjs$']&#10;&#10;});" description="require.js config" toReformat="true" toShortenFQNames="true">
+    <variable name="lib" expression="" defaultValue="angular" alwaysStopAt="true" />
+    <variable name="mainjs" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rcall" value="require('$path$')$END$" description="require('module/path/file')" toReformat="true" toShortenFQNames="true">
+    <variable name="path" expression="" defaultValue="path/module" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rdef" value="define(function(require) {&#10;  'use strict';&#10;&#10;  var module = {};$END$&#10;&#10;  return module;&#10;&#10;});" description="require.js define module" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="rload" value="define(function(require) {&#10;  'use strict';&#10;&#10;  $END$&#10;&#10;});" description="require.js load modules" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>
