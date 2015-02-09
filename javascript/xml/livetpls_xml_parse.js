@@ -12,18 +12,15 @@ var xmlPath = path.join(__dirname, 'src', 'livetpls.xml');
 
 //---
 
-fs_readfile( xmlPath )
-  .then(function fileContent( content ) {
-    return parseString( content );
-  })
-  .then(function processXML( xml ) {
-    return processLivetpls( xml, 'Require.js', 'JavaScript' );
-  })
-  .then(function result( markdown ) {
-    console.log( markdown );
-    console.log('');
-    console.log('done');
-  });
+function processXml( xmlPath, tplGroupName, lang ) {
+  return fs_readfile( xmlPath )
+    .then(function fileContent( content ) {
+      return parseString( content );
+    })
+    .then(function processXML( xml ) {
+      return processLivetpls( xml, tplGroupName, lang );
+    });
+}
 
 //---
 
@@ -54,3 +51,14 @@ function processTemplate( template, lang ) {
 
   return output;
 }
+
+//==============================================================================
+
+processXml( xmlPath, 'Require.js', 'JavaScript' )
+  .then(function result( markdown ) {
+    console.log( markdown );
+    console.log('');
+    console.log('done');
+  });
+
+
