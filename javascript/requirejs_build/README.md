@@ -51,3 +51,8 @@
 
 * [Require.js in Node | Require.js](http://requirejs.org/docs/node.html)
 
+--
+
+* [[GitHub] adriancmiranda / generator-gulp-requirejs](https://github.com/adriancmiranda/generator-gulp-requirejs) - A gulp.js generator for requirejs webapps
+
+* [[GitHub] RobinThrift / gulp-requirejs](https://github.com/robinthrift/gulp-requirejs) - A small, simply, very easy wrapper around the require.js optimizer to work with gulp.js
