@@ -7,9 +7,9 @@ module.exports = function() {
 
   var paths = {
 
-    src: './src',
-    build: '.temp',
-    dist: './dist'
+    src   : './src',
+    build : '.temp',
+    dist  : './dist'
 
   }; // @end: paths
 
@@ -17,26 +17,28 @@ module.exports = function() {
 
   var frontend = {
 
-    webhost: getIpAddress(),
-    webserver: 1337,
+    webhost   : getIpAddress(),
+    webserver : 1337,
 
     requirejs: {
       findModules: {
-        source: paths.src + '/app/modules',
-        fileMatch: /package\.js$/,
-        removeBase: 'src/',
-        mainModule: 'ng.app',
-        excludeModule: 'require.build.config'
+        source        : paths.src + '/app/modules',
+        fileMatch     : /package\.js$/,
+        removeBase    : 'src/',
+        mainModule    : 'ng.app',
+        excludeModule : 'require.build.config',
+        ignoreMatch   : /lazy\/load|mock|tests\/unit/
       }
     },
 
     html2js: {
-      source        : paths.src + '/app',
-      destination   : paths.build,
-      fileMatch     : /package\.js$/,
-      // ignorePath    : 'lazy/load',
-      // ignorePath    : '!',
-      removeBase    : paths.src + '/app'
+      source      : paths.src + '/app',
+      destination : paths.build,
+      fileMatch   : /package\.js$/,
+      ignoreMatch : /lazy\/load|mock|tests\/unit/,
+      // ignorePath  : 'lazy/load',
+      // ignorePath  : '!',
+      removeBase  : paths.src + '/app'
     }
 
   }; // @end: frontend
@@ -44,8 +46,8 @@ module.exports = function() {
   //----------------------------------------------------------------------------
 
   return {
-    paths:      paths,
-    frontend:   frontend
+    paths    : paths,
+    frontend : frontend
   };
 
 };

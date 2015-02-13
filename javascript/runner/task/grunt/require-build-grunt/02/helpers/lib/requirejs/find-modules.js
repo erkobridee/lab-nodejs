@@ -5,11 +5,12 @@ var path  = require('path'),
 // sample
 /*
 options = {
-  source: './src/app/modules',
-  fileMatch: /\.js$/,
-  removeBase: 'src/',
-  mainModule: 'ng.app',
-  excludeModule: 'require.config'
+  source        : './src/app/modules',
+  fileMatch     : /\.js$/,
+  removeBase    : 'src/',
+  mainModule    : 'ng.app',
+  excludeModule : 'require.config',
+  ignoreMatch   : /lazy\/load|mock|tests\/unit/
 }
 */
 function processDirectory( options ) {
@@ -33,6 +34,8 @@ function processDirectory( options ) {
   var mainModule = options.mainModule || 'ng.app';
   var excludeModule = options.excludeModule || 'require.config';
 
+  var ignoreMatch = options.ignoreMatch || null;
+
   //---
 
   function filterOnlyFiles(path, stat) {
@@ -41,6 +44,7 @@ function processDirectory( options ) {
 
     return stat.isFile() &&
       !path.match( /node_modules/ ) && // ignore /node_modules
+      ( ignoreMatch ? !path.match( ignoreMatch ) : true ) &&
       !filename.match( /^\./ ) && // ignore dot files like .DS_Store
       filename.match( fileMatch );
 

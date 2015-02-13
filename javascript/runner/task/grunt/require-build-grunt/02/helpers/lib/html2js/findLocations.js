@@ -5,10 +5,11 @@ var path  = require('path'),
 // sample
 /*
 options = {
-  source: './src/app',
-  fileMatch: /package\.js$/,
-  ignorePath: 'lazy/'
-  removeBase: 'src/'
+  source      : './src/app',
+  fileMatch   : /package\.js$/,
+  ignoreMatch : /lazy\/load|mock|tests\/unit/,
+  ignorePath  : 'lazy/'
+  removeBase  : 'src/'
 }
 */
 function processDirectory( options ) {
@@ -31,6 +32,7 @@ function processDirectory( options ) {
     if( removeBase.match(/^\.\//) ) removeBase = removeBase.replace('./', '');
   }
 
+  var ignoreMatch = options.ignoreMatch || null;
   var ignorePath = options.ignorePath || '!';
 
   //---
@@ -41,6 +43,7 @@ function processDirectory( options ) {
 
     return stat.isFile() &&
       !path.match( /node_modules/ ) && // ignore /node_modules
+      ( ignoreMatch ? !path.match( ignoreMatch ) : true ) &&
       !(path.indexOf( ignorePath ) != -1) &&
       !filename.match( /^\./ ) && // ignore dot files like .DS_Store
       filename.match( fileMatch );
