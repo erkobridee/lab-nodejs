@@ -39,10 +39,16 @@
 
 ## Node.js + PhantomJS
 
-* [[GitHub] sgentle / phantomjs-node](https://github.com/sgentle/phantomjs-node) - PhantomJS integration module for NodeJS
+* [[GitHub] Medium / phantomjs](https://github.com/Medium/phantomjs) - NPM wrapper for installing phantomjs
 
-  * [[GitHub] danielhusar / gulp-local-screenshots](https://github.com/danielhusar/gulp-local-screenshots) - Do the screenshots of your static html files
+--
 
 * [[GitHub] baudehlo / node-phantom-simple](https://github.com/baudehlo/node-phantom-simple) - Simple bridge to phantomjs for Node
 
   * [[GitHub] orangenpresse / grunt-phantomjs-screenshot](https://github.com/orangenpresse/grunt-phantomjs-screenshot) - Grunt task for taking screenshots with phantomjs
+
+--
+
+* [[GitHub] sgentle / phantomjs-node](https://github.com/sgentle/phantomjs-node) - PhantomJS integration module for NodeJS
+
+  * [[GitHub] danielhusar / gulp-local-screenshots](https://github.com/danielhusar/gulp-local-screenshots) - Do the screenshots of your static html files
