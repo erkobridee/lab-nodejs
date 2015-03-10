@@ -13,6 +13,14 @@
 
 ## commands
 
+### base64.js
+
+```bash
+$ phantomjs base64.js
+
+$ phantomjs --proxy=ip_host:port --proxy-auth=user:pass base64.js
+```
+
 ### content.js
 
 ```bash
