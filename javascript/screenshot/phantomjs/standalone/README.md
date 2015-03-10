@@ -13,6 +13,12 @@
 
 ## commands
 
+### content.js
+
+```bash
+$ phantomjs content.js
+```
+
 ### github.js
 
 ```bash
