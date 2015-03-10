@@ -4,9 +4,13 @@
 
 * [Screen capturing with PhantomJS | skipperkongen](http://skipperkongen.dk/2014/08/15/screen-capturing-with-phantomjs/)
 
+* [Automate mobile testing: phantom.js | JonathanMH](http://jonathanmh.com/automate-mobile-testing-phantom-js/)
+
 * [Creating thumbnails using PhantomJS and ImageMagick | Frederic Cambus](http://www.cambus.net/creating-thumbnails-using-phantomjs-and-imagemagick/)
 
 * [[GitHub] vbauer / manet](https://github.com/vbauer/manet) - Website screenshot service powered by Node.js, SlimerJS and PhantomJS
+
+* [Print Screen de páginas com o PhantomJS | Marcos Alves](http://blog.marcosalves.org/archives/31)
 
 --
 
