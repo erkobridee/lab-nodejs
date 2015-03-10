@@ -1,0 +1,21 @@
+{
+  "name": "node-phantom-simple-test",
+  "version": "0.1.0",
+  "description": "node-phantom-simple test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "outdated": "npm outdated --depth=0"
+  },
+  "keywords": [
+    "node",
+    "phantomjs",
+    "screenshot",
+    "test"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "devDependencies": {
+    "node-phantom-simple": "^1.2.0"
+  }
+}
