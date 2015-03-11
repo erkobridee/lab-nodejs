@@ -58,15 +58,15 @@ page.onCallback = function( data ) {
 
 //---
 
-function handleWithDoc( doc ) {
-  if(doc.addText) doc.addText( '-<|::[[ msg from phantomjs image_from_htmlfile.js ]]::|>-' );
+function handleWithDoc( obj ) {
+  if(obj.addText) obj.addText( '-<|::[[ msg from phantomjs image_from_htmlfile.js ]]::|>-' );
 }
 
 //---
 
 page.open(htmlfile, function() {
 
-  page.evaluate(function(fn) { fn( document ); }, handleWithDoc);
+  page.evaluate(function(fn) { fn( window ); }, handleWithDoc);
 
   page.evaluate(function() {
     return document.body.bgColor = 'white';
