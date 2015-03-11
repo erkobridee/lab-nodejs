@@ -1,4 +1,18 @@
 
+var arguments = process.argv.slice( 2 );
+
+if( arguments.length < 2 ) {
+  console.log('Usage: node rasterize.js SOURCE IMAGE_DEST [viewport ex.: 1024x768]');
+  process.exit(1);
+}
+
+var src = arguments[0];
+var dest = arguments[1];
+var viewport = arguments[2];
+
+//---
+
+
 var ScreenShooter = require('./lib/ScreenShooter');
 
 //---
@@ -17,6 +31,9 @@ var options = {
 };
 */
 
+if( viewport ) options.viewport = viewport;
+
+//---
 
 var screenshooter = new ScreenShooter();
 
@@ -24,9 +41,6 @@ screenshooter.init(options, takeScreenShot, done);
 
 function takeScreenShot( err ) {
   if( err ) return console.log( err );
-
-  var src  = 'http://google.com',
-      dest = 'screen/google.png';
 
   screenshooter.takeScreenShot( src, dest );
 
