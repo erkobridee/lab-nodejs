@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hello Worl</title>
+  <title>Hello World</title>
   <style type="text/css">
   body: {
     background-color: #FFFFFF;
@@ -16,5 +16,34 @@
   <br>
   <p>...</p>
   <br>
+  <script>
+  (function() {
+
+    document.addText = function( text ) {
+      text = text || '...?';
+
+      console.log( text );
+
+      var pText = document.createElement('p');
+      pText.innerHTML = text;
+      document.body.appendChild( pText );
+
+      if(typeof window.callPhantom === 'function') {
+        window.callPhantom( 'from page loaded' );
+      }
+    }
+
+    // http://www.mkyong.com/javascript/javascript-call-funtion-after-page-load/
+    window.onload = function() {
+      if(typeof window.callPhantom === 'function') {
+        window.callPhantom({
+          msg: 'ok',
+          type: 'onload'
+        });
+      }
+    };
+
+  })();
+  </script>
 </body>
 </html>
