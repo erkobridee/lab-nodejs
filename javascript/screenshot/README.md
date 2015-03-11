@@ -20,6 +20,8 @@
 
 * [Print Screen de páginas com o PhantomJS | Marcos Alves](http://blog.marcosalves.org/archives/31)
 
+* [Web Page Clipping with PhantomJS | don't code today what you can't debug tomorrow](http://ariya.ofilabs.com/2013/04/web-page-clipping-with-phantomjs.html)
+
 --
 
 * [[GitHub] eugeneware / html2png](https://github.com/eugeneware/html2png) - Take a screenshot of a HTML fragment or URL
