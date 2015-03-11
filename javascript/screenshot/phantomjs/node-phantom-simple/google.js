@@ -1,3 +1,10 @@
+var args = require('yargs').argv;
+
+var flags = {
+  proxy: !!args.proxy
+}
+
+//---
 
 var ScreenShooter = require('./lib/ScreenShooter');
 
@@ -8,15 +15,13 @@ var options = {};
 // PROXY_SERVER = ip_host:port
 // PROXY_AUTH = user:pass
 
-/*
-var options = {
-  parameters: {
-    'proxy'      : process.env.PROXY_SERVER,
-    'proxy-auth' : process.env.PROXY_AUTH
-  }
-};
-*/
+if( flags.proxy ) {
+  options.parameters = options.parameters || {};
+  options.parameters['proxy'] = process.env.PROXY_SERVER;
+  options.parameters['proxy-auth'] = process.env.PROXY_AUTH;
+}
 
+//---
 
 var screenshooter = new ScreenShooter();
 

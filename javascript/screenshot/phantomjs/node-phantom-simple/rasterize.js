@@ -1,17 +1,20 @@
 
-var arguments = process.argv.slice( 2 );
+var args = require('yargs').argv;
 
-if( arguments.length < 2 ) {
-  console.log('Usage: node rasterize.js SOURCE IMAGE_DEST [viewport ex.: 1024x768]');
+var flags = {
+  proxy: !!args.proxy
+}
+
+
+if( args._.length < 2 ) {
+  console.log('Usage: node rasterize.js SOURCE IMAGE_DEST [--viewport=1024x768 --proxy]');
   process.exit(1);
 }
 
-var src = arguments[0];
-var dest = arguments[1];
-var viewport = arguments[2];
+var src = args._[0];
+var dest = args._[1];
 
 //---
-
 
 var ScreenShooter = require('./lib/ScreenShooter');
 
@@ -22,16 +25,13 @@ var options = {};
 // PROXY_SERVER = ip_host:port
 // PROXY_AUTH = user:pass
 
-/*
-var options = {
-  parameters: {
-    'proxy'      : process.env.PROXY_SERVER,
-    'proxy-auth' : process.env.PROXY_AUTH
-  }
-};
-*/
+if( flags.proxy ) {
+  options.parameters = options.parameters || {};
+  options.parameters['proxy'] = process.env.PROXY_SERVER;
+  options.parameters['proxy-auth'] = process.env.PROXY_AUTH;
+}
 
-if( viewport ) options.viewport = viewport;
+options.viewport = args.viewport || '1024x768';
 
 //---
 

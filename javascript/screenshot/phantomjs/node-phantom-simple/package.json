@@ -16,6 +16,7 @@
   "author": "Erko Bridee",
   "license": "MIT",
   "dependencies": {
-    "node-phantom-simple": "^1.2.0"
+    "node-phantom-simple": "^1.2.0",
+    "yargs": "^3.5.3"
   }
 }
