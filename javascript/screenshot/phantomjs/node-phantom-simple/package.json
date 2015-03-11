@@ -15,7 +15,7 @@
   ],
   "author": "Erko Bridee",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "node-phantom-simple": "^1.2.0"
   }
 }
