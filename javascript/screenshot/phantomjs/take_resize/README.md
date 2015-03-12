@@ -2,7 +2,7 @@
 
 > **Usage:**
 >
-> phantomjs take_resize.js SOURCE OUTPUT _[OPTION1 OPTION2 250x200]_
+> phantomjs take_resize.js SOURCE OUTPUT _[OPTION1 OPTION2]_
 >
 > * **SOURCE**  : url or html file path
 > * **OUTPUT**  : image.png or --base64 (output base64 on console)
