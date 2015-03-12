@@ -1,6 +1,13 @@
 # ScreenShot / PhantomJS  / take_resize
 
-> Usage: phantomjs take_resize.js URL|HTML_FILE IMAGE.png|--base64 [1024x768x0 250x200]
+> **Usage:**
+>
+> phantomjs take_resize.js SOURCE OUTPUT [OPTION1 OPTION2 250x200]
+>
+> * SOURCE  : url or html file path
+> * OUTPUT  : image.png or --base64 (output base64 on console)
+> * OPTION1 : page dimensions to take screenshot [ default: 1024x768x0 >> pageWidth x pageWeight x pageTop ]
+> * OPTION2 : resize image to [ default: 250x200 >> imageWidth x imageHeight ]
 
 * [PhantomJS Screen Capture](http://phantomjs.org/screen-capture.html)
 
