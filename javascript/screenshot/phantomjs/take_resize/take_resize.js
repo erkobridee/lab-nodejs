@@ -46,8 +46,7 @@ function waitFor(testFx, onReady, timeOutMillis) {
 //------------------------------------------------------------------------------
 
 var webpage = require('webpage'),
-    system = require('system'),
-    fs = require('fs');
+    system = require('system');
 
 //------------------------------------------------------------------------------
 
@@ -230,12 +229,6 @@ function updateImageBase64Str( imageBase64 ) {
 //------------------------------------------------------------------------------
 
 function start() {
-  // src = 'http://github.com/erkobridee';
-  // dest = 'github_tumb.png';
-
-  // src = 'https://material.angularjs.org/#/demo/material.components.button';
-  // dest = 'angular_material_button_tumb.png'
-
   takeScreenShot();
 }
 
