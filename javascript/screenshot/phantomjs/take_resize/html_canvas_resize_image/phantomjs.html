@@ -7,11 +7,16 @@
     margin-top: 0px;
     margin-left: 0px;
   }
+
+  #imgArea {
+    margin-top: 1000px;
+  }
   </style>
 </head>
 <body>
-  <canvas id="render_canvas"></canvas>
+  <canvas id="render_canvas"></canvas><div id="imgArea"><img id="toLoadImage"/></div>
   <script src="resample_hermite.js"></script>
+  <script src="phantomjs_helper.js"></script>
   <script src="resize.js"></script>
 
   <!-- @begin: test block -->
@@ -21,14 +26,13 @@
     'use strict';
 
     // resize( imgur_base64 );
-    resize( imgur_base64, 350, 250 );
+    // resize( imgur_base64, 350, 250 );
 
-    // resize( bootstrap_base64 );
+    resize( bootstrap_base64 );
     // resize( bootstrap_base64, 350, 250 );
 
   })();
   </script>
   <!-- @end: test block -->
-
 </body>
 </html>
