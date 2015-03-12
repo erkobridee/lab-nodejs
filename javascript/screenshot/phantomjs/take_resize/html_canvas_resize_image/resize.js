@@ -10,20 +10,13 @@
 
   function resize( src, toWidth, toHeight ) {
 
-    console.log('resize.js');
-    // console.log( src );
-    // console.log( global.resizeFinished );
-
     toWidth = toWidth || 250;
     toHeight = toHeight || 200;
-
-    global.canvasRenderFinished = false;
 
     var canvas = doc.getElementById('render_canvas');
     var ctx = canvas.getContext('2d');
 
-    // var img = new Image();
-    var img = doc.getElementById('toLoadImage');
+    var img = new Image();
     img.crossOrigin = 'Anonymous'; //cors support
     img.onload = function(){
         console.log( 'img.onload' );
@@ -36,14 +29,10 @@
 
         //resize manually
         resample_hermite(canvas, W, H, toWidth, toHeight);
-
-        console.log( 'image resized' );
-        global.canvasRenderFinished = true;
-
-        if( global.resizeFinished ) global.resizeFinished();
     }
 
     img.src = src;
+
   }
 
   //---
