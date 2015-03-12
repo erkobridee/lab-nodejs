@@ -65,6 +65,26 @@ if( !( src && dest ) ) {
 if( dest === '--base64' ) {
   DEBUG = false;
   OUTPUT_BASE64 = true;
+} else {
+  checkDestFileName();
+}
+
+//------------------------------------------------------------------------------
+
+function checkDestFileName() {
+  if( /png/.test( dest ) ) return;
+
+  var check = dest.split(/\./),
+      last = check.pop();
+
+  if( !/jpg|jpeg|gif|pdf/.test(last) ) {
+    check.push( last );
+    if( !/png/.test(last) ) check.push('png');
+  } else {
+    check.push('png');
+  }
+
+  dest = check.join('.');
 }
 
 //------------------------------------------------------------------------------
@@ -146,12 +166,23 @@ function resizeImage( imageBase64 ) {
       var base64 = page.renderBase64('PNG');
       console.log( updateImageBase64Str( base64 ) );
     } else {
+
+      // tempWriteBase64ToDist( page.renderBase64('PNG') );
+
       page.render( dest );
     }
     page.close();
     finish();
   }
 
+}
+
+// to tests use
+function tempWriteBase64ToDist( imageBase64 ) {
+  imageBase64 = updateImageBase64Str( imageBase64 );
+  var fs = require('fs');
+  var text64File = dest + '.base64.txt';
+  fs.write( text64File, imageBase64, 'w' );
 }
 
 //------------------------------------------------------------------------------
