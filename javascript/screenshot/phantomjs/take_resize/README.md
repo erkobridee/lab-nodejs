@@ -2,12 +2,12 @@
 
 > **Usage:**
 >
-> phantomjs take_resize.js SOURCE OUTPUT [OPTION1 OPTION2 250x200]
+> phantomjs take_resize.js SOURCE OUTPUT _[OPTION1 OPTION2 250x200]_
 >
-> * SOURCE  : url or html file path
-> * OUTPUT  : image.png or --base64 (output base64 on console)
-> * OPTION1 : page dimensions to take screenshot [ default: 1024x768x0 >> pageWidth x pageWeight x pageTop ]
-> * OPTION2 : resize image to [ default: 250x200 >> imageWidth x imageHeight ]
+> * **SOURCE**  : url or html file path
+> * **OUTPUT**  : image.png or --base64 (output base64 on console)
+> * **OPTION1** : page dimensions to take screenshot _[ default: 1024x768x0 >> pageWidth x pageWeight x pageTop ]_
+> * **OPTION2** : resize image to _[ default: 250x200 >> imageWidth x imageHeight ]_
 
 * [PhantomJS Screen Capture](http://phantomjs.org/screen-capture.html)
 
