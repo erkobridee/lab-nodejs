@@ -1,4 +1,4 @@
-# Require.js Build 03
+# Require.js Build / r.js / 03
 
 Based on: [Require.js Build 02](../02) + [[GitHub] erkobridee / lab-angularjs ... / lazy_load/05](https://github.com/erkobridee/lab-angularjs/tree/master/src/lab/lazy_load/05)
 

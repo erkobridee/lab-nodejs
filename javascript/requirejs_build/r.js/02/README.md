@@ -1,4 +1,4 @@
-# Require.js Build 02
+# Require.js Build / r.js / 02
 
 Based on:
 
