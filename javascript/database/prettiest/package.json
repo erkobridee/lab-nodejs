@@ -1,0 +1,22 @@
+{
+  "name": "prettiest-test",
+  "version": "0.1.0",
+  "description": "prettiest tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "outdated": "npm outdated --depth=0"
+  },
+  "keywords": [
+    "prettiest",
+    "test",
+    "json",
+    "simple",
+    "db"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "dependencies": {
+    "prettiest": "^0.1.0"
+  }
+}
