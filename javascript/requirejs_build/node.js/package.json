@@ -1,0 +1,24 @@
+{
+  "name": "requirejs_build_by_nodejs",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Require.js optimize by node.js app",
+  "main": "index.js",
+  "scripts": {
+    "python_server": "python -m SimpleHTTPServer 1337",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "outdated": "npm outdated --depth=0"
+  },
+  "keywords": [
+    "require.js",
+    "node.js",
+    "optimize",
+    "app",
+    "examples"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "dependencies": {
+    "requirejs": "^2.1.16"
+  }
+}
