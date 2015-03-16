@@ -3,7 +3,7 @@ function reverseStr(value) {
   splitext = value.split("");
   revertext = splitext.reverse();
   reversed = revertext.join("");
-  return reversed;  
+  return reversed;
 };
 
 String.prototype.reverse = function() {
@@ -34,7 +34,7 @@ console.log('\n');
 
 //-------------------------------------------
 
-var Base64 = require('./lib/base64'); 
+var Base64 = require('./lib/base64');
 
 /*
 console.log(Base64);
@@ -72,3 +72,5 @@ console.log(x);
 console.log('\n');
 
 //-------------------------------------------
+
+console.log( Base64 );
