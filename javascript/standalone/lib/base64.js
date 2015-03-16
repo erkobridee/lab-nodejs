@@ -1,4 +1,5 @@
 (function( root ) {
+  /* jshint laxcomma:true */
 
   // base64.js
   /*
@@ -137,7 +138,7 @@
 
       var string = ""
         , i = 0
-        , c = c1 = c2 = 0
+        , c = 0, c1 = 0, c2 = 0
         , len = utftext.length
       ;
 
@@ -164,7 +165,7 @@
       }
 
       return string;
-    }
+    };
 
     return ClassDef;
   })();
@@ -180,6 +181,6 @@
   }
 
   // Browser globals (root is window)
-  if( root ) { root.Base64 = Base64 };
+  if( root ) { root.Base64 = Base64; }
 
 })( this );
