@@ -89,7 +89,9 @@ function checkDestFileName() {
 
 //------------------------------------------------------------------------------
 
-var screenshotDelay = 300;
+// TODO: accept parameter to define delay time in ms :: --delay=5000
+var screenshotDelay = 5000;
+// var screenshotDelay = 300;
 
 function takeScreenShot() {
   var page = createNewPage( screenshotDimensions );
@@ -107,7 +109,7 @@ function takeScreenShot() {
   function renderImageBase64() {
     var base64 = page.renderBase64('PNG');
     if(DEBUG) console.log('screenshot generated');
-    page.close();
+    // page.close();
     resizeImage( updateImageBase64Str( base64 ) )
   }
 
