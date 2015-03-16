@@ -10,8 +10,11 @@
 
 * [gulp - The vision, history, and future of the project | Medium](https://medium.com/p/3828e8126466)
 
+--
 
-## Links
+* [Essential Plugins for Gulp | Ilya Pestov](http://ipestov.com/essential-plugins-for-gulp/) - Huge collection of more than 100 best Gulp plugins for every needs: HTML&CSS, JavaScript, Graphics and Others.
+
+--
 
 * [Learning Gulp: Getting Started with The Front End Factory](http://hmphry.com/gulp/)
 
