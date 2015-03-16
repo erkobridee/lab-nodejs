@@ -179,6 +179,7 @@
     module.exports = Base64;
   }
 
+  // Browser globals (root is window)
   if( root ) { root.Base64 = Base64 };
 
 })( this );
