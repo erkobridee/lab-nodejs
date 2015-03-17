@@ -1,0 +1,20 @@
+{
+  "name": "hapijs-proxy-test",
+  "version": "0.1.0",
+  "description": "hapijs proxy test",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "outdated": "npm outdated --depth=0",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "hapijs",
+    "proxy",
+    "test"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "dependencies": {
+    "hapi": "^8.4.0"
+  }
+}
