@@ -6,7 +6,7 @@
 >
 > * **SOURCE**  : url or html file path
 > * **OUTPUT**  : image.png or --base64 (output base64 on console)
-> * **OPTION1** : page dimensions to take screenshot _[ default: 1024x768x0 >> pageWidth x pageWeight x pageTop ]_ or **OPTION3** flag
+> * **OPTION1** : page dimensions to take screenshot _[ default: 1024x768x0 >> pageWidth x pageHeight x pageTop ]_ or **OPTION3** flag
 > * **OPTION2** : resize image to _[ default: 250x200 >> imageWidth x imageHeight ]_ or **OPTION3** flag
 > * **OPTION3** : --delay=NUMBER time (ms) to take screenshot _[ default: 300 ms ]_
 
