@@ -1,0 +1,21 @@
+{
+  "name": "hapijs-simple_rest",
+  "version": "0.1.0",
+  "description": "hapijs simple rest api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "hapijs",
+    "rest",
+    "simple",
+    "api"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "dependencies": {
+    "hapi": "^8.4.0"
+  }
+}
