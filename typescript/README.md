@@ -26,6 +26,10 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
 
 * [My experience with TypeScript | Kinja Technology](http://tech.kinja.com/my-experience-with-typescript-710191610)
 
+--
+
+* [Catching JavaScript Mistakes with TypeScript - TypeScript Video Tutorial #free | @eggheadio](https://egghead.io/lessons/javascript-catching-javascript-mistakes-with-typescript)
+
 
 ## Code Editor
 
