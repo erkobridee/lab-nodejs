@@ -50,19 +50,24 @@ var webpage = require('webpage'),
 
 //------------------------------------------------------------------------------
 
-// phantomjs take_resize.js SOURCE DEST 1024x768x0 250x200
+// phantomjs take_resize.js SOURCE DEST 1024x768x0 250x200 --delay=500
 
-var src = system.args[1],
-    dest = system.args[2],
-    screenshotDimensions = system.args[3] || '1024x768x0',
-    resizeDimensions = system.args[4] || '250x200';
+var options = {
+  src                  : system.args[1],
+  dest                 : system.args[2],
+  screenshotDimensions : '1024x768x0',
+  resizeDimensions     : '250x200',
+  screenshotDelay      : 300 // ms :: --delay=300
+};
 
-if( !( src && dest ) ) {
-  console.log( 'Usage: phantomjs take_resize.js URL|HTML_FILE IMAGE.png|--base64 [1024x768x0 250x200]' );
+//---
+
+if( !( options.src && options.dest ) ) {
+  console.log( 'Usage: phantomjs take_resize.js URL|HTML_FILE IMAGE.png|--base64 [1024x768x0 250x200 --delay=300]' );
   finish();
 }
 
-if( dest === '--base64' ) {
+if( options.dest === '--base64' ) {
   DEBUG = false;
   OUTPUT_BASE64 = true;
 } else {
@@ -71,10 +76,75 @@ if( dest === '--base64' ) {
 
 //------------------------------------------------------------------------------
 
-function checkDestFileName() {
-  if( /png/.test( dest ) ) return;
+(function checkOptionsParams() {
+  var optParam = null;
+  optParam = checkOptionParam( 'screenshotDimensions', 3 );
+  if( !isScreenshotDelayParam( optParam ) ) {
+    optParam = checkOptionParam( 'resizeDimensions', 4 );
+    if( !isScreenshotDelayParam( optParam ) ) {
+      isScreenshotDelayParam( checkOptionParam( 'screenshotDelay', 5 ) );
+    }
+  }
 
-  var check = dest.split(/\./),
+  // TODO: review
+  console.log(
+    options.src,
+    options.dest,
+    options.screenshotDimensions,
+    options.resizeDimensions,
+    options.screenshotDelay
+  );
+})();
+
+function isScreenshotDelayParam( optParam ) {
+  var flag = false;
+  if( optParam.flag && optParam.name === 'delay' ) {
+    flag = true;
+    options['screenshotDelay'] = optParam.value || options['screenshotDelay'];
+  }
+  return false;
+}
+
+function checkOptionParam( optName, paramIdx ) {
+  var optParam = checkFlagParam( system.args[paramIdx] );
+  if( !optParam.flag ) {
+    options[optName] = optParam.value || options[optName];
+  }
+  return optParam;
+}
+
+function checkFlagParam( value ) {
+  var flagRegExp = /^-|--/,
+      output = {
+        flag  : false,
+        value : value,
+        name  : null
+      };
+  if( flagRegExp.test( value ) ) {
+    output.flag = true;
+
+    var equalsRegExp = /=/,
+        strCleaned = value.replace(/-/g, '');
+
+    if( equalsRegExp.test( strCleaned ) ) {
+      var parts    = strCleaned.split( equalsRegExp );
+      output.name  = parts[0];
+      output.value = parts[1];
+    } else {
+      output.name  = strCleaned;
+      output.value = true;
+    }
+
+  }
+  return output;
+}
+
+//------------------------------------------------------------------------------
+
+function checkDestFileName() {
+  if( /png/.test( options.dest ) ) return;
+
+  var check = options.dest.split(/\./),
       last = check.pop();
 
   if( !/jpg|jpeg|gif|pdf/.test(last) ) {
@@ -84,26 +154,22 @@ function checkDestFileName() {
     check.push('png');
   }
 
-  dest = check.join('.');
+  options.dest = check.join('.');
 }
 
 //------------------------------------------------------------------------------
 
-// TODO: accept parameter to define delay time in ms :: --delay=5000
-var screenshotDelay = 5000;
-// var screenshotDelay = 300;
-
 function takeScreenShot() {
-  var page = createNewPage( screenshotDimensions );
+  var page = createNewPage( options.screenshotDimensions );
 
-  page.open(src, pageOpenCallback(function() {
-    if(DEBUG) console.log('page opened: ' + src);
+  page.open(options.src, pageOpenCallback(function() {
+    if(DEBUG) console.log('page opened: ' + options.src);
 
     setWhiteBbColor( page );
 
     setTimeout(function() {
       renderImageBase64();
-    }, screenshotDelay);
+    }, options.screenshotDelay);
   }));
 
   function renderImageBase64() {
@@ -121,7 +187,7 @@ function pageOpenCallback( callback ) {
     if( status === 'success' ) {
       callback();
     } else {
-      console.log('error: fail to open ' + src);
+      console.log('error: fail to open ' + options.src);
       finish();
     }
   };
@@ -131,7 +197,7 @@ function pageOpenCallback( callback ) {
 //------------------------------------------------------------------------------
 
 function resizeImage( imageBase64 ) {
-  var imageDimensions = getDimensionsObject( resizeDimensions );
+  var imageDimensions = getDimensionsObject( options.resizeDimensions );
   var page = createNewPage( imageDimensions );
 
   //--- @begin: page.content
@@ -159,7 +225,7 @@ function resizeImage( imageBase64 ) {
       return document.getElementById("toproad").complete;
     });
   }, function() {
-    if(DEBUG) console.log('screenshot resized to ' + resizeDimensions);
+    if(DEBUG) console.log('screenshot resized to ' + options.resizeDimensions);
     renderImage();
   });
 
@@ -171,7 +237,7 @@ function resizeImage( imageBase64 ) {
 
       // tempWriteBase64ToDist( page.renderBase64('PNG') );
 
-      page.render( dest );
+      page.render( options.dest );
     }
     page.close();
     finish();
