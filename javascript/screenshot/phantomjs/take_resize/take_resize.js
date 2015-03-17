@@ -85,15 +85,6 @@ if( options.dest === '--base64' ) {
       isScreenshotDelayParam( checkOptionParam( 'screenshotDelay', 5 ) );
     }
   }
-
-  // TODO: review
-  console.log(
-    options.src,
-    options.dest,
-    options.screenshotDimensions,
-    options.resizeDimensions,
-    options.screenshotDelay
-  );
 })();
 
 function isScreenshotDelayParam( optParam ) {
