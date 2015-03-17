@@ -2,12 +2,13 @@
 
 > **Usage:**
 >
-> phantomjs take_resize.js SOURCE OUTPUT _[OPTION1 OPTION2]_
+> phantomjs take_resize.js SOURCE OUTPUT _[OPTION1 OPTION2 OPTION3]_
 >
 > * **SOURCE**  : url or html file path
 > * **OUTPUT**  : image.png or --base64 (output base64 on console)
-> * **OPTION1** : page dimensions to take screenshot _[ default: 1024x768x0 >> pageWidth x pageWeight x pageTop ]_
-> * **OPTION2** : resize image to _[ default: 250x200 >> imageWidth x imageHeight ]_
+> * **OPTION1** : page dimensions to take screenshot _[ default: 1024x768x0 >> pageWidth x pageWeight x pageTop ]_ or **OPTION3** flag
+> * **OPTION2** : resize image to _[ default: 250x200 >> imageWidth x imageHeight ]_ or **OPTION3** flag
+> * **OPTION3** : --delay=NUMBER time (ms) to take screenshot _[ default: 300 ms ]_
 
 * [PhantomJS Screen Capture](http://phantomjs.org/screen-capture.html)
 
@@ -37,9 +38,13 @@ $ phantomjs take_resize.js ../from_file/html/bootstrap_example.html --base64
 ### from url
 
 ```bash
+$ phantomjs take_resize.js http://github.com/erkobridee thumbnail/github_erkobridee.png --delay=1000
+
 $ phantomjs take_resize.js http://github.com/erkobridee thumbnail/github_erkobridee.png
 
 $ phantomjs take_resize.js http://github.com/erkobridee --base64
+
+$ phantomjs --proxy=ip_host:port --proxy-auth=user:pass take_resize.js http://github.com/erkobridee thumbnail/github_erkobridee.png --delay=1000
 
 $ phantomjs --proxy=ip_host:port --proxy-auth=user:pass take_resize.js http://github.com/erkobridee thumbnail/github_erkobridee.png
 
@@ -49,9 +54,13 @@ $ phantomjs --proxy=ip_host:port --proxy-auth=user:pass take_resize.js http://gi
 --
 
 ```bash
+$ phantomjs take_resize.js https://material.angularjs.org/#/demo/material.components.button thumbnail/button.png 1024x700 300x250 --delay=2000
+
 $ phantomjs take_resize.js https://material.angularjs.org/#/demo/material.components.button thumbnail/button.png 1024x700 300x250
 
 $ phantomjs take_resize.js https://material.angularjs.org/#/demo/material.components.button --base64 1024x700 300x250
+
+$ phantomjs --proxy=ip_host:port --proxy-auth=user:pass take_resize.js https://material.angularjs.org/#/demo/material.components.button thumbnail/button.png 1024x700 300x250 --delay=2000
 
 $ phantomjs --proxy=ip_host:port --proxy-auth=user:pass take_resize.js https://material.angularjs.org/#/demo/material.components.button thumbnail/button.png 1024x700 300x250
 
