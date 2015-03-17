@@ -9,6 +9,13 @@ server.connection({
 });
 
 //------------------------------------------------------------------------------
+
+// http://hapijs.com/api#serverdecoratetype-property-method
+server.decorate('reply', 'success', function() {
+  return this.response({ status: 'ok' });
+});
+
+//------------------------------------------------------------------------------
 // @begin: routes
 
 server.route({
@@ -40,6 +47,14 @@ server.route({
     path: '/{name}',
     handler: function (request, reply) {
         reply('Hello, ' + encodeURIComponent(request.params.name) + '!');
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/ok',
+    handler: function (request, reply) {
+        reply.success();
     }
 });
 
