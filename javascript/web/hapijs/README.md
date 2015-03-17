@@ -1,6 +1,8 @@
 # Hapi.js
 
 * [Hapi.js](http://hapijs.com/) - A rich framework for building applications and services
+  
+  * [Serving static files](http://hapijs.com/tutorials/serving-files)
 
 --
 
