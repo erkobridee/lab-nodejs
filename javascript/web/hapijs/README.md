@@ -1,0 +1,9 @@
+# Hapi.js
+
+* [Hapi.js](http://hapijs.com/) - A rich framework for building applications and services
+
+--
+
+* [Serving Images with Hapi | Calendee LLC](https://calendee.com/2014/01/31/serving-images-with-hapi/)
+
+* [[GitHub] piobyte / flamingo](https://github.com/piobyte/flamingo) - simple, hapijs based, HTTP server that allows you to convert media files to images
