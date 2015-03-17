@@ -8,7 +8,8 @@ server.connection({
   port: PORT
 });
 
-// Add the route
+//------------------------------------------------------------------------------
+// @begin: routes
 
 server.route({
   method: 'GET',
@@ -42,7 +43,10 @@ server.route({
     }
 });
 
+// @end: routes
+//------------------------------------------------------------------------------
+
 // Start the server
 server.start(function () {
-  console.log('Server running at:', server.info.uri);
+  console.log('Server running at port:', server.info.port);
 });

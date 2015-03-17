@@ -39,5 +39,5 @@ server.route({
 
 // Start the server
 server.start(function () {
-  console.log('Server running at:', server.info.uri);
+  console.log('Server running at port:', server.info.port);
 });
