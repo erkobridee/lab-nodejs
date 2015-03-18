@@ -16,6 +16,7 @@
   "author": "Erko Bridee",
   "license": "MIT",
   "dependencies": {
-    "hapi": "^8.4.0"
+    "hapi": "^8.4.0",
+    "joi": "^6.0.8"
   }
 }
