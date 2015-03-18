@@ -4,6 +4,10 @@
   
   * [Serving static files](http://hapijs.com/tutorials/serving-files)
 
+  * [Validation](http://hapijs.com/tutorials/validation)
+
+    * [[GitHub] hapijs / joi](https://github.com/hapijs/joi) - Object schema validation
+
 --
 
 * [Node.js and Hapi - Creating a REST AP | OnModulus](http://blog.modulus.io/nodejs-and-hapi-create-rest-api) - A simple to tutorial to help get started with Hapi. Goes over building a basic application and the start of a real RESTful API
