@@ -3,7 +3,7 @@ module.exports = function( server ) {
   var ctrls = require('./controllers');
   var schema = require('./schema');
 
-  var initPath = '/rest/bookmarks';
+  var initPath = '/bookmarks';
 
   server.route({
     method: 'GET',
