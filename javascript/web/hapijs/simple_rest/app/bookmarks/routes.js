@@ -1,6 +1,7 @@
 module.exports = function( server ) {
 
   var ctrls = require('./controllers');
+  var schema = require('./schema');
 
   var initPath = '/rest/bookmarks';
 
@@ -13,13 +14,23 @@ module.exports = function( server ) {
   server.route({
     method: 'POST',
     path: initPath,
-    handler: ctrls.insert
+    handler: ctrls.insert,
+    config: {
+      validate: {
+        payload: schema
+      }
+    }
   });
 
   server.route({
     method: 'PUT',
     path: initPath + '/{id}',
-    handler: ctrls.update
+    handler: ctrls.update,
+    config: {
+      validate: {
+        payload: schema
+      }
+    }
   });
 
   server.route({
