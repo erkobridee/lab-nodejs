@@ -8,6 +8,8 @@
 
     * [[GitHub] hapijs / joi](https://github.com/hapijs/joi) - Object schema validation
 
+    * [The Joi of Validation | Vawks Clamantis](http://vawks.com/blog/2014/03/22/the-joi-of-validation/)
+
 --
 
 * [Node.js and Hapi - Creating a REST AP | OnModulus](http://blog.modulus.io/nodejs-and-hapi-create-rest-api) - A simple to tutorial to help get started with Hapi. Goes over building a basic application and the start of a real RESTful API
