@@ -1,4 +1,6 @@
-(function() {
+module.exports = (function() {
+
+  var model = require('./model');
 
   var service = {
     get: get,
@@ -28,5 +30,6 @@
   }
 
   //---
-  module.exports = service;
+  return service;
+
 })();
