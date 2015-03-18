@@ -1,20 +1,24 @@
+var path = require('path'),
+    rootDir = path.dirname(require.main.filename);
+
 module.exports = function( server ) {
 
   server.route({
     method: 'GET',
     path:'/',
     handler: function (request, reply) {
-      var indexText = '<pre>' + [
-        'hapi.js index',
-        '',
-        'try:',
-        '  /rest/bookmarks/           [GET]',
-        '  /rest/bookmarks/           [POST]',
-        '  /rest/bookmarks/{id}       [PUT]',
-        '  /rest/bookmarks/{id}       [DELETE]',
-      ].join('\n') + '</pre>';
+     reply.file( path.join( rootDir, 'public', 'index.html' ) );
+    }
+  });
 
-     reply(indexText);
+  server.route({
+    method: 'GET',
+    path: '/{param*}',
+    handler: {
+      directory: {
+        path: path.join( rootDir, 'public' ),
+        listing: true
+      }
     }
   });
 
