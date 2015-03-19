@@ -69,7 +69,7 @@ $ phantomjs --proxy=ip_host:port --proxy-auth=user:pass take_resize.js https://m
 
 ## Links
 
-* [[GitHub] ariya / phantomjs / examples / waifor.js](https://github.com/ariya/phantomjs/blob/master/examples/waitfor.js)
+* [[GitHub] ariya / phantomjs / examples / waitfor.js](https://github.com/ariya/phantomjs/blob/master/examples/waitfor.js)
 
 * [[GitHub] ariya / phantomjs - ISSUE 11890](https://github.com/ariya/phantomjs/issues/11890) - Page.Content not working if contains img src="base64" /
 
