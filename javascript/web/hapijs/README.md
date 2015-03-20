@@ -25,3 +25,8 @@
 * [Serving Images with Hapi | Calendee LLC](https://calendee.com/2014/01/31/serving-images-with-hapi/)
 
 * [[GitHub] piobyte / flamingo](https://github.com/piobyte/flamingo) - simple, hapijs based, HTTP server that allows you to convert media files to images
+
+--
+
+* [[GitHub] pandeysoni / Hapi-file-upload-download](https://github.com/pandeysoni/Hapi-file-upload-download) - The purpose of this app is to upload and download the file of any extension. You don't need to worry about file extension, is going to work for all types of file.
+
