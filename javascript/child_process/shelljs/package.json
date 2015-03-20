@@ -2,6 +2,10 @@
   "name": "shelljs-test",
   "version": "0.0.1",
   "description": "shelljs tests",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "outdated": "npm outdated --depth=0"
+  },
   "keywords": [
     "shell",
     "js",
@@ -11,6 +15,6 @@
   "author": "Erko Bridee",
   "license": "MIT",
   "dependencies": {
-    "shelljs": "~0.2.6"
+    "shelljs": "^0.4.0"
   }
 }
