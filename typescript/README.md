@@ -28,6 +28,8 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
 
 --
 
+* [The Rise of TypeScript? | Telerik Developer Network](http://developer.telerik.com/featured/the-rise-of-typescript/)
+
 * [TypeScript for C# Programmers | InfoQ](http://www.infoq.com/minibooks/typescript-c-sharp-programmers)
 
 --
