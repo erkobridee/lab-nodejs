@@ -1,0 +1,29 @@
+{
+  "name": "writing-plugin-gulp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Writing Gulp Plugin",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "outdated": "npm outdated --depth=0"
+  },
+  "keywords": [
+    "gulp",
+    "plugin",
+    "examples",
+    "test"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "dependencies": {
+    "gulp-util": "^3.0.4",
+    "map-stream": "0.0.5",
+    "through2": "^0.6.3"
+  },
+  "devDependencies": {
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-jshint": "^1.9.4",
+    "jshint-stylish": "^1.0.1"
+  }
+}
