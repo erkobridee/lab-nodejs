@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "outdated": "npm outdated --depth=0",
     "setup": "node scripts/setup",
-    "maven": "node scripts/maven",
     "testos": "node scripts/testos"
   },
   "keywords": [

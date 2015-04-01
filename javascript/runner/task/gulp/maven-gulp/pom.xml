@@ -11,9 +11,9 @@
 
   <properties>
     <encoding>UTF-8</encoding>
-    <frontend-maven-plugin.version>0.0.20</frontend-maven-plugin.version>
-    <node.version>0.10.30</node.version>
-    <npm.version>1.4.21</npm.version>
+    <frontend-maven-plugin.version>0.0.23</frontend-maven-plugin.version>
+    <node.version>0.10.38</node.version>
+    <npm.version>1.4.28</npm.version>
   </properties>
 
   <build>
@@ -44,9 +44,6 @@
             <goals>
               <goal>npm</goal>
             </goals>
-            <configuration>
-              <arguments>run maven</arguments>
-            </configuration>
           </execution>
 
           <execution>
