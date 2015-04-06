@@ -41,6 +41,8 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
 
 * GitHub - [TypeScript Sublime Plugin](https://github.com/raph-amiard/sublime-typescript)
 
+* [[GitHub] Microsoft / TypeScript-Sublime-Plugin](https://github.com/Microsoft/TypeScript-Sublime-Plugin) - IO wrapper around TypeScript language services, allowing for easy consumption by editor plugins
+
 * [JetBrains | WebStorm — The smartest JavaScript IDE](https://www.jetbrains.com/webstorm/)
 
 * [TypeScript for Visual Studio 2012](http://go.microsoft.com/fwlink/?LinkID=266563)
