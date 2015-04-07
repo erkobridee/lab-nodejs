@@ -61,7 +61,7 @@ module.exports = (function() {
   config.html = {
     main: config.paths.src + '/index.html',
     project: config.paths.src + '/**/*.html'
-  }
+  };
 
   //---
 
