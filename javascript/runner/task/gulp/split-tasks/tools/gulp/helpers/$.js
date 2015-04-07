@@ -3,10 +3,29 @@ var $ = module.exports = require('gulp-load-plugins')();
 
 //---
 
-// Expose some other modules (local or not)
 $.path            = require('path');
+
+$.rootPath = $.path.resolve( './' );
+
+// [Gist] Better local require() paths for Node.js
+// https://gist.github.com/branneman/8048520
+$.rootRequire = function( name ) {
+  return require( $.path.join( $.rootPath, name ) );
+};
+
+//---
+// Expose some other modules
+
 $.del             = require('del');
 $.lazypipe        = require('lazypipe');
+
+  //--- local modules
+
+$.pkg = $.rootRequire('package.json');
+
+$.config = $.rootRequire('tools/config');
+
+$.localip = $.rootRequire('tools/lib/localip');
 
 //---
 
@@ -19,14 +38,6 @@ $.is = {
   release   : !!$.args.release,
   cdn       : !!$.args.cdn
 };
-
-//---
-
-$.pkg = require('../../../package.json');
-
-$.localip = require('../../lib/localip')();
-
-$.config = require('../../config');
 
 //---
 // @begin: define output dir
