@@ -1,12 +1,12 @@
 {
-  "name": "karma-04-grunt-01",
+  "name": "karma-05-gulp-01",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://github.com/erkobridee/lab-nodejs",
   "authors": [
     "Erko Bridee de Almeida Cabrera <erko.bridee@gmail.com>"
   ],
-  "description": "First Grunt Karma contact",
+  "description": "First Gulp Karma contact",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
