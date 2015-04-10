@@ -1,0 +1,48 @@
+{
+  "name": "karma-05-gulp-03",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://github.com/erkobridee/lab-nodejs",
+  "authors": [
+    "Erko Bridee de Almeida Cabrera <erko.bridee@gmail.com>"
+  ],
+  "description": "Karma Runner and require.js application with Gulp. Tests spec's loaded by tests/require.specs.load.js added on require config deps array.",
+  "scripts": {
+    "prestart": "npm run setup",
+    "start": "echo \"start development\n\" && gulp dev",
+    "test": "gulp ci",
+    "coverage": "gulp coverage",
+    "setup": "node scripts/setup",
+    "testos": "node scripts/testos"
+  },
+  "keywords": [
+    "test",
+    "karma",
+    "gulp"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.5.3",
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-cached": "^1.0.4",
+    "gulp-jshint": "^1.10.0",
+    "gulp-load-plugins": "^0.9.0",
+    "gulp-util": "^3.0.4",
+    "jasmine-core": "^2.2.0",
+    "jshint-stylish": "^1.0.1",
+    "karma": "^0.12.31",
+    "karma-background": "0.0.1",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-coverage": "^0.2.7",
+    "karma-firefox-launcher": "^0.1.4",
+    "karma-jasmine": "^0.3.5",
+    "karma-jasmine-html-reporter": "^0.1.8",
+    "karma-junit-reporter": "^0.2.2",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-requirejs": "^0.2.2",
+    "lazypipe": "^0.2.3",
+    "requirejs": "^2.1.17",
+    "run-sequence": "^1.0.2"
+  }
+}
