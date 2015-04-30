@@ -3,7 +3,11 @@
   "private": true,
   "version": "1.0.0",
   "description": "First gulp test",
+  "engines": {
+    "node": ">=0.10.0 <0.12"
+  },
   "scripts": {
+    "outdated": "npm outdated --depth=0",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -14,6 +18,6 @@
   "author": "Erko Bridee",
   "license": "MIT",
   "devDependencies": {
-    "gulp": "^3.8.10"
+    "gulp": "^3.8.11"
   }
 }
