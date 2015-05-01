@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "description": "Writing Gulp Plugin",
+  "engines": {
+    "node": ">=0.10.0 <0.12"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "outdated": "npm outdated --depth=0"
@@ -23,7 +26,8 @@
   "devDependencies": {
     "del": "^1.1.1",
     "gulp": "^3.8.11",
-    "gulp-jshint": "^1.9.4",
-    "jshint-stylish": "^1.0.1"
+    "gulp-jshint": "^1.10.0",
+    "jshint-stylish": "^1.0.1",
+    "through2": "^0.6.5"
   }
 }
