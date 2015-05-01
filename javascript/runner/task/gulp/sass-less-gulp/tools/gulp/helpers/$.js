@@ -11,6 +11,16 @@ $.runSequence     = require('run-sequence');
 
 //---
 
+$.rootPath = $.path.resolve( './' );
+
+// [Gist] Better local require() paths for Node.js
+// https://gist.github.com/branneman/8048520
+$.rootRequire = function( name ) {
+  return require( $.path.join( $.rootPath, name ) );
+};
+
+//---
+
 $.args = require('yargs').argv;
 
 //---
@@ -24,11 +34,11 @@ $.is = {
 
 //---
 
-$.pkg = require('../../../package.json');
+$.pkg = $.rootRequire('package.json');
 
-$.localip = require('../../lib/localip')();
+$.localip = $.rootRequire('tools/lib/localip')();
 
-$.config = require('../../config');
+$.config = $.rootRequire('tools/config');
 
 //---
 // @begin: define output dir
@@ -36,7 +46,7 @@ $.config = require('../../config');
 (function() {
 
   var output = $.config.paths.dist || 'dist';
-  if( $.is.cdn && $.is.release ) {
+  if( $.is.cdn ) {
     output = $.path.join( output, $.pkg.name, $.pkg.version );
   }
   $.config.paths.outputDir = output;
