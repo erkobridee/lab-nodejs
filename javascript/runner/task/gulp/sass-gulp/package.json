@@ -1,7 +1,11 @@
 {
   "name": "sass-gulp",
+  "private": true,
   "version": "0.1.0",
   "description": "sass gulp test",
+  "engines": {
+    "node": ">=0.10.0 <0.12"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "outdated": "npm outdated --depth=0"
@@ -17,8 +21,8 @@
   "license": "MIT",
   "devDependencies": {
     "del": "^1.1.1",
-    "gulp": "^3.8.10",
-    "gulp-sass": "^1.2.4",
-    "gulp-sourcemaps": "^1.3.0"
+    "gulp": "^3.8.11",
+    "gulp-sass": "^1.3.3",
+    "gulp-sourcemaps": "^1.5.2"
   }
 }

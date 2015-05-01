@@ -8,11 +8,7 @@ var config = {
   dist: './css'
 };
 
-gulp.task('clean:css', function(cb) {
-    del([
-      config.dist
-    ], cb);
-});
+gulp.task('clean:css', del.bind(null, [ config.dist ]));
 
 gulp.task('clean', ['clean:css']);
 
