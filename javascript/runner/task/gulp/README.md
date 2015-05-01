@@ -108,3 +108,11 @@
 * [[GitHub] ryanbenson / Front-End-Gulp-Boilerplate](https://github.com/ryanbenson/Front-End-Gulp-Boilerplate) - Front-end boilerplate for Gulp with everything you need to get started
 
 * [[GitHub] johnpapa / gulp-patterns](https://github.com/johnpapa/gulp-patterns) - JavaScript Build automation with Gulp and Angular
+
+--
+
+* [[GitHub] sun-zheng-an / gulp-shell](https://github.com/sun-zheng-an/gulp-shell) - A handy command line interface for gulp
+
+* [[GitHub] hparra / gulp-spawn](https://github.com/hparra/gulp-spawn) - CLI program piping plugin for gulp
+
+* [[GitHub] cbarrick / gulp-run](https://github.com/cbarrick/gulp-run) - Pipe to shell commands in gulp
