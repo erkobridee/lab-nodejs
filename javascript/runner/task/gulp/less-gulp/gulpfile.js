@@ -4,6 +4,7 @@ var gulp          = require('gulp');
 var gutil         = require('gulp-util');
 var less          = require('gulp-less');
 var sourcemaps    = require('gulp-sourcemaps');
+var debug         = require('gulp-debug');
 
 
 var LessPluginCleanCSS = require("less-plugin-clean-css"),
@@ -22,6 +23,8 @@ var config = {
   dist: 'dist'
 };
 
+//---
+
 gulp.task('clean:css', function(cb) {
   del([
     config.dist
@@ -30,21 +33,35 @@ gulp.task('clean:css', function(cb) {
 
 gulp.task('clean', ['clean:css']);
 
-gulp.task('build:css', function() {
-  return gulp.src(path.join(config.src, 'main.less'))
-    .pipe(require('gulp-debug')())
 
-    .pipe(sourcemaps.init())
+gulp.task('less', ['clean'], function() {
+  return gulp.src( path.join( config.src, 'main.less' ) )
+    .pipe( debug() )
 
     .pipe(less({
       // compress: true,
       plugins: [autoprefix] // cleancss
     }))
+    .on( 'error', gutil.log )
+
+    .pipe( gulp.dest( config.dist ) );
+});
+
+
+gulp.task('build:css', function() {
+  return gulp.src( path.join( config.src, 'main.less' ) )
+    .pipe( debug() )
+
+    .pipe( sourcemaps.init() )
+
+    .pipe( less() )
     .on('error', gutil.log)
 
-    .pipe(sourcemaps.write())
+    .pipe( sourcemaps.write() )
 
-    .pipe(gulp.dest(config.dist));
+    .pipe( gulp.dest( config.dist ) );
 });
+
+//---
 
 gulp.task('default', ['clean:css', 'build:css']);
