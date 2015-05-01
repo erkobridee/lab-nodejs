@@ -30,11 +30,8 @@ gulp.task('default', function() {
 
 //------------------------------------------------------------------------------
 
-gulp.task('clean', function( done ) {
-  del([
-    outputDir
-  ], done);
-});
+gulp.task('clean', del.bind(null, [ outputDir ]));
+
 gulp.task('cleanup', ['clean'])
 
 //------------------------------------------------------------------------------
