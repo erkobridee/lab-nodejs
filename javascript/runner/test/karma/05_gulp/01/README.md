@@ -42,8 +42,6 @@ $ npm install \
     gulp-load-plugins \
     gulp-jshint \
     gulp-util \
-    jasmine-core \
-    karma \
     karma-jasmine \
     karma-chrome-launcher \
     --save-dev
