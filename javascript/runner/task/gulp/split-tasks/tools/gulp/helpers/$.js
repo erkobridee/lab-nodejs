@@ -45,7 +45,7 @@ $.is = {
 (function() {
 
   var output = $.config.paths.dist || 'dist';
-  if( $.is.cdn && $.is.release ) {
+  if( $.is.cdn ) {
     output = $.path.join( output, $.pkg.name, $.pkg.version );
   }
   $.config.paths.outputDir = output;
