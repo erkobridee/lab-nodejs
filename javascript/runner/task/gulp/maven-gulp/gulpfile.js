@@ -13,11 +13,7 @@ var config = {
 
 //---
 
-gulp.task('clean:dist', function(cb) {
-  del([
-    config.dist
-  ], cb);
-});
+gulp.task('clean:dist', del.bind(null, [ config.dist ]));
 
 gulp.task('clean', ['clean:dist']);
 
