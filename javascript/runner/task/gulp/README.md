@@ -123,3 +123,5 @@
 * Gulp not working with newer node version : [Gulp ISSUE #893](https://github.com/gulpjs/gulp/issues/893)
 
 > remove and reinstall gulp global package
+
+* When update Node.js version remember to reinstall dependencies
