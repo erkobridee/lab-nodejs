@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "gulp uglify and rename test running by maven",
   "engines": {
-    "node": ">=0.10.0 <0.12"
+    "node": ">=0.10.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
