@@ -116,3 +116,10 @@
 * [[GitHub] hparra / gulp-spawn](https://github.com/hparra/gulp-spawn) - CLI program piping plugin for gulp
 
 * [[GitHub] cbarrick / gulp-run](https://github.com/cbarrick/gulp-run) - Pipe to shell commands in gulp
+
+
+## Known Issues
+
+* Gulp not working with newer node version : [Gulp ISSUE #893](https://github.com/gulpjs/gulp/issues/893)
+
+> remove and reinstall gulp global package
