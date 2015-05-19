@@ -14,6 +14,8 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
 
 * [Getting Started with TypeScript | Nettuts+](http://net.tutsplus.com/tutorials/javascript-ajax/getting-started-with-typescript/)
 
+* [Getting Started with TypeScript | Treehouse Blog](http://blog.teamtreehouse.com/getting-started-typescript)
+
 * [TypeScript for ActionScript Developers | Jesse Warden](http://jessewarden.com/2012/10/typescript-for-actionscript-developers.html)
 
 * [Why does TypeScript have to be the answer to anything? | Scott Hanselman](http://www.hanselman.com/blog/WhyDoesTypeScriptHaveToBeTheAnswerToAnything.aspx)
@@ -47,6 +49,9 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
 
 * [TypeScript for Visual Studio 2012](http://go.microsoft.com/fwlink/?LinkID=266563)
 
+* [Visual Studio Code](https://code.visualstudio.com/) - Code focused development. Redefined. Build and debug modern web and cloud applications. Code is free and available on your favorite platform - Linux, Mac OSX, and Windows.
+  
+  * [Visual Studio Code | Visual Studio](https://www.visualstudio.com/en-us/products/code-vs.aspx)
 
 ## pt_BR
 
