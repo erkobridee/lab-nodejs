@@ -8,8 +8,16 @@
 
 * [cli | Babel Docs](https://babeljs.io/docs/usage/cli/)
 
+  * compile to es5
+
 ```bash
 $ babel script-name.js -o script-name_compiled.js
+```
+  
+  * run es6
+
+```bash
+$ babel-node script-name.js
 ```
 
 
