@@ -13,7 +13,7 @@
 ```bash
 $ babel script-name.js -o script-name_compiled.js
 ```
-  
+
   * run es6
 
 ```bash
