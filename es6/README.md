@@ -6,6 +6,13 @@
 
   * [[GitHub] babel / babel](https://github.com/babel/babel) - Babel is a transpiler for writing next generation JavaScript. (Previously 6to5)
 
+* [cli | Babel Docs](https://babeljs.io/docs/usage/cli/)
+
+```bash
+$ babel script-name.js -o script-name_compiled.js
+```
+
+
 ## links
 
 * [ECMAScript 6 compatibility table](https://kangax.github.io/compat-table/es6/)
