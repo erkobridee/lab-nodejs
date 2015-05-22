@@ -1,5 +1,5 @@
 function hello( message: String = 'hello world' ) {
-	console.log( message );
+  console.log( message );
 }
 
 hello();

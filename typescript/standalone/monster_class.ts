@@ -1,22 +1,21 @@
 interface Point {
-	x: Number,
-	y: Number
+  x: Number,
+  y: Number
 };
 
 class Monster1 {
-	name: String;
-	position: Point;
+  name: String;
+  position: Point;
 	
-	constructor(name, position) {
-		this.name = name;
-		this.position = position;
+	constructor( name, position ) {
+    this.name = name;
+    this.position = position;
 	}
 }
 
 class Monster2 {
-	constructor(public name:String, public position: Point) {
-		
-	}
+  constructor( public name:String, public position: Point ) {
+  }
 }
 
 //---
