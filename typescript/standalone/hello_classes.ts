@@ -81,3 +81,8 @@ colorPoint.x = 4;
 colorPoint.y = 5;
 
 console.log( 'colorPoint : ', colorPoint.toString() );
+
+//---
+
+console.log( 'colorPoint instanceof ColorPoint: ', colorPoint instanceof ColorPoint );
+console.log( 'colorPoint instanceof Point: ', colorPoint instanceof Point );
