@@ -1,6 +1,6 @@
 function sayHello( name ) {
-	let msg = 'hello ' + ( name || 'world' );
-	console.log( msg );
+  let msg = 'hello ' + ( name || 'world' );
+  console.log( msg );
 }
 
 sayHello();
