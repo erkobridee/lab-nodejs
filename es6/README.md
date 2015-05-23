@@ -6,7 +6,9 @@
 
   * [[GitHub] babel / babel](https://github.com/babel/babel) - Babel is a transpiler for writing next generation JavaScript. (Previously 6to5)
 
-* [cli | Babel Docs](https://babeljs.io/docs/usage/cli/)
+  * [cli | Babel Docs](https://babeljs.io/docs/usage/cli/)
+
+  * [Learn ES6 | Babel](http://babeljs.io/docs/learn-es6/) - A detailed overview of ECMAScript 6 features.
 
   * compile to es5
 
@@ -36,5 +38,7 @@ $ babel-node script-name.js
 * [Introduction to ECMAScript 6 | Christophe Coenraets](http://coenraets.org/present/es6/)
 
 --
+
+* [[GitHub] lukehoban / es6features](https://github.com/lukehoban/es6features) - Overview of ECMAScript 6 features
 
 * [[GitHub] JustinDrake / node-es6-examples](https://github.com/JustinDrake/node-es6-examples) - ECMAScript 6 examples for Node.JS
