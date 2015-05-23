@@ -38,6 +38,17 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
 
 * [Catching JavaScript Mistakes with TypeScript - TypeScript Video Tutorial #free | @eggheadio](https://egghead.io/lessons/javascript-catching-javascript-mistakes-with-typescript)
 
+--
+
+* [DefinitelyTyped](http://definitelytyped.org/) - The repository for high quality TypeScript type definitions
+
+  * [[GitHub] borisyankov / DefinitelyTyped](https://github.com/borisyankov/DefinitelyTyped) - The repository for high quality TypeScript type definitions.
+
+  * [TSD](http://definitelytyped.org/tsd/) - TypeScript Definition manager for DefinitelyTyped
+  
+    * [[GitHub] DefinitelyTyped / tsd](https://github.com/Definitelytyped/tsd) - TypeScript Definition manager for DefinitelyTyped
+
+
 
 ## Code Editor
 
