@@ -1,0 +1,19 @@
+{
+  "name": "es6-split_files-02",
+  "version": "0.1.0",
+  "description": "testing es6 modules",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel-run": "babel-node src/main",
+    "babel-compile": "babel src --out-dir dist",
+    "app": "node dist/main",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "es6",
+    "babel.js",
+    "modules"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT"
+}
