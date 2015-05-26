@@ -16,3 +16,5 @@ gulp.task('compile', ['clean'], function() {
   .pipe(source('app.js'))
   .pipe(gulp.dest('./dist'));
 });
+
+gulp.task('default', ['compile']);
