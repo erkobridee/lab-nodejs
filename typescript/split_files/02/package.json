@@ -1,0 +1,17 @@
+{
+  "name": "typescript-split_files-02",
+  "version": "0.1.0",
+  "description": "testing typescript modules",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc src/main.ts --target es5 --module \"CommonJS\" --outDir dist",
+    "app": "node dist/main",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "typescript",
+    "modules"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT"
+}

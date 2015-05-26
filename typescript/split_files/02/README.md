@@ -25,6 +25,15 @@ rm -rf dist
 ```
 
 
+## npm
+
+* compile
+
+* run compiled
+
+* clean up
+
+
 ## links
 
 * [TypeScript 1.5: Modules, Decorators, Sublime Text Plug-in and More | InfoQ](http://www.infoq.com/news/2015/04/typescript-1-5/)
