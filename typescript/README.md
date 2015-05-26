@@ -52,6 +52,8 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
 
   * [[GitHub] JesterXL / gulp-typescript-basics](https://github.com/JesterXL/gulp-typescript-basics) - Basic repo that builds TypeScript
 
+* [[GitHub] rafaelfragosom / angular2-typescript](https://github.com/rafaelfragosom/angular2-typescript) - Angular 2 and TypeScript Initial Project
+
 --
 
 * [DefinitelyTyped](http://definitelytyped.org/) - The repository for high quality TypeScript type definitions
