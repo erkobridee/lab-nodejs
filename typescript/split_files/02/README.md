@@ -52,6 +52,47 @@ npm run clean
 ```
 
 
+## Gulp
+
+### Prerequisites
+
+* Must have [Git](http://git-scm.com/) installed
+
+* Must have [node.js (at least v0.10.0)](http://nodejs.org/) installed with npm (Node Package Manager)
+
+* Must have [Gulp.js](http://gulpjs.com/) node package installed globally.  `[sudo] npm install -g gulp`
+
+### Dependencies
+
+```bash
+npm install \
+  del \
+  gulp \
+  tsify \
+  browserify \
+  vinyl-source-stream \
+  --save-dev
+```
+
+### Commands
+
+* compile
+
+> generate bundle file on `dist` dir, using browserify, transforming typescript code with tsify 
+
+```bash
+gulp compile
+```
+
+* clean
+
+> remove `dist` dir
+
+```bash
+gulp clean
+```
+
+
 ## links
 
 * [TypeScript 1.5: Modules, Decorators, Sublime Text Plug-in and More | InfoQ](http://www.infoq.com/news/2015/04/typescript-1-5/)
@@ -60,3 +101,14 @@ npm run clean
 
   * [ISSUE #2242 - ES6 Modules](https://github.com/Microsoft/TypeScript/issues/2242)
 
+--
+
+* [[GitHub] sindresorhus / del](https://github.com/sindresorhus/del) - Delete files/folders using globs
+
+* [[GitHub] hughsk / vinyl-source-stream](https://github.com/hughsk/vinyl-source-stream) - Use conventional text streams at the start of your gulp or vinyl pipelines
+
+* [[GitHub] gulpjs / gulp](https://github.com/gulpjs/gulp) - The streaming build system
+
+* [[GitHub] smrq / tsify](https://github.com/smrq/tsify) - Browserify plugin for compiling Typescript
+
+* [[GitHub] substack / node-browserify](https://github.com/substack/node-browserify) - browser-side require() the node.js way

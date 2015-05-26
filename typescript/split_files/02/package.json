@@ -13,5 +13,12 @@
     "modules"
   ],
   "author": "Erko Bridee",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^10.2.1",
+    "del": "^1.2.0",
+    "gulp": "^3.8.11",
+    "tsify": "^0.11.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
 }
