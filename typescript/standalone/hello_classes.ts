@@ -9,31 +9,31 @@
 */
 
 class Point {
-  private _x : Number;
-  private _y : Number;
+  private _x: number;
+  private _y: number;
   
-  constructor(x : Number, y : Number) {
+  constructor(x: number, y: number) {
     this._x = x;
     this._y = y;
   }
   
-  set x(value : Number) {
+  set x(value : number) {
     this._x = value;  
   }
   
-  get x() : Number {
+  get x() : number {
     return this._x;
   }
   
-  set y(value : Number) {
+  set y(value : number) {
     this._y = value;
   }
   
-  get y() : Number {
+  get y() : number {
     return this._y;
   }
   
-  toString() : String {
+  toString() : string {
     return '( ' + this._x + ', ' + this._y + ' )';
   }
 }
@@ -51,22 +51,22 @@ console.log( 'point : ', point.toString() );
 //-------------------------------------------------------
 
 class ColorPoint extends Point {
-  private _color : String;
+  private _color : string;
   
-  constructor( x : Number, y : Number, color : String ) {
+  constructor( x : number, y : number, color : string ) {
     super( x, y );
     this.color = color; // use color setter
   }
   
-  get color() : String {
+  get color() : string {
     return this._color;
   }
   
-  set color( value : String ) {
+  set color( value : string ) {
     this._color = value;
   }
   
-  toString() : String {
+  toString() : string {
     return super.toString() + ' in ' + this.color; // use color getter
   }
 }

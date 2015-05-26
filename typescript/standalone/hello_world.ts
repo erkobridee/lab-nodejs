@@ -1,4 +1,4 @@
-function hello( message: String = 'hello world' ) {
+function hello( message: string = 'hello world' ) {
   console.log( message );
 }
 

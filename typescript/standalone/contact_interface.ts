@@ -1,7 +1,7 @@
 interface Contact {
-  name: String,
-  email: String,
-  twitter: String
+  name: string,
+  email: string,
+  twitter: string
 }
 
 var contacts: Contact[] = [];

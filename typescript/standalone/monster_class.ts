@@ -1,10 +1,10 @@
 interface Point {
-  x: Number,
-  y: Number
+  x: number,
+  y: number
 };
 
 class Monster1 {
-  name: String;
+  name: string;
   position: Point;
 
   constructor(name, position) {
@@ -14,7 +14,7 @@ class Monster1 {
 }
 
 class Monster2 {
-  constructor(public name: String, public position: Point) {
+  constructor(public name: string, public position: Point) {
   }
 }
 
