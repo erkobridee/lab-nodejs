@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "testing es6 modules",
   "scripts": {
+    "outdated": "npm outdated --depth=0",
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel-run": "babel-node src/main",
     "babel-compile": "babel src --out-dir dist",
@@ -15,5 +16,13 @@
     "modules"
   ],
   "author": "Erko Bridee",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "babelify": "^6.1.1",
+    "browserify": "^10.2.1",
+    "del": "^1.2.0",
+    "gulp": "^3.8.11",
+    "gulp-babel": "^5.1.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
 }
