@@ -1,23 +1,49 @@
 # es6 / split files / 01
 
-* Babel.js
+## Babel.js
 
-  * run
+* run
 
 ```bash
 babel-node src/app
 ```
 
-  * compile
+* compile
 
 ```bash
 babel src --out-dir dist
 ```
 
-  * run compiled
+* run compiled
 
 ```bash
 node dist/app
+```
+
+## npm
+
+* run 
+
+> cmd: `babel-node src/app`
+
+```bash
+npm run babel-run
+```
+
+* compile
+
+> cmd: babel src --out-dir dist
+
+```bash
+npm run babel-compile
+```
+
+* run compiled
+
+> cmd: node dist/app
+
+```bash
+npm run app
 ```
 
 
