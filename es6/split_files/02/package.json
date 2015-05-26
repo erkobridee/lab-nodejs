@@ -25,7 +25,6 @@
     "browserify": "^10.2.1",
     "del": "^1.2.0",
     "gulp": "^3.8.11",
-    "gulp-babel": "^5.1.0",
     "vinyl-source-stream": "^1.1.0"
   }
 }

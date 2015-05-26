@@ -72,7 +72,6 @@ npm run clean
 npm install \
   del \
   gulp \
-  gulp-babel \
   babelify \
   browserify \
   vinyl-source-stream \
@@ -121,8 +120,6 @@ gulp clean
 * [[GitHub] hughsk / vinyl-source-stream](https://github.com/hughsk/vinyl-source-stream) - Use conventional text streams at the start of your gulp or vinyl pipelines
 
 * [[GitHub] gulpjs / gulp](https://github.com/gulpjs/gulp) - The streaming build system
-
-  * [[GitHub] babel / gulp-babel](https://github.com/babel/gulp-babel) - Gulp plugin for Babel
 
 * [[GitHub] babel / babel](https://github.com/babel/babel) - Babel is a compiler for writing next generation JavaScript
 
