@@ -22,7 +22,7 @@ node dist/app
 
 ## npm
 
-* run 
+* run
 
 > cmd: `babel-node src/app`
 
@@ -32,7 +32,7 @@ npm run babel-run
 
 * compile
 
-> cmd: babel src --out-dir dist
+> cmd: `babel src --out-dir dist`
 
 ```bash
 npm run babel-compile
@@ -40,10 +40,18 @@ npm run babel-compile
 
 * run compiled
 
-> cmd: node dist/app
+> cmd: `node dist/app`
 
 ```bash
 npm run app
+```
+
+* clean up
+
+> cmd: `rm -rf dist`  [*nix only]
+
+```bash
+npm run clean
 ```
 
 
