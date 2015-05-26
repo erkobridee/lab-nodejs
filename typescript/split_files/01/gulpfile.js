@@ -7,7 +7,6 @@ var source     = require('vinyl-source-stream');
 gulp.task('clean', del.bind(null, [ 'dist' ]));
 
 gulp.task('compile', ['clean'], function() {
-  
   browserify({
     entries: './src/app.ts',
     debug: true
