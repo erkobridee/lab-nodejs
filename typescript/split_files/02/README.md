@@ -29,9 +29,27 @@ rm -rf dist
 
 * compile
 
+> cmd: `tsc src/main.ts --target es5 --module "CommonJS" --outDir dist`
+
+```bash
+npm run tsc
+```
+
 * run compiled
 
+> cmd: `node dist/main`
+
+```bash
+npm run app
+```
+
 * clean up
+
+> cmd: `rm -rf dist` [*nix only]
+
+```bash
+npm run clean
+```
 
 
 ## links
