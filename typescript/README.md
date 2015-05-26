@@ -8,7 +8,15 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
 
 * [TypeScript](http://www.typescriptlang.org/) - offers classes, modules, and interfaces to help you build robust components.
 
-* [TypeScript on CodePlex](https://typescript.codeplex.com/)
+* [[GitHub] Microsoft / TypeScript](https://github.com/Microsoft/TypeScript) - TypeScript is a superset of JavaScript that compiles to clean JavaScript output.
+
+  * [Roadmap](https://github.com/Microsoft/TypeScript/wiki/Roadmap)
+
+--
+
+* [TypeScript 1.5: Modules, Decorators, Sublime Text Plug-in and More | InfoQ](http://www.infoq.com/news/2015/04/typescript-1-5/)
+
+--
 
 * [Why I Like TypeScript | Lee Brimelow](http://www.leebrimelow.com/why-i-like-typescripts/)
 
@@ -37,6 +45,12 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
 --
 
 * [Catching JavaScript Mistakes with TypeScript - TypeScript Video Tutorial #free | @eggheadio](https://egghead.io/lessons/javascript-catching-javascript-mistakes-with-typescript)
+
+--
+
+* [[YouTube] BGTSD - Part 21: TypeScript and Gulp Basics](https://www.youtube.com/watch?v=5Z82cpVP_qo) - 2015/03/20
+
+  * [[GitHub] JesterXL / gulp-typescript-basics](https://github.com/JesterXL/gulp-typescript-basics) - Basic repo that builds TypeScript
 
 --
 
