@@ -13,7 +13,10 @@
   "keywords": [
     "es6",
     "babel.js",
-    "modules"
+    "modules",
+    "gulp",
+    "browserify",
+    "babelify"
   ],
   "author": "Erko Bridee",
   "license": "MIT",
