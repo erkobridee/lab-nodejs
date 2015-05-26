@@ -102,6 +102,12 @@ gulp clean
 
 --
 
+* [[YouTube] BGTSD - Part 21: TypeScript and Gulp Basics](https://www.youtube.com/watch?v=5Z82cpVP_qo) - 2015/03/20
+
+  * [[GitHub] JesterXL / gulp-typescript-basics](https://github.com/JesterXL/gulp-typescript-basics) - Basic repo that builds TypeScript
+
+--
+
 * [[GitHub] sindresorhus / del](https://github.com/sindresorhus/del) - Delete files/folders using globs
 
 * [[GitHub] hughsk / vinyl-source-stream](https://github.com/hughsk/vinyl-source-stream) - Use conventional text streams at the start of your gulp or vinyl pipelines
