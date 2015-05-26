@@ -12,6 +12,11 @@ logs
 results
 
 #-----------
+# project
+
+dist
+
+#-----------
 # bower
 
 bower_components
