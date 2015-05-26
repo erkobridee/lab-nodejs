@@ -1,24 +1,59 @@
 # es6 / split files / 02
 
-* Babel.js
+## Babel.js
 
-  * run
+* run
 
 ```bash
 babel-node src/main
 ```
 
-  * compile
+* compile
 
 ```bash
 babel src --out-dir dist
 ```
 
-  * run compiled
+* run compiled
 
 ```bash
 node dist/main
 ```
+
+## npm
+
+* run
+
+> cmd: `babel-node src/main`
+
+```bash
+npm run babel-run
+```
+
+* compile
+
+> cmd: `babel src --out-dir dist`
+
+```bash
+npm run babel-compile
+```
+
+* run compiled
+
+> cmd: `node dist/main`
+
+```bash
+npm run app
+```
+
+* clean up
+
+> cmd: `rm -rf dist`  [*nix only]
+
+```bash
+npm run clean
+```
+
 
 ## Links
 
