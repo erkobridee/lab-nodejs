@@ -24,6 +24,14 @@ node dist/app
 rm -rf dist
 ```
 
+## npm
+
+* compile
+
+* run compiled
+
+* clean up
+
 
 ## links
 
