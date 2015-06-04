@@ -1,0 +1,26 @@
+{
+  "name": "karma-04-gulp-04",
+  "version": "0.1.0",
+  "homepage": "https://github.com/erkobridee/lab-nodejs",
+  "authors": [
+    "Erko Bridee de Almeida Cabrera <erko.bridee@gmail.com>"
+  ],
+  "keywords": [
+    "jasmine",
+    "jquery",
+    "requirejs",
+    "angular",
+    "karma",
+    "gulp"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": "1.11.1",
+    "requirejs": "2.1.17",
+    "angular": "1.2.21",
+    "angular-resource": "1.2.21",
+    "angular-route": "1.2.21",
+    "angular-mocks": "1.2.21"
+  }
+}

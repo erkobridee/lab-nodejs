@@ -1,0 +1,24 @@
+{
+  "name": "karma-04-gulp-04",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://github.com/erkobridee/lab-nodejs",
+  "authors": [
+    "Erko Bridee de Almeida Cabrera <erko.bridee@gmail.com>"
+  ],
+  "description": "Karma Runner and require.js + angular.js modular application with Gulp.js. Code and test specs together in same directory module. Vendors Libs, Application Source and Tests specs loaded by require.js on Karma Runner test page.",
+  "scripts": {
+    "setup": "node scripts/setup",
+    "testos": "node scripts/testos"
+  },
+  "keywords": [
+    "test",
+    "karma",
+    "gulp",
+    "angular",
+    "requirejs"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+  }
+}
