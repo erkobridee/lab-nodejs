@@ -1,5 +1,7 @@
 # gulp-sequence test
 
+Test of gulp-sequence for gulp tasks
+
 > Run a series of gulp tasks in order
 
 

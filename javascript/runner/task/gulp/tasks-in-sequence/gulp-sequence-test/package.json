@@ -1,7 +1,7 @@
 {
   "name": "gulp-sequence-test",
   "version": "0.1.0",
-  "description": "test of run-sequence for gulp tasks",
+  "description": "test of gulp-sequence for gulp tasks",
   "main": "gulpfile.js",
   "scripts": {
     "outdated": "npm outdated --depth=0",
