@@ -64,6 +64,15 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
   
     * [[GitHub] DefinitelyTyped / tsd](https://github.com/Definitelytyped/tsd) - TypeScript Definition manager for DefinitelyTyped
 
+--
+
+* [Blog | Wolk Software Engineering](http://blog.wolksoftware.com/)
+
+  * Decorators & metadata reflection in TypeScript: From Novice to Expert
+
+    * [PART I: Method decorators](http://blog.wolksoftware.com/decorators-reflection-javascript-typescript)
+
+    * [PART II: Property decorators & Class decorators](http://blog.wolksoftware.com/decorators-metadata-reflection-in-typescript-from-novice-to-expert-part-ii)
 
 
 ## Code Editor
