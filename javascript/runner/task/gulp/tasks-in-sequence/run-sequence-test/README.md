@@ -1,5 +1,7 @@
 # run-sequence test
 
+Test of run-sequence for gulp tasks
+
 > **Warning:** run-sequence - be aware that this solution is a hack, and may stop working with a future update to orchestrator.
 
 
