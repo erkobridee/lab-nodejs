@@ -1,5 +1,12 @@
 # Gulp tasks in sequence
 
+* [run-sequence](run-sequence-test)
+
+* [gulp-sequence](gulp-sequence-test)
+
+* [gulp-sync](gulp-sync-test)
+
+
 ## Links
 
 * [[GitHub] OverZealous / run-sequence](https://github.com/OverZealous/run-sequence) - Run a series of dependent gulp tasks in order
