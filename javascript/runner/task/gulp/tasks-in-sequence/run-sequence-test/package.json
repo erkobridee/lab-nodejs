@@ -1,0 +1,24 @@
+{
+  "name": "run-sequence-test",
+  "version": "0.1.0",
+  "description": "test of run-sequence for gulp tasks",
+  "main": "gulpfile.js",
+  "scripts": {
+    "outdated": "npm outdated --depth=0",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "tasks",
+    "sequence",
+    "execution"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^1.11.0",
+    "gulp-lintspaces": "^0.3.0",
+    "run-sequence": "^1.1.0"
+  }
+}
