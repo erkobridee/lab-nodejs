@@ -1,0 +1,31 @@
+{
+  "name": "gulp-rev-replace-test",
+  "version": "0.1.0",
+  "description": "gulp-rev-replace test",
+  "main": "index.js",
+  "scripts": {
+    "outdated": "npm outdated --depth=0",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp"
+  },
+  "keywords": [
+    "gulp",
+    "ref",
+    "rev",
+    "replace",
+    "html"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "devDependencies": {
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-csso": "^1.0.0",
+    "gulp-filter": "^2.0.2",
+    "gulp-minify-html": "^1.0.3",
+    "gulp-rev": "^4.0.0",
+    "gulp-rev-replace": "^0.4.1",
+    "gulp-uglify": "^1.2.0",
+    "gulp-useref": "^1.2.0"
+  }
+}
