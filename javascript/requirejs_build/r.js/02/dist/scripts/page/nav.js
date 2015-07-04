@@ -1,1 +1,0 @@
-define("modules/Navigation",["require","jquery"],function(e){var n=(e("jquery"),function(e){e.append("Nav module loaded!")});return n.prototype={},n}),require(["run"],function(){require(["jquery","modules/Navigation"],function(e,n){new n(e("#nav"))})}),define("page/nav",function(){});
