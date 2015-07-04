@@ -1,13 +1,22 @@
 var del        = require('del');
 var gulp       = require('gulp');
+var shell      = require('gulp-shell');
+var eslint     = require('gulp-eslint');
 var babelify   = require('babelify');
 var browserify = require('browserify');
 var source     = require('vinyl-source-stream');
 
 gulp.task('clean', del.bind(null, [ 'dist' ]));
 
-gulp.task('compile', ['clean'], function() {
-  browserify({
+gulp.task('eslint', function () {
+  return gulp
+    .src(['./src/**/*.js'])
+    .pipe(eslint())
+    .pipe(eslint.format());
+});
+
+gulp.task('compile', ['clean', 'eslint'], function() {
+  return browserify({
     entries: './src/app.js',
     debug: true
   })
@@ -17,4 +26,14 @@ gulp.task('compile', ['clean'], function() {
   .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('default', ['compile']);
+gulp.task('run:app', ['compile'], shell.task([
+  'node dist/app.js'
+]));
+
+gulp.task('watch', ['run:app'], function() {
+
+  gulp.watch(['./src/**/*.js'], ['run:app']);
+
+});
+
+gulp.task('default', ['watch']);

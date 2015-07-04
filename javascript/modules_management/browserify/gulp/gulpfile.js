@@ -33,7 +33,7 @@ gulp.task('jshint', function() {
 });
 
 gulp.task('compile', ['clean', 'jshint'], function() {
-  browserify({
+  return browserify({
     entries: config.js.main,
     debug: true
   })

@@ -1,3 +1,5 @@
+'use strict';
+
 export class Point {
   constructor(x, y) {
     this.x = x;

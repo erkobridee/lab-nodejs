@@ -72,6 +72,9 @@ npm run clean
 npm install \
   del \
   gulp \
+  gulp-shell \
+  gulp-eslint \
+  babel-eslint \
   babelify \
   browserify \
   vinyl-source-stream \
@@ -94,6 +97,14 @@ gulp compile
 
 ```bash
 gulp clean
+```
+
+* dev
+
+> generate bundle file, run app and watch source files to regenerate bundle and run app again
+
+```bash
+gulp
 ```
 
 
@@ -121,8 +132,14 @@ gulp clean
 
 * [[GitHub] gulpjs / gulp](https://github.com/gulpjs/gulp) - The streaming build system
 
+  * [[GitHub] sun-zheng-an / gulp-shell](https://github.com/sun-zheng-an/gulp-shell) - A handy command line interface for gulp
+
+  * [[GitHub] adametry / gulp-eslint](https://github.com/adametry/gulp-eslint) - A Gulp plugin for identifying and reporting on patterns found in ECMAScript/JavaScript code
+
 * [[GitHub] babel / babel](https://github.com/babel/babel) - Babel is a compiler for writing next generation JavaScript
 
   * [[GitHub] babel / babelify](https://github.com/babel/babelify) - Browserify transform for Babel
+
+  * [[GitHub] babel / babel-eslint](https://github.com/babel/babel-eslint) - ESLint using Babel as the parser
 
 * [[GitHub] substack / node-browserify](https://github.com/substack/node-browserify) - browser-side require() the node.js way
