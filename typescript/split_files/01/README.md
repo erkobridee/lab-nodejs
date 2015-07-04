@@ -61,17 +61,21 @@ npm run clean
 
 * Must have [Gulp.js](http://gulpjs.com/) node package installed globally.  `[sudo] npm install -g gulp`
 
+
 ### Dependencies
 
 ```bash
 npm install \
   del \
   gulp \
+  gulp-shell \
+  gulp-tslint \
   tsify \
   browserify \
   vinyl-source-stream \
   --save-dev
 ```
+
 
 ### Commands
 
@@ -89,6 +93,14 @@ gulp compile
 
 ```bash
 gulp clean
+```
+
+* dev
+
+> generate bundle file, run app and watch for changes on source files (.ts)
+
+```bash
+gulp
 ```
 
 
@@ -113,6 +125,10 @@ gulp clean
 * [[GitHub] hughsk / vinyl-source-stream](https://github.com/hughsk/vinyl-source-stream) - Use conventional text streams at the start of your gulp or vinyl pipelines
 
 * [[GitHub] gulpjs / gulp](https://github.com/gulpjs/gulp) - The streaming build system
+
+  * [[GitHub] sun-zheng-an / gulp-shell](https://github.com/sun-zheng-an/gulp-shell) - A handy command line interface for gulp
+
+  * [[GitHub] panuhorsmalahti / gulp-tslint](https://github.com/panuhorsmalahti/gulp-tslint) - TypeScript linter plugin for Gulp
 
 * [[GitHub] smrq / tsify](https://github.com/smrq/tsify) - Browserify plugin for compiling Typescript
 

@@ -1,4 +1,4 @@
-import { Point } from "./Point";
+import { Point } from './Point';
 
 export class ColorPoint extends Point {
   constructor(x: number, y: number, public color: string) {
