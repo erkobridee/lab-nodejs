@@ -1,0 +1,25 @@
+{
+  "name": "browserify-gulp",
+  "private": true,
+  "version": "0.1.0",
+  "description": "browserify running by gulp test",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "browserify",
+    "test"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^10.2.4",
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-shell": "^0.4.2",
+    "jshint-summary": "^0.4.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
