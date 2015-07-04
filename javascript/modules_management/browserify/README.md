@@ -7,6 +7,8 @@
 
 * [hello](hello)
 
+* [gulp](gulp)
+
 * [gulp + browserify + es6](https://github.com/erkobridee/lab-nodejs/tree/master/es6/split_files)
 
 * [gulp + browserify + typescript](https://github.com/erkobridee/lab-nodejs/tree/master/typescript/split_files)
