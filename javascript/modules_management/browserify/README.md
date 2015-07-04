@@ -7,6 +7,10 @@
 
 * [hello](hello)
 
+* [gulp + browserify + es6](/erkobridee/lab-nodejs/tree/master/es6/split_files)
+
+* [gulp + browserify + typescript](/erkobridee/lab-nodejs/tree/master/typescript/split_files)
+
 
 ## links
 
