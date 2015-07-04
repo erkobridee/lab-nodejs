@@ -1,0 +1,18 @@
+# Browserify
+
+> [Browserify](http://browserify.org/) lets you require('modules') in the browser by bundling up all of your dependencies.
+
+
+## examples
+
+* [hello](hello)
+
+
+## links
+
+* [Browserify](http://browserify.org/)
+
+* [[GitHub] substack / node-browserify](https://github.com/substack/node-browserify) - browser-side require() the node.js way
+
+* [Journey from RequireJS to Browserify | Esa-Matti Suuronen](http://esa-matti.suuronen.org/blog/2013/03/22/journey-from-requirejs-to-browserify/)
+
