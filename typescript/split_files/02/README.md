@@ -98,7 +98,7 @@ gulp clean
 
 * dev
 
-> generate bundle file, run app and watch source files
+> generate bundle file, run app and watch for changes on source files (.ts)
 
 ```bash
 gulp
