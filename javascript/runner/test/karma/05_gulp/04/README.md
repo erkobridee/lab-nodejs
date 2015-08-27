@@ -54,6 +54,7 @@ $ npm install \
   karma-firefox-launcher \
   karma-phantomjs-launcher \
   karma-background \
+  karma-ng-html2js-preprocessor \
   --save-dev
 
 $ touch gulpfile.js
@@ -144,7 +145,11 @@ $ gulp ci
 
   * [[GitHub] karma-runner / karma](https://github.com/karma-runner/karma) - Spectacular Test Runner for JavaScript
 
-  * [[GitHub] callmehiphop / karma-background](https://github.com/callmehiphop/karma-background) - Easily run Karma as a background process
+
+
+  * [[GitHub] callmehiphop / karma-background](https://github.com/callmehiphop/karma-background) - Easily run Karma as a background process [ problem with karma 0.13+ ]
+
+
 
   * [[GitHub] karma-runner / karma-chrome-launcher](https://github.com/karma-runner/karma-chrome-launcher) - A Karma plugin. Launcher for Chrome and Chrome Canary.
 
@@ -154,6 +159,8 @@ $ gulp ci
 
   * [[GitHub] karma-runner / karma-jasmine](https://github.com/karma-runner/karma-jasmine) - A Karma plugin - adapter for Jasmine testing framework.
 
+  * [[GitHub] karma-runner / karma-ng-html2js-preprocessor](https://github.com/karma-runner/karma-ng-html2js-preprocessor) - A Karma plugin. Compile AngularJS 1.x templates to JavaScript on the fly.
+
   * [[GitHub] karma-runner / karma-coverage](https://github.com/karma-runner/karma-coverage) - A Karma plugin. Generate code coverage.
 
   * [[GitHub] taras42 / karma-jasmine-html-reporter](https://github.com/taras42/karma-jasmine-html-reporter) - A Karma plugin. Dynamically displays tests results at debug.html page
@@ -161,4 +168,3 @@ $ gulp ci
   * [[GitHub] karma-runner / karma-junit-reporter](https://github.com/karma-runner/karma-junit-reporter) - A Karma plugin. Report results in junit xml format.
 
   * [[GitHub] karma-runner / karma-requirejs](https://github.com/karma-runner/karma-requirejs) - A Karma plugin. Adapter for RequireJS framework.
-
