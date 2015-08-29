@@ -46,6 +46,9 @@ module.exports = {
   // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
   browsers: ['PhantomJS', 'Chrome', 'Firefox'],
 
+  // enable / disable colors in the output (reporters and logs)
+  colors: true,
+
   logLevel: 'INFO',
 
   // web server port

@@ -7,29 +7,32 @@ var coverageReporterHtml = {
   subdir: 'html'
 };
 
+var baseUnitConfig = {
+  reporters: ['html', 'progress', 'coverage'],
+  browsers: ['PhantomJS'],
+  coverageReporter: coverageReporterHtml
+};
+
 module.exports = {
 
-  unitSingleRun: _.extend({}, options, {
-    reporters: ['html', 'progress', 'coverage'],
-    browsers: ['PhantomJS'],
-    coverageReporter: coverageReporterHtml,
+  unitSingleRun: _.extend({}, options, baseUnitConfig, {
     singleRun: true
   }),
 
-  unit: _.extend({}, options, {
-    reporters: ['html', 'progress', 'coverage'],
-    browsers: ['PhantomJS'],
-    coverageReporter: coverageReporterHtml
+  unit: _.extend({}, options, baseUnitConfig, {
+    autoWatch: true
   }),
 
   specs: _.extend({}, options, {
-    reporters: ['html', 'progress']
+    reporters: ['html', 'progress'],
+    browsers: ['Chrome']
   }),
 
   coverage: _.extend({}, options, {
     reporters: ['coverage'],
     browsers: ['PhantomJS'],
     singleRun: true,
+    colors: false,
     logLevel: 'ERROR',
     coverageReporter: coverageReporterHtml
   }),
@@ -38,6 +41,7 @@ module.exports = {
     reporters: ['junit', 'coverage'],
     browsers: ['PhantomJS'],
     singleRun: true,
+    colors: false,
     logLevel: 'ERROR',
     junitReporter: {
       outputFile: 'tests_out/junit/test-results.xml'
