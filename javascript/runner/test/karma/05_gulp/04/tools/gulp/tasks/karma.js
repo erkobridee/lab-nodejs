@@ -57,6 +57,9 @@ module.exports = function(gulp, $) {
     startKarma( $.config.karma.unit, done );
   });
 
+  gulp.task('karma:specs', function( done ) {
+    startKarma( $.config.karma.specs, done );
+  });
 
   gulp.task('karma:coverage', function( done ) {
     startKarma( $.config.karma.coverage, done );

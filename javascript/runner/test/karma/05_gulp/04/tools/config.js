@@ -1,7 +1,8 @@
 module.exports = (function() {
 
   var path = require('path'),
-      pkg = require('../package');
+      pkg = require('../package'),
+      karmaConfigs = require('./karma-configs');
 
   //---
 
@@ -34,29 +35,7 @@ module.exports = (function() {
     port: 1337
   };
 
-  // TODO: review
-  config.karma = {
-
-    unitSingleRun: {
-      configFile: path.resolve( 'configs/karma.dev.conf.js' ),
-      browsers: ['PhantomJS'],
-      singleRun: true
-    },
-
-    unit: {
-      configFile: path.resolve( 'configs/karma.dev.conf.js' ),
-      browsers: ['PhantomJS']
-    },
-
-    coverage: {
-      configFile: path.resolve( 'configs/karma.coverage.conf.js' )
-    },
-
-    ci: {
-      configFile: path.resolve( 'configs/karma.ci.conf.js' )
-    }
-
-  };
+  config.karma = karmaConfigs;
 
 
   //---
