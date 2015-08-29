@@ -17,17 +17,16 @@ module.exports = (function() {
   };
 
   config.jshint = {
-    project : [
+    project: [
       'src/**/*.js',
       '!src/bower_components/**/*.js'
     ],
     specs: [
       'tests/**/*.js'
     ],
-    tools   : [
+    tools: [
       'gulpfile.js',
-      'configs/**/*.js',
-      'scripts/**/*.js'
+      'tools/**/*.js'
     ]
   };
 
