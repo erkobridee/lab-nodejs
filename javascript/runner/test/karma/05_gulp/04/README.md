@@ -34,6 +34,7 @@ $ touch README.md
 $ npm init
 
 $ npm install \
+  lodash \
   yargs \
   browser-sync \
   del \
@@ -115,6 +116,7 @@ $ gulp ci
 
 > **TODO:** review links
 
+* [[GitHub] lodash / lodash](https://github.com/lodash/lodash) - A JavaScript utility library delivering consistency, modularity, performance, & extras.
 
 * [[GitHub] BrowserSync / browser-sync](https://github.com/BrowserSync/browser-sync) - Keep multiple browsers & devices in sync when building websites
 

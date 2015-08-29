@@ -41,6 +41,7 @@
     "karma-phantomjs-launcher": "^0.2.1",
     "karma-requirejs": "^0.2.2",
     "lazypipe": "^1.0.1",
+    "lodash": "^3.10.1",
     "phantomjs": "^1.9.18",
     "requirejs": "^2.1.20",
     "run-sequence": "^1.1.2",
