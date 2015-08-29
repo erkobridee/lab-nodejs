@@ -13,16 +13,16 @@ module.exports = function(gulp, $) {
       .pipe( jshintString() );
   });
 
-  // gulp.task('jshint:specs', function() {
-  //   return gulp.src( $.config.jshint.specs )
-  //     .pipe( jshintString() );
-  // });
+  gulp.task('jshint:tests', function() {
+    return gulp.src( $.config.jshint.tests )
+      .pipe( jshintString() );
+  });
 
   gulp.task('jshint:tools', function() {
     return gulp.src( $.config.jshint.tools )
       .pipe( jshintString() );
   });
 
-  gulp.task('jshint', ['jshint:project', 'jshint:specs', 'jshint:tools']);
+  gulp.task('jshint', ['jshint:project', 'jshint:tests', 'jshint:tools']);
 
 };

@@ -21,7 +21,7 @@ module.exports = (function() {
       'src/**/*.js',
       '!src/bower_components/**/*.js'
     ],
-    specs: [
+    tests: [
       'tests/**/*.js'
     ],
     tools: [
