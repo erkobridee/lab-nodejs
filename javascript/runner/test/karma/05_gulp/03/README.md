@@ -49,7 +49,6 @@ $ npm install \
   karma-chrome-launcher \
   karma-firefox-launcher \
   karma-phantomjs-launcher \
-  karma-background \
   --save-dev
 
 $ touch gulpfile.js
@@ -65,7 +64,7 @@ $ npm start
 
 ### Gulp
 
-* development mode 
+* development mode
 
 > Project only
 
@@ -151,4 +150,3 @@ $ gulp ci
   * [[GitHub] karma-runner / karma-junit-reporter](https://github.com/karma-runner/karma-junit-reporter) - A Karma plugin. Report results in junit xml format.
 
   * [[GitHub] karma-runner / karma-requirejs](https://github.com/karma-runner/karma-requirejs) - A Karma plugin. Adapter for RequireJS framework.
-
