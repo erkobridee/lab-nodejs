@@ -43,8 +43,7 @@ module.exports = (function() {
 
     unit: {
       configFile: path.resolve( 'configs/karma.dev.conf.js' ),
-      browsers: ['PhantomJS'],
-      autoWatch: false
+      browsers: ['PhantomJS']
     },
 
     coverage: {

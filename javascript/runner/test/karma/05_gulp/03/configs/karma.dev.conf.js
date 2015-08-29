@@ -21,7 +21,6 @@ module.exports = function(config) {
     files: shared.files,
 
 
-
     // list of files to exclude
     exclude: shared.exclude,
 

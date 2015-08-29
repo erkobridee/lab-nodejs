@@ -37,7 +37,7 @@ module.exports = function(config) {
     reporters: ['junit', 'coverage'],
 
     // https://karma-runner.github.io/0.12/plus/jenkins.html
-
+    // https://github.com/karma-runner/karma-junit-reporter
     junitReporter: {
       outputFile: 'tests_out/junit/test-results.xml'
     },

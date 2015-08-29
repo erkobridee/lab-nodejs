@@ -18,7 +18,7 @@ module.exports = function() {
       'tests/require.config.js',
       {pattern: 'src/**/*.js', included: false, served: true},
       {pattern: 'tests/**/*.js', included: false, served: true},
-      {pattern: 'src/bower_components/**/*.(js|map)', included: false, served: true, watched: false}
+      {pattern: 'src/bower_components/**/*.?(js|map)', included: false, served: true, watched: false}
     ],
 
 
