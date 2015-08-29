@@ -30,6 +30,7 @@ $ touch README.md
 $ npm init
 
 $ npm install \
+  yargs \
   browser-sync \
   del \
   jshint-stylish \
@@ -102,6 +103,8 @@ $ gulp ci
 
 
 ## Links
+
+* [[GitHub] bcoe / yargs](https://github.com/bcoe/yargs) - yargs the modern, pirate-themed successor to optimist
 
 * [[GitHub] BrowserSync / browser-sync](https://github.com/BrowserSync/browser-sync) - Keep multiple browsers & devices in sync when building websites
 
