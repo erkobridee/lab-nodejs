@@ -1,5 +1,17 @@
 module.exports = function(gulp, $) {
 
-  // TODO: define gulp tasks
+  gulp.task('webserver', function() {
+
+    $.browserSync({
+      port: $.config.webserver.port,
+      server:{
+        // directory: true,
+        baseDir: [
+          $.config.paths.src
+        ]
+      }
+    });
+
+  });
 
 };
