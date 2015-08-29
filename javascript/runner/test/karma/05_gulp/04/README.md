@@ -34,6 +34,7 @@ $ touch README.md
 $ npm init
 
 $ npm install \
+  yargs \
   browser-sync \
   del \
   jshint-stylish \
@@ -116,6 +117,8 @@ $ gulp ci
 
 
 * [[GitHub] BrowserSync / browser-sync](https://github.com/BrowserSync/browser-sync) - Keep multiple browsers & devices in sync when building websites
+
+* [[GitHub] bcoe / yargs](https://github.com/bcoe/yargs) - yargs the modern, pirate-themed successor to optimist
 
 * [[GitHub] sindresorhus / del](https://github.com/sindresorhus/del) - Delete files/folders using globs
 
