@@ -70,20 +70,25 @@ $.is = {
   * Log a message or series of messages using chalk's blue color.
   * Can pass in a string, object or array.
   */
-$.log = function(msg) {
+$.log = function(msg, color) {
+  color = color || $.util.colors.blue;
   if (typeof(msg) === 'object') {
     for (var item in msg) {
       if (msg.hasOwnProperty(item)) {
-        $.util.log($.util.colors.blue(msg[item]));
+        $.util.log(color(msg[item]));
       }
     }
   } else {
-    $.util.log($.util.colors.blue(msg));
+    $.util.log(color(msg));
   }
 };
 
+$.onSuccess = function(msg) {
+  $.log(msg, $.util.colors.green);
+};
+
 $.onError = function(err) {
-  $.log(err);
+  $.log(err, $.util.colors.red);
 };
 
 //---

@@ -9,10 +9,35 @@ module.exports = function(gulp, $) {
     https://github.com/karma-runner/gulp-karma/commit/d3915b219290f5573e8c802e157bec18059b1d69
   */
 
-  gulp.task('karma:unit:single-run', function( done ) {
+  function onKarmaExecuted( code, done ) {
+    if(code === 1) { // tests failed
+      $.onError('karma: tests failed');
+    } else if( code === 0 ) { // tests executed
+      $.onSuccess('Karma: executed');
+    }
+    done();
+  }
+
+  function startKarma( config, done ) {
+    function onKarmaDone( exitCode ){
+      onKarmaExecuted( exitCode, done );
+    }
     new $.karma
-      .Server( $.config.karma.unitSingleRun, done )
+      .Server( config, onKarmaDone )
       .start();
+  }
+
+  function runKarma( config, done ) {
+    function onKarmaRunned( karmaResultCode ) {
+      onKarmaExecuted( karmaResultCode, done );
+    }
+    $.karma.runner.run( $.config.karma.unit, onKarmaRunned );
+  }
+
+  //----------------------------------------------------------------------------
+
+  gulp.task('karma:unit:single-run', function( done ) {
+    startKarma( $.config.karma.unitSingleRun, done );
   });
 
   gulp.task('karma:unit', ['karma:unit:single-run'], function() {
@@ -22,29 +47,23 @@ module.exports = function(gulp, $) {
 
   gulp.task('karma:unit:run', function( done ) {
     if( $.karma.background.running ) {
-      $.karma.runner.run( $.config.karma.unit, done );
+      runKarma( $.config.karma.unit, done );
     } else {
       done();
     }
   });
 
   gulp.task('karma:unit:dev', function( done ) {
-    new $.karma
-      .Server( $.config.karma.unit, done )
-      .start();
+    startKarma( $.config.karma.unit, done );
   });
 
 
   gulp.task('karma:coverage', function( done ) {
-    new $.karma
-      .Server( $.config.karma.coverage, done )
-      .start();
+    startKarma( $.config.karma.coverage, done );
   });
 
   gulp.task('karma:ci', function( done ) {
-    new $.karma
-      .Server( $.config.karma.ci, done )
-      .start();
+    startKarma( $.config.karma.ci, done );
   });
 
 };
