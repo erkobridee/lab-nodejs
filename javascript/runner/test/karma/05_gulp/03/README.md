@@ -147,6 +147,6 @@ $ gulp ci
 
   * [[GitHub] taras42 / karma-jasmine-html-reporter](https://github.com/taras42/karma-jasmine-html-reporter) - A Karma plugin. Dynamically displays tests results at debug.html page
 
-  * [[GitHub] karma-runner / karma-junit-reporter](https://github.com/karma-runner/karma-junit-reporter) - A Karma plugin. Report results in junit xml format.
+  * [[GitHub] karma-runner / karma-junit-reporter](https://github.com/karma-runner/karma-junit-reporter) - A Karma plugin. Report results in junit xml format. (Generate correctly to Jenkins CI only until v0.2.2)
 
   * [[GitHub] karma-runner / karma-requirejs](https://github.com/karma-runner/karma-requirejs) - A Karma plugin. Adapter for RequireJS framework.
