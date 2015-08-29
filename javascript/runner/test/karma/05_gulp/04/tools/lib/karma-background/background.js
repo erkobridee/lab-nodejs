@@ -1,6 +1,10 @@
-'use strict';
+(function() {
 
-var server = require('karma').server,
-    data = JSON.parse(process.argv[2]);
+  'use strict';
 
-server.start(data);
+  var server = require('karma').server,
+      data = JSON.parse(process.argv[2]);
+
+  server.start(data);
+
+})();

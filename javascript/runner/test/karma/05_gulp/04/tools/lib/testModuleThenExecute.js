@@ -5,9 +5,9 @@ function testModuleThenExecute(testModule, installModule, executeLaterFn) {
   }
   try {
     require.resolve(testModule);
-    executeLaterFn()
+    executeLaterFn();
   } catch(e) {
-    var async_exec = require('child_process').exec
+    var async_exec = require('child_process').exec;
 
     console.error('Module ' + testModule + ' not found. Installing... \n');
 
@@ -15,6 +15,6 @@ function testModuleThenExecute(testModule, installModule, executeLaterFn) {
       executeLaterFn();
     });
   }
-};
+}
 
 module.exports = testModuleThenExecute;
