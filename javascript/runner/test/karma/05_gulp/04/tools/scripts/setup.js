@@ -1,7 +1,7 @@
-var async_exec = require('child_process').exec;
+var testModuleThenExecute = require('../lib/testModuleThenExecute');
 
-// http://documentup.com/arturadib/shelljs
-async_exec('npm install shelljs', function (err, stdout, stderr) {
+testModuleThenExecute('shelljs', function executeLater() {
+
   require('shelljs/global');
 
   var oscheck = require('../lib/oscheck');
@@ -45,4 +45,5 @@ async_exec('npm install shelljs', function (err, stdout, stderr) {
   exec('bower install');
 
   echo('\nOK!');
+
 });
