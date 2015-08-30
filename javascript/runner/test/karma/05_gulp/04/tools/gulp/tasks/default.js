@@ -5,6 +5,7 @@ module.exports = function(gulp, $) {
   });
 
   gulp.task('project', function( done ) {
+    $.Karmaflow = false;
     $.runSequence(
       'default',
       'webserver',
@@ -38,6 +39,7 @@ module.exports = function(gulp, $) {
   });
 
   gulp.task('dev', function( done ) {
+    $.Karmaflow = true;
     $.runSequence(
       'default',
       [

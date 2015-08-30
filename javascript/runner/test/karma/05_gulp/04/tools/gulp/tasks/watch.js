@@ -8,18 +8,36 @@ module.exports = function(gulp, $) {
   });
 
   gulp.task('wf', function( done ) {
-    $.runSequence(
-      'jshint',
-      [
+    var runTasks = ['jshint'];
+    if($.Karmaflow) {
+      runTasks.push([
         'wf:bs:reload',
         'karma:unit:single-run'
-      ],
-      done
-    );
+      ]);
+    } else {
+      runTasks.push('wf:bs:reload');
+    }
+    runTasks.push(done);
+    $.runSequence.apply(null, runTasks);
+
+    // $.runSequence(
+    //   'jshint',
+    //   [
+    //     'wf:bs:reload',
+    //     'karma:unit:single-run'
+    //   ],
+    //   done
+    // );
   });
 
   gulp.task('watch', function() {
-    gulp.watch(['{src,tests}/**/*.js'], ['wf']);
+    var watchFor;
+    if($.Karmaflow){
+      watchFor = ['{src,tests}/**/*.js'];
+    } else {
+      watchFor = ['src/**/*.js'];
+    }
+    gulp.watch(watchFor, ['wf']);
   });
 
 };
