@@ -1,7 +1,5 @@
 module.exports = function(gulp, $) {
 
-  // TODO: review
-
   // wf - watch flow
 
     // bs - browser sync
@@ -14,7 +12,7 @@ module.exports = function(gulp, $) {
       'jshint',
       [
         'wf:bs:reload',
-        'karma:unit:run'
+        'karma:unit:single-run'
       ],
       done
     );

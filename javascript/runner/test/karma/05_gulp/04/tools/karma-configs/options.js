@@ -9,7 +9,7 @@ module.exports = {
   // list of files / patterns to load in the browser
   files: [
     {pattern: 'src/bower_components/angular/angular.?(min.js|map|css)', included: true, served: true, watched:false},
-    {pattern: 'src/bower_components/**/*.?(js|map|css)', included: false, served: true, watched:false},
+    {pattern: 'src/bower_components/**/*.?(js|map)', included: false, served: true, watched:false},
 
     // load app source and test's specs
     'tests/require.config.js',

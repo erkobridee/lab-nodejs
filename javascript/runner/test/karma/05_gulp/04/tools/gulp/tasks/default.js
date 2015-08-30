@@ -4,8 +4,6 @@ module.exports = function(gulp, $) {
     $.projectInfoMsg();
   });
 
-  // TODO: review
-
   gulp.task('project', function( done ) {
     $.runSequence(
       'default',
@@ -34,8 +32,7 @@ module.exports = function(gulp, $) {
   gulp.task('specs', function( done ) {
     $.runSequence(
       'default',
-      'karma:unit',
-      'watch',
+      'karma:specs',
       done
     );
   });
@@ -45,7 +42,7 @@ module.exports = function(gulp, $) {
       'default',
       [
         'webserver',
-        'karma:unit'
+        'karma:unit:single-run'
       ],
       'watch',
       done

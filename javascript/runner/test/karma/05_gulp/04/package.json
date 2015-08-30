@@ -9,6 +9,10 @@
   "description": "Karma Runner and require.js + angular.js modular application with Gulp.js. Code and test specs together in same directory module. Vendors Libs, Application Source and Tests specs loaded by require.js on Karma Runner test page.",
   "scripts": {
     "outdated": "npm outdated --depth=0",
+    "prestart": "npm run setup",
+    "start": "echo \"start development\n\" && gulp dev",
+    "test": "gulp ci",
+    "coverage": "gulp coverage",
     "setup": "node tools/scripts/setup",
     "testos": "node tools/scripts/testos"
   },

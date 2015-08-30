@@ -20,7 +20,7 @@ module.exports = {
   }),
 
   unit: _.extend({}, options, baseUnitConfig, {
-    autoWatch: true
+    singleRun: false
   }),
 
   specs: _.extend({}, options, {
