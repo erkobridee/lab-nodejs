@@ -23,6 +23,9 @@ $.runSequence     = require('run-sequence');
 $.browserSync     = require('browser-sync');
 $.reload          = $.browserSync.reload;
 
+// https://github.com/karma-runner/gulp-karma
+$.karma            = require('karma');
+
   //--- local modules
 
 $.pkg       = $.rootRequire('package.json');
@@ -33,18 +36,11 @@ $.localip   = $.rootRequire('tools/lib/localip');
 
 //---
 
-// https://github.com/karma-runner/gulp-karma
-$.karma            = require('karma');
-$.karma.background = $.rootRequire('tools/lib/karma-background');
-$.karma.background.running = false;
-
-//---
-
 $.args = require('yargs').argv;
 
 //---
 
-// TODO: review
+// debug don't used... but use yargs to make possible config other webserver port
 $.is = {
   debug   : !!$.args.debug
 };
