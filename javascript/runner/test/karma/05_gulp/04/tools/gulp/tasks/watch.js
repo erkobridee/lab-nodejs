@@ -19,15 +19,6 @@ module.exports = function(gulp, $) {
     }
     runTasks.push(done);
     $.runSequence.apply(null, runTasks);
-
-    // $.runSequence(
-    //   'jshint',
-    //   [
-    //     'wf:bs:reload',
-    //     'karma:unit:single-run'
-    //   ],
-    //   done
-    // );
   });
 
   gulp.task('watch', function() {
