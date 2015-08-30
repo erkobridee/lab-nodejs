@@ -1,23 +1,11 @@
-define(
-// require.js dependency injection
-[
-  'angular',
-  'angularRoute'
-],
-
-// require.js module scope
-function(ng) {
+define(function(require) {
   'use strict';
 
-  // module definition
-  return ng.module(
-    // module name
-    'about',
+  var angular = require('angular');
+  require('angularRoute');
 
-    // module dependencies
-    [
-      'ngRoute'
-    ]
-  );
+  return angular.module('about', [
+    'ngRoute'
+  ]);
 
 });

@@ -1,19 +1,11 @@
-define(
-// require.js dependency injection
-[
-  './module'
-],
-
-// require.js module scope
-function(module) {
+define(function(require) {
   'use strict';
 
-  module.filter(
+  var module = require('./module');
+  module.filter('reverse', Filter);
 
-    // filter name
-    'reverse',
-
-  function() {
+  Filter.$inject = [];
+  function Filter() {
 
     return function(input, uppercase) {
 
@@ -31,6 +23,6 @@ function(module) {
       return out;
     };
 
-  });
+  }
 
 });

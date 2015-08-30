@@ -1,20 +1,11 @@
-define(
-// require.js dependency injection
-[
-  './module'
-],
-
-// require.js module scope
-function(module) {
+define(function(require) {
   'use strict';
 
-  module.config(
+  var module = require('./module');
+  module.config(configureRoutes);
 
-    // dependencies injection
-    ['$routeProvider',
-
-  // routes definition
-  function ($routeProvider) {
+  configureRoutes.$inject = ['$routeProvider'];
+  function configureRoutes($routeProvider) {
 
     $routeProvider
       .when(
@@ -26,6 +17,6 @@ function(module) {
 
       .otherwise({redirectTo:'/404'});
 
-  }]);
+  }
 
 });

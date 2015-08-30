@@ -1,12 +1,10 @@
-define(
-// require.js dependency injection
-[
-  './app/main/tests/unit/require.load',
-  './app/home/tests/unit/require.load',
-  './app/about/tests/unit/require.load',
-  './app/dep1/tests/unit/require.load',
-  './app/github/tests/unit/require.load'
-],
+define(function(require) {
+  'use strict';
 
-// require.js module scope
-function() {});
+  require('./app/main/tests/unit/package');
+  require('./app/home/tests/unit/package');
+  require('./app/about/tests/unit/package');
+  require('./app/dep1/tests/unit/package');
+  require('./app/github/tests/unit/package');
+
+});

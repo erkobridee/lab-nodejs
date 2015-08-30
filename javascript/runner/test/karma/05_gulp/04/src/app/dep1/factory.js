@@ -1,22 +1,11 @@
-define(
-// require.js dependency injection
-[
-  './module'
-],
-
-// require.js module scope
-function(module) {
+define(function(require) {
   'use strict';
 
-  module.factory(
+  var module = require('./module');
+  module.factory('Dep1Factory', Factory);
 
-    // factory name
-    'Dep1Factory',
-
-    // dependencies injection
-    [ //,
-
-  function() {
+  Factory.$inject = [];
+  function Factory() {
 
     // private
     function checkMsg(msg) {
@@ -30,6 +19,6 @@ function(module) {
       }
     };
 
-  }]);
+  }
 
 });

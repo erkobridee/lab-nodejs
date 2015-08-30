@@ -1,26 +1,14 @@
-define(
-// require.js dependency injection
-[
-  './module'
-],
-
-// require.js module scope
-function(module) {
+define(function(require) {
   'use strict';
 
-  module.controller(
+  var module = require('./module');
+  module.controller('HomeCtrl', Controller);
 
-    // controller name
-    'HomeCtrl',
-
-    // dependencies injection
-    ['$scope',
-
-  // controller definition
-  function($scope) {
+  Controller.$inject = ['$scope'];
+  function Controller($scope) {
 
     $scope.pageName = 'Home Page';
 
-  }]);
+  }
 
 });

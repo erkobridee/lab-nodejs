@@ -1,35 +1,18 @@
-define(
-// require.js dependency injection
-[
-  'angular',
-  'angularRoute',
-  'angularResource',
-
-  'app/home/require.load',
-  'app/about/require.load',
-  'app/dep1/require.load',
-  'app/github/require.load'
-],
-
-// require.js module scope
-function(ng) {
+define(function(require) {
   'use strict';
 
-  // module definition
-  return ng.module(
-    // module name
-    'main',
+  var angular = require('angular');
+  require('angularRoute');
+  require('angularResource');
 
-    // module dependencies
-    [
-      'ngRoute',
-      'ngResource',
+  return angular.module('main', [
+    'ngRoute',
+    'ngResource',
 
-      'home',
-      'about',
-      'dep1',
-      'github'
-    ]
-  );
+    require('app/home/package').name,
+    require('app/about/package').name,
+    require('app/dep1/package').name,
+    require('app/github/package').name
+  ]);
 
 });

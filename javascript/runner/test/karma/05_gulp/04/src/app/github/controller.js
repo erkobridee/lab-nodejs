@@ -1,23 +1,11 @@
-define(
-// require.js dependency injection
-[
-  './module'
-],
-
-// require.js module scope
-function(module) {
+define(function(require) {
   'use strict';
 
-  module.controller(
-    // controller name
-    'GitHubCtrl',
+  var module = require('./module');
+  module.controller('GitHubCtrl', Controller);
 
-    // dependencies injection
-    [
-      '$scope', 'GitHubUsersResource',
-
-  // controller definition
-  function (scope, resource) {
+  Controller.$inject = ['$scope', 'GitHubUsersResource'];
+  function Controller(scope, resource) {
 
     scope.user = null;
     scope.notFound = null;
@@ -43,6 +31,6 @@ function(module) {
       );
     };
 
-  }]);
+  }
 
 });

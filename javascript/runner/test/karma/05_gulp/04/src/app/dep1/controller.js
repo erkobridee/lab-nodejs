@@ -1,22 +1,11 @@
-define(
-// require.js dependency injection
-[
-  './module'
-],
-
-// require.js module scope
-function(module) {
+define(function(require) {
   'use strict';
 
-  module.controller(
+  var module = require('./module');
+  module.controller('Dep1Ctrl', Controller);
 
-    // controller name
-    'Dep1Ctrl',
-
-    // dependencies injection
-    ['$scope', 'Dep1Factory', 'Dep1Service',
-
-  function($scope, depFactory, depService) {
+  Controller.$inject = ['$scope', 'Dep1Factory', 'Dep1Service'];
+  function Controller($scope, depFactory, depService) {
 
     $scope.value = 'Application Dependency Module Value';
 
@@ -35,6 +24,6 @@ function(module) {
       return depService.questionText(msg);
     };
 
-  }]);
+  }
 
 });

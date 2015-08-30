@@ -1,11 +1,4 @@
-define(
-// require.js dependency injection
-[
-  './module'
-],
-
-// require.js module scope
-function(module) {
+define(function(require) {
   'use strict';
 
   var service = (function () {
@@ -27,17 +20,10 @@ function(module) {
     return ClassDef;
 
   })();
+  service.$inject = [];
 
-  module.service(
 
-    // service name
-    'Dep1Service',
-
-    // dependencies injection
-    [ //'$http', //,
-
-    service // when service called will return new instance
-
-  ]);
+  var module = require('./module');
+  module.service('Dep1Service', service);
 
 });

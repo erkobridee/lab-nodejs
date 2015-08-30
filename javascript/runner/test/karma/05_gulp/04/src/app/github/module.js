@@ -1,25 +1,13 @@
-define(
-// require.js dependency injection
-[
-  'angular',
-  'angularRoute',
-  'angularResource'
-],
-
-// require.js module scope
-function(ng) {
+define(function(require) {
   'use strict';
 
-  // module definition
-  return ng.module(
-    // module name
-    'github',
+  var angular = require('angular');
+  require('angularRoute');
+  require('angularResource');
 
-    // module dependencies
-    [
-      'ngRoute',
-      'ngResource'
-    ]
-  );
+  return angular.module('github', [
+    'ngRoute',
+    'ngResource'
+  ]);
 
 });

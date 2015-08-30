@@ -1,29 +1,21 @@
-define(
-// require.js dependency injection
-[
-  './module'
-],
-
-// require.js module scope
-function(module) {
+define(function(require) {
   'use strict';
 
-  module.config(
+  var module = require('./module');
+  module.config(configureRoutes);
 
-    // dependencies injection
-    ['$routeProvider',
+  configureRoutes.$inject = ['$routeProvider'];
+  function configureRoutes($routeProvider) {
 
-  function($routeProvider) {
+    $routeProvider
+      .when(
+        '/',
+        {
+          controller: 'HomeCtrl',
+          templateUrl:'app/home/template.html'
+        }
+      );
 
-      $routeProvider
-        .when(
-          '/',
-          {
-            controller: 'HomeCtrl',
-            templateUrl:'app/home/template.html'
-          }
-        );
-
-  }]);
+  }
 
 });

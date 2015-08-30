@@ -1,28 +1,16 @@
-define(
-// require.js dependency injection
-[
-  './module'
-],
-
-// require.js module scope
-function(module) {
+define(function(require) {
   'use strict';
 
-  module.factory(
-    // resource name
-    'GitHubUsersResource',
+  var module = require('./module');
+  module.factory('GitHubUsersResource', Factory);
 
-    // dependencies injection
-    [
-      '$resource',
-
-  // resource definition
-  function ($resource) {
+  Factory.$inject = ['$resource'];
+  function Factory($resource) {
 
     return $resource(
       'https://api.github.com/users/:login'
     );
 
-  }]);
+  }
 
 });

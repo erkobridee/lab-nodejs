@@ -1,20 +1,14 @@
-define(
-// require.js dependency injection
-[
-  'angular',
-
-  './app/main/require.load'
-],
-
-// require.js module scope
-function(ng) {
+define(function(require) {
   'use strict';
 
+  var angular = require('angular'),
+      mainModule = require('./app/main/package');
+
+  function bootstrap() {
+    angular.bootstrap(document, [mainModule.name]);
+  }
+
   // start angular app
-  ng.element(document).ready(function() {
-
-    ng.bootstrap(document, ['main']);
-
-  });
+  angular.element(document).ready(bootstrap);
 
 });
