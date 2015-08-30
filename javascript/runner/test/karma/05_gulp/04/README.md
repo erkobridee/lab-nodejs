@@ -2,8 +2,6 @@
 
 > Karma Runner and require.js + angular.js modular application with Gulp.js. Code and test specs together in same directory module. Vendors Libs, Application Source and Tests specs loaded by require.js on Karma Runner test page.
 
-> **TODO:** define gulp tasks and workflows
-
 
 ## Prerequisites
 
@@ -21,8 +19,6 @@
 ## Commands on Mac
 
 ### Create commands list
-
-> **TODO:** review
 
 ```bash
 $ mkdir 04
@@ -72,9 +68,6 @@ $ npm start
 
 ### Gulp
 
-> **TODO:** review commands links and descriptions
-
-
 * development mode
 
 > Project only
@@ -114,8 +107,6 @@ $ gulp ci
 
 ## Links
 
-> **TODO:** review links
-
 * [[GitHub] lodash / lodash](https://github.com/lodash/lodash) - A JavaScript utility library delivering consistency, modularity, performance, & extras.
 
 * [[GitHub] BrowserSync / browser-sync](https://github.com/BrowserSync/browser-sync) - Keep multiple browsers & devices in sync when building websites
@@ -149,12 +140,6 @@ $ gulp ci
 * [Karma Runner](https://karma-runner.github.io/)
 
   * [[GitHub] karma-runner / karma](https://github.com/karma-runner/karma) - Spectacular Test Runner for JavaScript
-
-
-
-  * [[GitHub] callmehiphop / karma-background](https://github.com/callmehiphop/karma-background) - Easily run Karma as a background process [ problem with karma 0.13+ ]
-
-
 
   * [[GitHub] karma-runner / karma-chrome-launcher](https://github.com/karma-runner/karma-chrome-launcher) - A Karma plugin. Launcher for Chrome and Chrome Canary.
 
