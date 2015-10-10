@@ -143,6 +143,10 @@ $ gulp protractor:multi-browser
 
 * [[GitHub] angular / protractor](https://github.com/angular/protractor) - E2E test framework for Angular apps
 
+--
+
+* [[GitHub] OverZealous / lazypipe](https://github.com/OverZealous/lazypipe) - Lazily create a pipeline out of reusable components. Useful for gulp.
+
 * [[GitHub] gulpjs / gulp](https://github.com/gulpjs/gulp) - The streaming build system
 
   * [[GitHub] spalger / gulp-jshint](https://github.com/spalger/gulp-jshint) - JSHint plugin for gulp
