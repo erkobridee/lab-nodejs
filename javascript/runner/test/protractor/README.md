@@ -53,7 +53,7 @@
 
 * [[GitHub] angular / protractor](https://github.com/angular/protractor) - E2E test framework for Angular apps
 
-* [angular,js protractor e2e cheatsheet | Health to the Web](http://webslainte.blogspot.com.br/2014/01/angular-js-protractor-e2e-cheatsheet.html) - 2014/01/15
+* [angular.js protractor e2e cheatsheet | Health to the Web](http://webslainte.blogspot.com.br/2014/01/angular-js-protractor-e2e-cheatsheet.html) - 2014/01/15
 
 * Slides
 
@@ -108,6 +108,10 @@
 * Gulp.js
 
   * [[GitHug] mllrsohn / gulp-protractor](https://github.com/mllrsohn/gulp-protractor) - gulp wrapper for protractor tests
+
+  * [[GitHub] mjhea0/angular-testing-tutorial](https://github.com/mjhea0/angular-testing-tutorial)
+
+    * Testing AngularJS with Protractor and Karma - [part 1](http://mherman.org/blog/2015/04/09/testing-angularjs-with-protractor-and-karma-part-1/) | [part 2](http://mherman.org/blog/2015/04/26/testing-angularjs-with-protractor-and-karma-part-2/) - Michael Herman
 
 --
 
