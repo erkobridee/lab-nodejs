@@ -16,6 +16,6 @@
 
   * [local angular application](grunt/02-local-angular-app)
 
-* Gulp
+* [Gulp](gulp)
 
-  * in progress...
+  * [remote angular application](gulp/01-remote-angular-app)
