@@ -1,4 +1,4 @@
-# Protractor / 02 / 01 remote angular app
+# Protractor / 02 / grunt / 01 remote angular app
 
 > Remote Angular.js application e2e tests running with Grunt.js
 >
@@ -68,7 +68,7 @@ $ npm run webdriver-manager-update
 $ npm run webdriver-manager-start
 ```
 
-* run basic e2e tests with protractor 
+* run basic e2e tests with protractor
 
 > will call `grunt protractor:basic`
 
@@ -112,7 +112,7 @@ $ grunt protractor:selenium_server_jar
 
   * task which use `config/basic.js`
 
-> Run e2e tests with default web browser: `Google Chrome` 
+> Run e2e tests with default web browser: `Google Chrome`
 
 ```bash
 $ grunt protractor:basic
@@ -160,4 +160,3 @@ $ grunt protractor:multiBrowser
   * [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint)
 
   * [grunt-protractor-runner](https://github.com/teerapap/grunt-protractor-runner)
-

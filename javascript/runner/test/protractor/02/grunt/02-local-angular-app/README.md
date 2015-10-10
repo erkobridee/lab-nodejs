@@ -1,4 +1,4 @@
-# Protractor / 02 / 02 local angular app
+# Protractor / 02 / grunt / 02 local angular app
 
 > Local Angular.js application e2e tests running with Grunt.js
 >
@@ -74,7 +74,7 @@ $ npm run webdriver-manager-update
 $ npm run webdriver-manager-start
 ```
 
-* run basic e2e tests with protractor 
+* run basic e2e tests with protractor
 
 > will call `grunt protractor:basic`
 
@@ -120,4 +120,3 @@ $ grunt e2e
   * [grunt-contrib-connect](https://github.com/gruntjs/grunt-contrib-connect)
 
   * [grunt-protractor-runner](https://github.com/teerapap/grunt-protractor-runner)
-
