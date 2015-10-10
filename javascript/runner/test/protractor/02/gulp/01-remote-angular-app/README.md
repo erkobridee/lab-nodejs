@@ -12,7 +12,7 @@
 
 * Must have [node.js (at least v0.10.x)](http://nodejs.org/) installed with npm (Node Package Manager)
 
-### Grunt CommandLine Interface
+### Gulp CommandLine Interface
 
 ```bash
 $ sudo npm install -g gulp
