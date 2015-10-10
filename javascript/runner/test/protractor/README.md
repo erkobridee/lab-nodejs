@@ -28,7 +28,7 @@
 
   * SOLUTION for Firefox 24, 31 and 32 [keep selenium server jar always up to date]
 
-    * update selenium server to v2.43.0 or above >> [CHANGELOG](https://selenium.googlecode.com/git/java/CHANGELOG) 
+    * update selenium server to v2.43.0 or above >> [CHANGELOG](https://selenium.googlecode.com/git/java/CHANGELOG)
 
 
 ## Links
@@ -89,7 +89,7 @@
 
   * [[StackOverflow] get text of element during angular $timeout in protractor](https://stackoverflow.com/questions/24041920/get-text-of-element-during-angular-timeout-in-protractor)
 
-  * [Protractor - issue 49 : comment about the problem](https://github.com/angular/protractor/issues/49#issuecomment-26443073) 
+  * [Protractor - issue 49 : comment about the problem](https://github.com/angular/protractor/issues/49#issuecomment-26443073)
 
 --
 
@@ -105,6 +105,10 @@
 
   * [AngularJS End to End Testing with Protractor - Easy Set up with Yeoman, Grunt, Bower | CodeOrbits](http://www.codeorbits.com/blog/2014/01/26/angularjs-end-to-end-testing-with-protractor-easy-set-up-with-yeoman/)
 
+* Gulp.js
+
+  * [[GitHug] mllrsohn / gulp-protractor](https://github.com/mllrsohn/gulp-protractor) - gulp wrapper for protractor tests
+
 --
 
 * [Protractor - Testing Angular and Non Angular Sites | ng-learn.org](http://ng-learn.org/2014/02/Protractor_Testing_With_Angular_And_Non_Angular_Sites/) - 2014/02/12
@@ -114,4 +118,3 @@
 --
 
 * [#610 - How to use browser.wait() to wait for URL to change? | angular / protractor - GitHub](https://github.com/angular/protractor/issues/610)
-
