@@ -19,3 +19,5 @@
 * [Gulp](gulp)
 
   * [remote angular application](gulp/01-remote-angular-app)
+
+  * [local angular application](gulp/02-local-angular-app)

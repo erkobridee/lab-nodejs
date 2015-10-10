@@ -1,0 +1,23 @@
+{
+  "name": "protractor-02-gulp-02-local-angular-app",
+  "version": "0.1.0",
+  "homepage": "https://github.com/erkobridee/lab-nodejs",
+  "authors": [
+    "Erko Bridee <erko.bridee@gmail.com>"
+  ],
+  "description": "selenium tests",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "gulp",
+    "tests",
+    "e2e",
+    "protractor"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "3.3.5",
+    "angular": "1.4.7"
+  }
+}
