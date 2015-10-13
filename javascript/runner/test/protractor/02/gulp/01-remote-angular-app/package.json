@@ -21,6 +21,7 @@
     "protractor": "^2.5.1"
   },
   "scripts": {
+    "outdated": "npm outdated --depth=0",
     "webdriver-manager-update": "./node_modules/.bin/webdriver-manager update",
     "webdriver-manager-start": "./node_modules/.bin/webdriver-manager start",
     "test": "gulp protractor:basic"
