@@ -1,8 +1,6 @@
 module.exports = function(grunt) {
   'use strict';
 
-  // TODO: review
-
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
