@@ -15,10 +15,10 @@ define(function(require) {
       'ngRoute',
       'ngResource',
 
-      require('app/home/require.load').name,
-      require('app/about/require.load').name,
-      require('app/dep1/require.load').name,
-      require('app/github/require.load').name
+      require('app/home/package').name,
+      require('app/about/package').name,
+      require('app/dep1/package').name,
+      require('app/github/package').name
     ]
   );
 

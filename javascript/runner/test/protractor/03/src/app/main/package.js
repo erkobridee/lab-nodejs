@@ -1,14 +1,3 @@
-define(
-// require.js dependency injection
-[
-  './module',
-  './controller',
-  './routes'
-],
-
-// require.js module scope
-function() {});
-
 define(function(require) {
   'use strict';
 
