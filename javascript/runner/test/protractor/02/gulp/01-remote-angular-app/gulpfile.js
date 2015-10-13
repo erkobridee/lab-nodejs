@@ -44,53 +44,23 @@ gulp.task('protractor:webdriver_update', webdriver_update);
 // seleniumServerJar in your protractor.conf.js
 gulp.task('protractor:webdriver_standalone', ['protractor:webdriver_update'], webdriver_standalone);
 
-// remember to run first in other console/terminal: gulp protractor:webdriver_standalone
-gulp.task('protractor:selenium-address', ['protractor:webdriver_update'], function(cb) {
-  return gulp.src(['tests/e2e/**/*.js']).pipe(protractor({
-    configFile: 'config/selenium-address.js',
-  })).on('error', function(e) {
-    console.log(e);
-  }).on('end', cb);
-});
+[
+  'selenium-address', // remember to run first in other console/terminal: gulp protractor:webdriver_standalone
+  'selenium-server-jar',
+  'basic',
+  'firefox',
+  'safari',
+  'multi-browser'
+].forEach(function(config){
 
-gulp.task('protractor:selenium-server-jar', ['protractor:webdriver_update'], function(cb) {
-  return gulp.src(['tests/e2e/**/*.js']).pipe(protractor({
-    configFile: 'config/selenium-server-jar.js',
-  })).on('error', function(e) {
-    console.log(e);
-  }).on('end', cb);
-});
+  gulp.task('protractor:'+config, ['protractor:webdriver_update'], function(cb) {
+    return gulp.src(['tests/e2e/**/*.js']).pipe(protractor({
+      configFile: 'config/'+config+'.js',
+    })).on('error', function(e) {
+      console.log(e);
+    }).on('end', cb);
+  });
 
-gulp.task('protractor:basic', ['protractor:webdriver_update'], function(cb) {
-  return gulp.src(['tests/e2e/**/*.js']).pipe(protractor({
-    configFile: 'config/basic.js',
-  })).on('error', function(e) {
-    console.log(e);
-  }).on('end', cb);
-});
-
-gulp.task('protractor:firefox', ['protractor:webdriver_update'], function(cb) {
-  return gulp.src(['tests/e2e/**/*.js']).pipe(protractor({
-    configFile: 'config/firefox.js',
-  })).on('error', function(e) {
-    console.log(e);
-  }).on('end', cb);
-});
-
-gulp.task('protractor:safari', ['protractor:webdriver_update'], function(cb) {
-  return gulp.src(['tests/e2e/**/*.js']).pipe(protractor({
-    configFile: 'config/safari.js',
-  })).on('error', function(e) {
-    console.log(e);
-  }).on('end', cb);
-});
-
-gulp.task('protractor:multi-browser', ['protractor:webdriver_update'], function(cb) {
-  return gulp.src(['tests/e2e/**/*.js']).pipe(protractor({
-    configFile: 'config/multi-browser.js',
-  })).on('error', function(e) {
-    console.log(e);
-  }).on('end', cb);
 });
 
 // @end: protractor
