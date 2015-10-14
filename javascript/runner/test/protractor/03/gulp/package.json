@@ -1,0 +1,35 @@
+{
+  "name": "protractor-03-gulp",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://github.com/erkobridee/lab-nodejs",
+  "author": "Erko Bridee",
+  "description": "selenium tests",
+  "keywords": [
+    "local",
+    "angularjs",
+    "angular",
+    "e2e",
+    "test",
+    "protractor",
+    "gulp"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "outdated": "npm outdated --depth=0",
+    "postinstall": "bower install",
+    "webdriver-manager-update": "./node_modules/.bin/webdriver-manager update",
+    "webdriver-manager-start": "./node_modules/.bin/webdriver-manager start",
+    "test": "gulp e2e"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.9.11",
+    "gulp": "^3.9.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-protractor": "^1.0.0",
+    "lazypipe": "^1.0.1",
+    "protractor": "^2.5.1",
+    "run-sequence": "^1.1.4"
+  }
+}
