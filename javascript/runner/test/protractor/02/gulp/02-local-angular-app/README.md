@@ -79,7 +79,7 @@ $ npm run webdriver-manager-start
 
 * run basic e2e tests with protractor
 
-> will call `grunt protractor:basic`
+> will call `gulp e2e`
 
 ```bash
 npm test
