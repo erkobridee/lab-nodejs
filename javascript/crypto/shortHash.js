@@ -4,7 +4,7 @@ var Hashids=function(){"use strict";function Hashids(salt,minHashLength,alphabet
 
 var salt = 'this is my salt';
 
-var hashids = new Hashids( salt );
+var hashids = new Hashids( salt, 8 ); // minimum lenght
 //==============================================================================
 
 function isString( value ) { return typeof value === 'string'; };
