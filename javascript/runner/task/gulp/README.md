@@ -4,6 +4,8 @@
 
   * [[GitHub] gulpjs / gulp](https://github.com/gulpjs/gulp) - the streaming build system
 
+* [How do I update to Gulp 4? | Liquid Light](https://www.liquidlight.co.uk/blog/article/how-do-i-update-to-gulp-4/) - 2016/03/22
+
 --
 
 * [[GitHub] osscafe / gulp-cheatsheet](https://github.com/osscafe/gulp-cheatsheet)
