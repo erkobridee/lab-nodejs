@@ -61,7 +61,7 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
   * [[GitHub] borisyankov / DefinitelyTyped](https://github.com/borisyankov/DefinitelyTyped) - The repository for high quality TypeScript type definitions.
 
   * [TSD](http://definitelytyped.org/tsd/) - TypeScript Definition manager for DefinitelyTyped
-  
+
     * [[GitHub] DefinitelyTyped / tsd](https://github.com/Definitelytyped/tsd) - TypeScript Definition manager for DefinitelyTyped
 
 --
@@ -73,6 +73,10 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
     * [PART I: Method decorators](http://blog.wolksoftware.com/decorators-reflection-javascript-typescript)
 
     * [PART II: Property decorators & Class decorators](http://blog.wolksoftware.com/decorators-metadata-reflection-in-typescript-from-novice-to-expert-part-ii)
+
+--
+
+* [[GitHub] DanWahlin / TypeScriptDemos](https://github.com/DanWahlin/TypeScriptDemos) - A set of TypeScript demos showing various features of the language
 
 
 ## Code Editor
@@ -86,7 +90,7 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
 * [TypeScript for Visual Studio 2012](http://go.microsoft.com/fwlink/?LinkID=266563)
 
 * [Visual Studio Code](https://code.visualstudio.com/) - Code focused development. Redefined. Build and debug modern web and cloud applications. Code is free and available on your favorite platform - Linux, Mac OSX, and Windows.
-  
+
   * [Visual Studio Code | Visual Studio](https://www.visualstudio.com/en-us/products/code-vs.aspx)
 
 ## pt_BR
@@ -94,4 +98,3 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
 * [Introdução ao TypeScript | JavascriptBrasil](http://javascriptbrasil.com/pre-processadores/introducao-ao-typescript)
 
 * [Typescript: uma análise inicial | Blog Lambda3](http://blog.lambda3.com.br/2012/10/typescript-uma-anlise-inicial/)
-
