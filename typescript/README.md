@@ -12,6 +12,8 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
 
   * [Roadmap](https://github.com/Microsoft/TypeScript/wiki/Roadmap)
 
+* [The Case for TypeScript | InfoQ](http://www.infoq.com/presentations/tpescript-language-tools) - 2016/04/17
+
 --
 
 * [TypeScript 1.5: Modules, Decorators, Sublime Text Plug-in and More | InfoQ](http://www.infoq.com/news/2015/04/typescript-1-5/)
