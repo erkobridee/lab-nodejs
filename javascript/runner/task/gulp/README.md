@@ -119,6 +119,8 @@
 
 * [[GitHub] cbarrick / gulp-run](https://github.com/cbarrick/gulp-run) - Pipe to shell commands in gulp
 
+* [[GitHub] floridoo / gulp-sourcemaps](https://github.com/floridoo/gulp-sourcemaps) - Source map support for Gulp.js
+
 
 ## Known Issues
 
