@@ -6,6 +6,8 @@
 
 * [How do I update to Gulp 4? | Liquid Light](https://www.liquidlight.co.uk/blog/article/how-do-i-update-to-gulp-4/) - 2016/03/22
 
+* [he Complete-Ish Guide to Upgrading to Gulp 4 | Joe Zim's JavaScript Blog](https://www.joezimjs.com/javascript/complete-guide-upgrading-gulp-4/) - 2015/05/25
+
 --
 
 * [[GitHub] osscafe / gulp-cheatsheet](https://github.com/osscafe/gulp-cheatsheet)
