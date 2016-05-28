@@ -20,4 +20,3 @@ let colorPoint = new ColorPoint(2, 2, 'blue');
 console.log( 'colorPoint : ', colorPoint.toString() );
 console.log( 'colorPoint instanceof ColorPoint: ', colorPoint instanceof ColorPoint );
 console.log( 'colorPoint instanceof Point: ', colorPoint instanceof Point );
-
