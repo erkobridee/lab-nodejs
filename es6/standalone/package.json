@@ -1,0 +1,19 @@
+{
+  "name": "es6-standalone",
+  "version": "1.0.0",
+  "description": "standalone babel es6 tests",
+  "scripts": {
+    "outdated": "npm outdated --depth=0",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "es6",
+    "babel",
+    "standalone"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.9.0"
+  }
+}
