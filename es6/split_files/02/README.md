@@ -49,7 +49,7 @@ npm run app
 
 * clean up
 
-> cmd: `rm -rf dist`  [*nix only]
+> cmd: `rm -rf dist`  [nix only]
 
 ```bash
 npm run clean
@@ -87,7 +87,7 @@ npm install \
 
 * compile
 
-> generate bundle file on `dist` dir, using browserify, transforming es6 code with babelify 
+> generate bundle file on `dist` dir, using browserify, transforming es6 code with babelify
 
 ```bash
 gulp compile
@@ -121,6 +121,10 @@ gulp
 * [Architecture of ECMAScript 6 Modules | Pony Foo](http://ponyfoo.com/articles/architecture-of-ecmascript-6-modules)
 
 * [ECMAScript 6 modules: the final syntax | 2ality](http://www.2ality.com/2014/09/es6-modules-final.html)
+
+--
+
+* [Using ES6 with gulp — Mark Goodyear](https://markgoodyear.com/2015/06/using-es6-with-gulp/) -  2015/06/24
 
 --
 
