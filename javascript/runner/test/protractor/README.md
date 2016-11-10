@@ -14,6 +14,14 @@
 
 ## Known Issues
 
+* Google Chrome
+
+  * Protractor 2.5.1 issue to run e2e tests on Google Chrome v54+
+
+    * [Chrome driver stopped working for Chrome browser version 54 with the latest Chrome driver 2.24 | StackOverflow](https://stackoverflow.com/questions/40240299/chrome-driver-stopped-working-for-chrome-browser-version-54-with-the-latest-chro)
+
+    * Manually [download](https://sites.google.com/a/chromium.org/chromedriver/downloads) the last chrome driver and replace if on `./node_modules/protractor/selenium` directory
+
 * Firefox
 
   * [Firefox 32.0 does not work with Selenium | Mozilla Support](https://support.mozilla.org/en-US/questions/1018296) - 2014/09/03
