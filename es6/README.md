@@ -1,4 +1,8 @@
-# ECMAScript 6
+# Javascript ECMAScript 6 and beyond
+
+> ES6 was later renamed to ES2015 and starting on this version they plan a ES version released on each year
+
+* About ECMAScript versions [wikipedia link](https://en.wikipedia.org/wiki/ECMAScript)
 
 > Next JavaScript syntax
 
