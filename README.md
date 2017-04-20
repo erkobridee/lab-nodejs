@@ -100,19 +100,15 @@ Node.js test code lab
 
 ### Use Cases
 
-* [Node GH](http://nodegh.io/) = NodeJS + GitHub - GitHub command line tools
+* [[GitHub] node-gh / gh](https://github.com/node-gh/gh) - GitHub command line tools made with NodeJS
 
-* [Noduino](http://semu.github.io/noduino/) – Control Arduino with Node.js, WebSockets and HTML5
+* [[GitHub] sbstjn / noduino](https://github.com/sbstjn/noduino) - JavaScript and Node.js Framework for controlling Arduino with HTML and WebSockets
 
 * [GitMoon](http://www.gitmoon.com/) Social analytics for Node.js developers | [GitHub : code](https://github.com/yaronn/gitmoon)
 
-* [GitHub : Status Dashboard](https://github.com/obazoud/statusdashboard) Status Dashboard is status page for your configured services or applications.
+* [[GitHub] statusdashboard / statusdashboard](https://github.com/statusdashboard/statusdashboard) - A service status dashboard powered by Node.js
 
 * [Building CSSDB: a short case-study on the build of a small Node.js/MongoDB application](http://rowanmanning.com/posts/building-cssdb/)
-
-* [How We Built eBay’s First Node.js Application](http://www.ebaytechblog.com/2013/05/17/how-we-built-ebays-first-node-js-application/)
-
-* [Can You Count on Node? - Blog - Joyent](http://joyent.com/blog/can-you-count-on-node)
 
 
 ### Amazon AWS
@@ -130,14 +126,12 @@ Node.js test code lab
 
 ### Windows Azure
 
-* [[Blog] Node on Azure](http://nodeblog.azurewebsites.net/)
+* [Node.js Developer Center | Microsoft Azure](https://azure.microsoft.com/en-us/develop/nodejs/)
 
 
 #### pt_BR
 
 * [Node.js | Underground WebDev](http://udgwebdev.com/nodejs/)
-
-* [Node.js para leigos (Versão completa) | Underground WebDev](http://www.udgwebdev.com/nodejs-para-leigos/)
 
 * [Quer aprender Node.js? (Atualizado) | Underground WebDev](http://udgwebdev.com/quer-aprender-node-js-atualizado/)
 
