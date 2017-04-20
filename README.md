@@ -104,7 +104,7 @@ Node.js test code lab
 
 * [[GitHub] sbstjn / noduino](https://github.com/sbstjn/noduino) - JavaScript and Node.js Framework for controlling Arduino with HTML and WebSockets
 
-* [GitMoon](http://www.gitmoon.com/) Social analytics for Node.js developers | [GitHub : code](https://github.com/yaronn/gitmoon)
+* [[GitHub] yaronn / gitmoon](https://github.com/yaronn/gitmoon) - Social analytics for node.js open source developers
 
 * [[GitHub] statusdashboard / statusdashboard](https://github.com/statusdashboard/statusdashboard) - A service status dashboard powered by Node.js
 
