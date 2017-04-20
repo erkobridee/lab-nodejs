@@ -5,7 +5,7 @@ Node.js test code lab
 
 ## Links
 
-* [Node.js](http://nodejs.org/) 
+* [Node.js](http://nodejs.org/)
 
 * [Node.js API DOCS](http://nodejs.org/api/)
 
@@ -68,7 +68,7 @@ Node.js test code lab
 * Cron
 
 	* [[GitHub] Cron for NodeJS](https://github.com/ncb000gt/node-cron)
-	
+
 	* [[GitHub] shell-jobs: Cron replacement in NodeJS, made for humans](https://github.com/azer/shell-jobs)
 
 * [[GitHub] node-windows](https://github.com/coreybutler/node-windows) - Windows support for Node.JS scripts (daemons, eventlog, UAC, etc)
@@ -121,7 +121,7 @@ Node.js test code lab
 
 * [Amazon Web Services Blog: AWS Elastic Beanstalk for Node.js](http://aws.typepad.com/aws/2013/03/aws-elastic-beanstalk-for-nodejs.html)
 
-* [Node.js powered by BitNami](https://aws.amazon.com/marketplace/pp/B008ASK0ZE) 
+* [Node.js powered by BitNami](https://aws.amazon.com/marketplace/pp/B008ASK0ZE)
 
   * [BitNami Node.js](http://bitnami.com/stack/nodejs)
 
@@ -152,12 +152,3 @@ Node.js test code lab
 * [Node.js com Express.js nos negócios | iMasters](http://imasters.com.br/front-end/javascript/node-js-com-express-js-nos-negocios/)
 
 * [Player.io](http://openblog.github.com/2013/03/15/player.io/) - Um media player que roda no navegador, feito com Node.JS, Socket.IO e é controlado pelo seu smartphone
-
-
-## Geekli.st
-
-Come join me at [Geekli.st](https://geekli.st/erkobridee/invite/196DA487FB) and share your geek achievements !
-
-> Geeklist is a vibrant platform for geeks to discover, connect and share the great work they have done and who they did it with.
-
-Build with Node.js, check more info at [geekli.st about page](https://geekli.st/about).
