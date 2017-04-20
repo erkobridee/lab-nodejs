@@ -1,0 +1,19 @@
+{
+  "name": "hello",
+  "version": "1.0.0",
+  "description": "first webpack 2 test",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "npm run build && node dist/bundle.js"
+  },
+  "keywords": [
+    "webpack2",
+    "hello"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^2.4.1"
+  }
+}
