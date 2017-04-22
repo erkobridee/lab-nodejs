@@ -1,0 +1,27 @@
+{
+  "name": "es6_hello_webpack2",
+  "version": "1.0.0",
+  "description": "es6+ hello webpack 2",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && webpack && echo \"\n\"",
+    "exec": "node dist/bundle.js",
+    "start": "npm run build && npm run exec"
+  },
+  "keywords": [
+    "es6",
+    "hello",
+    "webpack2",
+    "test"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.4.0",
+    "rimraf": "^2.6.1",
+    "webpack": "^2.4.1"
+  }
+}
