@@ -6,7 +6,7 @@
 
 * Must have [Git](http://git-scm.com/) installed
 
-* Must have [node.js (at least v6+)](http://nodejs.org/) installed with npm (Node Package Manager)
+* Must have [node.js (at least LTS)](http://nodejs.org/) installed with npm (Node Package Manager)
 
 
 ## Commands on Mac
