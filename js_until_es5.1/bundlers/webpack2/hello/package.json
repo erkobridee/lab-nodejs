@@ -4,7 +4,8 @@
   "description": "first webpack 2 test",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "clean": "rimraf dist",
+    "build": "npm run clean && webpack && echo \"\n\"",
     "start": "npm run build && node dist/bundle.js"
   },
   "keywords": [
@@ -14,6 +15,7 @@
   "author": "Erko Bridee",
   "license": "MIT",
   "devDependencies": {
+    "rimraf": "^2.6.1",
     "webpack": "^2.4.1"
   }
 }
