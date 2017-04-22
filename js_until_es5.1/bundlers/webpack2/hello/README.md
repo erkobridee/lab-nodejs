@@ -27,6 +27,7 @@ touch webpack.config.js
 // commands to create src/
 
 npm install \
+  rimraf \
   webpack \
   --save-dev
 
