@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && webpack && echo \"\n\"",
-    "start": "npm run build && node dist/bundle.js"
+    "exec": "node dist/bundle.js",
+    "start": "npm run build && npm run exec"
   },
   "keywords": [
     "webpack2",

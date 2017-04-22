@@ -46,6 +46,12 @@ npm install
 npm run build
 ```
 
+* execute
+
+```bash
+npm run exec
+```
+
 * build and execute
 
 ```bash
