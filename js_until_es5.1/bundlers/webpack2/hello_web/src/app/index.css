@@ -1,0 +1,19 @@
+.show-time {
+  border: 1px solid blue;
+  padding: 5px;
+}
+
+.sum-result {
+  border: 1px solid green;
+  padding: 5px;
+}
+
+.assets-image-area {
+  border: 1px solid red;
+  padding: 5px;
+}
+
+.lazy-image-area {
+  border: 1px solid red;
+  padding: 5px;
+}

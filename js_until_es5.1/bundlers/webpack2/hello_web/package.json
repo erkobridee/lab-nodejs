@@ -1,0 +1,35 @@
+{
+  "name": "hello_web",
+  "version": "1.0.0",
+  "description": "first webpack 2 web project",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build:prod": "NODE_ENV=production npm run clean && webpack -p",
+    "build": "npm run clean && webpack",
+    "start": "webpack-dev-server"
+  },
+  "keywords": [
+    "webpack2",
+    "web",
+    "hello",
+    "test"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "html-webpack-plugin": "^2.28.0",
+    "image-webpack-loader": "^2.0.0",
+    "rimraf": "^2.6.1",
+    "style-loader": "^0.16.1",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.4"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "moment": "^2.18.1"
+  }
+}
