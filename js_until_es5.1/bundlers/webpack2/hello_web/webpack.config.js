@@ -49,6 +49,7 @@ module.exports = {
           {
             loader : 'url-loader',
             options : {
+              // Convert images < 40k to base64 strings
               limit : 40000,
               // define images output directory and the name pattern
               name : 'assets/[hash].[ext]'
