@@ -58,3 +58,9 @@ npm run exec
 ```bash
 npm start
 ```
+
+# links
+
+* [[GitHub] webpack / webpack](https://github.com/webpack/webpack)
+
+* [[GitHub] isaacs / rimraf](https://github.com/isaacs/rimraf)
