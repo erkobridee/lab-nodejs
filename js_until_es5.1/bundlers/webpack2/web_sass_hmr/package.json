@@ -1,0 +1,17 @@
+{
+  "name": "web_sass_hmr",
+  "version": "1.0.0",
+  "description": "webpack 2 web project with sass and hot module replacement (hmr)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack2",
+    "web",
+    "sass",
+    "hmr"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT"
+}
