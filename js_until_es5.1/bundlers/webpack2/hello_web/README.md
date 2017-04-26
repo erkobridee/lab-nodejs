@@ -73,6 +73,8 @@ npm start
 
 ## Links
 
+* [lorempixel](http://lorempixel.com/) - placeholder images service
+
 * [Webpack.js](https://webpack.js.org/)
 
 * [[GitHub] webpack / docs - webpack dev server](https://github.com/webpack/docs/wiki/webpack-dev-server)
