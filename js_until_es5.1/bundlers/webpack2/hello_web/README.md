@@ -75,6 +75,8 @@ npm start
 
 * [Webpack.js](https://webpack.js.org/)
 
+* [[GitHub] webpack / docs - webpack dev server](https://github.com/webpack/docs/wiki/webpack-dev-server)
+
 * [[GitHub] webpack-contrib/file-loader :: Output files to a different dir #32](https://github.com/webpack-contrib/file-loader/issues/32)
 
 ### dependencies
