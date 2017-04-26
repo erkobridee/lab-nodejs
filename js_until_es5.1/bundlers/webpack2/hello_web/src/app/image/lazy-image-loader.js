@@ -1,9 +1,9 @@
-var imageLoaderHelper = require('./image-loader-helper');
+// load styles
+require('./lazy-image-loader.css');
 
 //---
 
-// load styles
-require('./lazy-image-loader.css');
+var imageLoaderHelper = require('./image-loader-helper');
 
 //---
 
