@@ -1,5 +1,5 @@
 var imageLoaderHelper = require('./image-loader-helper');
-var assets = require('./assets');
+var assetsURL = require('./assets');
 
 //---
 
@@ -7,8 +7,8 @@ function renderUI(){
   console.log('image assets-loader');
 
   var selector = '.assets-image-area';
-  imageLoaderHelper(selector, assets.small);
-  imageLoaderHelper(selector, assets.big);
+  imageLoaderHelper(selector, assetsURL.small);
+  imageLoaderHelper(selector, assetsURL.big);
 }
 
 module.exports.render = renderUI;
