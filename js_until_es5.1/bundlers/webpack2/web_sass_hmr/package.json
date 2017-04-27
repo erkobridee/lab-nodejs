@@ -4,7 +4,12 @@
   "description": "webpack 2 web project with sass and hot module replacement (hmr)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf dist",
+    "build:prod": "NODE_ENV=production npm run clean && webpack -p --config config/webpack.prod.js",
+    "build": "npm run clean && webpack --config config/webpack.dev.js",
+    "server": "webpack-dev-server --config config/webpack.dev.js --progress",
+    "server:hmr": "npm run server -- --inline --hot",
+    "start": "npm run server:hmr"
   },
   "keywords": [
     "webpack2",
@@ -13,5 +18,23 @@
     "hmr"
   ],
   "author": "Erko Bridee",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "html-webpack-plugin": "^2.28.0",
+    "image-webpack-loader": "^2.0.0",
+    "node-sass": "^4.5.2",
+    "rimraf": "^2.6.1",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.5",
+    "webpack-merge": "^4.1.0"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "moment": "^2.18.1"
+  }
 }

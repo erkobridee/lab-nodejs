@@ -38,6 +38,7 @@ npm install \
   image-webpack-loader@2.0.0 \
   html-webpack-plugin \
   extract-text-webpack-plugin \
+  webpack-merge \
   --save-dev
 
 npm install \
@@ -64,7 +65,19 @@ npm run build
 * production build
 
 ```bash
-npm run build:build
+npm run build:prod
+```
+
+* webpack server
+
+```bash
+npm run server
+```
+
+* webpack server with hmr (hot module replace)
+
+```bash
+npm run server:hmr
 ```
 
 * development
@@ -72,6 +85,9 @@ npm run build:build
 ```bash
 npm start
 ```
+
+> call `npm run server:hmr`
+
 
 ## Links
 
@@ -81,13 +97,15 @@ npm start
 
   * [Hot Module Replacement](https://webpack.js.org/guides/hmr-react/)
 
+  * [DevServer](https://webpack.js.org/configuration/dev-server/)
+
 * [[GitHub] webpack / docs - webpack dev server](https://github.com/webpack/docs/wiki/webpack-dev-server)
 
 * [[GitHub] webpack-contrib/file-loader :: Output files to a different dir #32](https://github.com/webpack-contrib/file-loader/issues/32)
 
 --
 
-* [A Beginner'&#039;'s Guide to Webpack 2 and Module Bundling | SitePoint](https://www.sitepoint.com/beginners-guide-to-webpack-2-and-module-bundling/) - (2017/01/30) In this beginner-friendly webpack 2 tutorial, Mark Brown demonstrates how to set up and configure webpack to transform and bundle all your front-end assets.
+* [A Beginner's Guide to Webpack 2 and Module Bundling | SitePoint](https://www.sitepoint.com/beginners-guide-to-webpack-2-and-module-bundling/) - (2017/01/30) In this beginner-friendly webpack 2 tutorial, Mark Brown demonstrates how to set up and configure webpack to transform and bundle all your front-end assets.
 
 * [Webpack - The Hot Module Replacement | Medium by @rajaraodv](https://medium.com/@rajaraodv/webpack-hot-module-replacement-hmr-e756a726a07) - 2016/04/24
 
@@ -97,6 +115,7 @@ npm start
 * [[GitHub] jquery / jquery](https://github.com/jquery/jquery)
 
 * [[GitHub] moment / moment](https://github.com/moment/moment)
+
 
 ### dev dependencies
 
@@ -121,3 +140,5 @@ npm start
 * [[GitHub] jantimon / html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin) - Simplifies creation of HTML files to serve your webpack bundles
 
 * [[GitHub] webpack-contrib / extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin) - Extract text from bundle into a file.
+
+* [[GitHub] survivejs / webpack-merge](https://github.com/survivejs/webpack-merge) - Merge designed for Webpack
