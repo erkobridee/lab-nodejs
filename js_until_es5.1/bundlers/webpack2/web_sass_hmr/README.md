@@ -93,6 +93,8 @@ npm start
 
 * [lorempixel](http://lorempixel.com/) - placeholder images service
 
+* [Sass: Syntactically Awesome Style Sheets](http://sass-lang.com/)
+
 * [Webpack.js](https://webpack.js.org/)
 
   * [Hot Module Replacement](https://webpack.js.org/guides/hmr-react/)
