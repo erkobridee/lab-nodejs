@@ -45,8 +45,18 @@ module.exports = webpackMerge.strategy({
           fallback : 'style-loader', // inline output
           use : 'css-loader'
         })
-      }
+      },
       // @end: css
+
+      // @begin: sass
+      {
+        test : /\.(sass|scss)$/,
+        loader : ExtratTextPlugin.extract({
+          fallback : 'style-loader', // inline output
+          use : 'css-loader!sass-loader'
+        })
+      }
+      // @end: sass
     ]
   },
 

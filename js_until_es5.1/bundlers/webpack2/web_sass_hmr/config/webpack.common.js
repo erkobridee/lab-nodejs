@@ -43,8 +43,20 @@ module.exports = {
           'style-loader', // that keeps the css inside of app bundler js output
           'css-loader' // process css files
         ]
-      }
+      },
       // @end: css
+
+      // @begin: sass
+      {
+        test : /\.(sass|scss)$/,
+        // executes from the last to the first
+        use : [
+          'style-loader', // that keeps the css inside of app bundler js output
+          'css-loader', // process css files
+          'sass-loader' // process sass files
+        ]
+      }
+      // @end: sass
     ]
   },
 
