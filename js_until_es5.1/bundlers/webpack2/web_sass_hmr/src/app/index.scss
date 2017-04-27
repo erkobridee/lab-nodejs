@@ -1,0 +1,17 @@
+@mixin basic-config($color){
+  border: 1px solid $color;
+  padding: 5px;
+}
+
+.show-time {
+  @include basic-config(blue);
+}
+
+.sum-result {
+  @include basic-config(green);
+}
+
+.assets-image-area,
+.lazy-image-area {
+  @include basic-config(red);
+}

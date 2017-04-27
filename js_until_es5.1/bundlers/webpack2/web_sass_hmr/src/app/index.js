@@ -1,5 +1,5 @@
 // load styles
-require('./index.css');
+require('./index.scss');
 
 //---
 

@@ -1,5 +1,5 @@
 // load styles
-require('./lazy-image-loader.css');
+require('./lazy-image-loader.scss');
 
 //---
 
