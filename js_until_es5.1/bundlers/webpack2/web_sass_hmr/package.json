@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "build:prod": "NODE_ENV=production npm run clean && webpack -p --config config/webpack.prod.js",
-    "build": "npm run clean && webpack --config config/webpack.dev.js",
-    "server": "webpack-dev-server --config config/webpack.dev.js --progress",
+    "build:prod": "npm run clean && webpack -p --env prod --progress --profile --no-colors",
+    "build:dev": "npm run clean && webpack --env dev --progress --profile --colors",
+    "build": "npm run build:dev",
+    "server": "webpack-dev-server --env dev --progress",
     "server:hmr": "npm run server -- --inline --hot",
     "start": "npm run server:hmr"
   },
@@ -31,7 +32,8 @@
     "url-loader": "^0.5.8",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.5",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "yargs": "^7.1.0"
   },
   "dependencies": {
     "jquery": "^3.2.1",

@@ -27,6 +27,7 @@ touch webpack.config.js
 // commands to create src/
 
 npm install \
+  yargs \
   node-sass \
   rimraf \
   webpack \
@@ -59,7 +60,7 @@ npm install
 * development build
 
 ```bash
-npm run build
+npm run build:dev
 ```
 
 * production build
@@ -121,9 +122,11 @@ npm start
 
 ### dev dependencies
 
+* [[GitHub] yargs / yargs](https://github.com/yargs/yargs) - yargs the modern, pirate-themed successor to optimist.
+
 * [[GitHub] sass / node-sass](https://github.com/sass/node-sass) - Node.js bindings to libsass
 
-* [[GitHub] isaacs / rimraf](https://github.com/isaacs/rimraf)
+* [[GitHub] isaacs / rimraf](https://github.com/isaacs/rimraf) - A `rm -rf` util for nodejs
 
 * [[GitHub] webpack / webpack](https://github.com/webpack/webpack)
 

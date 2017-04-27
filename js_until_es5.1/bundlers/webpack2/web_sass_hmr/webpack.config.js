@@ -1,12 +1,10 @@
 // see webpack configs inside of config/ directory
-switch (process.env.NODE_ENV) {
-  case 'prod':
-  case 'production':
-    module.exports = require('./config/webpack.prod');
-    break;
-  case 'dev':
-  case 'development':
-  default:
-    module.exports = require('./config/webpack.dev');
-    break;
-}
+module.exports = function(env){
+  var config = {};
+  try {
+    config = require('./config/webpack.' + env );
+  } catch(e) {
+    // file not found
+  }
+  return config;
+};

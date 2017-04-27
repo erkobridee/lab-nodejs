@@ -1,8 +1,5 @@
 var path = require('path');
-
-//---
-
-var EVENT = process.env.npm_lifecycle_event || '';
+var args = require('yargs').argv;
 
 //---
 
@@ -36,6 +33,7 @@ function hasProcessFlag(flag) {
   return process.argv.join('').indexOf(flag) > -1;
 }
 
+var EVENT = process.env.npm_lifecycle_event || '';
 function hasNpmFlag(flag) {
   return EVENT.includes(flag);
 }
@@ -46,8 +44,25 @@ function isWebpackDevServer() {
 
 //---
 
+var env = (function getEnv(args){
+  var output = args.env;
+  if(output){
+    switch (output) {
+      case 'prod':
+      case 'production':
+        output = 'production';
+      case 'dev':
+      case 'development':
+      default:
+        output = 'development';
+        break;
+    }
+  }
+  return (output || process.env.ENV || process.env.NODE_ENV || 'development');
+})(args);
+
 var METADATA = {
-  ENV   : (process.env.ENV || process.env.NODE_ENV || 'development'),
+  ENV   : env,
   HOST  : (process.env.HOST || 'localhost'),
   PORT  : (process.env.PORT || 3000),
   HMR   : hasProcessFlag('hot')
