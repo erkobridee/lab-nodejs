@@ -39,3 +39,5 @@
   * [Gulp: Creating multiple bundles with Browserify | Stefan Baumgartner](https://fettblog.eu/gulp-browserify-multiple-bundles/) - 2015/03/25
 
   * [[GitHub] sogko / gulp-recipes / browserify-separating-app-and-vendor-bundles](https://github.com/sogko/gulp-recipes/tree/master/browserify-separating-app-and-vendor-bundles) - Using browserify to bundle separate app and vendor files
+
+* [[GitHub] gothinkster / angularjs-realworld-example-app](https://github.com/gothinkster/angularjs-realworld-example-app) - Exemplary real world application built with Angular 1.5 + ES6 (using browserify)
