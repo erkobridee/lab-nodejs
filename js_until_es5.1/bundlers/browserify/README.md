@@ -22,5 +22,20 @@
 
 * [[GitHub] substack / browserify-handbook](https://github.com/substack/browserify-handbook) - how to build modular applications with browserify
 
+--
+
+* [[GitHub] thlorenz / browserify-shim](https://github.com/thlorenz/browserify-shim) - Makes CommonJS incompatible files browserifyable.
+
+--
+
 * [Journey from RequireJS to Browserify | Esa-Matti Suuronen](http://esa-matti.suuronen.org/blog/2013/03/22/journey-from-requirejs-to-browserify/)
 
+* [Getting Started with Browserify | SitePoint](https://www.sitepoint.com/getting-started-browserify/) - (2014/06/10) This article introduces the Browserify tool. It also shows how Browserify can be integrated with Grunt and Gulp
+
+* output multiple bundles
+
+  * [Speedy Browserifying with Multiple Bundles | Lincoln Loop](https://lincolnloop.com/blog/speedy-browserifying-multiple-bundles/) - 2014/04/08
+
+  * [Gulp: Creating multiple bundles with Browserify | Stefan Baumgartner](https://fettblog.eu/gulp-browserify-multiple-bundles/) - 2015/03/25
+
+  * [[GitHub] sogko / gulp-recipes / browserify-separating-app-and-vendor-bundles](https://github.com/sogko/gulp-recipes/tree/master/browserify-separating-app-and-vendor-bundles) - Using browserify to bundle separate app and vendor files
