@@ -110,6 +110,8 @@ npm start
 
   * [DevServer](https://webpack.js.org/configuration/dev-server/)
 
+  * [Devtool](https://webpack.js.org/configuration/devtool/) - This option controls if and how Source Maps are generated.
+
 * [[GitHub] webpack / docs - webpack dev server](https://github.com/webpack/docs/wiki/webpack-dev-server)
 
 * [[GitHub] webpack-contrib/file-loader :: Output files to a different dir #32](https://github.com/webpack-contrib/file-loader/issues/32)
