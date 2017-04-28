@@ -66,6 +66,12 @@ npm start
 
 # links
 
+* [Babel](https://babeljs.io/) - is a JavaScript compiler. Use next generation JavaScript, today.
+
+* [Webpack.js](https://webpack.js.org/)
+
+### dev dependencies
+
 * [[GitHub] webpack / webpack](https://github.com/webpack/webpack)
 
 * [[GitHub] isaacs / rimraf](https://github.com/isaacs/rimraf)
