@@ -9,6 +9,8 @@ const helpers = require('./helpers');
 
 module.exports = webpackMerge(commonConfig, {
 
+  // https://webpack.js.org/configuration/devtool/
+  // on google chrome developer tools, see on source tab the item webpack://
   devtool : 'cheap-module-source-map',
 
   // https://webpack.js.org/configuration/dev-server/
