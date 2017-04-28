@@ -63,3 +63,17 @@ npm run exec
 ```bash
 npm start
 ```
+
+# links
+
+* [[GitHub] webpack / webpack](https://github.com/webpack/webpack)
+
+* [[GitHub] isaacs / rimraf](https://github.com/isaacs/rimraf)
+
+* [[GitHub] babel / babel](https://github.com/babel/babel) - Babel is a compiler for writing next generation JavaScript.
+
+  * [babel-code](https://github.com/babel/babel/tree/master/packages/babel-core)
+
+* [[GitHub] babel / babel-loader](https://github.com/babel/babel-loader) - Webpack plugin for Babel
+
+* [[GitHub] babel / babel-preset-env](https://github.com/babel/babel-preset-env)
