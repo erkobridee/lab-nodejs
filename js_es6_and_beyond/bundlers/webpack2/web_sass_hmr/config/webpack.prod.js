@@ -11,6 +11,7 @@ helpers.METADATA.HMR = false;
 
 //---
 
+// https://github.com/survivejs/webpack-merge#merging-with-strategies
 module.exports = webpackMerge.strategy({
   'module.rules' : 'replace'
 })(commonConfig, {
