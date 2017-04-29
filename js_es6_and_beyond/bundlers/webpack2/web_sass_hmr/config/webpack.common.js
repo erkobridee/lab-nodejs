@@ -8,7 +8,7 @@ const helpers = require('./helpers');
 //---
 
 const htmlPluginConfig = (function defineHtmlConfig(){
-  var config = {
+  let config = {
     // define our html template where the webpack will inject stuff
     template : 'src/index.html'
   };
