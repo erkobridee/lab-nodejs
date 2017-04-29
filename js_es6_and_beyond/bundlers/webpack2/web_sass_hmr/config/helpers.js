@@ -51,6 +51,7 @@ const env = (function getEnv(args){
       case 'prod':
       case 'production':
         output = 'production';
+        break;
       case 'dev':
       case 'development':
       default:
