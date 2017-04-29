@@ -7,6 +7,32 @@ const helpers = require('./helpers');
 
 //---
 
+const htmlPluginConfig = (function defineHtmlConfig(){
+  var config = {
+    // define our html template where the webpack will inject stuff
+    template : 'src/index.html'
+  };
+
+  if(helpers.METADATA.ENV === 'production'){
+    config.minify = { // the html content
+      removeComments: true,
+      collapseWhitespace: true,
+      removeRedundantAttributes: true,
+      useShortDoctype: true,
+      removeEmptyAttributes: true,
+      removeStyleLinkTypeAttributes: true,
+      keepClosingSlash: true,
+      minifyJS: true,
+      minifyCSS: true,
+      minifyURLs: true
+    };
+  }
+
+  return config;
+})();
+
+//---
+
 // webpack common config
 module.exports = {
   entry : {
@@ -75,22 +101,7 @@ module.exports = {
       names : ['vendors', 'manifest']
     }),
 
-    new HtmlWebpackPlugin({
-      // define our html template where the webpack will inject stuff
-      template : 'src/index.html',
-      minify: { // html content
-        removeComments: true,
-        collapseWhitespace: true,
-        removeRedundantAttributes: true,
-        useShortDoctype: true,
-        removeEmptyAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        keepClosingSlash: true,
-        minifyJS: true,
-        minifyCSS: true,
-        minifyURLs: true
-      }
-    }),
+    new HtmlWebpackPlugin(htmlPluginConfig),
 
     new webpack.DefinePlugin({
       'ENV' : JSON.stringify(helpers.METADATA.ENV),
