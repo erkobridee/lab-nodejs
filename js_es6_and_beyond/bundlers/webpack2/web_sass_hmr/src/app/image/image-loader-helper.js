@@ -1,7 +1,6 @@
 import $ from 'jquery';
 
-function loadImage(options){
-  let {selector, imageURL} = options;
+function loadImage({selector, imageURL}){
 
   if(!selector || !imageURL) {
     return;
@@ -11,8 +10,6 @@ function loadImage(options){
   image.src = imageURL;
   $(selector).append(image);
   image = null;
-  selector = null;
-  imageURL = null;
 }
 
 export default loadImage;
