@@ -49,6 +49,8 @@ gulp
 
 * [Sass: Syntactically Awesome Style Sheets](http://sass-lang.com/) - [guide](http://sass-lang.com/guide)
 
+* [[Udemy] Sass: From Beginner to Advanced](https://www.udemy.com/sass-from-beginner-to-advanced/)
+
 * [A Simple Gulp'y Workflow For Sass | SitePoint](https://www.sitepoint.com/simple-gulpy-workflow-sass/) - 2015/06/11
 
 ### dev dependencies
