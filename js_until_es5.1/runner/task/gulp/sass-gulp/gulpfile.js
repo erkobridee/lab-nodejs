@@ -5,7 +5,7 @@ var sourcemaps  = require('gulp-sourcemaps');
 
 var config = {
   src: './src',
-  dist: './css'
+  dist: './dist'
 };
 
 gulp.task('clean:css', del.bind(null, [ config.dist ]));
