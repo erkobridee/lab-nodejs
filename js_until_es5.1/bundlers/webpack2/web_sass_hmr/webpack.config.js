@@ -5,6 +5,7 @@ module.exports = function(env){
     config = require('./config/webpack.' + env );
   } catch(e) {
     // file not found
+    console.log('\nconfig file \'./config/webpack.' + env + '.js\' not founded\n\n');
   }
   return config;
 };
