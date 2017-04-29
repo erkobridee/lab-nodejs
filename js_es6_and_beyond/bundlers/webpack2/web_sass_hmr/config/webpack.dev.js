@@ -18,8 +18,8 @@ module.exports = webpackMerge(commonConfig, {
     port : helpers.METADATA.PORT,
     host : helpers.METADATA.HOST,
     open : true,
-    historyApiFallback : true,
-    hotOnly : true
+    historyApiFallback : true
+    // hotOnly : true // this config will do the reload only to known hot modules
   }
 
 });
