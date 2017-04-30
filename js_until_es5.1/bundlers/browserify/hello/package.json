@@ -1,0 +1,24 @@
+{
+  "name": "hello",
+  "version": "1.0.0",
+  "description": "first tests with browserify",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf dist_app.js",
+    "build": "browserify src/main.js > dist_app.js",
+    "exec": "node dist_app.js",
+    "start": "npm run clean && npm run build && npm run exec"
+  },
+  "keywords": [
+    "browserify",
+    "hello",
+    "test"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^14.3.0",
+    "rimraf": "^2.6.1"
+  }
+}
