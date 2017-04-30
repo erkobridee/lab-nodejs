@@ -29,6 +29,7 @@ npm install \
   gulp \
   gulp-sass \
   gulp-sourcemaps \
+  gulp-autoprefixer \
   --save-dev
 
 ```
@@ -40,6 +41,26 @@ npm install
 ```
 
 ### run command
+
+* cleanup `dist` folder
+
+```
+gulp clean
+```
+
+* build development
+
+```
+gulp build:dev
+```
+
+* build production
+
+```
+gulp build:prod
+```
+
+* development flow
 
 ```
 gulp
@@ -62,3 +83,5 @@ gulp
 * [[GitHub] dlmanning / gulp-sass](https://github.com/dlmanning/gulp-sass) - SASS plugin for gulp
 
 * [[GitHub] floridoo / gulp-sourcemaps](https://github.com/floridoo/gulp-sourcemaps) - Source map support for Gulp.js
+
+* [[GitHub] sindresorhus / gulp-autoprefixer](https://github.com/sindresorhus/gulp-autoprefixer) - prefix CSS
