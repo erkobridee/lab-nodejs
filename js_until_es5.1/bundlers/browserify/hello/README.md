@@ -7,30 +7,52 @@
 
 * Must have [Git](http://git-scm.com/) installed
 
-* Must have [node.js (at least v0.10)](http://nodejs.org/) installed with npm (Node Package Manager)
+* Must have [node.js (at least LTS)](http://nodejs.org/) installed with npm (Node Package Manager)
 
-* Must have [browserify](http://browserify.org/) node package installed globally.  `sudo npm install -g browserify`
 
+## Dependencies
+
+```
+npm install \
+  rimraf \
+  browserify \
+  --save-dev
+```
 
 ## commands
+
+* clean
+
+```bash
+npm run clean
+```
 
 * build
 
 ```bash
-browserify src/main.js -o dist_app.js
+npm run build
 ```
 
 * run
 
 ```bash
-node dist_app.js
+npm run exec
 ```
 
-* clean
-
-> *nix
+* clean > build > run
 
 ```bash
-rm dist_app.js
+npm start
 ```
 
+## links
+
+* [Browserify](http://browserify.org/)
+
+* [Getting Started with Browserify | Scotch](https://scotch.io/tutorials/getting-started-with-browserify) - 2016/04/06
+
+### dev dependencies
+
+* [[GitHub] isaacs / rimraf](https://github.com/isaacs/rimraf) - A `rm -rf` util for nodejs
+
+* [[GitHub] substack / node-browserify](https://github.com/substack/node-browserify) - browser-side require() the node.js way
