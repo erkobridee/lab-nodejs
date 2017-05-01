@@ -1,0 +1,33 @@
+{
+  "name": "sass-bootstrap3-gulp",
+  "version": "1.0.0",
+  "description": "sass bootstrap3 compilation tests with node-sass",
+  "main": "gulpfile.js",
+  "scripts": {
+    "preinstall": "bower install",
+    "clean": "gulp clean",
+    "start": "gulp"
+  },
+  "keywords": [
+    "sass",
+    "bootstrap3",
+    "gulp",
+    "node-sass",
+    "libsass"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-inject": "^4.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-rev": "^7.1.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^2.1.2",
+    "run-sequence": "^1.2.2"
+  }
+}
