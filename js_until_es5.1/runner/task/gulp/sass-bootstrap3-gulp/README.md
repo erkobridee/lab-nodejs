@@ -6,7 +6,7 @@
 
   * make sure, before import sass files into your sass, have the line `$bootstrap-sass-asset-helper: false !default;`
 
-  * in case you have used any [compass](http://compass-style.org/) mixin ([compass mixins list](http://compass-style.org/index/mixins/)), the [compass-mixins]() may help to compile your sass
+  * in case you have used any [compass](http://compass-style.org/) mixin ([compass mixins list](http://compass-style.org/index/mixins/)), the [compass-mixins](https://github.com/Igosuki/compass-mixins) may help to compile your sass
 
 ## Prerequisites
 
