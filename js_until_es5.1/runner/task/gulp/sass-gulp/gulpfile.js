@@ -23,7 +23,7 @@ gulp.task('clean', del.bind(null, [ config.paths.dist ]));
 
 //---
 
-gulp.task('sass:dev', ['clean:css'], function() {
+gulp.task('sass:dev', ['clean'], function() {
   return gulp.src(config.sass.files)
     .pipe(sass({
       errLogToConsole : true,
@@ -34,7 +34,7 @@ gulp.task('sass:dev', ['clean:css'], function() {
     .pipe(gulp.dest(config.paths.dist));
 });
 
-gulp.task('sass:prod', ['clean:css'], function() {
+gulp.task('sass:prod', ['clean'], function() {
   return gulp.src(config.sass.files)
     .pipe(sourcemaps.init())
     .pipe(sass({
