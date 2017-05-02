@@ -28,6 +28,7 @@ npm install \
   grunt \
   grunt-contrib-jshint \
   grunt-contrib-clean \
+  grunt-contrib-copy \
   grunt-sass \
   grunt-postcss \
   autoprefixer \
