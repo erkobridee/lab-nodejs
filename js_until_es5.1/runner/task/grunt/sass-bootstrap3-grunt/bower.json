@@ -1,0 +1,29 @@
+{
+  "name": "sass-bootstrap3-grunt",
+  "homepage": "https://github.com/erkobridee/lab-nodejs",
+  "authors": [
+    "Erko Bridee <erko.bridee@gmail.com>"
+  ],
+  "description": "sass bootstrap3 compilation tests with node-sass",
+  "keywords": [
+    "sass",
+    "bootstrap3",
+    "grunt",
+    "node-sass",
+    "libsass"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap-sass": "bootstrap-sass-official#^3.3.7",
+    "compass-mixins": "^1.0.2"
+  }
+}
