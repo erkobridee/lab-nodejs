@@ -1,10 +1,3 @@
 @import 'variables';
-
-body {
-  font: 100% $font-stack;
-  color: $primary-color;
-}
-
-:fullscreen a {
-  display: flex
-}
+@import 'body';
+@import 'link';
