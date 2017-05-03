@@ -13,6 +13,19 @@ module.exports = function(grunt){
       grunt : ['Gruntfile.js']
     },
 
+    lintspaces : {
+      options : {
+        editorconfig : '.editorconfig'
+      },
+      project : {
+        src : [
+          'package.json',
+          'Gruntfile.js',
+          'src/**/*'
+        ]
+      }
+    }, // @end: lintspaces
+
     clean : {
       build : ['.temp'],
       dist : ['dist']
@@ -25,7 +38,14 @@ module.exports = function(grunt){
         src : '**',
         dest : 'dist'
       }
-    },
+    }, // @end: copy
+
+    sasslint : {
+      options : {
+        configFile : '.sass-lint.yml'
+      },
+      target : ['src/**/*.scss']
+    }, // @end: sasslint
 
     sass : {
       options : {
@@ -48,7 +68,7 @@ module.exports = function(grunt){
           '.temp/app.css': 'src/app.scss'
         }
       }
-    },
+    }, // @end: sass
 
     postcss : {
       options : {
@@ -65,15 +85,45 @@ module.exports = function(grunt){
         },
         src : '.temp/app.css'
       }
-    }
+    } // @end: postcss
 
   };
   grunt.initConfig(gruntConfig);
 
   //---
+  // @begin: sasslint output report
 
-  grunt.registerTask('build:dev', ['clean', 'sass:dev', 'postcss:dev', 'copy:build2dist', 'clean:build']);
-  grunt.registerTask('build:prod', ['clean', 'sass:prod', 'postcss:prod', 'copy:build2dist', 'clean:build']);
+  grunt.registerTask('sasslint:report', function(){
+    grunt.config.set('sasslint.options', {
+      configFile : '.sass-lint.yml',
+      formatter : 'jslint-xml',
+      outputFile : 'dist/reports/lint_sass.xml'
+    });
+    grunt.task.run('sasslint');
+  });
+
+  // @end: sasslint output report
+  //---
+
+  grunt.registerTask('build:dev', [
+    'clean',
+    'sass:dev',
+    'lintspaces',
+    'sasslint',
+    'postcss:dev',
+    'copy:build2dist',
+    'clean:build'
+  ]);
+
+  grunt.registerTask('build:prod', [
+    'clean',
+    'lintspaces',
+    'sasslint:report',
+    'sass:prod',
+    'postcss:prod',
+    'copy:build2dist',
+    'clean:build'
+  ]);
 
   grunt.registerTask('default', ['jshint', 'build:prod']);
 
