@@ -49,7 +49,9 @@ npm install \
   grunt-contrib-copy \
   grunt-contrib-concat \
   grunt-contrib-uglify \
+  grunt-lintspaces \
   grunt-sass \
+  grunt-sass-lint \
   grunt-postcss \
   autoprefixer \
   grunt-injector \
@@ -126,7 +128,11 @@ grunt
 
 * [[GitHub] gruntjs / grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify) - Minify files with UglifyJS.
 
+* [[GitHub] schorfES / grunt-lintspaces](https://github.com/schorfES/grunt-lintspaces) - A Grunt task for checking spaces in files.
+
 * [[GitHub] sindresorhus / grunt-sass](https://github.com/sindresorhus/grunt-sass) - Compile Sass to CSS
+
+* [[GitHub] sasstools / grunt-sass-lint](https://github.com/sasstools/grunt-sass-lint) - Grunt plugin for Sass Lint
 
 * [[GitHub] nDmitry / grunt-postcss](https://github.com/nDmitry/grunt-postcss) - Apply several post-processors to your CSS using PostCSS.
 

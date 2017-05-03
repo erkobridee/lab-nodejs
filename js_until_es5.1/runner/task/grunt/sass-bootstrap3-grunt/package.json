@@ -26,8 +26,10 @@
     "grunt-contrib-uglify": "^2.3.0",
     "grunt-filerev": "^2.3.1",
     "grunt-injector": "^1.1.0",
+    "grunt-lintspaces": "^0.8.1",
     "grunt-postcss": "^0.8.0",
     "grunt-sass": "^2.0.0",
+    "grunt-sass-lint": "^0.2.2",
     "jit-grunt": "^0.10.0",
     "time-grunt": "^1.4.0"
   }

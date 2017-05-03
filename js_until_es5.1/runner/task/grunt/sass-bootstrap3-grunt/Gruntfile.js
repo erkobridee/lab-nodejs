@@ -2,7 +2,9 @@ module.exports = function(grunt){
   'use strict';
 
   require('time-grunt')(grunt);
-  require('jit-grunt')(grunt);
+  require('jit-grunt')(grunt, {
+    sasslint : 'grunt-sass-lint'
+  });
 
   //---
 
@@ -12,7 +14,8 @@ module.exports = function(grunt){
     bower : 'bower_components',
     src : 'src',
     build : '.temp',
-    dist : 'dist'
+    dist : 'dist',
+    reports : 'reports'
   };
 
   projectConfig.htmlIndexBuild = projectConfig.paths.build + '/index.html';
@@ -74,11 +77,25 @@ module.exports = function(grunt){
       project : '<%= config.paths.src %>/**/*.js'
     },
 
+    lintspaces : {
+      options : {
+        editorconfig : '.editorconfig'
+      },
+      project : {
+        src : [
+          'package.json',
+          'Gruntfile.js',
+          '<%= config.paths.src %>/**/*'
+        ]
+      }
+    }, // @end: lintspaces
+
     clean : {
       build : ['<%= config.paths.build %>'],
       jsbuild : ['<%= config.paths.build %>/js'],
       jsminbuild : ['<%= config.paths.build %>/js-min'],
-      dist : ['<%= config.paths.dist %>']
+      dist : ['<%= config.paths.dist %>'],
+      reports : ['<%= config.paths.reports %>']
     },
 
     copy : {
@@ -110,6 +127,13 @@ module.exports = function(grunt){
         dest : '<%= config.paths.dist %>'
       }
     }, //@end: copy
+
+    sasslint : {
+      options : {
+        configFile : '.sass-lint.yml'
+      },
+      target : ['<%= config.paths.src %>/**/*.scss']
+    }, // @end: sasslint
 
     sass : {
       options : {
@@ -202,26 +226,42 @@ module.exports = function(grunt){
   grunt.initConfig(gruntConfig);
 
   //---
+  // @begin: sasslint output report
+
+  grunt.registerTask('sasslint:report', function(){
+    grunt.config.set('sasslint.options', {
+      configFile : '.sass-lint.yml',
+      formatter : 'jslint-xml',
+      outputFile : '<%= config.paths.reports %>/lint_sass.xml'
+    });
+    grunt.task.run('sasslint');
+  });
+
+  // @end: sasslint output report
+  //---
 
   grunt.registerTask('common:tasks', [
     'clean',
+    'lintspaces',
     'copy:bootstrapFonts',
     'copy:indexhtml2build'
   ]);
 
   grunt.registerTask('build:dev', [
-     'common:tasks',
-     'sass:dev',
-     'postcss:dev',
-     'concat:vendor',
-     'concat:project',
-     'injector',
-     'copy:build2dist',
-     'clean:build'
+    'common:tasks',
+    'sasslint',
+    'sass:dev',
+    'postcss:dev',
+    'concat:vendor',
+    'concat:project',
+    'injector',
+    'copy:build2dist',
+    'clean:build'
   ]);
 
   grunt.registerTask('build:prod', [
     'common:tasks',
+    'sasslint:report',
     'sass:prod',
     'postcss:prod',
     'concat:vendor',
