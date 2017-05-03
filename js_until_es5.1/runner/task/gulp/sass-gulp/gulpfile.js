@@ -1,4 +1,5 @@
 var del           = require('del');
+var runSequence   = require('run-sequence');
 var gulp          = require('gulp');
 var lintspaces    = require('gulp-lintspaces');
 var sass          = require('gulp-sass');
@@ -62,7 +63,7 @@ gulp.task('sasslint:report', function(){
 
 //---
 
-gulp.task('sass:dev', ['clean', 'sasslint'], function() {
+gulp.task('sass:dev', ['sasslint'], function() {
   return gulp.src(config.sass.files)
     .pipe(sass({
       errLogToConsole : true,
@@ -73,7 +74,7 @@ gulp.task('sass:dev', ['clean', 'sasslint'], function() {
     .pipe(gulp.dest(config.paths.dist));
 });
 
-gulp.task('sass:prod', ['clean', 'sasslint'], function() {
+gulp.task('sass:prod', ['sasslint:report'], function() {
   return gulp.src(config.sass.files)
     .pipe(sourcemaps.init())
     .pipe(sass({
@@ -86,8 +87,23 @@ gulp.task('sass:prod', ['clean', 'sasslint'], function() {
     .pipe(gulp.dest(config.paths.dist));
 });
 
-gulp.task('build:dev', ['lintspaces', 'sass:dev']);
-gulp.task('build:prod', ['lintspaces', 'sass:prod']);
+//---
+
+gulp.task('build:dev', function(done){
+  runSequence(
+    ['clean', 'lintspaces'],
+    'sass:dev',
+    done
+  );
+});
+
+gulp.task('build:prod', function(done){
+  runSequence(
+    ['clean', 'lintspaces'],
+    'sass:prod',
+    done
+  );
+});
 
 //---
 

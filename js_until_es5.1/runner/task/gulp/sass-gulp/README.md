@@ -26,6 +26,7 @@ touch gulpfile.js
 
 npm install \
   del \
+  run-sequence \
   gulp \
   gulp-sass \
   gulp-sass-lint \
@@ -79,6 +80,8 @@ gulp
 ### dev dependencies
 
 * [[GitHub] sindresorhus / del](https://github.com/sindresorhus/del) - Delete files/folders using globs
+
+* [[GitHub] OverZealous / run-sequence](https://github.com/OverZealous/run-sequence) - Run a series of dependent gulp tasks in order
 
 * [[GitHub] gulpjs / gulp](https://github.com/gulpjs/gulp) - The streaming build system
 
