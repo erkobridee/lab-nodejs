@@ -1,6 +1,8 @@
 var del           = require('del');
 var gulp          = require('gulp');
+var lintspaces    = require('gulp-lintspaces');
 var sass          = require('gulp-sass');
+var sasslint      = require('gulp-sass-lint');
 var sourcemaps    = require('gulp-sourcemaps');
 var autoprefixer  = require('gulp-autoprefixer');
 
@@ -23,7 +25,44 @@ gulp.task('clean', del.bind(null, [ config.paths.dist ]));
 
 //---
 
-gulp.task('sass:dev', ['clean'], function() {
+gulp.task('lintspaces', function(){
+  return gulp
+    .src([
+      'package.json',
+      'gulpfile.js',
+      'src/**/*'
+    ])
+    .pipe(lintspaces({ editorconfig: '.editorconfig' }))
+    .pipe(lintspaces.reporter());
+});
+
+//---
+
+gulp.task('sasslint', function(){
+  return gulp
+    .src(config.sass.files)
+    .pipe(sasslint({ configFile: '.sass-lint.yml' }))
+    .pipe(sasslint.format())
+    .pipe(sasslint.failOnError());
+});
+
+gulp.task('sasslint:report', function(){
+  return gulp
+    .src(config.sass.files)
+    .pipe(sasslint({
+      options : {
+        'formatter': 'jslint-xml',
+        'output-file': 'dist/reports/lint_sass.xml'
+      },
+      configFile : '.sass-lint.yml'
+    }))
+    .pipe(sasslint.format())
+    .pipe(sasslint.failOnError());
+});
+
+//---
+
+gulp.task('sass:dev', ['clean', 'sasslint'], function() {
   return gulp.src(config.sass.files)
     .pipe(sass({
       errLogToConsole : true,
@@ -34,7 +73,7 @@ gulp.task('sass:dev', ['clean'], function() {
     .pipe(gulp.dest(config.paths.dist));
 });
 
-gulp.task('sass:prod', ['clean'], function() {
+gulp.task('sass:prod', ['clean', 'sasslint'], function() {
   return gulp.src(config.sass.files)
     .pipe(sourcemaps.init())
     .pipe(sass({
@@ -47,8 +86,8 @@ gulp.task('sass:prod', ['clean'], function() {
     .pipe(gulp.dest(config.paths.dist));
 });
 
-gulp.task('build:dev', ['sass:dev']);
-gulp.task('build:prod', ['sass:prod']);
+gulp.task('build:dev', ['lintspaces', 'sass:dev']);
+gulp.task('build:prod', ['lintspaces', 'sass:prod']);
 
 //---
 
