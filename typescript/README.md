@@ -1,10 +1,12 @@
+# TypeScript
+
 
 _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 6), today."_ - [Lee Brimelow](http://www.leebrimelow.com/)
 
   * [ECMAScript 6 Resources For The Curious JavaScripter](http://addyosmani.com/blog/ecmascript-6-resources-for-the-curious-javascripter/)
 
 
-# Links
+## Links
 
 * [TypeScript](http://www.typescriptlang.org/) - offers classes, modules, and interfaces to help you build robust components.
 
@@ -81,7 +83,7 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
 * [[GitHub] DanWahlin / TypeScriptDemos](https://github.com/DanWahlin/TypeScriptDemos) - A set of TypeScript demos showing various features of the language
 
 
-## Code Editor
+### Code Editor
 
 * GitHub - [TypeScript Sublime Plugin](https://github.com/raph-amiard/sublime-typescript)
 
@@ -95,8 +97,10 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
 
   * [Visual Studio Code | Visual Studio](https://www.visualstudio.com/en-us/products/code-vs.aspx)
 
-## pt_BR
+### pt_BR
 
 * [Introdução ao TypeScript | JavascriptBrasil](http://javascriptbrasil.com/pre-processadores/introducao-ao-typescript)
 
 * [Typescript: uma análise inicial | Blog Lambda3](http://blog.lambda3.com.br/2012/10/typescript-uma-anlise-inicial/)
+
+* [[Slides] Quem tem medo do TypeScript - William Grasel](http://slides.com/williamgrasel/quem-tem-medo-do-typescript) - 2017/04/29
