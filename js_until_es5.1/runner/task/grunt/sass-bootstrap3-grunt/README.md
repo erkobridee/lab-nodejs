@@ -1,4 +1,4 @@
-# Sass Bootstrap 3 Gulp
+# Sass Bootstrap 3 Grunt
 
 > compile [sass](http://sass-lang.com/) files and use bootstrapp sass official sass files imported in the project sass
 
