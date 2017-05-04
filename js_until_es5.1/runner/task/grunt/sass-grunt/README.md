@@ -99,7 +99,13 @@ grunt
 
 * [[GitHub] sindresorhus / grunt-sass](https://github.com/sindresorhus/grunt-sass) - Compile Sass to CSS
 
-* [[GitHub] sasstools / grunt-sass-lint](https://github.com/sasstools/grunt-sass-lint) - Grunt plugin for Sass Lint
+* [[GitHub] sasstools / gulp-sass-lint](https://github.com/sasstools/gulp-sass-lint) - Gulp plugin for Sass Lint
+
+  * [[GitHub] sasstools / sass-lint](https://github.com/sasstools/sass-lint) - Pure Node.js Sass linting
+
+    * [available rules](https://github.com/sasstools/sass-lint/tree/master/docs/rules)
+
+    * Migrating from SCSS-Lint: If you already have a config for SCSS-Lint, you can instantly convert it to the equivalent Sass Lint config at [sasstools.github.io/make-sass-lint-config](https://sasstools.github.io/make-sass-lint-config/).
 
 * [[GitHub] nDmitry / grunt-postcss](https://github.com/nDmitry/grunt-postcss) - Apply several post-processors to your CSS using PostCSS.
 
