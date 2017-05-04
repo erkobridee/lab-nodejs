@@ -46,7 +46,9 @@ npm install \
   del \
   run-sequence \
   gulp \
+  gulp-lintspaces \
   gulp-sass \
+  gulp-sass-lint \
   gulp-sourcemaps \
   gulp-autoprefixer \
   gulp-rename \
@@ -137,7 +139,17 @@ gulp
 
 * [[GitHub] gulpjs / gulp](https://github.com/gulpjs/gulp) - The streaming build system
 
+* [[GitHub] AlbertoElias / gulp-lintspaces](https://github.com/AlbertoElias/gulp-lintspaces) - Gulp plugin for node-lintspaces.
+
 * [[GitHub] dlmanning / gulp-sass](https://github.com/dlmanning/gulp-sass) - SASS plugin for gulp
+
+* [[GitHub] sasstools / gulp-sass-lint](https://github.com/sasstools/gulp-sass-lint) - Gulp plugin for Sass Lint
+
+  * [[GitHub] sasstools / sass-lint](https://github.com/sasstools/sass-lint) - Pure Node.js Sass linting
+
+    * [available rules](https://github.com/sasstools/sass-lint/tree/master/docs/rules)
+
+    * Migrating from SCSS-Lint: If you already have a config for SCSS-Lint, you can instantly convert it to the equivalent Sass Lint config at [sasstools.github.io/make-sass-lint-config](https://sasstools.github.io/make-sass-lint-config/).
 
 * [[GitHub] gulp-sourcemaps / gulp-sourcemaps](https://github.com/gulp-sourcemaps/gulp-sourcemaps) - Source map support for Gulp.js
 

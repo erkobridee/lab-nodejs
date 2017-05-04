@@ -1,7 +1,9 @@
 var del           = require('del');
 var runSequence   = require('run-sequence');
 var gulp          = require('gulp');
+var lintspaces    = require('gulp-lintspaces');
 var sass          = require('gulp-sass');
+var sasslint      = require('gulp-sass-lint');
 var sourcemaps    = require('gulp-sourcemaps');
 var autoprefixer  = require('gulp-autoprefixer');
 var rename        = require('gulp-rename');
@@ -16,8 +18,9 @@ var config = {};
 
 config.paths = {
   bower : './bower_components',
-  src: './src',
-  dist: './dist'
+  src : './src',
+  dist : './dist',
+  reports : './reports'
 };
 
 var bootstrapPath = config.paths.bower + '/bootstrap-sass/assets';
@@ -57,9 +60,15 @@ config.output = {
 
 //------------------------------------------------------------------------------
 
-gulp.task('clean', function(done){
+gulp.task('clean:dist', function(done){
   return del([ config.paths.dist ], done);
 });
+
+gulp.task('clean:reports', function(done){
+  return del([ config.paths.reports ], done);
+});
+
+gulp.task('clean', ['clean:dist', 'clean:reports']);
 
 //---
 // @begin: copy
@@ -74,9 +83,51 @@ gulp.task('copy', ['copy:fonts']);
 
 // @end: copy
 //---
+// @begin: lintspaces
+
+gulp.task('lintspaces', function(){
+  return gulp
+    .src([
+      'package.json',
+      'gulpfile.js',
+      config.paths.src + '/**/*'
+    ])
+    .pipe(lintspaces({ editorconfig: '.editorconfig' }))
+    .pipe(lintspaces.reporter());
+});
+
+// @end: lintspaces
+//---
+// @begin: sass lint
+
+
+gulp.task('sasslint', function(){
+  return gulp
+    .src(config.sass.files)
+    .pipe(sasslint({ configFile: '.sass-lint.yml' }))
+    .pipe(sasslint.format())
+    .pipe(sasslint.failOnError());
+});
+
+gulp.task('sasslint:report', function(){
+  return gulp
+    .src(config.sass.files)
+    .pipe(sasslint({
+      options : {
+        'formatter': 'jslint-xml',
+        'output-file': config.paths.reports + '/lint_sass.xml'
+      },
+      configFile : '.sass-lint.yml'
+    }))
+    .pipe(sasslint.format())
+    .pipe(sasslint.failOnError());
+});
+
+// @end: sass lint
+//---
 // @begin: sass
 
-gulp.task('sass:dev', function() {
+gulp.task('sass:dev', ['sasslint'], function() {
   return gulp.src(config.sass.files)
     .pipe(sass({
       errLogToConsole : true,
@@ -89,7 +140,7 @@ gulp.task('sass:dev', function() {
     .pipe(gulp.dest(config.output.styles));
 });
 
-gulp.task('sass:prod', function() {
+gulp.task('sass:prod', ['sasslint:report'], function() {
   return gulp.src(config.sass.files)
     .pipe(sourcemaps.init())
     .pipe(sass({
@@ -184,6 +235,7 @@ gulp.task('build:dev', function(done){
   runSequence(
     'clean',
     'copy',
+    'lintspaces',
     ['sass:dev', 'js:dev'],
     'html:index',
     done
@@ -194,6 +246,7 @@ gulp.task('build:prod', function(done){
   runSequence(
     'clean',
     'copy',
+    'lintspaces',
     ['sass:prod', 'js:prod'],
     'html:index',
     done
