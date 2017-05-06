@@ -38,4 +38,8 @@
 
 --
 
+* [[GitHub] 60frames / webpack-hot-server-middleware](https://github.com/60frames/webpack-hot-server-middleware) - Hot reload webpack bundles on the server
+
+--
+
 * [[YouTube Playlist] Webpack 2 Tutorial](https://www.youtube.com/watch?v=JdGnYNtuEtE&list=PLkEZWD8wbltnRp6nRR8kv97RbpcUdNawY)
