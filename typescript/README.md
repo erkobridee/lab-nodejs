@@ -42,6 +42,10 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
 
 --
 
+* [TypeScript: the Fun Parts | Sessions by Pusher](https://pusher.com/sessions/meetup/ember-london/typescript-the-fun-parts) - A brief look into some of the features of Typescript and what they can bring to a Javascript application.
+
+--
+
 * [The Rise of TypeScript? | Telerik Developer Network](http://developer.telerik.com/featured/the-rise-of-typescript/)
 
 * [TypeScript for C# Programmers | InfoQ](http://www.infoq.com/minibooks/typescript-c-sharp-programmers)
