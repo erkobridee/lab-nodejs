@@ -24,6 +24,7 @@ rules:
   quotes:
     - 1
     - style: single
+  space-before-colon: 1
   space-after-colon:
     - 1
     - include: true
