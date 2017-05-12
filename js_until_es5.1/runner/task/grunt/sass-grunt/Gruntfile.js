@@ -44,7 +44,16 @@ module.exports = function(grunt){
       options : {
         configFile : '.sass-lint.yml'
       },
-      target : ['src/**/*.scss']
+      log : {
+        src : ['src/**/*.scss']
+      },
+      report : {
+        options : {
+          formatter : 'jslint-xml',
+          outputFile : 'dist/reports/lint_sass.xml'
+        },
+        src : ['src/**/*.scss']
+      }
     }, // @end: sasslint
 
     sass : {
@@ -91,25 +100,12 @@ module.exports = function(grunt){
   grunt.initConfig(gruntConfig);
 
   //---
-  // @begin: sasslint output report
-
-  grunt.registerTask('sasslint:report', function(){
-    grunt.config.set('sasslint.options', {
-      configFile : '.sass-lint.yml',
-      formatter : 'jslint-xml',
-      outputFile : 'dist/reports/lint_sass.xml'
-    });
-    grunt.task.run('sasslint');
-  });
-
-  // @end: sasslint output report
-  //---
 
   grunt.registerTask('build:dev', [
     'clean',
     'sass:dev',
     'lintspaces',
-    'sasslint',
+    'sasslint:log',
     'postcss:dev',
     'copy:build2dist',
     'clean:build'
