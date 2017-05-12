@@ -18,7 +18,11 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
 
 --
 
-* [TypeScript 1.5: Modules, Decorators, Sublime Text Plug-in and More | InfoQ](http://www.infoq.com/news/2015/04/typescript-1-5/)
+* [[GitHub] TypeStrong / ts-node](https://github.com/TypeStrong/ts-node) - TypeScript execution environment for node
+
+--
+
+* [TypeScript | InfoQ](https://www.infoq.com/typescript/)
 
 --
 
@@ -99,7 +103,9 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
 
 * [Visual Studio Code](https://code.visualstudio.com/) - Code focused development. Redefined. Build and debug modern web and cloud applications. Code is free and available on your favorite platform - Linux, Mac OSX, and Windows.
 
-  * [Visual Studio Code | Visual Studio](https://www.visualstudio.com/en-us/products/code-vs.aspx)
+  * [[YouTube playlist] Learning TypeScript](https://www.youtube.com/watch?v=Gd76yF1Dkg4&list=PLzvRQMJ9HDiQyjtcrtvDkeQMJIrv5ABbm)
+
+    * [[YouTube] Set up Visual Studio Code (TypeScript tutorial, #4) - Savjee](https://www.youtube.com/watch?v=fxTKHG-S8RY) - 2016/12/20
 
 ### pt_BR
 
