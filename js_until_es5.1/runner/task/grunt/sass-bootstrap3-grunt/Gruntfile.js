@@ -132,7 +132,16 @@ module.exports = function(grunt){
       options : {
         configFile : '.sass-lint.yml'
       },
-      target : ['<%= config.paths.src %>/**/*.scss']
+      log : {
+        src : ['<%= config.paths.src %>/**/*.scss']
+      },
+      report : {
+        options : {
+          formatter : 'jslint-xml',
+          outputFile : '<%= config.paths.reports %>/lint_sass.xml'
+        },
+        src : ['<%= config.paths.src %>/**/*.scss']
+      }
     }, // @end: sasslint
 
     sass : {
@@ -226,19 +235,6 @@ module.exports = function(grunt){
   grunt.initConfig(gruntConfig);
 
   //---
-  // @begin: sasslint output report
-
-  grunt.registerTask('sasslint:report', function(){
-    grunt.config.set('sasslint.options', {
-      configFile : '.sass-lint.yml',
-      formatter : 'jslint-xml',
-      outputFile : '<%= config.paths.reports %>/lint_sass.xml'
-    });
-    grunt.task.run('sasslint');
-  });
-
-  // @end: sasslint output report
-  //---
 
   grunt.registerTask('common:tasks', [
     'clean',
@@ -249,7 +245,7 @@ module.exports = function(grunt){
 
   grunt.registerTask('build:dev', [
     'common:tasks',
-    'sasslint',
+    'sasslint:log',
     'sass:dev',
     'postcss:dev',
     'concat:vendor',
