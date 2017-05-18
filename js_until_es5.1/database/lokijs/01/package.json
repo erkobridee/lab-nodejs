@@ -4,7 +4,7 @@
   "description": "lokijs test 01",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf data.db.json",
+    "clean": "rimraf dist/data.db.json",
     "data:create": "node createData",
     "data:load": "node loadData",
     "start": "npm run clean && npm run data:create && npm run data:load"

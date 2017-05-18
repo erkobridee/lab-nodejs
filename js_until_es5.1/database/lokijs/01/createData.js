@@ -1,10 +1,8 @@
-var LokiJS = require('lokijs');
-
 //---
 // @begin: db definition
 
 // load / define a database
-var db = new LokiJS('data.db.json');
+var db = require('./LokiJSDB');
 
 // add a collection to the database
 var users = db.addCollection('users');

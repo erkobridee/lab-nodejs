@@ -1,6 +1,4 @@
-var LokiJS = require('lokijs');
-
-var db = new LokiJS('data.db.json');
+var db = require('./LokiJSDB');
 
 var users;
 
