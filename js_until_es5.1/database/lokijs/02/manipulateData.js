@@ -1,3 +1,8 @@
+/*
+  LokiJS Class: Collection jsdoc
+  https://rawgit.com/techfort/LokiJS/master/jsdoc/Collection.html
+*/
+
 var db = require('./LokiJSDB');
 
 var dbPromise = db.loadDatabasePromise();
