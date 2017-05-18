@@ -76,7 +76,7 @@ dbPromise.then(function(){
 dbPromise.then(function(){
   console.log('insert, update and delete \n');
 
-  user = users.insert({ _id: 1, name: 'Erko Bridee', age: 30, address: 'Earth' });
+  user = users.insert({ id: 1, name: 'Erko Bridee', age: 30, address: 'Earth' });
 
   console.log('inserted: ', user, '\n');
 
@@ -90,12 +90,40 @@ dbPromise.then(function(){
 
   console.log('removed: ', user, '\n');
 
-  console.log('is it still there? ', (users.find({ _id: 1 }).length > 1));
+  console.log('is it still there? ', (users.findOne({ id: 1 }) !== null));
 
   console.log('---------------------------------------------------------------\n');
 });
 
 // @end: insert, update and delete
+//---
+// @begin: insert, find/update and find/remove
+
+dbPromise.then(function(){
+  console.log('insert, find/update and find/remove \n');
+
+  user = users.insert({ id: 2, name: 'Son Goku', age: 31, address: 'Earth' });
+
+  console.log('inserted: ', user, '\n');
+
+  users.findAndUpdate({ id: 2 }, function(user){
+    user.name = 'kakaroto',
+    user.age = 32;
+    return user;
+  });
+
+  user = users.findOne({ id: 2 });
+  console.log('updated: ', user, '\n');
+
+  users.findAndRemove({ id: 2 });
+
+  user = users.findOne({ id: 2 });
+  console.log('is it still there? ', (user !== null));
+
+  console.log('---------------------------------------------------------------\n');
+});
+
+// @end: insert, find/update and find/remove
 //---
 
 dbPromise.then(function(){
