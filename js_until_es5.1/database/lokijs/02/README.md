@@ -28,6 +28,8 @@ npm install \
   rimraf \
   bluebird \
   --save-dev
+
+mkdir dist
 ```
 
 ### project cloned from git

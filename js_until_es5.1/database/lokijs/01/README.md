@@ -27,6 +27,8 @@ npm install \
   lokijs \
   rimraf \
   --save-dev
+
+mkdir dist
 ```
 
 ### project cloned from git
