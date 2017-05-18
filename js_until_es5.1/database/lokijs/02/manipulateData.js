@@ -2,7 +2,7 @@ var db = require('./LokiJSDB');
 
 var dbPromise = db.loadDatabasePromise();
 
-var users, results, Odin, progenyView;
+var users, user, results, Odin, progenyView;
 
 //---
 // @begin: db definition
@@ -70,6 +70,32 @@ dbPromise.then(function(){
 });
 
 // @end: advanced operations
+//---
+// @begin: insert, update and delete
+
+dbPromise.then(function(){
+  console.log('insert, update and delete \n');
+
+  user = users.insert({ _id: 1, name: 'Erko Bridee', age: 30, address: 'Earth' });
+
+  console.log('inserted: ', user, '\n');
+
+  user.name = 'Erko Bridee de Almeida Cabrera';
+  user.age = 31;
+  user = users.update(user);
+
+  console.log('updated: ', user, '\n');
+
+  user = users.remove(user);
+
+  console.log('removed: ', user, '\n');
+
+  console.log('is it still there? ', (users.find({ _id: 1 }).length > 1));
+
+  console.log('---------------------------------------------------------------\n');
+});
+
+// @end: insert, update and delete
 //---
 
 dbPromise.then(function(){
