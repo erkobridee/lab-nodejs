@@ -9,6 +9,8 @@
 
 * [01](01) - basic tests
 
+* [02](02) - more organized test using promises
+
 
 ## links
 

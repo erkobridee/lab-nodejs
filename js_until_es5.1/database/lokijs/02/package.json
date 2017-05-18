@@ -1,0 +1,26 @@
+{
+  "name": "lokijs_test-02",
+  "version": "1.0.0",
+  "description": "lokijs test 02",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist/data.db.json",
+    "data:create": "node createData",
+    "data:load": "node loadData",
+    "start": "npm run clean && npm run data:create && npm run data:load"
+  },
+  "keywords": [
+    "lokijs",
+    "nosql",
+    "db",
+    "test",
+    "promises"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "devDependencies": {
+    "bluebird": "^3.5.0",
+    "lokijs": "^1.4.3",
+    "rimraf": "^2.6.1"
+  }
+}
