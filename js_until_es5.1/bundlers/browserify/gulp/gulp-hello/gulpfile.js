@@ -32,6 +32,16 @@ config.js = {
 
 //------------------------------------------------------------------------------
 
+function getBrowserify(sourmapsFlag){
+  return browserify({
+    entries: config.js.main,
+    // if true that will generate sourcemaps output inside of bundle file
+    debug: !!sourmapsFlag
+  });
+}
+
+//------------------------------------------------------------------------------
+
 gulp.task('clean', del.bind(null, [ config.paths.dist ]));
 
 gulp.task('jshint', function() {
@@ -45,27 +55,22 @@ gulp.task('jshint', function() {
 //---
 
 gulp.task('compile:dev', ['clean', 'jshint'], function() {
-  return browserify({
-    entries: config.js.main,
-    debug: true // will generate sourcemaps output inside of bundle file
-  })
-  .bundle()
-  .pipe(source(config.outputFilename.dev))
-  .pipe(gulp.dest( config.paths.dist ));
+  return getBrowserify(true)
+    .bundle()
+    .pipe(source(config.outputFilename.dev))
+    .pipe(gulp.dest( config.paths.dist ));
 });
 
 gulp.task('compile:prod', ['clean', 'jshint'], function() {
-  return browserify({
-    entries: config.js.main
-  })
-  .bundle()
-  .on('error', gutil.log.bind(gutil, 'Browserify Error'))
-  .pipe(source(config.outputFilename.prod))
-  .pipe(buffer())
-  .pipe(sourcemaps.init({loadMaps: true})) // loads map from browserify file
-  .pipe(uglify())
-  .pipe(sourcemaps.write('./')) // writes .map file
-  .pipe(gulp.dest( config.paths.dist ));
+  return getBrowserify(false)
+    .bundle()
+    .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+    .pipe(source(config.outputFilename.prod))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({loadMaps: true})) // loads map from browserify file
+    .pipe(uglify())
+    .pipe(sourcemaps.write('./')) // writes .map file
+    .pipe(gulp.dest( config.paths.dist ));
 });
 
 gulp.task('compile', ['compile:dev']);
