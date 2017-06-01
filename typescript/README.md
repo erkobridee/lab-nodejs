@@ -26,17 +26,19 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
 
 --
 
-* [Why I Like TypeScript | Lee Brimelow](http://www.leebrimelow.com/why-i-like-typescripts/)
-
 * [Getting Started with TypeScript | Nettuts+](http://net.tutsplus.com/tutorials/javascript-ajax/getting-started-with-typescript/)
 
 * [Getting Started with TypeScript | Treehouse Blog](http://blog.teamtreehouse.com/getting-started-typescript)
 
-* [TypeScript for ActionScript Developers | Jesse Warden](http://jessewarden.com/2012/10/typescript-for-actionscript-developers.html)
+* [Getting Started With TypeScript ( Superset of JavaScript ) | CodeProject](http://www.codeproject.com/Articles/470129/TypeScript-Superset-of-JavaScript)
+
+* [[YouTube playlist] Learning TypeScript - Savjee](https://www.youtube.com/watch?v=Gd76yF1Dkg4&list=PLzvRQMJ9HDiQyjtcrtvDkeQMJIrv5ABbm)
+
+--
+
+* [Why I Like TypeScript | Lee Brimelow](http://www.leebrimelow.com/why-i-like-typescripts/)
 
 * [Why does TypeScript have to be the answer to anything? | Scott Hanselman](http://www.hanselman.com/blog/WhyDoesTypeScriptHaveToBeTheAnswerToAnything.aspx)
-
-* [Getting Started With TypeScript ( Superset of JavaScript ) | CodeProject](http://www.codeproject.com/Articles/470129/TypeScript-Superset-of-JavaScript)
 
 * [TypeScript Modularization - Good, Bad and Microsoft](http://brettjonesdev.com/modularization-in-typescript/)
 
@@ -44,13 +46,15 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
 
 * [My experience with TypeScript | Kinja Technology](http://tech.kinja.com/my-experience-with-typescript-710191610)
 
+* [The Rise of TypeScript? | Telerik Developer Network](http://developer.telerik.com/featured/the-rise-of-typescript/)
+
 --
 
 * [TypeScript: the Fun Parts | Sessions by Pusher](https://pusher.com/sessions/meetup/ember-london/typescript-the-fun-parts) - A brief look into some of the features of Typescript and what they can bring to a Javascript application.
 
 --
 
-* [The Rise of TypeScript? | Telerik Developer Network](http://developer.telerik.com/featured/the-rise-of-typescript/)
+* [TypeScript for ActionScript Developers | Jesse Warden](http://jessewarden.com/2012/10/typescript-for-actionscript-developers.html)
 
 * [TypeScript for C# Programmers | InfoQ](http://www.infoq.com/minibooks/typescript-c-sharp-programmers)
 
@@ -103,9 +107,7 @@ _"Basically TypeScript allows you to use the JavaScript of tomorrow (ECMAScript 
 
 * [Visual Studio Code](https://code.visualstudio.com/) - Code focused development. Redefined. Build and debug modern web and cloud applications. Code is free and available on your favorite platform - Linux, Mac OSX, and Windows.
 
-  * [[YouTube playlist] Learning TypeScript](https://www.youtube.com/watch?v=Gd76yF1Dkg4&list=PLzvRQMJ9HDiQyjtcrtvDkeQMJIrv5ABbm)
-
-    * [[YouTube] Set up Visual Studio Code (TypeScript tutorial, #4) - Savjee](https://www.youtube.com/watch?v=fxTKHG-S8RY) - 2016/12/20
+  * [[YouTube] Set up Visual Studio Code (TypeScript tutorial, #4) - Savjee](https://www.youtube.com/watch?v=fxTKHG-S8RY) - 2016/12/20
 
 ### pt_BR
 
