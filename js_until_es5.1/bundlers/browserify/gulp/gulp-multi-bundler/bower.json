@@ -1,0 +1,28 @@
+{
+  "name": "gulp-multi-bundler",
+  "homepage": "https://github.com/erkobridee/lab-nodejs",
+  "authors": [
+    "Erko Bridee <erko.bridee@gmail.com>"
+  ],
+  "description": "browserify running by gulp multi bundlers output test",
+  "main": "",
+  "keywords": [
+    "gulp",
+    "browserify",
+    "test",
+    "multi",
+    "bundlers"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
