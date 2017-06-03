@@ -4,7 +4,9 @@
   "description": "browserify running by gulp multi bundlers output test",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "gulp clean",
+    "production": "gulp prod:preview",
+    "start": "gulp"
   },
   "keywords": [
     "gulp",
