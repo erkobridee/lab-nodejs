@@ -1,6 +1,6 @@
-# Browserify - gulp multi bundlers
+# Browserify - gulp multi bundles
 
-> running browserify from gulp to generate multi bundlers output
+> running browserify from gulp to generate multi bundles output
 
 
 ## Prerequisites
