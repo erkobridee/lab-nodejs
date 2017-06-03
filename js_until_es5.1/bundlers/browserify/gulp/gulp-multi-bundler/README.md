@@ -59,15 +59,11 @@ npm install \
 
 ## gulp commands
 
-> **TODO:** review and update
+* build
 
-* compile
+  * development `gulp build:dev`
 
-> generate bundle file on `dist` dir using browserify
-
-```bash
-gulp compile
-```
+  * production `gulp build:prod`
 
 * clean
 
@@ -77,9 +73,17 @@ gulp compile
 gulp clean
 ```
 
+* production preview
+
+> execute build prod task and then start the webserver
+
+```bash
+gulp prod:preview
+```
+
 * dev
 
-> execute compile task, then watch project source files (.js)
+> execute build dev task, start webserver and then watch project source files (.js)
 
 ```bash
 gulp
