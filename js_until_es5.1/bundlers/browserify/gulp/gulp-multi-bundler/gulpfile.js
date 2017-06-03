@@ -15,9 +15,9 @@ var buffer       = require('vinyl-buffer');
 var nodeResolve  = require('resolve');
 var bowerResolve = require('bower-resolve');
 
-var runSequence  = require('run-sequence').use(gulp);
+var runSequence  = require('run-sequence');
 var bsServer     = require('browser-sync');
-var bsReload     = bsServer.reload;
+// var bsReload     = bsServer.reload;
 
 //------------------------------------------------------------------------------
 // @begin: configs
@@ -64,6 +64,7 @@ function getNPMPackageIds(){
 
 function compileDev(stream){
   return stream
+    // .pipe(buffer())
     // .pipe(rev())
     .pipe(gulp.dest( config.paths.dist ));
 }
@@ -84,11 +85,16 @@ function compileProd(stream){
 // @begin: browserify helpers
 
 function getBrowserify(entries, sourmapsFlag){
-  return browserify({
-    entries: entries,
+  var config = {
     // if true that will generate sourcemaps output inside of bundle file
     debug: !!sourmapsFlag
-  });
+  };
+
+  if(entries){
+    config.entries = entries;
+  }
+
+  return browserify(config);
 }
 
 function browserifyToStream(instance, outputFilename){
@@ -103,11 +109,8 @@ function browserifyToStream(instance, outputFilename){
     .pipe(source(outputFilename));
 }
 
-
-// TODO: redefine to get libs paths and use concat instead of browserify
-// example: https://gist.github.com/Aeon/2063cbad046fa53749c7#file-gulpfile-js-L93
 function getVendorBrowserify(debugFlag){
-  var b = getBrowserify(config.js.main, debugFlag);
+  var b = getBrowserify(null, debugFlag);
 
   // this task will go through ./bower.json and
   // uses bower-resolve to resolve its full path.
@@ -136,10 +139,8 @@ function getVendorBrowserify(debugFlag){
     b.require(nodeResolve.sync(id), { expose: id });
   });
 
-  return browserifyToStream(b, 'vendor.js');
+  return browserifyToStream(b, 'scripts/00_vendors.js');
 }
-
-
 
 function getAppBrowserify(debugFlag){
   var b = getBrowserify(config.js.main, debugFlag);
@@ -158,7 +159,7 @@ function getAppBrowserify(debugFlag){
     b.external(id);
   });
 
-  return browserifyToStream(b, 'main.js');
+  return browserifyToStream(b, 'scripts/01_scripts.js');
 }
 
 // @end: browserify helpers
@@ -176,47 +177,116 @@ gulp.task('jshint', function() {
 });
 
 //---
+// @begin: javascript
 
-gulp.task('compile:vendor:dev', function() {
+gulp.task('js:dev:vendor', function() {
   return compileDev(getVendorBrowserify(true));
 });
 
-gulp.task('compile:vendor:prod',function() {
-  return compileProd(getVendorBrowserify(false));
+gulp.task('js:prod:vendor',function() {
+  return compileProd(getVendorBrowserify(true));
 });
 
-gulp.task('compile:app:dev', ['jshint'], function() {
+gulp.task('js:dev:app', ['jshint'], function() {
   return compileDev(getAppBrowserify(true));
 });
 
-gulp.task('compile:app:prod', ['jshint'], function() {
-  return compileProd(getAppBrowserify(false));
+gulp.task('js:prod:app', ['jshint'], function() {
+  return compileProd(getAppBrowserify(true));
 });
 
-gulp.task('compile:dev', function(done) {
+gulp.task('js:dev', ['js:dev:vendor', 'js:dev:app']);
+gulp.task('js:prod', ['js:prod:vendor', 'js:prod:app']);
+
+// @end: javascript
+//---
+// @begin: inject stuff on index.html
+
+gulp.task('html:index', function(){
+  var injectFiles = gulp.src([
+    config.paths.dist + '/styles/**/*.css',
+    config.paths.dist + '/scripts/**/*.js',
+  ], { read: false });
+  var injectOptionsDefault = {
+    addRootSlash : false,
+    ignorePath : ['src', 'dist']
+  };
+
+  return gulp
+    .src(config.paths.src + '/index.html')
+    .pipe(inject(injectFiles, injectOptionsDefault))
+    .pipe(gulp.dest(config.paths.dist));
+});
+
+// @end: inject stuff on index.html
+//---
+// @begin: build
+
+gulp.task('build:dev', function(done) {
   runSequence(
     'clean',
-    'compile:vendor:dev',
-    'compile:app:dev',
+    'js:dev',
+    'html:index',
     done
   );
 });
 
-gulp.task('compile:prod', function(done) {
+gulp.task('build:prod', function(done) {
   runSequence(
     'clean',
-    'compile:vendor:prod',
-    'compile:app:prod',
+    'js:prod',
+    'html:index',
     done
   );
+});
+
+// @end: build
+//---
+// @begin: web server
+
+gulp.task('webserver', function(){
+  bsServer({
+    port : 1337,
+    ui : false,
+    files : [
+      config.paths.dist
+    ],
+    server : {
+        baseDir : [
+          config.paths.dist
+        ]
+    }
+  });
+});
+
+// @end: web server
+//---
+
+gulp.task('watch', ['webserver'], function(){
+  gulp.watch([config.js.files], ['js:dev:app']);
+
+  gulp.watch([config.paths.src + '/index.html'], ['html:index']);
 });
 
 //---
 
-// TODO: define watch task
+gulp.task('dev:flow', function(done){
+  runSequence(
+    'build:dev',
+    'watch',
+    done
+  );
+})
 
-// TODO: define web server task using browserSync
+gulp.task('prod:preview', function(done){
+  runSequence(
+    'build:prod',
+    'webserver',
+    done
+  );
+})
 
+gulp.task('default', ['dev:flow']);
 
 // @end: gulp tasks
 //------------------------------------------------------------------------------
