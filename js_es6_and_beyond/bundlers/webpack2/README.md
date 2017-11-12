@@ -28,6 +28,14 @@
 
 --
 
+* [Resolve > resolve.modules | webpack 2 docs](https://webpack.js.org/configuration/resolve/#resolve-modules)
+
+> `modules: [path.resolve(__dirname, "src"), "node_modules"]`
+
+* [ES6 Import Statement Without Relative Paths Using Webpack | Modus Create](https://moduscreate.com/blog/es6-es2015-import-no-relative-path-webpack/) - 2016/04/14
+
+--
+
 * [Getting Started with Webpack 2 | Thinking in Code – Medium](https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783) - 2016/10/24
 
   * [[GitHub] ModusCreateOrg / budgeting-sample-app-webpack2](https://github.com/ModusCreateOrg/budgeting-sample-app-webpack2) - Budgeting - React + Redux + Webpack 2 (tree shaking) Sample App
